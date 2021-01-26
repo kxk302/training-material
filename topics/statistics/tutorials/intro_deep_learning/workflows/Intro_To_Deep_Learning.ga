@@ -16,7 +16,7 @@
                     "name": "X_test"
                 }
             ],
-            "label": null,
+            "label": X_test,
             "name": "Input dataset",
             "outputs": [],
             "position": {
@@ -42,7 +42,7 @@
                     "name": "X_train"
                 }
             ],
-            "label": "X_test",
+            "label": "X_train",
             "name": "Input dataset",
             "outputs": [],
             "position": {
@@ -68,7 +68,7 @@
                     "name": "y_test"
                 }
             ],
-            "label": "X_train",
+            "label": "Y_test",
             "name": "Input dataset",
             "outputs": [],
             "position": {
@@ -94,7 +94,7 @@
                     "name": "y_train"
                 }
             ],
-            "label": "y_test",
+            "label": "Y_train",
             "name": "Input dataset",
             "outputs": [],
             "position": {
