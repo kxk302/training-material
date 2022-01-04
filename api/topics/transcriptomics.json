@@ -45,7 +45,8 @@
     },
     {
       "name": "Wendi Bacon",
-      "email": "wendi@ebi.ac.uk",
+      "email": "wendi@open.ac.uk",
+      "twitter": "WendiBacon1",
       "joined": "2020-03",
       "id": "nomadscientist",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
@@ -551,7 +552,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/mtekman.json"
         }
       ],
-      "last_modified_at": "2021-10-20T09:00:29+00:00",
+      "last_modified_at": "2021-11-24T12:10:36+00:00",
       "url": "/topics/transcriptomics/tutorials/scrna-intro/slides.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "scrna-intro",
@@ -826,6 +827,87 @@
     },
     {
       "layout": "tutorial_hands_on",
+      "enable": false,
+      "title": "De novo transcriptome assembly, annotation, and differential expression analysis",
+      "zenodo_link": "https://zenodo.org/record/3541678",
+      "questions": [
+        "Which biological questions are addressed by the tutorial?",
+        "Which bioinformatics techniques are important to know for this type of data?"
+      ],
+      "objectives": [
+        "The learning objectives are the goals of the tutorial",
+        "They will be informed by your audience and will communicate to them and to yourself what you should focus on during the course",
+        "They are single sentences describing what a learner should be able to do once they have completed the tutorial",
+        "You can use Bloom's Taxonomy to write effective learning objectives"
+      ],
+      "time_estimation": "3H",
+      "key_points": [
+        "The take-home messages",
+        "They will appear at the end of the tutorial"
+      ],
+      "contributors": [
+        {
+          "name": "Anthony Bretaudeau",
+          "email": "anthony.bretaudeau@inra.fr",
+          "twitter": "abretau",
+          "gitter": "abretaud",
+          "orcid": "0000-0003-0914-2470",
+          "joined": "2017-09",
+          "id": "abretaud",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/abretaud.json"
+        },
+        {
+          "name": "Gildas Le Corguillé",
+          "joined": "2017-09",
+          "id": "lecorguille",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/lecorguille.json"
+        },
+        {
+          "name": "Erwan Corre",
+          "email": "erwan.corre@sb-roscoff.fr",
+          "twitter": "r1corre",
+          "orcid": "0000-0001-6354-2278",
+          "joined": "2019-04",
+          "id": "r1corre",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/r1corre.json"
+        },
+        {
+          "name": "Xi Liu",
+          "github": false,
+          "joined": "2019-11",
+          "id": "xiliu",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/xiliu.json"
+        }
+      ],
+      "last_modified_at": "2021-03-12T17:24:55+00:00",
+      "url": "/topics/transcriptomics/tutorials/full-de-novo/tutorial.html",
+      "topic_name": "transcriptomics",
+      "tutorial_name": "full-de-novo",
+      "hands_on": true,
+      "slides": false,
+      "workflows": true,
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "tags": [
+        "work-in-progress"
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/full-de-novo/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/full-de-novo/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
       "title": "De novo transcriptome reconstruction with RNA-Seq",
       "subtopic": "introduction",
       "priority": 3,
@@ -1001,7 +1083,7 @@
         }
       ],
       "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-      "last_modified_at": "2021-04-16T13:55:31+00:00",
+      "last_modified_at": "2021-11-26T14:22:34+00:00",
       "url": "/topics/transcriptomics/tutorials/scrna-raceid/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "scrna-raceid",
@@ -1067,7 +1149,8 @@
       "contributors": [
         {
           "name": "Wendi Bacon",
-          "email": "wendi@ebi.ac.uk",
+          "email": "wendi@open.ac.uk",
+          "twitter": "WendiBacon1",
           "joined": "2020-03",
           "id": "nomadscientist",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
@@ -1082,7 +1165,7 @@
         ],
         "video": false
       },
-      "last_modified_at": "2021-10-01T10:56:45+00:00",
+      "last_modified_at": "2021-12-06T13:41:05+00:00",
       "url": "/topics/transcriptomics/tutorials/scrna-seq-basic-pipeline/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "scrna-seq-basic-pipeline",
@@ -1126,7 +1209,8 @@
       "contributors": [
         {
           "name": "Wendi Bacon",
-          "email": "wendi@ebi.ac.uk",
+          "email": "wendi@open.ac.uk",
+          "twitter": "WendiBacon1",
           "joined": "2020-03",
           "id": "nomadscientist",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
@@ -1332,7 +1416,8 @@
       "contributors": [
         {
           "name": "Wendi Bacon",
-          "email": "wendi@ebi.ac.uk",
+          "email": "wendi@open.ac.uk",
+          "twitter": "WendiBacon1",
           "joined": "2020-03",
           "id": "nomadscientist",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
@@ -1448,7 +1533,8 @@
         },
         {
           "name": "Wendi Bacon",
-          "email": "wendi@ebi.ac.uk",
+          "email": "wendi@open.ac.uk",
+          "twitter": "WendiBacon1",
           "joined": "2020-03",
           "id": "nomadscientist",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"
@@ -1563,7 +1649,7 @@
         }
       ],
       "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-      "last_modified_at": "2021-03-23T18:28:07+00:00",
+      "last_modified_at": "2021-11-26T14:22:34+00:00",
       "url": "/topics/transcriptomics/tutorials/scrna-preprocessing/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "scrna-preprocessing",
@@ -1728,6 +1814,55 @@
     },
     {
       "layout": "tutorial_hands_on",
+      "title": "Reference-based RNAseq data analysis (long)",
+      "zenodo_link": "",
+      "enable": false,
+      "questions": [
+        "How to perform analysis of RNAseq data when reference genome is available?"
+      ],
+      "objectives": [
+        "Learns basic concepts of RNAseq analysis"
+      ],
+      "time_estimation": "1h",
+      "key_points": null,
+      "contributors": [
+        {
+          "name": "Anton Nekrutenko",
+          "email": "anton@nekrut.org",
+          "joined": "2017-09",
+          "id": "nekrut",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/nekrut.json"
+        }
+      ],
+      "last_modified_at": "2020-07-28T13:02:01+00:00",
+      "url": "/topics/transcriptomics/tutorials/rb-rnaseq/tutorial.html",
+      "topic_name": "transcriptomics",
+      "tutorial_name": "rb-rnaseq",
+      "hands_on": true,
+      "slides": false,
+      "workflows": false,
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "tags": [
+        "work-in-progress"
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/rb-rnaseq/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//transcriptomics/tutorials/rb-rnaseq/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
       "title": "RNA Seq Counts to Viz in R",
       "subtopic": "visualisation",
       "zenodo_link": "https://zenodo.org/record/3477564/",
@@ -1800,9 +1935,18 @@
           "joined": "2019-07",
           "id": "tobyhodges",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/tobyhodges.json"
+        },
+        {
+          "name": "Erasmus+ Programme",
+          "joined": "2020-09",
+          "github": false,
+          "funder": true,
+          "funding_statement": "This project (`2020-1-NL01-KA203-064717`) is funded with the support of the Erasmus+ programme of the European Union. Their funding has supported a large number of tutorials within the GTN across a wide array of topics.\n![eu flag with the text: with the support of the erasmus programme of the european union](https://gallantries.github.io/assets/images/logosbeneficaireserasmusright_en.jpg)\n",
+          "id": "erasmusplus",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/erasmusplus.json"
         }
       ],
-      "last_modified_at": "2021-10-07T17:52:57+00:00",
+      "last_modified_at": "2021-12-14T14:52:15+00:00",
       "url": "/topics/transcriptomics/tutorials/rna-seq-counts-to-viz-in-r/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "rna-seq-counts-to-viz-in-r",
@@ -2031,7 +2175,7 @@
         }
       ],
       "gitter": "Galaxy-Training-Network/galaxy-single-cell",
-      "last_modified_at": "2021-03-23T18:28:07+00:00",
+      "last_modified_at": "2021-11-26T14:22:34+00:00",
       "url": "/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html",
       "topic_name": "transcriptomics",
       "tutorial_name": "scrna-scater-qc",
@@ -2150,7 +2294,8 @@
       "contributors": [
         {
           "name": "Wendi Bacon",
-          "email": "wendi@ebi.ac.uk",
+          "email": "wendi@open.ac.uk",
+          "twitter": "WendiBacon1",
           "joined": "2020-03",
           "id": "nomadscientist",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/nomadscientist.json"

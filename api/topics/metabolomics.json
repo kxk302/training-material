@@ -67,6 +67,71 @@
     },
     {
       "layout": "tutorial_hands_on",
+      "enable": false,
+      "title": "Mass spectrometry : GC-MS analysis with metaMS package",
+      "level": "Introductory",
+      "zenodo_link": "https://zenodo.org/record/3244991",
+      "questions": [
+        "What are the main steps of GC-MS datas processing for metabolomic analysis ?",
+        "How te be able to annotate the maximum of unknowns using Galaxy ?"
+      ],
+      "objectives": [
+        "To be sure you have already comprehend the diversity of MS pre-processing analysis.",
+        "To learn the principal functions of metaMS package through Galaxy.",
+        "To evaluate the potential of this new GC-MS workflow for GC-MS metabolomic analysis."
+      ],
+      "time_estimation": "2H",
+      "key_points": [
+        "Have a good file containing all your peaks during the first stopover",
+        "Find all your unknowns in your datas",
+        "Find your stanards if you have some"
+      ],
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "metabolomics",
+          "tutorials": [
+            "lcms"
+          ]
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Julien Saint-Vanne",
+          "joined": "2020-01",
+          "id": "jsaintvanne",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/jsaintvanne.json"
+        }
+      ],
+      "last_modified_at": "2021-09-22T11:20:42+00:00",
+      "url": "/topics/metabolomics/tutorials/gcms/tutorial.html",
+      "topic_name": "metabolomics",
+      "tutorial_name": "gcms",
+      "hands_on": true,
+      "slides": false,
+      "workflows": false,
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "tags": [
+        "work-in-progress"
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/gcms/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/gcms/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
       "title": "Mass spectrometry imaging: Examining the spatial distribution of analytes",
       "zenodo_link": "https://zenodo.org/record/484496",
       "level": "Introductory",
@@ -272,6 +337,68 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/lcms/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/lcms/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "enable": false,
+      "title": "Mass spectrometry: LC-MS data processing",
+      "zenodo_link": "https://zenodo.org/record/5179809",
+      "level": "Introductory",
+      "questions": [
+        "Why should one consider performing data processing steps when dealing with Metabolomics data?",
+        "How to conduct LCMS-based untargeted metabolomic data processing using Galaxy?"
+      ],
+      "objectives": [
+        "To comprehend the key role of data processing",
+        "To comprehend the diversity of steps necessary to perform untargeted LC-MS metabolomic data processing.",
+        "To be familiar with the \"identify then perform\" approach necessary to deploy relevant data processing strategies."
+      ],
+      "time_estimation": "1H",
+      "key_points": [
+        "Data processing is a key step in untargeted Metabolomics analyses. The question of data filtering and correction must be addressed in all projects, even thought in some cases it may lead to the decision of no action on data. In particular, blank filtering, pool variation study and signal drift correction are common aspects to consider when dealing with LC-MS.",
+        "Although some main steps are standard, various ways to combine tools exist. Remember that depending on your context (type of samples, protocol specificities...) specific filters/normalisations may be needed, independently of standards ones.",
+        "Tools are available in Galaxy, but do not forget that you need appropriate knowledge to decide what to use depending on your data."
+      ],
+      "contributors": [
+        {
+          "name": "Mélanie Petera",
+          "joined": "2019-06",
+          "id": "melpetera",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/melpetera.json"
+        },
+        {
+          "name": "Workflow4Metabolomics core team",
+          "joined": "2019-06",
+          "id": "workflow4metabolomics",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/workflow4metabolomics.json"
+        }
+      ],
+      "last_modified_at": "2021-09-02T15:00:54+00:00",
+      "url": "/topics/metabolomics/tutorials/lcms-dataprocessing/tutorial.html",
+      "topic_name": "metabolomics",
+      "tutorial_name": "lcms-dataprocessing",
+      "hands_on": true,
+      "slides": false,
+      "workflows": false,
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "tags": [
+        "work-in-progress"
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/lcms-dataprocessing/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//metabolomics/tutorials/lcms-dataprocessing/tutorial.json"
       }
     },
     {

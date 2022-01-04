@@ -210,6 +210,8 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "admin/tutorials/users-groups-quotas/slides",
 				"topic": "Galaxy Server administration",
@@ -224,6 +226,12 @@
 					
                        
                        
+                       
+                               
+                       
+                               
+                       
+                               
                        
                                
                        
@@ -281,6 +289,8 @@
 					
                        
                        
+                       
+                               
                        
                                
                        
@@ -395,10 +405,14 @@
                        
                                
                        
+                               
+                       
                
 					
                        
                        
+                       
+                               
                        
                                
                        
@@ -497,60 +511,66 @@
                        
                                
                        
-               
-					
-                       
-                       
-                       
-               
-					
-                       
-                       
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
-                               
-                       
                                
                        
                
 					
                        
                        
+                       
+               
+					
+                       
+                       
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+               
+					
+                       
+                       
+                       
+                               
+                       
+                               
                        
                                
                        
@@ -572,6 +592,8 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "genome-annotation/tutorials/apollo/slides",
 				"topic": "Genome Annotation",
@@ -585,32 +607,12 @@
                        
                        
                        
-               
-					
-                       
-                       
-                       
-                               
-                       
-                               
-                       
-                               
-                       
                                
                        
                
 					
                        
                        
-                       
-               
-					
-                       
-                       
-                       
-                               
-                       
-                               
                        
                                
                        
@@ -629,6 +631,32 @@
 					
                        
                        
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+               
+					
+                       
+                       
+                       
+               
+					
+                       
+                       
+                       
+                               
+                       
+                               
                        
                                
                        
@@ -725,21 +753,30 @@
                        
                                
                        
-               
-					
-                       
-                       
-                       
-                               
-                       
-                               
-                       
                                
                        
                
 					
                        
                        
+                       
+                               
+                       
+                               
+                       
+                               
+                       
+               
+					
+                       
+                       
+                       
+               
+					
+                       
+                       
+                       
+                               
                        
                                
                        
@@ -823,12 +860,16 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "transcriptomics/tutorials/scrna-plates-batches-barcodes/slides",
 				"topic": "Transcriptomics",
 				"title": "Plates, Batches, and Barcodes"
 			},
 								
+                               
+                       
                                
                        
                                
@@ -872,6 +913,8 @@
 					
                        
                        
+                       
+                               
                        
                                
                        
