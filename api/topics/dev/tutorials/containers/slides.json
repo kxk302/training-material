@@ -30,34 +30,41 @@
     "Planemo makes it easy to test your tool inside of containers."
   ],
   "contributors": [
-    {
-      "name": "John Chilton",
-      "email": "jmchilton@gmail.com",
-      "joined": "2017-09",
-      "id": "jmchilton",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
-    },
-    {
-      "name": "Björn Grüning",
-      "email": "bjoern.gruening@gmail.com",
-      "twitter": "bjoerngruening",
-      "gitter": "bgruening",
-      "orcid": "0000-0002-3079-6586",
-      "linkedin": "bgruening",
-      "joined": "2017-09",
-      "id": "bgruening",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
-    }
+    "jmchilton",
+    "bgruening"
   ],
-  "last_modified_at": "2021-07-10T15:18:44+00:00",
+  "short_id": "S00047",
   "url": "/topics/dev/tutorials/containers/slides.html",
   "topic_name": "dev",
   "tutorial_name": "containers",
+  "dir": "topics/dev/tutorials/containers",
+  "id": "dev/containers",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": false,
   "slides": true,
+  "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/containers/tutorial.json",
   "tools": [
 
   ],
+  "supported_servers": [
+
+  ],
+  "topic_name_human": "Development in Galaxy",
+  "admin_install": {
+    "install_tool_dependencies": true,
+    "install_repository_dependencies": true,
+    "install_resolver_dependencies": true,
+    "tools": [
+
+    ]
+  },
+  "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
   "tours": false,
   "video": false,
   "translations": {
@@ -70,8 +77,8 @@
     "video": false
   },
   "type": "tutorial",
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/containers/slides.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/containers/slides.json"
-  }
+  "redirect_from": [
+    "/short/dev/containers/slides",
+    "/short/S00047"
+  ]
 }

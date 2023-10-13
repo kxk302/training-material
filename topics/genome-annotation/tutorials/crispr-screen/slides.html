@@ -1,63 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Introduction to CRISPR screen analysis</title>
+        
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
 
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
 
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
 
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+-->
+<script type="text/javascript">
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
 
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
+</script>
 
+        
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/crispr-screen/slides.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
 
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Introduction to CRISPR screen analysis">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2022-03-10 08:46:04 +0000">
+<meta name="DC.creator" content="Maria Doyle">
+<meta name="DC.creator" content="Sylvia Mahara">
 
+        
+        
+        
+        
+        <meta name="description" content="Genome annotation is a multi-level process that includes ..." />
+        <meta property="og:site_name" content="Galaxy Training Network" />
+        <meta property="og:title" content="Galaxy Training: Introduction to CRISPR screen analysis" />
+        <meta property="og:description" content="Genome annotation is a multi-level process that includes ..." />
+        
+        <meta property="og:image" content="/training-material/assets/images/gga.png">
 
-
-  <head>
-    <meta charset="utf-8">
-    <title>Introduction to CRISPR screen analysis</title>
-    
-        <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
-
-    
-    <link rel="stylesheet" href="/training-material/assets/css/slides.css">
-    <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-
-    
-    
-    
-    
-    <meta name="description" content="Genome annotation is a multi-level process that includes ..." />
-    <meta property="og:title" content="Galaxy Training: Introduction to CRISPR screen analysis" />
-    <meta property="og:description" content="Genome annotation is a multi-level process that includes ..." />
-    <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
-    <script type="application/ld+json">
-      
+        <script type="application/ld+json">
+            
 
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -70,7 +124,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:33:42 +0000",
+  "dateModified": "2022-03-10 08:46:04 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Introduction to CRISPR screen analysis",
   "interactivityType": "mixed",
@@ -95,27 +149,51 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Genome Annotation",
     "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-    "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/"
+    "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
   },
-  "courseCode": "genome-annotation / crispr-screen / slides",
   "learningResourceType": "slides",
   "name": "Slides for 'Introduction to CRISPR screen analysis' tutorial",
-  "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/tutorials/crispr-screen/slides.html",
+  "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/crispr-screen/slides.html",
   "timeRequired": "PT5M",
-  "description": "The questions this  addresses are:\n - What is CRISPR?\n - What is a CRISPR screen?\n - How is a guide RNA library created?\n - What is the difference between a negative and positive screen?\n - How to analyse CRISPR screen data?\n\n\\nThe objectives are:\n - Describe what CRISPR screen data is\n - Outline how CRISPR screen data is generated and analysed\n\n",
+  "teaches": "Describe what CRISPR screen data is\n - Outline how CRISPR screen data is generated and analysed",
+  "keywords": "genome-annotation",
+  "description": "The questions this  addresses are:\n - What is CRISPR?\n - What is a CRISPR screen?\n - How is a guide RNA library created?\n - What is the difference between a negative and positive screen?\n - How to analyse CRISPR screen data?\n\n\nThe objectives are:\n - Describe what CRISPR screen data is\n - Outline how CRISPR screen data is generated and analysed\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "CreativeWork",
-      "url": "https://training.galaxyproject.org//training-material/topics/introduction/",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
+      "url": "https://training.galaxyproject.org/training-material/topics/introduction/",
       "name": "Introduction to Galaxy Analyses",
       "description": "Introduction to Galaxy Analyses",
       "provider": {
@@ -126,27 +204,50 @@
       }
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Maria Doyle"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mblue9/",
+      "name": "Maria Doyle",
+      "image": "https://avatars.githubusercontent.com/mblue9",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-4847-8436",
+      "orcid": "https://orcid.org/0000-0003-4847-8436"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Sylvia Mahara"
-    }
-  ],
-  "contributor": [
-    {
-      "@type": "Person",
-      "name": "Maria Doyle"
-    },
-    {
-      "@type": "Person",
-      "name": "Sylvia Mahara"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/sylviamahara/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/sylviamahara/",
+      "name": "Sylvia Mahara",
+      "image": "https://avatars.githubusercontent.com/sylviamahara",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -154,14 +255,28 @@
       "@type": "CreativeWork",
       "name": "Genome Annotation",
       "description": "Genome annotation is a multi-level process that includes prediction of protein-coding\ngenes, as well as other functional genome units such as structural RNAs, tRNAs,\nsmall RNAs, pseudogenes, control regions, direct and inverted repeats, insertion\nsequences, transposons and other mobile elements.\n",
-      "url": "https://training.galaxyproject.org//training-material/topics/genome-annotation/"
+      "url": "https://training.galaxyproject.org/training-material/topics/genome-annotation/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_0362",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_0362",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0362"
     }
-  ]
+  ],
+  "educationalLevel": "Introductory",
+  "mentions": [
+
+  ],
+  "abstract": "### What is CRISPR?"
 }
-    </script>
-    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-  </head>
-  <body>
+        </script>
+    </head>
+  <body data-brightness="auto" data-contrast="auto">
+
+
+    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
     <textarea id="source">
 name: inverse
 layout: true
@@ -170,7 +285,7 @@ class: center, middle, inverse
 <div class="my-header"><span>
 <a href="/training-material/topics/genome-annotation" title="Return to topic page" ><i class="fa fa-level-up" aria-hidden="true"></i></a>
 
-<a class="nav-link" href="https://github.com/galaxyproject/training-material/edit/main/topics/genome-annotation/tutorials/crispr-screen/slides.html"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+<a href="https://github.com/galaxyproject/training-material/edit/main/topics/genome-annotation/tutorials/crispr-screen/slides.html"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
 </span></div>
 
@@ -184,32 +299,44 @@ class: center, middle, inverse
 
 
 
-<img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" class="cover-logo"/>
+<img src="/training-material/assets/images/GTNLogo1000.png" alt="Galaxy Training Network" class="cover-logo"/>
 
 
 # Introduction to CRISPR screen analysis
 
 
-<div class="contributors-line">
+<div markdown="0">
 
-<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
-
-
-<a href="/training-material/hall-of-fame/sylviamahara/" class="contributor-badge contributor-sylviamahara"><img src="https://avatars.githubusercontent.com/sylviamahara?s=27" alt="Avatar">Sylvia Mahara</a>
-
-
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
-
+	<div class="contributors-line">
+		Authors: <a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Avatar" width="36" height="36">Maria Doyle</a><a href="/training-material/hall-of-fame/sylviamahara/" class="contributor-badge contributor-sylviamahara"><img src="https://avatars.githubusercontent.com/sylviamahara?s=36" alt="Avatar" width="36" height="36">Sylvia Mahara</a>
+	</div>
 
 </div>
 
 
-<div class="footnote" style="bottom: 5.5em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Mar 10, 2022</div>
+<!-- modified date -->
+<div class="footnote" style="bottom: 8em;">
+  <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated:  &nbsp;
+  <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:S00067">gxy.io/GTN:S00067</a>
+</div>
 
-<div class="footnote" style="bottom: 4em;"><a href="/training-material/videos/watch.html?v=/genome-annotation/tutorials/crispr-screen/slides"><i class="far fa-play-circle" aria-hidden="true"></i><span class="visually-hidden">video-slides</span> View video slides for this lecture</a></div>
 
-<div class="footnote" style="bottom: 2.5em;"><i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a></div>
-<div class="footnote" style="bottom: 1em;"><strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes</div>
+<!-- other slide formats (video and plain-text) -->
+<div class="footnote" style="bottom: 6em;">
+
+  <i class="far fa-play-circle" aria-hidden="true"></i><span class="visually-hidden">video-slides</span> <a href="/training-material/videos/watch.html?v=/genome-annotation/tutorials/crispr-screen/slides">Video slides</a> |
+
+
+  <i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a>
+</div>
+
+
+<!-- usage tips -->
+<div class="footnote" style="bottom: 2em;">
+    <strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes
+    | <i class="fa fa-arrows" aria-hidden="true"></i><span class="visually-hidden">arrow-keys</span> Use arrow keys to move between slides
+
+</div>
 
 ???
 Presenter notes contain extra information which might be useful if you intend to use these slides for teaching.
@@ -293,7 +420,7 @@ Before diving into this slide deck, we recommend you to have a look at:
 ???
 
 - CRISPR stands for Clustered Regularly Interspaced Short Palindromic Repeats.
-- It's a bacterial immune system that has been modified for genome editing.
+- It&apos;s a bacterial immune system that has been modified for genome editing.
 - It consists of 2 components - a guide RNA and a non-specific CRISPR-associated endonuclease called Cas9.
 - The guide RNA is a short synthetic RNA composed of a scaffold sequence necessary for Cas9-binding and ~20 nucleotide spacer sequence that binds to the genomic target.
 - Cas9 induces a double-stranded break within the target DNA.
@@ -387,31 +514,31 @@ Before diving into this slide deck, we recommend you to have a look at:
 
 This material is the result of a collaborative work. Thanks to the [Galaxy Training Network](https://training.galaxyproject.org) and all the contributors!
 
+<div markdown="0">
 
-<div class="contributors-line">
-
-<a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="https://avatars.githubusercontent.com/mblue9?s=27" alt="Avatar">Maria Doyle</a>
-
-
-<a href="/training-material/hall-of-fame/sylviamahara/" class="contributor-badge contributor-sylviamahara"><img src="https://avatars.githubusercontent.com/sylviamahara?s=27" alt="Avatar">Sylvia Mahara</a>
-
+	<div class="contributors-line">
+		Authors: <a href="/training-material/hall-of-fame/mblue9/" class="contributor-badge contributor-mblue9"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/mblue9?s=36" alt="Avatar" width="36" height="36">Maria Doyle</a><a href="/training-material/hall-of-fame/sylviamahara/" class="contributor-badge contributor-sylviamahara"><img src="https://avatars.githubusercontent.com/sylviamahara?s=36" alt="Avatar" width="36" height="36">Sylvia Mahara</a>
+	</div>
 
 </div>
 
 
+<div style="display: flex;flex-direction: row;align-items: center;justify-content: center;">
 
-<img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
+<img src="/training-material/assets/images/GTNLogo1000.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
+
+</div>
 
 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 This material is licensed under the Creative Commons Attribution 4.0 International License</a>.
 
 
     </textarea>
-	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
+	<script src="/training-material/assets/js/remark-latest.min.js"></script>
+    <script src="/training-material/assets/js/theme.js"></script>
+    <script src="/training-material/assets/js/clipboard.min.js"></script>
+    <script>
       var slideshow = remark.create({navigation: {scroll: false}, ratio: '16:9'});
       var hljs = remark.highlighter.engine;
       var snippets = document.querySelectorAll('code.remark-code');
@@ -423,7 +550,7 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
       }});
     </script>
 
-    <script type="text/javascript">
+    <script>
         if(window.location.hostname === "galaxyproject.github.io") {
             // Redirect
             var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
@@ -435,6 +562,15 @@ This material is licensed under the Creative Commons Attribution 4.0 Internation
 
         }
     </script>
+        <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
+        <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
+        <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
 
-  </body>
+    </body>
 </html>

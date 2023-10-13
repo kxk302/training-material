@@ -3,24 +3,41 @@
   "logo": "assets/images/gat.png",
   "title": "Galaxy on the Cloud",
   "contributors": [
-    {
-      "name": "Simon Gladman",
-      "email": "simon.gladman@unimelb.edu.au",
-      "joined": "2017-09",
-      "id": "slugger70",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/slugger70.json"
-    }
+    "slugger70"
   ],
   "subtopic": "cloud",
-  "last_modified_at": "2022-03-01T12:21:57+00:00",
+  "short_id": "S00004",
   "url": "/topics/admin/tutorials/cloudbursting/slides.html",
   "topic_name": "admin",
   "tutorial_name": "cloudbursting",
+  "dir": "topics/admin/tutorials/cloudbursting",
+  "id": "admin/cloudbursting",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": null
+  },
   "hands_on": false,
   "slides": true,
+  "api": "https://training.galaxyproject.org/training-material/api/topics/admin/tutorials/cloudbursting/tutorial.json",
   "tools": [
 
   ],
+  "supported_servers": [
+
+  ],
+  "topic_name_human": "Galaxy Server administration",
+  "admin_install": {
+    "install_tool_dependencies": true,
+    "install_repository_dependencies": true,
+    "install_resolver_dependencies": true,
+    "tools": [
+
+    ]
+  },
+  "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
   "tours": false,
   "video": false,
   "translations": {
@@ -33,8 +50,8 @@
     "video": false
   },
   "type": "tutorial",
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/cloudbursting/slides.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/cloudbursting/slides.json"
-  }
+  "redirect_from": [
+    "/short/admin/cloudbursting/slides",
+    "/short/S00004"
+  ]
 }

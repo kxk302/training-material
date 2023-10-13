@@ -22,34 +22,55 @@
   ],
   "subtopic": "core",
   "contributors": [
-    {
-      "name": "John Chilton",
-      "email": "jmchilton@gmail.com",
-      "joined": "2017-09",
-      "id": "jmchilton",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
-    },
-    {
-      "name": "Björn Grüning",
-      "email": "bjoern.gruening@gmail.com",
-      "twitter": "bjoerngruening",
-      "gitter": "bgruening",
-      "orcid": "0000-0002-3079-6586",
-      "linkedin": "bgruening",
-      "joined": "2017-09",
-      "id": "bgruening",
-      "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
-    }
+    "jmchilton",
+    "bgruening"
   ],
-  "last_modified_at": "2021-09-24T15:51:23+00:00",
+  "short_id": "S00043",
   "url": "/topics/dev/tutorials/architecture/slides.html",
   "topic_name": "dev",
   "tutorial_name": "architecture",
+  "dir": "topics/dev/tutorials/architecture",
+  "id": "dev/architecture",
+  "video_library": {
+    "tutorial": null,
+    "slides": null,
+    "demo": null,
+    "both": null,
+    "session": {
+      "title": "Galaxy Code Architecture Lecture Series",
+      "description": "In this 9-part Lecture series, John Chilton will walk you through the Galaxy Code Architecture.",
+      "videos": [
+        "dev/architecture/slides-ecosystem",
+        "dev/architecture/slides-models-managers",
+        "dev/architecture/slides-app-di",
+        "dev/architecture/slides-project-management",
+        "dev/architecture/slides-web-client",
+        "dev/architecture/slides-pluggable-components",
+        "dev/architecture/slides-principles",
+        "dev/architecture/slides-web-requests",
+        "dev/architecture/slides-files-directories"
+      ]
+    }
+  },
   "hands_on": false,
   "slides": true,
+  "api": "https://training.galaxyproject.org/training-material/api/topics/dev/tutorials/architecture/tutorial.json",
   "tools": [
 
   ],
+  "supported_servers": [
+
+  ],
+  "topic_name_human": "Development in Galaxy",
+  "admin_install": {
+    "install_tool_dependencies": true,
+    "install_repository_dependencies": true,
+    "install_resolver_dependencies": true,
+    "tools": [
+
+    ]
+  },
+  "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
   "tours": false,
   "video": false,
   "translations": {
@@ -62,8 +83,8 @@
     "video": false
   },
   "type": "tutorial",
-  "urls": {
-    "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/architecture/slides.json",
-    "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/architecture/slides.json"
-  }
+  "redirect_from": [
+    "/short/dev/architecture/slides",
+    "/short/S00043"
+  ]
 }

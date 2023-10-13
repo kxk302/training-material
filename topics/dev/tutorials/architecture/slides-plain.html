@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,35 +6,114 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Galaxy Code Architecture</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
+
+<script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
+
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
+
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+-->
+<script type="text/javascript">
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
+</script>
 
         
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/dev/tutorials/architecture/slides-plain.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="Galaxy Code Architecture">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-10-13 18:01:24 +0000">
+<meta name="DC.creator" content="John Chilton">
+<meta name="DC.creator" content="Björn Grüning">
 
         
         
         
         
+        <meta name="description" content="Collection of tutorials developed and maintained by the w...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: Galaxy Code Architecture">
+        <meta property="og:description" content="Collection of tutorials developed and maintained by the w...">
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:title" content="Galaxy Training: Galaxy Code Architecture" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+
+        
     </head>
-    <body data-spy="scroll" data-target="#toc">
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
             <a class="navbar-brand" href="/training-material/">
                 <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
+                
+                    Galaxy Training!
+                
             </a>
 
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,38 +130,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/dev/tutorials/architecture/slides-plain.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -98,7 +149,7 @@
         </form>
         -->
 
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
         </a>
         
@@ -118,8 +169,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right">
 
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/dev/tutorials/architecture/slides-plain.md" title="Edit on GitHub">
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/./topics/dev/tutorials/architecture/slides.html" title="Edit on GitHub">
           <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
         </a>
 
@@ -131,58 +181,31 @@
             <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
         </a>
 
+        <!-- link to feedback -->
         
             <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
                 <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
             </a>
         
 
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                <label data-value="default" class="btn btn-secondary">
-                    <input type="radio" name="options" id="default" autocomplete="off"> Default
-                </label>
-                <label data-value="night" class="btn btn-secondary">
-                    <input type="radio" name="options" id="night" autocomplete="off"> Night
-                </label>
-                <label data-value="midnight" class="btn btn-secondary">
-                    <input type="radio" name="options" id="midnight" autocomplete="off"> Midnight
-                </label>
-                <label data-value="rainbow" class="btn btn-secondary">
-                    <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
-                </label>
-                <label data-value="progress" class="btn btn-secondary">
-                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
-                </label>
-                <label data-value="halloween" class="btn btn-secondary">
-                    <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
-                </label>
-                <label data-value="straya" class="btn btn-secondary">
-                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
-                </label>
-            </div>
-
-        </div>
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
 
         <div class="dropdown-item">
             <div>
                 <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
             </div>
 
-            
             <div id="archive-selector">
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-12-01/topics/dev/tutorials/architecture/slides-plain.html" title="Version 2020-12-01">2020-12-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-12-01/topics/dev/tutorials/architecture/slides-plain.html">2020-12-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-11-01/topics/dev/tutorials/architecture/slides-plain.html" title="Version 2020-11-01">2020-11-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-11-01/topics/dev/tutorials/architecture/slides-plain.html">2020-11-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-10-01/topics/dev/tutorials/architecture/slides-plain.html" title="Version 2020-10-01">2020-10-01</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-10-01/topics/dev/tutorials/architecture/slides-plain.html">2020-10-01</a>
             
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
             </div>
 
         </div>
@@ -195,7 +218,7 @@
                     <li class="nav-item">
                       <div id="navbarSupportedContent" role="search">
                         <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
                           <i class="fas fa-search nav-link" aria-hidden="true"></i>
                           <div class="md-form mb-2">
                             <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
@@ -209,17 +232,19 @@
     </nav>
 </header>
 
+        
         <div class="container main-content" role="main">
         <section class="tutorial">
 	<a href="https://github.com/galaxyproject/training-material/blob/main//topics/dev/tutorials/architecture/slides.html">View markdown source on GitHub</a>
 	<h1>Galaxy Code Architecture</h1>
 		<h2>Contributors</h2>
-		
-<a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge contributor-jmchilton"><img src="https://avatars.githubusercontent.com/jmchilton?s=27" alt="Avatar">John Chilton</a>
+<div markdown="0">
 
- 
-<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+	<div class="contributors-line">
+		Authors: <a href="/training-material/hall-of-fame/jmchilton/" class="contributor-badge contributor-jmchilton"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/jmchilton?s=36" alt="Avatar" width="36" height="36">John Chilton</a><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/bgruening?s=36" alt="Avatar" width="36" height="36">Björn Grüning</a>
+	</div>
 
+</div>
 
 
 		
@@ -256,7 +281,7 @@
 
 		
 
-		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Sep 24, 2021 </div>
+		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Oct 13, 2023 </div>
 
 	<hr />
 
@@ -287,7 +312,7 @@ topic_name: Galaxy Architecture</p>
 
 <p>class: enlarge200</p>
 
-<p><strong>Gitter:</strong> <a href="https://gitter.im/galaxyproject/Lobby">galaxyproject/Lobby </a></p>
+<p><strong>Chat:</strong> <a href="https://matrix.to/#/#galaxyproject_Lobby:gitter.im">galaxyproject Lobby</a></p>
 
 <p><strong>GitHub:</strong> <a href="https://github.com/galaxyproject">github.com/galaxyproject </a></p>
 
@@ -318,18 +343,18 @@ and projects for Galaxy administrators.</p>
 <p>More links we’ll mention as we go through the slides:</p>
 
 <ul>
-  <li>https://gitter.im/galaxyproject/Lobby</li>
-  <li>https://gitter.im/galaxyproject/dev</li>
-  <li>https://gitter.im/galaxyproject/admins</li>
-  <li>https://gitter.im/galaxyproject/FederatedGalaxy</li>
-  <li>https://gitter.im/galaxyproject/bioblend</li>
-  <li>https://gitter.im/galaxyproject/ephemeris</li>
-  <li>https://gitter.im/usegalaxy-eu/Lobby</li>
-  <li>https://gitter.im/galaxy-iuc/iuc</li>
-  <li>https://gitter.im/bgruening/docker-galaxy-stable</li>
-  <li>https://gitter.im/Galaxy-Training-Network/Lobby</li>
-  <li>https://gitter.im/biocontainers/Lobby</li>
-  <li>https://gitter.im/bioconda/Lobby</li>
+  <li>https://matrix.to/#/#galaxyproject_Lobby:gitter.im</li>
+  <li>https://matrix.to/#/#galaxyproject_dev:gitter.im</li>
+  <li>https://matrix.to/#/#galaxyproject_admins:gitter.im</li>
+  <li>https://matrix.to/#/#galaxyproject_FederatedGalaxy:gitter.im</li>
+  <li>https://matrix.to/#/#galaxyproject_bioblend:gitter.im</li>
+  <li>https://matrix.to/#/#galaxyproject_ephemeris:gitter.im</li>
+  <li>https://matrix.to/#/#usegalaxy-eu_Lobby:gitter.im</li>
+  <li>https://matrix.to/#/#galaxy-iuc_iuc:gitter.im</li>
+  <li>https://matrix.to/#/#bgruening_docker-galaxy-stable:gitter.im</li>
+  <li>https://matrix.to/#/#Galaxy-Training-Network_Lobby:gitter.im</li>
+  <li>https://matrix.to/#/#biocontainers_Lobby:gitter.im</li>
+  <li>https://matrix.to/#/#bioconda_Lobby:gitter.im</li>
 </ul>
 
 <p>Working group chats linked at https://galaxyproject.org/community/wg/.</p>
@@ -479,7 +504,7 @@ github and then deployed to test/main ToolSheds</p>
 
 <p>Intergalactic Workflow Commission. Hosting workflows and defining best practices for publishing workflows.</p>
 
-<p>https://gitter.im/galaxyproject/iwc</p>
+<p>https://matrix.to/#/#galaxyproject_iwc:gitter.im</p>
 
 <hr />
 
@@ -550,6 +575,18 @@ usegalaxy-eu/<strong>{ansible-*, *-playbook}</strong></p>
 
 <p>class: enlarge150</p>
 
+<p><a href="https://github.com/galaxyproject/gravity">galaxyproject/<strong>gravity</strong> </a></p>
+
+<p>A process manager (supervisor) and management tools for Galaxy servers.</p>
+
+<p><code class="language-plaintext highlighter-rouge">galaxyctl</code> which is used to manage the starting, stopping, and logging of Galaxy’s various processes.</p>
+
+<p><code class="language-plaintext highlighter-rouge">galaxy</code> which can be used to run a Galaxy server in the foreground.</p>
+
+<hr />
+
+<p>class: enlarge150</p>
+
 <p><a href="https://github.com/galaxyproject/galaxy-helm">galaxyproject/<strong>galaxy-helm</strong> </a></p>
 
 <p>Kubernetes helm chart for deploying Galaxy. Leveraged by cloudlaunch and CloudMan but usable standalone.</p>
@@ -595,6 +632,16 @@ usegalaxy-eu/<strong>{ansible-*, *-playbook}</strong></p>
 <h3 id="ephemeris-vs-gxadmin">ephemeris vs gxadmin</h3>
 
 <p>Ephemeris generally talks to the Galaxy API and is a pure Python project, gxadmin talks directly to the Galaxy database and relevant files.</p>
+
+<hr />
+
+<h3 id="total-perspective-vortex">Total Perspective Vortex</h3>
+
+<p><a href="https://github.com/galaxyproject/total-perspective-vortex">galaxyproject/total-perspective-vortex **</a></p>
+
+<p><img src="https://raw.githubusercontent.com/galaxyproject/total-perspective-vortex/main/docs/images/tpv-logo-wide.png" alt="TPV Logo" /></p>
+
+<p>TotalPerspectiveVortex (TPV) provides an installable set of dynamic rules for the Galaxy application that can route entities (Tools, Users, Roles) to appropriate job destinations based on a configurable yaml file.</p>
 
 <hr />
 
@@ -755,19 +802,21 @@ pull requests of the Galaxy repository.</p>
 
 <h3 id="linting-and-code-formatting">Linting and Code Formatting</h3>
 
-<p>Part of the Galaxy CI process includes linting both the backend Python and frontend ES 6 code.
+<p>Part of the Galaxy CI process includes linting and checking the format of both the backend Python and frontend ES 6 code.
 This linting process captures many common problems as well as enforcing a common code style.</p>
 
 <p>The output reports from the CI process are relatively straightforward, but it is a good process
-to lint changes before opening pull requests for them. The Python linter can be run using <code class="language-plaintext highlighter-rouge">tox</code>
-as follows.</p>
+to lint changes and formatting your code before opening pull requests for them.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tox -e lint
+<p>Execute the <code class="language-plaintext highlighter-rouge">format</code> make command to format the backend code and then use <code class="language-plaintext highlighter-rouge">tox</code>
+to lint the formatted code.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make format
+$ tox -e lint
 </code></pre></div></div>
 
-<p>The client code formatting guidelines are much more strict but as a result can be applied
-automatically for very consistent code. Execute the <code class="language-plaintext highlighter-rouge">client-format</code> make command to format
-the code and then the <code class="language-plaintext highlighter-rouge">client-lint</code> command to check the result.</p>
+<p>Execute the <code class="language-plaintext highlighter-rouge">client-format</code> make command to format the code and then the <code class="language-plaintext highlighter-rouge">client-lint</code> command
+to lint the formatted code.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make client-format
 $ make client-lint
@@ -977,8 +1026,6 @@ using galaxy.util, galaxy.model.mapping, and galaxy.web.framework.</p>
 
 <p><img src="../../images/core_packages.plantuml.svg" alt="package structure" /></p>
 
-<p>(somewhat aspirational still)</p>
-
 <hr />
 
 <h3 id="pypi">PyPI</h3>
@@ -1024,9 +1071,9 @@ connection), <code class="language-plaintext highlighter-rouge">send</code> (an 
 and <code class="language-plaintext highlighter-rouge">receive</code> (an async callable to receive messages).</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">):</span>
-    <span class="n">event</span> <span class="o">=</span> <span class="k">await</span> <span class="n">receive</span><span class="p">()</span>
-    <span class="p">...</span>
-    <span class="k">await</span> <span class="n">send</span><span class="p">({</span><span class="s">"type"</span><span class="p">:</span> <span class="s">"http.response.body"</span><span class="p">,</span> <span class="p">...})</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">receive</span><span class="p">()</span>
+    <span class="bp">...</span>
+    <span class="k">await</span> <span class="nf">send</span><span class="p">({</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">http.response.body</span><span class="sh">"</span><span class="p">,</span> <span class="p">...})</span>
 </code></pre></div></div>
 
 <p>Checkout <a href="https://asgi.readthedocs.io/">ASGI documentation</a> for more details.</p>
@@ -1040,12 +1087,12 @@ and <code class="language-plaintext highlighter-rouge">receive</code> (an async 
 <p>We will talk a lot about Galaxy and FastAPI - but much of its
 plumbing is just aliases for starlette ASGI handling.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">starlette.responses</span> <span class="kn">import</span> <span class="n">PlainTextResponse</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">starlette.responses</span> <span class="kn">import</span> <span class="n">PlainTextResponse</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">app</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">scope</span><span class="p">[</span><span class="s">'type'</span><span class="p">]</span> <span class="o">==</span> <span class="s">"http"</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">PlainTextResponse</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
-    <span class="k">await</span> <span class="n">response</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">scope</span><span class="p">[</span><span class="sh">'</span><span class="s">type</span><span class="sh">'</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">http</span><span class="sh">"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="nc">PlainTextResponse</span><span class="p">(</span><span class="sh">'</span><span class="s">Hello, world!</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">await</span> <span class="nf">response</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>If this is placed in a file called <code class="language-plaintext highlighter-rouge">example.py</code> with Starlette on
@@ -1067,17 +1114,17 @@ INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 <p>Building a higher-level <code class="language-plaintext highlighter-rouge">example.py</code> with Starlette.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">starlette.applications</span> <span class="kn">import</span> <span class="n">Starlette</span>
-<span class="kn">from</span> <span class="nn">starlette.responses</span> <span class="kn">import</span> <span class="n">JSONResponse</span>
-<span class="kn">from</span> <span class="nn">starlette.routing</span> <span class="kn">import</span> <span class="n">Route</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">starlette.applications</span> <span class="kn">import</span> <span class="n">Starlette</span>
+<span class="kn">from</span> <span class="n">starlette.responses</span> <span class="kn">import</span> <span class="n">JSONResponse</span>
+<span class="kn">from</span> <span class="n">starlette.routing</span> <span class="kn">import</span> <span class="n">Route</span>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">homepage</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">JSONResponse</span><span class="p">({</span><span class="s">'hello'</span><span class="p">:</span> <span class="s">'world'</span><span class="p">})</span>
+    <span class="k">return</span> <span class="nc">JSONResponse</span><span class="p">({</span><span class="sh">'</span><span class="s">hello</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">world</span><span class="sh">'</span><span class="p">})</span>
 
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Starlette</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">routes</span><span class="o">=</span><span class="p">[</span>
-    <span class="n">Route</span><span class="p">(</span><span class="s">'/'</span><span class="p">,</span> <span class="n">homepage</span><span class="p">),</span>
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Starlette</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">routes</span><span class="o">=</span><span class="p">[</span>
+    <span class="nc">Route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span> <span class="n">homepage</span><span class="p">),</span>
 <span class="p">])</span>
 </code></pre></div></div>
 
@@ -1091,12 +1138,12 @@ INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 <p>From https://github.com/tiangolo/fastapi/blob/master/fastapi/applications.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
-<span class="kn">from</span> <span class="nn">starlette.applications</span> <span class="kn">import</span> <span class="n">Starlette</span>
-<span class="p">...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">...</span>
+<span class="kn">from</span> <span class="n">starlette.applications</span> <span class="kn">import</span> <span class="n">Starlette</span>
+<span class="bp">...</span>
 
 <span class="k">class</span> <span class="nc">FastAPI</span><span class="p">(</span><span class="n">Starlette</span><span class="p">):</span>
-    <span class="p">...</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p>FastAPI (the library and the application base) extends starlette framework with features for building APIs. These include data
@@ -1114,15 +1161,15 @@ validation, serialization, documentation generation.</p>
 
 <p>https://github.com/tiangolo/fastapi/blob/master/fastapi/applications.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">root_path</span><span class="p">:</span>
-        <span class="n">scope</span><span class="p">[</span><span class="s">"root_path"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">root_path</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">root_path</span><span class="p">:</span>
+        <span class="n">scope</span><span class="p">[</span><span class="sh">"</span><span class="s">root_path</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">root_path</span>
     <span class="k">if</span> <span class="n">AsyncExitStack</span><span class="p">:</span>
-        <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncExitStack</span><span class="p">()</span> <span class="k">as</span> <span class="n">stack</span><span class="p">:</span>
-             <span class="n">scope</span><span class="p">[</span><span class="s">"fastapi_astack"</span><span class="p">]</span> <span class="o">=</span> <span class="n">stack</span>
-             <span class="k">await</span> <span class="nb">super</span><span class="p">().</span><span class="n">__call__</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="nc">AsyncExitStack</span><span class="p">()</span> <span class="k">as</span> <span class="n">stack</span><span class="p">:</span>
+             <span class="n">scope</span><span class="p">[</span><span class="sh">"</span><span class="s">fastapi_astack</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">stack</span>
+             <span class="k">await</span> <span class="nf">super</span><span class="p">().</span><span class="nf">__call__</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">await</span> <span class="nb">super</span><span class="p">().</span><span class="n">__call__</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>  <span class="c1"># pragma: no cover
+        <span class="k">await</span> <span class="nf">super</span><span class="p">().</span><span class="nf">__call__</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>  <span class="c1"># pragma: no cover
 </span></code></pre></div></div>
 
 <p>A light wrapper around Starlette’s call entry point.</p>
@@ -1135,9 +1182,9 @@ validation, serialization, documentation generation.</p>
 
 <p>https://github.com/encode/starlette/blob/master/starlette/applications.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-   <span class="n">scope</span><span class="p">[</span><span class="s">"app"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
-   <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">middleware_stack</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+   <span class="n">scope</span><span class="p">[</span><span class="sh">"</span><span class="s">app</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span>
+   <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">middleware_stack</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Walks through Starlette middleware.</p>
@@ -1150,12 +1197,12 @@ validation, serialization, documentation generation.</p>
 
 <p>https://github.com/encode/starlette/blob/master/starlette/applications.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">build_middleware_stack</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ASGIApp</span><span class="p">:</span>
-    <span class="p">...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">build_middleware_stack</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ASGIApp</span><span class="p">:</span>
+    <span class="bp">...</span>
 
-    <span class="n">app</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">router</span>
-    <span class="k">for</span> <span class="n">cls</span><span class="p">,</span> <span class="n">options</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">middleware</span><span class="p">):</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">router</span>
+    <span class="k">for</span> <span class="n">cls</span><span class="p">,</span> <span class="n">options</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="n">middleware</span><span class="p">):</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="nf">cls</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">app</span>
 </code></pre></div></div>
 
@@ -1195,12 +1242,12 @@ class: enlarge150</p>
 
 <p>https://github.com/encode/starlette/blob/master/starlette/applications.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">build_middleware_stack</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ASGIApp</span><span class="p">:</span>
-    <span class="p">...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">build_middleware_stack</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ASGIApp</span><span class="p">:</span>
+    <span class="bp">...</span>
 
-    <span class="n">app</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">router</span>
-    <span class="k">for</span> <span class="n">cls</span><span class="p">,</span> <span class="n">options</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">middleware</span><span class="p">):</span>
-        <span class="n">app</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">router</span>
+    <span class="k">for</span> <span class="n">cls</span><span class="p">,</span> <span class="n">options</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="n">middleware</span><span class="p">):</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="nf">cls</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">app</span>
 </code></pre></div></div>
 
@@ -1215,8 +1262,8 @@ class: enlarge150</p>
 <p>https://github.com/tiangolo/fastapi/blob/master/fastapi/applications.py</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FastAPI</span><span class="p">(</span><span class="n">Starlette</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">...):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">router</span><span class="p">:</span> <span class="n">routing</span><span class="p">.</span><span class="n">APIRouter</span> <span class="o">=</span> <span class="n">routing</span><span class="p">.</span><span class="n">APIRouter</span><span class="p">(</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="p">...):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">router</span><span class="p">:</span> <span class="n">routing</span><span class="p">.</span><span class="n">APIRouter</span> <span class="o">=</span> <span class="n">routing</span><span class="p">.</span><span class="nc">APIRouter</span><span class="p">(</span>
             <span class="n">routes</span><span class="o">=</span><span class="n">routes</span><span class="p">,</span>
         <span class="p">)</span>
 </code></pre></div></div>
@@ -1225,10 +1272,10 @@ class: enlarge150</p>
 
 <h3 id="fastapi-router">FastAPI Router</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">starlette</span> <span class="kn">import</span> <span class="n">routing</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">starlette</span> <span class="kn">import</span> <span class="n">routing</span>
 
 <span class="k">class</span> <span class="nc">APIRouter</span><span class="p">(</span><span class="n">routing</span><span class="p">.</span><span class="n">Router</span><span class="p">):</span>
-   <span class="p">...</span>
+   <span class="bp">...</span>
 </code></pre></div></div>
 
 <hr />
@@ -1237,17 +1284,17 @@ class: enlarge150</p>
 
 <p>https://github.com/encode/starlette/blob/master/starlette/routing.py</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-   <span class="p">...</span>
-   <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">routes</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">:</span> <span class="n">Receive</span><span class="p">,</span> <span class="n">send</span><span class="p">:</span> <span class="n">Send</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+   <span class="bp">...</span>
+   <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">routes</span><span class="p">:</span>
        <span class="c1"># Determine if any route matches the incoming scope,
 </span>       <span class="c1"># and hand over to the matching route if found.
-</span>       <span class="n">match</span><span class="p">,</span> <span class="n">child_scope</span> <span class="o">=</span> <span class="n">route</span><span class="p">.</span><span class="n">matches</span><span class="p">(</span><span class="n">scope</span><span class="p">)</span>
+</span>       <span class="n">match</span><span class="p">,</span> <span class="n">child_scope</span> <span class="o">=</span> <span class="n">route</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="n">scope</span><span class="p">)</span>
        <span class="k">if</span> <span class="n">match</span> <span class="o">==</span> <span class="n">Match</span><span class="p">.</span><span class="n">FULL</span><span class="p">:</span>
-           <span class="n">scope</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">child_scope</span><span class="p">)</span>
-           <span class="k">await</span> <span class="n">route</span><span class="p">.</span><span class="n">handle</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
+           <span class="n">scope</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">child_scope</span><span class="p">)</span>
+           <span class="k">await</span> <span class="n">route</span><span class="p">.</span><span class="nf">handle</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">receive</span><span class="p">,</span> <span class="n">send</span><span class="p">)</span>
            <span class="k">return</span>
-       <span class="p">...</span>
+       <span class="bp">...</span>
 </code></pre></div></div>
 
 <p>https://www.starlette.io/routing/</p>
@@ -1277,21 +1324,21 @@ application (ASGI endpoint) is constructed.</p>
 <p><code class="language-plaintext highlighter-rouge">lib/galaxy/webapps/galaxy/fast_factory.py</code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">factory</span><span class="p">():</span>
-    <span class="n">props</span> <span class="o">=</span> <span class="n">WebappSetupProps</span><span class="p">(</span>
-        <span class="n">app_name</span><span class="o">=</span><span class="s">'galaxy'</span><span class="p">,</span>
+    <span class="n">props</span> <span class="o">=</span> <span class="nc">WebappSetupProps</span><span class="p">(</span>
+        <span class="n">app_name</span><span class="o">=</span><span class="sh">'</span><span class="s">galaxy</span><span class="sh">'</span><span class="p">,</span>
         <span class="n">default_section_name</span><span class="o">=</span><span class="n">DEFAULT_CONFIG_SECTION</span><span class="p">,</span>
-        <span class="n">env_config_file</span><span class="o">=</span><span class="s">'GALAXY_CONFIG_FILE'</span><span class="p">,</span>
-        <span class="n">env_config_section</span><span class="o">=</span><span class="s">'GALAXY_CONFIG_SECTION'</span><span class="p">,</span>
+        <span class="n">env_config_file</span><span class="o">=</span><span class="sh">'</span><span class="s">GALAXY_CONFIG_FILE</span><span class="sh">'</span><span class="p">,</span>
+        <span class="n">env_config_section</span><span class="o">=</span><span class="sh">'</span><span class="s">GALAXY_CONFIG_SECTION</span><span class="sh">'</span><span class="p">,</span>
         <span class="n">check_galaxy_root</span><span class="o">=</span><span class="bp">True</span>
     <span class="p">)</span>
-    <span class="n">config_provider</span> <span class="o">=</span> <span class="n">WebappConfigResolver</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="n">config_provider</span><span class="p">.</span><span class="n">resolve_config</span><span class="p">()</span>
-    <span class="n">gx_webapp</span><span class="p">,</span> <span class="n">gx_app</span> <span class="o">=</span> <span class="n">app_pair</span><span class="p">(</span>
+    <span class="n">config_provider</span> <span class="o">=</span> <span class="nc">WebappConfigResolver</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">config_provider</span><span class="p">.</span><span class="nf">resolve_config</span><span class="p">()</span>
+    <span class="n">gx_webapp</span><span class="p">,</span> <span class="n">gx_app</span> <span class="o">=</span> <span class="nf">app_pair</span><span class="p">(</span>
         <span class="n">global_conf</span><span class="o">=</span><span class="n">config</span><span class="p">.</span><span class="n">global_conf</span><span class="p">,</span>
         <span class="n">load_app_kwds</span><span class="o">=</span><span class="n">config</span><span class="p">.</span><span class="n">load_app_kwds</span><span class="p">,</span>
         <span class="n">wsgi_preflight</span><span class="o">=</span><span class="n">config</span><span class="p">.</span><span class="n">wsgi_preflight</span>
     <span class="p">)</span>
-    <span class="k">return</span> <span class="n">initialize_fast_app</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">,</span> <span class="n">gx_app</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">initialize_fast_app</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">,</span> <span class="n">gx_app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1301,17 +1348,17 @@ application (ASGI endpoint) is constructed.</p>
 <p><code class="language-plaintext highlighter-rouge">lib/galaxy/webapps/galaxy/fast_app.py</code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">initialize_fast_app</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">,</span> <span class="n">gx_app</span><span class="p">):</span>
-    <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span>
-        <span class="n">title</span><span class="o">=</span><span class="s">"Galaxy API"</span><span class="p">,</span>
-        <span class="n">docs_url</span><span class="o">=</span><span class="s">"/api/docs"</span><span class="p">,</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="nc">FastAPI</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Galaxy API</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">docs_url</span><span class="o">=</span><span class="sh">"</span><span class="s">/api/docs</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">openapi_tags</span><span class="o">=</span><span class="n">api_tags_metadata</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">add_exception_handler</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-    <span class="n">add_galaxy_middleware</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">gx_app</span><span class="p">)</span>
-    <span class="n">add_request_id_middleware</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-    <span class="n">include_all_package_routers</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">'galaxy.webapps.galaxy.api'</span><span class="p">)</span>
-    <span class="n">wsgi_handler</span> <span class="o">=</span> <span class="n">WSGIMiddleware</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">)</span>
-    <span class="n">app</span><span class="p">.</span><span class="n">mount</span><span class="p">(</span><span class="s">'/'</span><span class="p">,</span> <span class="n">wsgi_handler</span><span class="p">)</span>
+    <span class="nf">add_exception_handler</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="nf">add_galaxy_middleware</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">gx_app</span><span class="p">)</span>
+    <span class="nf">add_request_id_middleware</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="nf">include_all_package_routers</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="sh">'</span><span class="s">galaxy.webapps.galaxy.api</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">wsgi_handler</span> <span class="o">=</span> <span class="nc">WSGIMiddleware</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">)</span>
+    <span class="n">app</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span> <span class="n">wsgi_handler</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">app</span>
 </code></pre></div></div>
 
@@ -1328,10 +1375,10 @@ application (ASGI endpoint) is constructed.</p>
 <p><code class="language-plaintext highlighter-rouge">lib/galaxy/webapps/base/api.py</code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">include_all_package_routers</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">package_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">walk_controller_modules</span><span class="p">(</span><span class="n">package_name</span><span class="p">):</span>
-        <span class="n">router</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s">"router"</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="nf">walk_controller_modules</span><span class="p">(</span><span class="n">package_name</span><span class="p">):</span>
+        <span class="n">router</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="sh">"</span><span class="s">router</span><span class="sh">"</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">router</span><span class="p">:</span>
-            <span class="n">app</span><span class="p">.</span><span class="n">include_router</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
+            <span class="n">app</span><span class="p">.</span><span class="nf">include_router</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1340,33 +1387,33 @@ application (ASGI endpoint) is constructed.</p>
 
 <h3 id="routing-inside-the-application">Routing inside the Application</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s">'tags'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">router</span> <span class="o">=</span> <span class="nc">Router</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">tags</span><span class="sh">'</span><span class="p">])</span>
 
 
-<span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">cbv</span>
+<span class="nd">@router.cbv</span>
 <span class="k">class</span> <span class="nc">FastAPITags</span><span class="p">:</span>
-    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="n">depends</span><span class="p">(</span><span class="n">TagsManager</span><span class="p">)</span>
+    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="nf">depends</span><span class="p">(</span><span class="n">TagsManager</span><span class="p">)</span>
 
-    <span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">put</span><span class="p">(</span>
-        <span class="s">'/api/tags'</span><span class="p">,</span>
-        <span class="n">summary</span><span class="o">=</span><span class="s">"Apply a new set of tags to an item."</span><span class="p">,</span>
+    <span class="nd">@router.put</span><span class="p">(</span>
+        <span class="sh">'</span><span class="s">/api/tags</span><span class="sh">'</span><span class="p">,</span>
+        <span class="n">summary</span><span class="o">=</span><span class="sh">"</span><span class="s">Apply a new set of tags to an item.</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="p">.</span><span class="n">HTTP_204_NO_CONTENT</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">self</span><span class="p">,</span>
         <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">,</span>
-        <span class="n">payload</span><span class="p">:</span> <span class="n">ItemTagsPayload</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span>
+        <span class="n">payload</span><span class="p">:</span> <span class="n">ItemTagsPayload</span> <span class="o">=</span> <span class="nc">Body</span><span class="p">(</span>
             <span class="p">...,</span>  <span class="c1"># Required
-</span>            <span class="n">title</span><span class="o">=</span><span class="s">"Payload"</span><span class="p">,</span>
-            <span class="n">description</span><span class="o">=</span><span class="s">"Request body containing the item and the tags to be assigned."</span><span class="p">,</span>
+</span>            <span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Payload</span><span class="sh">"</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Request body containing the item and the tags to be assigned.</span><span class="sh">"</span><span class="p">,</span>
         <span class="p">),</span>
     <span class="p">):</span>
-        <span class="s">"""Replaces the tags associated with an item with the new ones specified in the payload.
+        <span class="sh">"""</span><span class="s">Replaces the tags associated with an item with the new ones specified in the payload.
 
         - The previous tags will be __deleted__.
         - If no tags are provided in the request body, the currently associated tags will also be __deleted__.
-        """</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+        </span><span class="sh">"""</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">manager</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1385,8 +1432,8 @@ application (ASGI endpoint) is constructed.</p>
 
 <p>Back to <code class="language-plaintext highlighter-rouge">initialize_fast_app</code>, two of the final lines were as follows:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wsgi_handler</span> <span class="o">=</span> <span class="n">WSGIMiddleware</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">)</span>
-<span class="n">app</span><span class="p">.</span><span class="n">mount</span><span class="p">(</span><span class="s">'/'</span><span class="p">,</span> <span class="n">wsgi_handler</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wsgi_handler</span> <span class="o">=</span> <span class="nc">WSGIMiddleware</span><span class="p">(</span><span class="n">gx_webapp</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span> <span class="n">wsgi_handler</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>This effectively provides a fallback to our legacy WSGI application.</p>
@@ -1469,9 +1516,9 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <p>Setup on <code class="language-plaintext highlighter-rouge">webapp</code> in <code class="language-plaintext highlighter-rouge">galaxy.webapps.galaxy.buildapp.py</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">webapp</span><span class="p">.</span><span class="n">add_route</span><span class="p">(</span>
-    <span class="s">'/datasets/:dataset_id/display/{filename:.+?}'</span><span class="p">,</span>
-    <span class="n">controller</span><span class="o">=</span><span class="s">'dataset'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">'display'</span><span class="p">,</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">webapp</span><span class="p">.</span><span class="nf">add_route</span><span class="p">(</span>
+    <span class="sh">'</span><span class="s">/datasets/:dataset_id/display/{filename:.+?}</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">controller</span><span class="o">=</span><span class="sh">'</span><span class="s">dataset</span><span class="sh">'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="sh">'</span><span class="s">display</span><span class="sh">'</span><span class="p">,</span>
     <span class="n">dataset_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="bp">None</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -1492,28 +1539,28 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <p>Simplified <code class="language-plaintext highlighter-rouge">handle_request</code> from <code class="language-plaintext highlighter-rouge">lib/galaxy/web/framework/base.py</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">handle_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
-    <span class="n">path_info</span> <span class="o">=</span> <span class="n">environ</span><span class="p">.</span><span class="n">get</span><span class="p">(</span> <span class="s">'PATH_INFO'</span><span class="p">,</span> <span class="s">''</span> <span class="p">)</span>
-    <span class="nb">map</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">mapper</span><span class="p">.</span><span class="n">match</span><span class="p">(</span> <span class="n">path_info</span><span class="p">,</span> <span class="n">environ</span> <span class="p">)</span>
-    <span class="k">if</span> <span class="n">path_info</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'/api'</span><span class="p">):</span>
-        <span class="n">controllers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">api_controllers</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">handle_request</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">start_response</span><span class="p">):</span>
+    <span class="n">path_info</span> <span class="o">=</span> <span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span> <span class="sh">'</span><span class="s">PATH_INFO</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span> <span class="p">)</span>
+    <span class="nb">map</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">mapper</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span> <span class="n">path_info</span><span class="p">,</span> <span class="n">environ</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">path_info</span><span class="p">.</span><span class="nf">startswith</span><span class="p">(</span><span class="sh">'</span><span class="s">/api</span><span class="sh">'</span><span class="p">):</span>
+        <span class="n">controllers</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">api_controllers</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">controllers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">controllers</span>
+        <span class="n">controllers</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">controllers</span>
 
-    <span class="n">trans</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">transaction_factory</span><span class="p">(</span> <span class="n">environ</span> <span class="p">)</span>
+    <span class="n">trans</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">transaction_factory</span><span class="p">(</span> <span class="n">environ</span> <span class="p">)</span>
 
-    <span class="n">controller_name</span> <span class="o">=</span> <span class="nb">map</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span> <span class="s">'controller'</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
-    <span class="n">controller</span> <span class="o">=</span> <span class="n">controllers</span><span class="p">.</span><span class="n">get</span><span class="p">(</span> <span class="n">controller_name</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
+    <span class="n">controller_name</span> <span class="o">=</span> <span class="nb">map</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span> <span class="sh">'</span><span class="s">controller</span><span class="sh">'</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
+    <span class="n">controller</span> <span class="o">=</span> <span class="n">controllers</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span> <span class="n">controller_name</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
 
     <span class="c1"># Resolve action method on controller
-</span>    <span class="n">action</span> <span class="o">=</span> <span class="nb">map</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span> <span class="s">'action'</span><span class="p">,</span> <span class="s">'index'</span> <span class="p">)</span>
-    <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span> <span class="n">controller</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
+</span>    <span class="n">action</span> <span class="o">=</span> <span class="nb">map</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span> <span class="sh">'</span><span class="s">action</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">index</span><span class="sh">'</span> <span class="p">)</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span> <span class="n">controller</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="bp">None</span> <span class="p">)</span>
 
-    <span class="n">kwargs</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">params</span><span class="p">.</span><span class="n">mixed</span><span class="p">()</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">params</span><span class="p">.</span><span class="nf">mixed</span><span class="p">()</span>
     <span class="c1"># Read controller arguments from mapper match
-</span>    <span class="n">kwargs</span><span class="p">.</span><span class="n">update</span><span class="p">(</span> <span class="nb">map</span> <span class="p">)</span>
+</span>    <span class="n">kwargs</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span> <span class="nb">map</span> <span class="p">)</span>
 
-    <span class="n">body</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span> <span class="n">trans</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="nf">method</span><span class="p">(</span> <span class="n">trans</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
     <span class="c1"># Body may be a file, string, etc... respond with it.
 </span></code></pre></div></div>
 
@@ -1554,25 +1601,25 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <p><code class="language-plaintext highlighter-rouge">lib/galaxy/webapps/galaxy/controllers/api/roles.py</code></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">cbv</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@router.cbv</span>
 <span class="k">class</span> <span class="nc">FastAPIRoles</span><span class="p">:</span>
-    <span class="n">role_manager</span><span class="p">:</span> <span class="n">RoleManager</span> <span class="o">=</span> <span class="n">depends</span><span class="p">(</span><span class="n">RoleManager</span><span class="p">)</span>
+    <span class="n">role_manager</span><span class="p">:</span> <span class="n">RoleManager</span> <span class="o">=</span> <span class="nf">depends</span><span class="p">(</span><span class="n">RoleManager</span><span class="p">)</span>
 
-    <span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/api/roles'</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RoleListModel</span><span class="p">:</span>
-        <span class="n">roles</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">list_displayable_roles</span><span class="p">(</span><span class="n">trans</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">RoleListModel</span><span class="p">(</span><span class="n">__root__</span><span class="o">=</span><span class="p">[</span><span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">])</span>
+    <span class="nd">@router.get</span><span class="p">(</span><span class="sh">'</span><span class="s">/api/roles</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RoleListModel</span><span class="p">:</span>
+        <span class="n">roles</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">list_displayable_roles</span><span class="p">(</span><span class="n">trans</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nc">RoleListModel</span><span class="p">(</span><span class="n">__root__</span><span class="o">=</span><span class="p">[</span><span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">])</span>
 
-    <span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/api/roles/{id}'</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">EncodedDatabaseIdField</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RoleModel</span><span class="p">:</span>
-        <span class="n">role_id</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="n">decode_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-        <span class="n">role</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_id</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+    <span class="nd">@router.get</span><span class="p">(</span><span class="sh">'</span><span class="s">/api/roles/{id}</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">EncodedDatabaseIdField</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RoleModel</span><span class="p">:</span>
+        <span class="n">role_id</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="n">security</span><span class="p">.</span><span class="nf">decode_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
 
-    <span class="o">@</span><span class="n">router</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/api/roles"</span><span class="p">,</span> <span class="n">require_admin</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">:</span> <span class="n">RoleDefinitionModel</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(...))</span> <span class="o">-&gt;</span> <span class="n">RoleModel</span><span class="p">:</span>
-        <span class="n">role</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">create_role</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+    <span class="nd">@router.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/api/roles</span><span class="sh">"</span><span class="p">,</span> <span class="n">require_admin</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span> <span class="o">=</span> <span class="n">DependsOnTrans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">:</span> <span class="n">RoleDefinitionModel</span> <span class="o">=</span> <span class="nc">Body</span><span class="p">(...))</span> <span class="o">-&gt;</span> <span class="n">RoleModel</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">create_role</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1581,28 +1628,28 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <h3 id="fastapi-and-pydantic">FastAPI and Pydantic</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RoleIdField</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"ID"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"Encoded ID of the role"</span><span class="p">)</span>
-<span class="n">RoleNameField</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Name"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"Name of the role"</span><span class="p">)</span>
-<span class="n">RoleDescriptionField</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Description"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"Description of the role"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RoleIdField</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">ID</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Encoded ID of the role</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">RoleNameField</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Name of the role</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">RoleDescriptionField</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Description</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Description of the role</span><span class="sh">"</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">BasicRoleModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="nb">id</span><span class="p">:</span> <span class="n">EncodedDatabaseIdField</span> <span class="o">=</span> <span class="n">RoleIdField</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">RoleNameField</span>
-    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Type"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"Type or category of the role"</span><span class="p">)</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Type</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Type or category of the role</span><span class="sh">"</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">RoleModel</span><span class="p">(</span><span class="n">BasicRoleModel</span><span class="p">):</span>
     <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">RoleDescriptionField</span>
-    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"URL"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"URL for the role"</span><span class="p">)</span>
-    <span class="n">model_class</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Model class"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">"Database model class (Role)"</span><span class="p">)</span>
+    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">URL</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">URL for the role</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">model_class</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Model class</span><span class="sh">"</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="sh">"</span><span class="s">Database model class (Role)</span><span class="sh">"</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">RoleDefinitionModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">RoleNameField</span>
     <span class="n">description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">RoleDescriptionField</span>
-    <span class="n">user_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">EncodedDatabaseIdField</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"User IDs"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[])</span>
-    <span class="n">group_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">EncodedDatabaseIdField</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"Group IDs"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[])</span>
+    <span class="n">user_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">EncodedDatabaseIdField</span><span class="p">]]</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">User IDs</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[])</span>
+    <span class="n">group_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">EncodedDatabaseIdField</span><span class="p">]]</span> <span class="o">=</span> <span class="nc">Field</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Group IDs</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[])</span>
 </code></pre></div></div>
 
 <hr />
@@ -1638,38 +1685,38 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 <p><code class="language-plaintext highlighter-rouge">lib/galaxy/webapps/galaxy/controllers/api/roles.py</code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RoleAPIController</span><span class="p">(</span><span class="n">BaseGalaxyAPIController</span><span class="p">):</span>
-    <span class="n">role_manager</span><span class="p">:</span> <span class="n">RoleManager</span> <span class="o">=</span> <span class="n">depends</span><span class="p">(</span><span class="n">RoleManager</span><span class="p">)</span>
+    <span class="n">role_manager</span><span class="p">:</span> <span class="n">RoleManager</span> <span class="o">=</span> <span class="nf">depends</span><span class="p">(</span><span class="n">RoleManager</span><span class="p">)</span>
 
-    <span class="o">@</span><span class="n">web</span><span class="p">.</span><span class="n">expose_api</span>
-    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
-        <span class="s">"""
+    <span class="nd">@web.expose_api</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">
         GET /api/roles
         Displays a collection (list) of roles.
-        """</span>
-        <span class="n">roles</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">list_displayable_roles</span><span class="p">(</span><span class="n">trans</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">RoleListModel</span><span class="p">(</span><span class="n">__root__</span><span class="o">=</span><span class="p">[</span><span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">])</span>
+        </span><span class="sh">"""</span>
+        <span class="n">roles</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">list_displayable_roles</span><span class="p">(</span><span class="n">trans</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nc">RoleListModel</span><span class="p">(</span><span class="n">__root__</span><span class="o">=</span><span class="p">[</span><span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">])</span>
 
-    <span class="o">@</span><span class="n">web</span><span class="p">.</span><span class="n">expose_api</span>
-    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
-        <span class="s">"""
+    <span class="nd">@web.expose_api</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">
         GET /api/roles/{encoded_role_id}
         Displays information about a role.
-        """</span>
-        <span class="n">role_id</span> <span class="o">=</span> <span class="n">decode_id</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">app</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
-        <span class="n">role</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_id</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+        </span><span class="sh">"""</span>
+        <span class="n">role_id</span> <span class="o">=</span> <span class="nf">decode_id</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">app</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
 
-    <span class="o">@</span><span class="n">web</span><span class="p">.</span><span class="n">expose_api</span>
-    <span class="o">@</span><span class="n">web</span><span class="p">.</span><span class="n">require_admin</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
-        <span class="s">"""
+    <span class="nd">@web.expose_api</span>
+    <span class="nd">@web.require_admin</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">trans</span><span class="p">:</span> <span class="n">ProvidesUserContext</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="o">**</span><span class="n">kwd</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">
         POST /api/roles
         Creates a new role.
-        """</span>
-        <span class="n">expand_json_keys</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">[</span><span class="s">"user_ids"</span><span class="p">,</span> <span class="s">"group_ids"</span><span class="p">])</span>
-        <span class="n">role_definition_model</span> <span class="o">=</span> <span class="n">RoleDefinitionModel</span><span class="p">(</span><span class="o">**</span><span class="n">payload</span><span class="p">)</span>
-        <span class="n">role</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="n">create_role</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+        </span><span class="sh">"""</span>
+        <span class="nf">expand_json_keys</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="p">[</span><span class="sh">"</span><span class="s">user_ids</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">group_ids</span><span class="sh">"</span><span class="p">])</span>
+        <span class="n">role_definition_model</span> <span class="o">=</span> <span class="nc">RoleDefinitionModel</span><span class="p">(</span><span class="o">**</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">role_manager</span><span class="p">.</span><span class="nf">create_role</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role_definition_model</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">role_to_model</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1713,16 +1760,16 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DatasetCollectionManager</span><span class="p">:</span>
 
-     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
+     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
 
-        <span class="bp">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="n">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="n">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="n">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="nc">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="nc">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="nc">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -1735,16 +1782,16 @@ function of <code class="language-plaintext highlighter-rouge">galaxy.webapps.ga
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DatasetCollectionManager</span><span class="p">:</span>
 
-     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">UniverseApplication</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
+     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">UniverseApplication</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
 
-        <span class="bp">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="n">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="n">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="n">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="nc">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="nc">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="nc">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">UniverseApplication</code> creates a <code class="language-plaintext highlighter-rouge">DatasetCollectionManager</code> for the application and <code class="language-plaintext highlighter-rouge">DatasetCollectionManager</code> imports and annotates
@@ -1768,16 +1815,16 @@ the <code class="language-plaintext highlighter-rouge">UniverseApplication</code
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DatasetCollectionManager</span><span class="p">:</span>
 
-     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
+     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
 
-        <span class="bp">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="n">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="n">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="n">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="nc">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="nc">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="nc">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
@@ -1795,16 +1842,16 @@ the <code class="language-plaintext highlighter-rouge">UniverseApplication</code
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DatasetCollectionManager</span><span class="p">:</span>
 
-     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
+     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
 
-        <span class="bp">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="n">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="n">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="n">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="nc">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="nc">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="nc">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
@@ -1822,16 +1869,16 @@ chain results in brittleness and complexity in how to construct <code class="lan
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DatasetCollectionManager</span><span class="p">:</span>
 
-     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
+     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">StructuredApp</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">type_registry</span> <span class="o">=</span> <span class="n">DATASET_COLLECTION_TYPES_REGISTRY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">collection_type_descriptions</span> <span class="o">=</span> <span class="n">COLLECTION_TYPE_DESCRIPTION_FACTORY</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">security</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">security</span>
 
-        <span class="bp">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="n">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="n">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="n">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hda_manager</span> <span class="o">=</span> <span class="n">hdas</span><span class="p">.</span><span class="nc">HDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">history_manager</span> <span class="o">=</span> <span class="n">histories</span><span class="p">.</span><span class="nc">HistoryManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">tag_handler</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ldda_manager</span> <span class="o">=</span> <span class="n">lddas</span><span class="p">.</span><span class="nc">LDDAManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
@@ -1882,13 +1929,13 @@ class DatasetCollectionManager:
 
 <h3 id="constructing-the-object-is-still-brittle">Constructing the Object Is Still Brittle</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DatasetCollectionManager</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">model</span><span class="p">,</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">security</span><span class="p">,</span>
-    <span class="n">HDAManager</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-    <span class="n">HistoryManager</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-    <span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">),</span>
-    <span class="n">LDDAManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DatasetCollectionManager</span><span class="p">(</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">security</span><span class="p">,</span>
+    <span class="nc">HDAManager</span><span class="p">(</span><span class="n">self</span><span class="p">),</span>
+    <span class="nc">HistoryManager</span><span class="p">(</span><span class="n">self</span><span class="p">),</span>
+    <span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">),</span>
+    <span class="nc">LDDAManager</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div></div>
 
@@ -1917,13 +1964,13 @@ recursively for an object of type <code class="language-plaintext highlighter-ro
 
 <p>Once all the dependencies have been type annotated properly and the needed singletons have been configured.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dcm</span> <span class="o">=</span> <span class="n">DatasetCollectionManager</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">model</span><span class="p">,</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">security</span><span class="p">,</span>
-    <span class="n">HDAManager</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-    <span class="n">HistoryManager</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-    <span class="n">GalaxyTagHandler</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">),</span>
-    <span class="n">LDDAManager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dcm</span> <span class="o">=</span> <span class="nc">DatasetCollectionManager</span><span class="p">(</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">security</span><span class="p">,</span>
+    <span class="nc">HDAManager</span><span class="p">(</span><span class="n">self</span><span class="p">),</span>
+    <span class="nc">HistoryManager</span><span class="p">(</span><span class="n">self</span><span class="p">),</span>
+    <span class="nc">GalaxyTagHandler</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">context</span><span class="p">),</span>
+    <span class="nc">LDDAManager</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div></div>
 
@@ -1959,13 +2006,13 @@ injection.</p>
 <p>FastAPI controllers allowed some basic dependency injection.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_tags_manager</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">TagsManager</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">TagsManager</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nc">TagsManager</span><span class="p">()</span>
 
 
-<span class="o">@</span><span class="n">cbv</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
+<span class="nd">@cbv</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">FastAPITags</span><span class="p">:</span>
-    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_tags_manager</span><span class="p">)</span>
-    <span class="p">...</span>
+    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="nc">Depends</span><span class="p">(</span><span class="n">get_tags_manager</span><span class="p">)</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p>Dependency injection allows for type checking but doesn’t use type inference (requires factory functions, etc..)</p>
@@ -1979,19 +2026,19 @@ injection.</p>
 <p>Also we have two different controller styles and only the new FastAPI allowed dependency injection.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_tags_manager</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">TagsManager</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">TagsManager</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nc">TagsManager</span><span class="p">()</span>
 
 
-<span class="o">@</span><span class="n">cbv</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
+<span class="nd">@cbv</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">FastAPITags</span><span class="p">:</span>
-    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_tags_manager</span><span class="p">)</span>
-    <span class="p">...</span>
+    <span class="n">manager</span><span class="p">:</span> <span class="n">TagsManager</span> <span class="o">=</span> <span class="nc">Depends</span><span class="p">(</span><span class="n">get_tags_manager</span><span class="p">)</span>
+    <span class="bp">...</span>
 
 <span class="k">class</span> <span class="nc">TagsController</span><span class="p">(</span><span class="n">BaseAPIController</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">TagsManager</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">manager</span> <span class="o">=</span> <span class="nc">TagsManager</span><span class="p">()</span>
 </code></pre></div></div>
 
 <hr />
@@ -2008,14 +2055,14 @@ injection.</p>
  class FastAPITags:
 <span class="gd">-    manager: TagsManager = Depends(get_tags_manager)
 </span><span class="gi">+    manager: TagsManager = depends(TagsManager)
-</span>
-     @router.put(
+</span><span class="err">
+</span>     @router.put(
          '/api/tags',
 <span class="p">@@ -58,11 +54,8 @@</span> def update(
          self.manager.update(trans, payload)
+<span class="err">
 
-
-<span class="gd">-class TagsController(BaseAPIController):
+</span><span class="gd">-class TagsController(BaseAPIController):
 -
 -    def __init__(self, app):
 -        super().__init__(app)
@@ -2033,14 +2080,14 @@ injection.</p>
 
 <p>From <code class="language-plaintext highlighter-rouge">lib/galaxy/celery/tasks.py</code></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">lagom</span> <span class="kn">import</span> <span class="n">magic_bind_to_container</span>
-<span class="p">...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">lagom</span> <span class="kn">import</span> <span class="n">magic_bind_to_container</span>
+<span class="bp">...</span>
 
 <span class="k">def</span> <span class="nf">galaxy_task</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="n">CELERY_TASKS</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
-    <span class="n">app</span> <span class="o">=</span> <span class="n">get_galaxy_app</span><span class="p">()</span>
+    <span class="n">CELERY_TASKS</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="p">)</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="nf">get_galaxy_app</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">app</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">magic_bind_to_container</span><span class="p">(</span><span class="n">app</span><span class="p">)(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nf">magic_bind_to_container</span><span class="p">(</span><span class="n">app</span><span class="p">)(</span><span class="n">func</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">func</span>
 </code></pre></div></div>
 
@@ -2052,21 +2099,21 @@ injection.</p>
 
 <p>From <code class="language-plaintext highlighter-rouge">lib/galaxy/celery/tasks.py</code></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">celery_app</span><span class="p">.</span><span class="n">task</span><span class="p">(</span><span class="n">ignore_result</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="o">@</span><span class="n">galaxy_task</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@celery_app.task</span><span class="p">(</span><span class="n">ignore_result</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@galaxy_task</span>
 <span class="k">def</span> <span class="nf">purge_hda</span><span class="p">(</span><span class="n">hda_manager</span><span class="p">:</span> <span class="n">HDAManager</span><span class="p">,</span> <span class="n">hda_id</span><span class="p">):</span>
-    <span class="n">hda</span> <span class="o">=</span> <span class="n">hda_manager</span><span class="p">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">hda_id</span><span class="p">)</span>
-    <span class="n">hda_manager</span><span class="p">.</span><span class="n">_purge</span><span class="p">(</span><span class="n">hda</span><span class="p">)</span>
+    <span class="n">hda</span> <span class="o">=</span> <span class="n">hda_manager</span><span class="p">.</span><span class="nf">by_id</span><span class="p">(</span><span class="n">hda_id</span><span class="p">)</span>
+    <span class="n">hda_manager</span><span class="p">.</span><span class="nf">_purge</span><span class="p">(</span><span class="n">hda</span><span class="p">)</span>
 
 
-<span class="o">@</span><span class="n">celery_app</span><span class="p">.</span><span class="n">task</span>
-<span class="o">@</span><span class="n">galaxy_task</span>
-<span class="k">def</span> <span class="nf">set_metadata</span><span class="p">(</span><span class="n">hda_manager</span><span class="p">:</span> <span class="n">HDAManager</span><span class="p">,</span> <span class="n">ldda_manager</span><span class="p">:</span> <span class="n">LDDAManager</span><span class="p">,</span> <span class="n">dataset_id</span><span class="p">,</span> <span class="n">model_class</span><span class="o">=</span><span class="s">'HistoryDatasetAssociation'</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">model_class</span> <span class="o">==</span> <span class="s">'HistoryDatasetAssociation'</span><span class="p">:</span>
-        <span class="n">dataset</span> <span class="o">=</span> <span class="n">hda_manager</span><span class="p">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">model_class</span> <span class="o">==</span> <span class="s">'LibraryDatasetDatasetAssociation'</span><span class="p">:</span>
-        <span class="n">dataset</span> <span class="o">=</span> <span class="n">ldda_manager</span><span class="p">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
-    <span class="n">dataset</span><span class="p">.</span><span class="n">datatype</span><span class="p">.</span><span class="n">set_meta</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="nd">@celery_app.task</span>
+<span class="nd">@galaxy_task</span>
+<span class="k">def</span> <span class="nf">set_metadata</span><span class="p">(</span><span class="n">hda_manager</span><span class="p">:</span> <span class="n">HDAManager</span><span class="p">,</span> <span class="n">ldda_manager</span><span class="p">:</span> <span class="n">LDDAManager</span><span class="p">,</span> <span class="n">dataset_id</span><span class="p">,</span> <span class="n">model_class</span><span class="o">=</span><span class="sh">'</span><span class="s">HistoryDatasetAssociation</span><span class="sh">'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">model_class</span> <span class="o">==</span> <span class="sh">'</span><span class="s">HistoryDatasetAssociation</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">hda_manager</span><span class="p">.</span><span class="nf">by_id</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">model_class</span> <span class="o">==</span> <span class="sh">'</span><span class="s">LibraryDatasetDatasetAssociation</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">ldda_manager</span><span class="p">.</span><span class="nf">by_id</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+    <span class="n">dataset</span><span class="p">.</span><span class="n">datatype</span><span class="p">.</span><span class="nf">set_meta</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -2086,240 +2133,627 @@ injection.</p>
 
 <hr />
 
-<h2 id="application-components---models-and-managers">Application Components - Models and Managers</h2>
+<h2 id="galaxy-tasks">Galaxy Tasks</h2>
 
-<p><em>The architecture surrounding Galaxy components.</em></p>
-
-<hr />
-
-<p><img src="../../images/wsgi_app.plantuml.svg" alt="This section will talk about that manager layer and what lies below" /></p>
+<p><em>The architecture surrounding Galaxy task management.</em></p>
 
 <hr />
 
-<p>There are many ways to describe and visualize the Galaxy server architecture,
-one is to imagine the Galaxy database as the ultimate source for Galaxy “stuff”
-and the API controllers as the ultimate sink.</p>
-
-<p>In this architecture imagining of Galaxy, managers are the layer meant to
-mediate all controller interactions (and isolate the backend from the web
-framework) while the model layer is meant to mediate all database interactions
-(and isolate the backend from database internals).</p>
-
-<hr />
-
-<p><img src="../../images/core_models_managers.plantuml.svg" alt="Models and Managers" /></p>
-
-<hr />
-
-<h3 id="managers">Managers</h3>
-
-<p>High-level business logic that ties all of these components together.</p>
-
-<p>Controllers should ideally be thin wrappers around actions defined in managers.</p>
-
-<p>Whenever a model requires more than just the database, the operation should be defined
-in a manager instead of in the model.</p>
-
-<hr />
-
-<h3 id="managers---some-key-files">Managers - Some Key Files</h3>
-
-<p><img src="../../images/core_files_managers.plantuml.svg" alt="Key Managers" /></p>
-
-<hr />
-
-<h3 id="managers---some-helpers">Managers - Some Helpers</h3>
-
-<p><img src="../../images/core_files_managers_helpers.plantuml.svg" alt="Manager Helpers" /></p>
-
-<hr />
-
-<h3 id="galaxy-models">Galaxy Models</h3>
-
-<ul>
-  <li>Database interactions powered by SQLAlchemy - https://www.sqlalchemy.org/.</li>
-  <li>Galaxy doesn’t think in terms of “rows” but “objects”.</li>
-  <li>Classes for Galaxy model objects in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/__init__.py</code>.</li>
-  <li>Classes mapped to tables in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/mapping.py</code>
-    <ul>
-      <li>Describes table definitions and relationships.</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<p><img src="../../images/sqla_arch_small.png" alt="SQLAlchemy Architecture" /></p>
-
-<hr />
-
-<h3 id="galaxy-model-migrations">Galaxy Model Migrations</h3>
-
-<ul>
-  <li>A migration describes a linear list of database “diff”s to
-end up with the current Galaxy model.</li>
-  <li>Allow the schema to be migrated forward automatically.</li>
-  <li>Powered by sqlalchemy-migrate - https://sqlalchemy-migrate.readthedocs.io/en/latest/.</li>
-  <li>Each file in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/migrate/versions/</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">0124_job_state_history.py</code></li>
-      <li><code class="language-plaintext highlighter-rouge">0125_workflow_step_tracking.py</code></li>
-      <li><code class="language-plaintext highlighter-rouge">0126_password_reset.py</code></li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<p><img src="../../images/galaxy_schema.png" alt="Galaxy Schema" /></p>
-
-<h3 id="database-diagram">Database Diagram</h3>
-
-<p>https://galaxyproject.org/admin/internals/data-model/</p>
-
-<hr />
-
-<p><img src="../../images/hda.svg" alt="HDA" /></p>
-
-<hr />
-
-<p><img src="../../images/hda_dataset.plantuml.svg" alt="HDA Dataset" /></p>
-
-<hr />
-
-<h3 id="dataset-metadata">Dataset Metadata</h3>
-
-<ul>
-  <li>Typed key-value pairs attached to HDA.</li>
-  <li>Keys and types defined at the datatype level.</li>
-  <li>Can be used by tools to dynamically control the tool form.</li>
-</ul>
+<p><img src="../../images/asgi_app.plantuml.svg" alt="Processing requests on the server" /></p>
 
 <p><span>Speaker Notes</span></p>
 
-<hr />
+<p>Web servers are a terrible place to do work. Traditional Python WSGI servers
+are meant for processing requests that take less a minute - they are meant
+for long running tasks.</p>
 
-<p><img src="../../images/hda_hdca.plantuml.svg" alt="HDAs and HDCAs" /></p>
-
-<hr />
-
-<p><img src="../../images/workflow_definition.svg" alt="Workflows" /></p>
-
-<hr />
-
-<p><img src="../../images/workflow_run.svg" alt="Workflow Running" /></p>
+<p>This request/response cycle is inappropriate for deleting all the files in a
+history, submitted 10,000 batch jobs for a collection, building a zip file for
+a library folder.</p>
 
 <hr />
 
-<p><img src="../../images/libraries.svg" alt="Libraries" /></p>
+<p><img src="../../images/core_backend_controllers.plantuml.svg" alt="Zoom in on Backend" /></p>
 
 <hr />
 
-<p><img src="../../images/library_permissions.svg" alt="Library Permissions" /></p>
+<p><img src="../../images/core_backend_celery.plantuml.svg" alt="Infrastructure including Celery" /></p>
+
+<p><span>Speaker Notes</span></p>
+
+<p>Handling a task description off to Celery allows the web server to respond right
+away and avoid various hacks. Celery is meant for these long running tasks and has
+a set of operations for handling them properly.</p>
 
 <hr />
 
-<h2 id="application-components---plugins">Application Components - Plugins</h2>
-
-<p><em>The architecture of pluggable Galaxy components.</em></p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/f6a5a0c33eac1250034747d375da9a396e5488ce/0196f/media/async-task-python.png" alt="Celery Overview" /></p>
 
 <hr />
 
-<p><img src="../../images/core_models_managers.plantuml.svg" alt="Models and Managers" /></p>
+<p>class: enlarge150</p>
+
+<h3 id="downsides-of-celery">Downsides of Celery</h3>
+
+<p>Adds more complexity to deploying Galaxy. Celery needs to be available to Galaxy
+at runtime, production Galaxy instances need a broker and a backend.</p>
 
 <hr />
 
-<h3 id="plugins-all-the-way-down">Plugins All the Way Down</h3>
+<p>class: reduce90</p>
 
-<p><img src="../../images/core_plugins_overview.plantuml.svg" alt="Plugins" /></p>
+<h3 id="gravity--celery">Gravity + Celery</h3>
 
-<hr />
+<p>.code[```
+$ galaxy
+Registered galaxy config: /home/nate/work/galaxy/config/galaxy.yml
+Creating or updating service gunicorn
+Creating or updating service celery
+Creating or updating service celery-beat
+celery: added process group
+2022-01-20 14:44:24,619 INFO spawned: ‘celery’ with pid 291651
+celery-beat: added process group
+2022-01-20 14:44:24,620 INFO spawned: ‘celery-beat’ with pid 291652
+gunicorn: added process group
+2022-01-20 14:44:24,622 INFO spawned: ‘gunicorn’ with pid 291653
+celery                           STARTING
+celery-beat                      STARTING
+gunicorn                         STARTING
+==&gt; /home/nate/work/galaxy/database/gravity/log/gunicorn.log &lt;==
+…log output follows…</p>
+<pre><code class="language-]">
+&lt;span&gt;Speaker Notes&lt;/span&gt;
 
-<h4 id="datatypes">Datatypes</h4>
+Start Galaxy with Gravity starts not only the Python web server (gunicorn)
+running the Galaxy application but also celery and required services.
 
-<p><img src="../../images/core_files_datatypes.plantuml.svg" alt="Datatype Files" /></p>
+---
 
-<p>Developer docs on adding new datatypes can be found at https://docs.galaxyproject.org/en/latest/dev/data_types.html.</p>
+![Celery tasks being registered at startup](../../images/celery_tasks_list.png)
 
-<hr />
+---
 
-<h4 id="tools">Tools</h4>
+class: enlarge150
 
-<p><img src="../../images/core_toolbox_classes.plantuml.svg" alt="ToolBox Classes" /></p>
+### Declaring a Task
 
-<p>Three major classes can be summarized as - the <code class="language-plaintext highlighter-rouge">ToolBox</code> contains <code class="language-plaintext highlighter-rouge">Tool</code> objects
-that execute a <code class="language-plaintext highlighter-rouge">ToolAction</code>.</p>
+- Placed in `galaxy.celery.tasks`.
+- We've placed a layer around Celery to mirror what we're with API endpoints.
+  - Typed functions with Pydantic inputs implicitly mapped.
+  - Implicit type based dependency injection from Galaxy's DI container (using Lagom)
+  - Feels a lot like writing an API endpoint.
 
-<hr />
+---
 
-<h4 id="subclasses-of-tool">Subclasses of Tool</h4>
+class: enlarge150
 
-<p><img src="../../images/core_tool_classes.plantuml.svg" alt="Tool Classes" /></p>
+### A Simple Task
 
-<hr />
+.code[```
+@galaxy_task(
+    ignore_result=True,
+    action="setting up export history job"
+)
+def export_history(
+    model_store_manager: ModelStoreManager,
+    request: SetupHistoryExportJob,
+):
+    model_store_manager.setup_history_export_job(request)
+```]
 
-<p><img src="../../images/core_tool_sequence.plantuml.svg" alt="Running Tools" /></p>
+---
 
-<hr />
+class: enlarge150
 
-<h3 id="a-little-about-jobs">A Little About Jobs</h3>
+### The `galaxy_task` Decorator
 
-<ul>
-  <li>Job is placed into the database and picked up by the job handler.</li>
-  <li>Job handler (<code class="language-plaintext highlighter-rouge">JobHandler</code>) watches the job and transitions job’s state - common startup and finishing.</li>
-  <li>Job mapper (<code class="language-plaintext highlighter-rouge">JobRunnerMapper</code>) decides the “destination” for a job.</li>
-  <li>Job runner (e.g. <code class="language-plaintext highlighter-rouge">DrammaJobRunner</code>) actual runs the job and provides an interface for checking status.</li>
-</ul>
+.code[```
+@galaxy_task(
+    ignore_result=True,
+    action="setting up export history job"
+)
+def export_history(
+    model_store_manager: ModelStoreManager,
+    request: SetupHistoryExportJob,
+):
+    model_store_manager.setup_history_export_job(request)
+```]
 
-<hr />
+- `galaxy_task` is a wrapper around Celery's `task` decorator
+- Wrap a simple function to turn it into a task.
+- Ensure all inputs are JSON serializable or components in Galaxy's dependency injection container
 
-<h3 id="job-runners">Job Runners</h3>
+---
 
-<p><img src="../../images/core_runner_classes.plantuml.svg" alt="Job Runners" /></p>
+class: enlarge150
 
-<hr />
+### Celery and Pydantic
 
-<p><img src="../../images/core_jobs_sequence.plantuml.svg" alt="Handling Jobs" /></p>
+The `request` argument to `export_history` is a Pydantic model type named
+`SetupHistoryExportJob`. These are mostly defined in `galaxy.schema.tasks`.
 
-<hr />
+.code[```
+from pydantic import BaseModel
 
-<p><img src="../../images/data_managers.svg" alt="Data Managers" /></p>
+class SetupHistoryExportJob(BaseModel):
+    history_id: int
+    job_id: int
+    store_directory: str
+    include_files: bool
+    include_hidden: bool
+    include_deleted: bool
+```]
 
-<hr />
+---
 
-<h3 id="visualization-plugins">Visualization Plugins</h3>
+class: enlarge200
 
-<p>Adding new visualizations to a Galaxy instance</p>
+### Celery and Pydantic - Implementation
 
-<ul>
-  <li>Configuration file (XML)</li>
-  <li>Base template (Mako or JavaScript)</li>
-  <li>Additional static data if needed (CSS, JS, …)</li>
-</ul>
+- Custom JSON encoding and decoding to adapt Celery to Pydantic.
+- Implemented in `galaxy.celery._serialization`.
+- Inject `__type__` and `__class__` attributes into JSON description.
+- `@galaxy_task` decorator sets Celery `serializer` attribute.
 
-<p>.footnote[<a href="/training-material/topics/dev/tutorials/visualization-generic/slides.html">Learn more about it with our visualization tutorial.</a>]</p>
+---
 
-<hr />
+class: enlarge150
 
-<p>class: reduce70</p>
+### Celery and Dependency Injection
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="cp">&lt;!DOCTYPE visualization SYSTEM "../../visualization.dtd"&gt;</span>
-<span class="nt">&lt;visualization</span> <span class="na">name=</span><span class="s">"ChiRAViz"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;description&gt;</span>ChiRAViz<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;data_sources&gt;</span>
-        <span class="nt">&lt;data_source&gt;</span>
-           <span class="nt">&lt;model_class&gt;</span>HistoryDatasetAssociation<span class="nt">&lt;/model_class&gt;</span>
-           <span class="nt">&lt;test</span> <span class="na">type=</span><span class="s">"isinstance"</span> <span class="na">test_attr=</span><span class="s">"datatype"</span> <span class="na">result_type=</span><span class="s">"datatype"</span><span class="nt">&gt;</span>binary.ChiraSQLite<span class="nt">&lt;/test&gt;</span>
-            <span class="nt">&lt;to_param</span> <span class="na">param_attr=</span><span class="s">"id"</span><span class="nt">&gt;</span>dataset_id<span class="nt">&lt;/to_param&gt;</span>
-        <span class="nt">&lt;/data_source&gt;</span>
-    <span class="nt">&lt;/data_sources&gt;</span>
-    <span class="nt">&lt;params&gt;</span>
-        <span class="nt">&lt;param</span> <span class="na">type=</span><span class="s">"dataset"</span> <span class="na">var_name_in_template=</span><span class="s">"hda"</span> <span class="na">required=</span><span class="s">"true"</span><span class="nt">&gt;</span>dataset_id<span class="nt">&lt;/param&gt;</span>
-    <span class="nt">&lt;/params&gt;</span>
-    <span class="nt">&lt;template&gt;</span>chiraviz.mako<span class="nt">&lt;/template&gt;</span>
-<span class="nt">&lt;/visualization&gt;</span>
-</code></pre></div></div>
+.code[```
+@galaxy_task(
+    ignore_result=True,
+    action="setting up export history job"
+)
+def export_history(
+    model_store_manager: ModelStoreManager,
+    request: SetupHistoryExportJob,
+):
+    model_store_manager.setup_history_export_job(request)
+```]
+
+- The type declaration on `model_store_manager` of `ModelStoreManager` causes
+  the Galaxy manager object of this class to be passed to the function when the
+  task is running.
+- Client does not need to have any knowledge of this class.
+
+---
+
+### Executing Tasks from Galaxy
+
+See `lib/galaxy/tools/imp_exp/__init__.py`:
+
+.code[```
+from galaxy.schema.tasks import SetupHistoryExportJob
+
+...
+
+    request = SetupHistoryExportJob(
+        history_id=history.id,
+        job_id=self.job_id,
+        store_directory=store_directory,
+        include_files=True,
+        include_hidden=include_hidden,
+        include_deleted=include_deleted,
+    )
+    export_history.delay(request=request)
+
+```]
+
+The delay method is created implicitly from the `galaxy_task` decorator.
+
+---
+
+class: enlarge200
+
+### Best Practices
+
+- Place tasks in `galaxy.celery.tasks`.
+- Keep the tasks as thin as possible (ideally simply delegate inputs
+  to a manager or another Galaxy component independent of Celery).
+- Ensure required/injected Galaxy components as small and decomposed as
+  possible.
+- Place new request definition argument types in `galaxy.schema.tasks`.
+
+---
+
+### Existing Tasks Success Stories
+
+---
+
+class: enlarge150
+
+### PDF Export Problems
+
+- We added PDF export of Galaxy Markdown using weasyprint
+- Generation of PDF took too long, feature was quite unstable
+
+---
+
+class: enlarge150
+
+### Short Term Storage (STS)
+
+- A Galaxy component for managing user downloadable files that only
+  need to exist for a little time.
+- Traditionally, these kind of files have required a lot of
+  hacking to do well in Galaxy (tracking transient request-like stuff in data model, etc..)
+- Not just unoptimized by default, but unusable
+- Required customizing nginx routes, special web server plugins, etc...
+
+https://github.com/galaxyproject/galaxy/pull/13691
+
+---
+
+class: enlarge150
+
+.code[```
+class GeneratePdfDownload(BaseModel):
+    short_term_storage_request_id: str
+    basic_markdown: str
+    document_type: PdfDocumentType
+```]
+
+---
+
+class: enlarge120
+
+### Robust PDF Export
+
+.code[```
+from galaxy.managers.markdown_util import generate_branded_pdf
+
+@galaxy_task(
+    action="preparing Galaxy Markdown PDF for download"
+)
+def prepare_pdf_download(
+    request: GeneratePdfDownload,
+    config: GalaxyAppConfiguration,
+    short_term_storage_monitor: ShortTermStorageMonitor,
+):
+    generate_branded_pdf(
+        request,
+        config,
+        short_term_storage_monitor,
+    )
+```]
+
+---
+
+class: enlarge120
+
+### Exporting Histories, Invocations, Libraries
+
+.code[```
+@galaxy_task(
+    action="generate and stage a workflow invocation store for download"
+)
+def prepare_invocation_download(
+    model_store_manager: ModelStoreManager,
+    request: GenerateInvocationDownload,
+):
+    model_store_manager.prepare_invocation_download(
+        request
+    )
+```]
+
+https://github.com/galaxyproject/galaxy/pull/12533
+
+---
+
+class: enlarge150
+
+### Optimized Uploads
+
+- Decomposed job handling, precursor to migrating more job components to Celery
+- Converting uploads to tasks signficantly sped up running Galaxy tests
+  - API tests went from 2.5 hours to 50 minutes
+  - Amazing speed up for small jobs
+- Exploring task composition
+
+https://github.com/galaxyproject/galaxy/pull/13655
+
+---
+
+### Uploads - Task Composition
+
+See `lib/galaxy/tools/execute.py`
+
+.code[```
+async_result = (
+    setup_fetch_data.s(job_id, raw_tool_source=raw_tool_source)
+    | fetch_data.s(job_id=job_id).set(queue="galaxy.external")
+    | set_job_metadata.s(
+        extended_metadata_collection="extended" in tool.app.config.metadata_strategy,
+        job_id=job_id,
+    ).set(
+        queue="galaxy.external",
+        link_error=finish_job.si(job_id=job_id, raw_tool_source=raw_tool_source)
+    )
+    | finish_job.si(job_id=job_id, raw_tool_source=raw_tool_source)
+)()
+```]
+
+---
+
+class: enlarge200
+
+### Batch Operations
+
+Task-based operations enable the most expensive of the new history's batch operations.
+
+- Changing datatypes
+- Purging datasets
+
+https://github.com/galaxyproject/galaxy/pull/14042
+
+---
+
+class: enlarge200
+
+### Future Work
+
+- *Migrating tool submission to tasks*
+- Workflow scheduling
+- Importing shared histories
+
+https://github.com/galaxyproject/galaxy/issues/11721
+
+---
+
+## Application Components - Models, Managers, and Services
+
+*The architecture surrounding Galaxy components.*
+
+---
+
+![This section will talk about that manager layer and what lies below](../../images/asgi_app.plantuml.svg)
+
+---
+
+There are many ways to describe and visualize the Galaxy server architecture,
+one is to imagine the Galaxy database as the ultimate source for Galaxy "stuff"
+and the API controllers as the ultimate sink.
+
+In this architecture imagining of Galaxy, managers are the layer meant to
+mediate all controller interactions (and isolate the backend from the web
+framework) while the model layer is meant to mediate all database interactions
+(and isolate the backend from database internals).
+
+---
+
+![Models and Managers](../../images/core_models_managers.plantuml.svg)
+
+---
+
+class: enlarge150
+
+### Services
+
+Handle API and web processing details of requests and responses at a high-level.
+
+Thin layer below the controllers to shield applciation logic from FastAPI internals.
+
+In practice, it is totally fine to skip this layer and have FastAPI controllers talk directly
+to managers.
+
+---
+
+class: enlarge150
+
+### Managers
+
+High-level business logic that ties all of these components together.
+
+Controllers should ideally be thin wrappers around actions defined in managers.
+
+Whenever a model requires more than just the database, the operation should be defined
+in a manager instead of in the model.
+
+---
+
+### Managers - Some Key Files
+
+![Key Managers](../../images/core_files_managers.plantuml.svg)
+
+---
+
+### Managers - Some Helpers
+
+![Manager Helpers](../../images/core_files_managers_helpers.plantuml.svg)
+
+---
+
+### Galaxy Models
+
+- Database interactions powered by SQLAlchemy - https://www.sqlalchemy.org/.
+- Galaxy doesn't think in terms of "rows" but "objects".
+- Classes for Galaxy model objects defined in `lib/galaxy/model/__init__.py`.
+- Classes mapped to database objects in same module via "declarative mapping".
+  - Classes/attributes mapped to tables/columns
+  - Associations between classes mapped to relationships between tables
+
+
+---
+
+![SQLAlchemy Architecture](../../images/sqla_arch_small.png)
+
+---
+
+### Galaxy Database Schema Migrations
+
+- Automated execution of incremental, reversible changes to the database schema.
+- Performed to update or revert the database schema to a newer or older version.
+- Powered by Alembic - https://alembic.sqlalchemy.org/.
+  - (as of 22.05; prior to that by SQLAlchemy Migrate)
+- Each file in `lib/galaxy/model/migrations/alembic/versions_gxy` represents a migration description
+  - `e7b6dcb09efd_create_gxy_branch.py`
+  - `6a67bf27e6a6_deferred_data_tables.py`
+  - `b182f655505f_add_workflow_source_metadata_column.py`
+
+---
+
+### More on Schema Migrations
+
+- Great documentation in code README - `lib/galaxy/model/migrations/README.md`
+  - Admin perspective on how to migrate databases forward and revert on problems.
+  - Developer persepctive on how to add new revisions.
+- Galaxy's data model is split into the galaxy model and the legacy install model:
+  - Persisted in one combined database or two separate databases
+  - Represented by 2 migration branches: "gxy" and "tsi"
+- Schema changes defined in revision modules:
+  - `lib/galaxy/model/migrations/alembic/versions_gxy` (gxy branch: galaxy model)
+  - `lib/galaxy/model/migrations/alembic/versions_tsi` (tsi branch: legacy install model)
+
+---
+
+![Galaxy Schema](../../images/galaxy_schema.png)
+
+### Database Diagram
+
+https://galaxyproject.org/admin/internals/data-model/
+
+---
+
+![HDA](../../images/hda.svg)
+
+---
+
+![HDA Dataset](../../images/hda_dataset.plantuml.svg)
+
+---
+
+### Dataset Metadata
+
+- Typed key-value pairs attached to HDA.
+- Keys and types defined at the datatype level.
+- Can be used by tools to dynamically control the tool form.
+
+&lt;span&gt;Speaker Notes&lt;/span&gt;
+
+---
+
+![HDAs and HDCAs](../../images/hda_hdca.plantuml.svg)
+
+---
+
+![Workflows](../../images/workflow_definition.svg)
+
+---
+
+![Workflow Running](../../images/workflow_run.svg)
+
+---
+
+![Libraries](../../images/libraries.svg)
+
+---
+
+![Library Permissions](../../images/library_permissions.svg)
+
+---
+
+## Application Components - Plugins
+
+*The architecture of pluggable Galaxy components.*
+
+---
+
+![Models and Managers](../../images/core_models_managers.plantuml.svg)
+
+---
+
+### Plugins All the Way Down
+
+![Plugins](../../images/core_plugins_overview.plantuml.svg)
+
+---
+
+#### Datatypes
+
+![Datatype Files](../../images/core_files_datatypes.plantuml.svg)
+
+Developer docs on adding new datatypes can be found at https://docs.galaxyproject.org/en/latest/dev/data_types.html.
+
+---
+
+#### Tools
+
+![ToolBox Classes](../../images/core_toolbox_classes.plantuml.svg)
+
+Three major classes can be summarized as - the `ToolBox` contains `Tool` objects
+that execute a `ToolAction`.
+
+---
+
+#### Subclasses of Tool
+
+![Tool Classes](../../images/core_tool_classes.plantuml.svg)
+
+---
+
+![Running Tools](../../images/core_tool_sequence.plantuml.svg)
+
+---
+
+### A Little About Jobs
+
+- Job is placed into the database and picked up by the job handler.
+- Job handler (`JobHandler`) watches the job and transitions job's state - common startup and finishing.
+- Job mapper (`JobRunnerMapper`) decides the "destination" for a job.
+- Job runner (e.g. `DrammaJobRunner`) actual runs the job and provides an interface for checking status.
+
+---
+
+### Job Runners
+
+![Job Runners](../../images/core_runner_classes.plantuml.svg)
+
+---
+
+![Handling Jobs](../../images/core_jobs_sequence.plantuml.svg)
+
+---
+
+![Data Managers](../../images/data_managers.svg)
+
+---
+
+
+### Visualization Plugins
+
+Adding new visualizations to a Galaxy instance
+
+- Configuration file (XML)
+- Base template (Mako or JavaScript)
+- Additional static data if needed (CSS, JS, …)
+
+
+.footnote[[Learn more about it with our visualization tutorial.](/training-material/topics/dev/tutorials/visualization-generic/slides.html)]
+
+---
+
+class: reduce70
+
+```xml
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE visualization SYSTEM "../../visualization.dtd"&gt;
+&lt;visualization name="ChiRAViz"&gt;
+    &lt;description&gt;ChiRAViz&lt;/description&gt;
+    &lt;data_sources&gt;
+        &lt;data_source&gt;
+           &lt;model_class&gt;HistoryDatasetAssociation&lt;/model_class&gt;
+           &lt;test type="isinstance" test_attr="datatype" result_type="datatype"&gt;binary.ChiraSQLite&lt;/test&gt;
+            &lt;to_param param_attr="id"&gt;dataset_id&lt;/to_param&gt;
+        &lt;/data_source&gt;
+    &lt;/data_sources&gt;
+    &lt;params&gt;
+        &lt;param type="dataset" var_name_in_template="hda" required="true"&gt;dataset_id&lt;/param&gt;
+    &lt;/params&gt;
+    &lt;template&gt;chiraviz.mako&lt;/template&gt;
+&lt;/visualization&gt;
+</code></pre>
 
 <hr />
 
@@ -2352,34 +2786,6 @@ or use data providers to adapt it</p>
 
 <hr />
 
-<h3 id="interactive-environments">Interactive Environments</h3>
-
-<p>Similar to visualizations: config and template</p>
-
-<p>Within the base template, launch a Docker container running a web accessible
-process</p>
-
-<p>Build a UI that accesses that process through a proxy</p>
-
-<p>.footnote[<a href="/training-material/topics/dev/tutorials/interactive-environments/slides.html">Learn more about it with our IE tutorial.</a>]</p>
-
-<hr />
-
-<p>template: left-aligned</p>
-
-<h3 id="interactive-environments---examples">Interactive Environments - Examples</h3>
-
-<p>All in <code class="language-plaintext highlighter-rouge">config/plugins/interactive_environments</code>:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">jupyter</code></li>
-  <li><code class="language-plaintext highlighter-rouge">rstudio</code></li>
-  <li><code class="language-plaintext highlighter-rouge">phinch</code></li>
-  <li><code class="language-plaintext highlighter-rouge">bam_iobio</code></li>
-</ul>
-
-<hr />
-
 <h3 id="object-store">Object Store</h3>
 
 <p>.strike[```python</p>
@@ -2396,9 +2802,9 @@ fh.read()
   </blockquote>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="n">update_from_file</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="err">‘</span><span class="n">foo</span><span class="p">.</span><span class="n">txt</span><span class="err">’</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="nf">update_from_file</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="err">‘</span><span class="n">foo</span><span class="p">.</span><span class="n">txt</span><span class="err">’</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="nf">get_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">objectstore</span><span class="p">.</span><span class="nf">get_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
@@ -2453,9 +2859,9 @@ description of configured plugins.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plugins_dict</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">plugin_type_identifier</span><span class="p">):</span>
     <span class="n">plugin_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">for</span> <span class="n">plugin_module</span> <span class="ow">in</span> <span class="n">import_submodules</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">clazz</span> <span class="ow">in</span> <span class="n">__plugin_classes_in_module</span><span class="p">(</span><span class="n">plugin_module</span><span class="p">):</span>
-            <span class="n">plugin_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span> <span class="n">plugin_type_identifier</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">plugin_module</span> <span class="ow">in</span> <span class="nf">import_submodules</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">clazz</span> <span class="ow">in</span> <span class="nf">__plugin_classes_in_module</span><span class="p">(</span><span class="n">plugin_module</span><span class="p">):</span>
+            <span class="n">plugin_type</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span> <span class="n">plugin_type_identifier</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">plugin_type</span><span class="p">:</span>
                 <span class="n">plugin_dict</span><span class="p">[</span><span class="n">plugin_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">clazz</span>
 
@@ -2468,30 +2874,30 @@ description of configured plugins.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ContainerRegistry</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_info</span><span class="p">,</span> <span class="n">mulled_resolution_cache</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">resolver_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">__resolvers_dict</span><span class="p">()</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">app_info</span> <span class="o">=</span> <span class="n">app_info</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">container_resolvers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">__build_container_resolvers</span><span class="p">(</span><span class="n">app_info</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app_info</span><span class="p">,</span> <span class="n">mulled_resolution_cache</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">resolver_classes</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">__resolvers_dict</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">app_info</span> <span class="o">=</span> <span class="n">app_info</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">container_resolvers</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">__build_container_resolvers</span><span class="p">(</span><span class="n">app_info</span><span class="p">)</span>
         <span class="c1"># ... other stuff here
 </span>
-    <span class="k">def</span> <span class="nf">__build_container_resolvers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_info</span><span class="p">):</span>
-        <span class="n">conf_file</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">app_info</span><span class="p">,</span> <span class="s">'containers_resolvers_config_file'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-        <span class="n">plugin_source</span> <span class="o">=</span> <span class="n">plugin_config</span><span class="p">.</span><span class="n">plugin_source_from_path</span><span class="p">(</span><span class="n">conf_file</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_parse_resolver_conf</span><span class="p">(</span><span class="n">plugin_source</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__build_container_resolvers</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app_info</span><span class="p">):</span>
+        <span class="n">conf_file</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">app_info</span><span class="p">,</span> <span class="sh">'</span><span class="s">containers_resolvers_config_file</span><span class="sh">'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">plugin_source</span> <span class="o">=</span> <span class="n">plugin_config</span><span class="p">.</span><span class="nf">plugin_source_from_path</span><span class="p">(</span><span class="n">conf_file</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">_parse_resolver_conf</span><span class="p">(</span><span class="n">plugin_source</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_parse_resolver_conf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugin_source</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_parse_resolver_conf</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">plugin_source</span><span class="p">):</span>
         <span class="n">extra_kwds</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s">'app_info'</span><span class="p">:</span> <span class="bp">self</span><span class="p">.</span><span class="n">app_info</span>
+            <span class="sh">'</span><span class="s">app_info</span><span class="sh">'</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">app_info</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">plugin_config</span><span class="p">.</span><span class="n">load_plugins</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">.</span><span class="n">resolver_classes</span><span class="p">,</span> <span class="n">plugin_source</span><span class="p">,</span> <span class="n">extra_kwds</span>
+        <span class="k">return</span> <span class="n">plugin_config</span><span class="p">.</span><span class="nf">load_plugins</span><span class="p">(</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">resolver_classes</span><span class="p">,</span> <span class="n">plugin_source</span><span class="p">,</span> <span class="n">extra_kwds</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__resolvers_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">import</span> <span class="nn">galaxy.tool_util.deps.container_resolvers</span>
-        <span class="k">return</span> <span class="n">plugin_config</span><span class="p">.</span><span class="n">plugins_dict</span><span class="p">(</span>
+    <span class="k">def</span> <span class="nf">__resolvers_dict</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="n">galaxy.tool_util.deps.container_resolvers</span>
+        <span class="k">return</span> <span class="n">plugin_config</span><span class="p">.</span><span class="nf">plugins_dict</span><span class="p">(</span>
             <span class="n">galaxy</span><span class="p">.</span><span class="n">tool_util</span><span class="p">.</span><span class="n">deps</span><span class="p">.</span><span class="n">container_resolvers</span><span class="p">,</span>
-            <span class="s">'resolver_type'</span>
+            <span class="sh">'</span><span class="s">resolver_type</span><span class="sh">'</span>
         <span class="p">)</span>
 </code></pre></div></div>
 
@@ -2501,14 +2907,14 @@ description of configured plugins.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CachedMulledDockerContainerResolver</span><span class="p">(</span><span class="n">ContainerResolver</span><span class="p">):</span>
 
-<span class="n">resolver_type</span> <span class="o">=</span> <span class="s">"cached_mulled"</span>
+<span class="n">resolver_type</span> <span class="o">=</span> <span class="sh">"</span><span class="s">cached_mulled</span><span class="sh">"</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_info</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s">"biocontainers"</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="s">"v2"</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">CachedMulledDockerContainerResolver</span><span class="p">,</span> <span class="bp">self</span><span class="p">).</span><span class="n">__init__</span><span class="p">(</span><span class="n">app_info</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">namespace</span> <span class="o">=</span> <span class="n">namespace</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">hash_func</span> <span class="o">=</span> <span class="n">hash_func</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">app_info</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="sh">"</span><span class="s">biocontainers</span><span class="sh">"</span><span class="p">,</span> <span class="n">hash_func</span><span class="o">=</span><span class="sh">"</span><span class="s">v2</span><span class="sh">"</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">CachedMulledDockerContainerResolver</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">(</span><span class="n">app_info</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">namespace</span> <span class="o">=</span> <span class="n">namespace</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">hash_func</span> <span class="o">=</span> <span class="n">hash_func</span>
 
-    <span class="k">def</span> <span class="nf">resolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enabled_container_types</span><span class="p">,</span> <span class="n">tool_info</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">resolve</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enabled_container_types</span><span class="p">,</span> <span class="n">tool_info</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
         <span class="c1"># ... do the magic with configured plugin
 </span></code></pre></div></div>
 
@@ -3150,7 +3556,7 @@ galaxy.tools.special_tools DEBUG 2016-06-23 19:13:38,108 Loaded history export t
 
 <p>class: reduce70</p>
 
-<h3 id="visualization-plugins-1">Visualization Plugins</h3>
+<h3 id="visualization-plugins">Visualization Plugins</h3>
 
 <p>.code[<code class="language-plaintext highlighter-rouge">
 galaxy.web.base.pluginframework INFO 2016-06-23 19:13:38,109 VisualizationsRegistry, loaded plugin: charts
@@ -3443,9 +3849,7 @@ Many Grids, User and preference management.</p>
 This material is the result of a collaborative work. Thanks to the <a href="https://training.galaxyproject.org" aria-label="Visit the GTN">Galaxy Training Network</a> and all the contributors!
 
 
-
-
-<img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
+<img src="/training-material/assets/images/GTNLogo1000.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
 
 This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
@@ -3453,56 +3857,51 @@ This material is licensed under the <a rel="license" href="https://creativecommo
 
 
 
+
+
         </div>
-        
-            <footer>
-    <div class="container">
-        <br><br>
-        <p>
-            The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
-            provides researchers with online training materials, connects them with local trainers, and helps promoting open data analysis practices worldwide.
-        </p>
-        <p>
-The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
-</p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/31e169385f5c5390a3bb226f87ecc35f8f1e322e">31e169385f5c5390a3bb226f87ecc35f8f1e322e</a></p>
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					<i>This Material</i>:
+					
+					is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/./topics/dev/tutorials/architecture/slides.html" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
     </div>
 </footer>
 
-        
+
+        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
-    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-    <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
-
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
-    var snippets=document.querySelectorAll('div.highlight');
-    [].forEach.call(snippets,function(snippet){
-        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-    });
-
-    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-        target:function(trigger){return trigger.nextElementSibling;
-    }});
-    </script>
-    
-
-    <script type="text/javascript">
-        if(window.location.hostname === "galaxyproject.github.io") {
-            // Redirect
-            var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-            $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-            window.setTimeout(function(){
-                window.location.href = redirect;
-            }, 5000)
-
-        }
-    </script>
 </html>

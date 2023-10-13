@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,264 +6,120 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>CLI basics</title>
         
-            <script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
-
-        
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap.min.css?v=3">
-        <link rel="stylesheet" href="/training-material/assets/css/bootstrap-toc.min.css">
-        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=2">
-        <script src="https://kit.fontawesome.com/67b3f98409.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/training-material/assets/css/academicons.css">
-        <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
-        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
-
-        
-        
-        
-        
-        
-        <meta name="description" content="These lessons will help you get your feet in data science..." />
-        <meta property="og:title" content="Galaxy Training: CLI basics" />
-        <meta property="og:description" content="These lessons will help you get your feet in data science..." />
-        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
-    </head>
-    <body data-spy="scroll" data-target="#toc">
-        <header>
-    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
-        <div class="container">
-            <a class="navbar-brand" href="/training-material/">
-                <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
-                Galaxy Training!
-            </a>
-
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="top-navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        
-                        <a class="nav-link" href="/training-material/topics/data-science" title="Go back to list of tutorials">
-                            <i class="far fa-folder" aria-hidden="true"></i> Foundations of Data Science
-                        </a>
-                        
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Languages">
-                            <i class="fas fa-language" aria-hidden="true"></i><span class="visually-hidden">language</span> Languages
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            
-                              <strong class="dropdown-header">Automatic Translations</strong>
-            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url">
-                            Français
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url">
-                            日本語
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url">
-                            Español
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url">
-                            Português
-                            </a>
-                            
-            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url">
-                            العربية
-                            </a>
-                            
-                            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org/topics/data-science/tutorials/cli-basics/tutorial.html&edit-text=&act=url" title="">
-                            And more!
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
-        <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
-    </a>
-    <div class="dropdown-menu dropdown-menu-right">
-        <!-- disable Tess for now
-        <form method="get" action="https://tess.elixir-europe.org/materials">
-            <input type="text" id="search" name="q" value="" style="margin-left: 0.5em;/*! border-radius: 0px; */">
-            <input type="hidden" value="Galaxy Training" name="content_provider">
-            <input type="submit" value="Search on TeSS" style="width: 92%;border-radius: 0px;margin: 0.5em;background: #f47d20;border: 0px;padding: 0.25em;" class="">
-        </form>
-        -->
-
-        <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
-           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
-        </a>
-        
-        <a class="dropdown-item" href="/training-material/topics/data-science/faqs/" title="Check our FAQs for the Foundations of Data Science topic">
-           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Topic FAQs
-        </a>
-        
-        <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
-            <i class="far fa-comments" aria-hidden="true"></i><span class="visually-hidden">feedback</span> Galaxy Help Forum
-        </a>
-        <a class="dropdown-item" href="https://gitter.im/Galaxy-Training-Network/Lobby" title="Discuss on gitter">
-           <i class="fab fa-gitter" aria-hidden="true"></i><span class="visually-hidden">gitter</span> Discuss on Gitter
-        </a>
-    </div>
-</li>
-
-
-                    <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Extras">
-        <i class="far fa-star" aria-hidden="true"></i><span class="visually-hidden">galaxy-star</span> Extras
-    </a>
-    <div class="dropdown-menu dropdown-menu-right">
-
-        
-        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/cli-basics/tutorial.md" title="Edit on GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
-        </a>
-
-        <a class="dropdown-item" href="/training-material/stats.html" title="Show view statistics about this repository">
-            <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN statistics
-        </a>
-
-        <a class="dropdown-item" href="https://plausible.galaxyproject.eu/training.galaxyproject.org?period=12mo&page=/training-material/topics/data-science/tutorials/cli-basics/tutorial.html" title="Show view statistics of this page">
-            <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
-        </a>
-
-        
-            <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
-                <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
-            </a>
-        
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Theme
-            </div>
-
-            <div id="theme-selector" data-toggle="buttons">
-                <label data-value="default" class="btn btn-secondary">
-                    <input type="radio" name="options" id="default" autocomplete="off"> Default
-                </label>
-                <label data-value="night" class="btn btn-secondary">
-                    <input type="radio" name="options" id="night" autocomplete="off"> Night
-                </label>
-                <label data-value="midnight" class="btn btn-secondary">
-                    <input type="radio" name="options" id="midnight" autocomplete="off"> Midnight
-                </label>
-                <label data-value="rainbow" class="btn btn-secondary">
-                    <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
-                </label>
-                <label data-value="progress" class="btn btn-secondary">
-                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
-                </label>
-                <label data-value="halloween" class="btn btn-secondary">
-                    <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
-                </label>
-                <label data-value="straya" class="btn btn-secondary">
-                    <input type="radio" name="options" id="downunder" autocomplete="off"> 🇦🇺
-                </label>
-            </div>
-
-        </div>
-
-        <div class="dropdown-item">
-            <div>
-                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
-            </div>
-
-            
-            <div id="archive-selector">
-            
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-12-01/topics/data-science/tutorials/cli-basics/tutorial.html" title="Version 2020-12-01">2020-12-01</a>
-            
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-11-01/topics/data-science/tutorials/cli-basics/tutorial.html" title="Version 2020-11-01">2020-11-01</a>
-            
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-10-01/topics/data-science/tutorials/cli-basics/tutorial.html" title="Version 2020-10-01">2020-10-01</a>
-            
-                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
-            </div>
-
-        </div>
-
-    </div>
-</li>
-
-
-                    <!-- Search bar-->
-                    <li class="nav-item">
-                      <div id="navbarSupportedContent" role="search">
-                        <!-- Search form -->
-                        <form class="form-inline mr-auto" method="GET" action="/training-material/search">
-                          <i class="fas fa-search nav-link" aria-hidden="true"></i>
-                          <div class="md-form mb-2">
-                            <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
-                          </div>
-                        </form>
-                      </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-        <div class="container main-content" role="main">
-        
-
-
-
-
-
-
-
-
-
-
-
-<!-- Gitter -->
-
-
-
+            <!--
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+-->
+<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
 
 <script>
-  ((window.gitter = {}).chat = {}).options = {
-  room: 'Galaxy-Training-Network/Lobby'
-  };
-</script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+var scriptElement = document.createElement("script");
+scriptElement.async = true;
+scriptElement.defer = true;
+scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
+scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
 
-<script type="application/ld+json">
-    
+// Appending the script element to the body
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Plausible: opt-in");
+	// Wait for the document to be available
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+}
+</script>
+
+<!-- JavaScript Error Monitoring, and performance tracking. -->
+<!--
+<script
+  src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
+  integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
+  crossorigin="anonymous"
+></script>
+-->
+<script type="text/javascript">
+var scriptElement = document.createElement("script");
+scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
+scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
+scriptElement.crossOrigin = "anonymous";
+
+if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	console.log("Sentry: opt-in");
+	// Appending the script element to the body
+	document.addEventListener("DOMContentLoaded", function(event) {
+		document.body.appendChild(scriptElement);
+	});
+		
+	Sentry.init({
+	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
+	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+	  sampleRate: 0.1,
+	  tracesSampleRate: 0.1,
+	  // Capture Replay for no sessions by default
+	  replaysSessionSampleRate: 0.01,
+	  // plus for 1% of sessions with an error
+	  replaysOnErrorSampleRate: 0.01,
+	  // PII OFF
+	  sendDefaultPii: false, // Off by default but just in case.
+	  environment: "production",
+	});
+}
+</script>
+
+        
+        <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon">
+        <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml">
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html">
+        <link rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
+        <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
+        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
+        <link rel="manifest" href="/training-material/manifest.json">
+        <meta name="theme-color" content="#2c3143"/>
+
+
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
+<meta name="DC.type" content="text">
+<meta name="DC.title" content="CLI basics">
+<meta name="DC.publisher" content="Galaxy Training Network">
+<meta name="DC.date" content="2023-01-23 14:28:11 +0000">
+<meta name="DC.creator" content="The Carpentries">
+<meta name="DC.creator" content="Helena Rasche">
+<meta name="DC.creator" content="Bazante Sanders">
+<meta name="DC.creator" content="Erasmus+ Programme">
+<meta name="DC.creator" content="Avans Hogeschool">
+
+        
+        
+        
+        
+        <meta name="description" content="These lessons will help you get your feet in data science...">
+        <meta property="og:site_name" content="Galaxy Training Network">
+        <meta property="og:title" content="Galaxy Training: CLI basics">
+        <meta property="og:description" content="These lessons will help you get your feet in data science...">
+        
+        <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png">
+
+        
+        <script type="application/ld+json">
+            
 
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -276,7 +132,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:33:41 +0000",
+  "dateModified": "2023-01-23 14:28:11 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "CLI basics",
   "interactivityType": "mixed",
@@ -301,69 +157,153 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
+  "workTranslation": [
+
+  ],
+  "creativeWorkStatus": "Active",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Foundations of Data Science",
     "description": "These lessons will help you get your feet in data science and give you tools to help you slice and dice your data into results.",
-    "url": "https://training.galaxyproject.org//training-material/topics/data-science/"
+    "url": "https://training.galaxyproject.org/training-material/topics/data-science/"
   },
-  "courseCode": "data-science / cli-basics / hands-on",
   "learningResourceType": "hands-on tutorial",
   "name": "Hands-on for 'CLI basics' tutorial",
-  "url": "https://training.galaxyproject.org//training-material/topics/data-science/tutorials/cli-basics/tutorial.html",
+  "url": "https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html",
   "timeRequired": "PT1H",
-  "keywords": "bash, jupyter-notebook",
-  "description": "The questions this  addresses are:\n - What is a command shell and why would I use one?\n - How can I move around on my computer?\n - How can I see what files and directories I have?\n - How can I specify the location of a file or directory on my computer?\n - How can I create, copy, and delete files and directories?\n - How can I edit files?\n\n\\nThe objectives are:\n - Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.\n - Explain when and why command-line interfaces should be used instead of graphical interfaces.\n - Explain the similarities and differences between a file and a directory.\n - Translate an absolute path into a relative path and vice versa.\n - Construct absolute and relative paths that identify specific files and directories.\n - Use options and arguments to change the behaviour of a shell command.\n - Demonstrate the use of tab completion and explain its advantages.\n - Create a directory hierarchy that matches a given diagram.\n - Create files in that hierarchy using an editor or by copying and renaming existing files.\n - Delete, copy and move specified files and/or directories.\n\n",
+  "teaches": "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.\n - Explain when and why command-line interfaces should be used instead of graphical interfaces.\n - Explain the similarities and differences between a file and a directory.\n - Translate an absolute path into a relative path and vice versa.\n - Construct absolute and relative paths that identify specific files and directories.\n - Use options and arguments to change the behaviour of a shell command.\n - Demonstrate the use of tab completion and explain its advantages.\n - Create a directory hierarchy that matches a given diagram.\n - Create files in that hierarchy using an editor or by copying and renaming existing files.\n - Delete, copy and move specified files and/or directories.",
+  "keywords": "data-science, bash, jupyter-notebook",
+  "description": "The questions this  addresses are:\n - What is a command shell and why would I use one?\n - How can I move around on my computer?\n - How can I see what files and directories I have?\n - How can I specify the location of a file or directory on my computer?\n - How can I create, copy, and delete files and directories?\n - How can I edit files?\n\n\nThe objectives are:\n - Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.\n - Explain when and why command-line interfaces should be used instead of graphical interfaces.\n - Explain the similarities and differences between a file and a directory.\n - Translate an absolute path into a relative path and vice versa.\n - Construct absolute and relative paths that identify specific files and directories.\n - Use options and arguments to change the behaviour of a shell command.\n - Demonstrate the use of tab completion and explain its advantages.\n - Create a directory hierarchy that matches a given diagram.\n - Create files in that hierarchy using an editor or by copying and renaming existing files.\n - Delete, copy and move specified files and/or directories.\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "The Carpentries"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/carpentries/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/carpentries/",
+      "name": "The Carpentries",
+      "image": "https://avatars.githubusercontent.com/carpentries",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Helena Rasche"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/",
+      "name": "Helena Rasche",
+      "image": "https://avatars.githubusercontent.com/hexylena",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9760-8992",
+      "orcid": "https://orcid.org/0000-0001-9760-8992"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Bazante Sanders"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/bazante1/",
+      "name": "Bazante Sanders",
+      "image": "https://avatars.githubusercontent.com/bazante1",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Erasmus+ Programme"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
+      "name": "Erasmus+ Programme",
+      "image": "https://avatars.githubusercontent.com/erasmusplus",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Avans Hogeschool"
-    }
-  ],
-  "contributor": [
-    {
-      "@type": "Person",
-      "name": "The Carpentries"
-    },
-    {
-      "@type": "Person",
-      "name": "Helena Rasche"
-    },
-    {
-      "@type": "Person",
-      "name": "Bazante Sanders"
-    },
-    {
-      "@type": "Person",
-      "name": "Erasmus+ Programme"
-    },
-    {
-      "@type": "Person",
-      "name": "Avans Hogeschool"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avans-atgm/",
+      "name": "Avans Hogeschool",
+      "image": "https://avatars.githubusercontent.com/avans-atgm",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -371,43 +311,210 @@
       "@type": "CreativeWork",
       "name": "Foundations of Data Science",
       "description": "These lessons will help you get your feet in data science and give you tools to help you slice and dice your data into results.",
-      "url": "https://training.galaxyproject.org//training-material/topics/data-science/"
+      "url": "https://training.galaxyproject.org/training-material/topics/data-science/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "http://edamontology.org/topic_3372",
+      "inDefinedTermSet": "http://edamontology.org",
+      "termCode": "topic_3372",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3372"
     }
   ],
-  "skillLevel": "Introductory"
+  "educationalLevel": "Beginner",
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "bash"
+    },
+    {
+      "@type": "Thing",
+      "name": "jupyter-notebook"
+    }
+  ],
+  "abstract": "This tutorial will walk you through the basics of how to use the Unix command line."
 }
-</script>
+        </script>
+        
+    </head>
+    <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
+        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <header>
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
+        <div class="container">
+            <a class="navbar-brand" href="/training-material/">
+                <img src="/training-material/assets/images/GTN-60px.png" height="30" alt="Galaxy Training Network logo">
+                
+                    Galaxy Training!
+                
+            </a>
 
-<section class="tutorial topic-data-science">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="top-navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="/training-material/topics/data-science" title="Go back to list of tutorials">
+                            <i class="far fa-folder" aria-hidden="true"></i> Foundations of Data Science
+                        </a>
+                        
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/training-material/learning-pathways" title="Learning Pathways">
+                           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Learning Pathways
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Help">
+        <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">help</span> Help
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <!-- disable Tess for now
+        <form method="get" action="https://tess.elixir-europe.org/materials">
+            <input type="text" id="search" name="q" value="" style="margin-left: 0.5em;/*! border-radius: 0px; */">
+            <input type="hidden" value="Galaxy Training" name="content_provider">
+            <input type="submit" value="Search on TeSS" style="width: 92%;border-radius: 0px;margin: 0.5em;background: #f47d20;border: 0px;padding: 0.25em;" class="">
+        </form>
+        -->
+
+	<a class="dropdown-item" href="/training-material/faqs/index.html" title="Check our FAQs">
+           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
+        </a>
+        
+        
+        <a class="dropdown-item" href="/training-material/topics/data-science/faqs/" title="Check our FAQs for the Foundations of Data Science topic">
+           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Topic FAQs
+        </a>
+        
+        
+        <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
+            <i class="far fa-comments" aria-hidden="true"></i><span class="visually-hidden">feedback</span> Galaxy Help Forum
+        </a>
+        <a class="dropdown-item" href="https://gitter.im/Galaxy-Training-Network/Lobby" title="Discuss on gitter">
+           <i class="fab fa-gitter" aria-hidden="true"></i><span class="visually-hidden">gitter</span> Discuss on Gitter
+        </a>
+    </div>
+</li>
+
+
+                    <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Extras">
+        <i class="far fa-star" aria-hidden="true"></i><span class="visually-hidden">galaxy-star</span> Extras
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+
+        <a class="dropdown-item" href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/cli-basics/tutorial.md" title="Edit on GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+        </a>
+
+        <a class="dropdown-item" href="/training-material/stats.html" title="Show view statistics about this repository">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN statistics
+        </a>
+
+        <a class="dropdown-item" href="https://plausible.galaxyproject.eu/training.galaxyproject.org?period=12mo&page=/training-material/topics/data-science/tutorials/cli-basics/tutorial.html" title="Show view statistics of this page">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> Page Metrics
+        </a>
+
+        <!-- link to feedback -->
+        
+            
+            
+                <a class="dropdown-item" href="/training-material/feedback.html" title="Show feedback statistics about this repository">
+                    <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="visually-hidden">galaxy-barchart</span> GTN feedback
+                </a>
+            
+        
+
+		<a href="/training-material/preferences.html" class="dropdown-item">
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+		</a>
+
+        <div class="dropdown-item">
+            <div>
+                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
+            </div>
+
+            <div id="archive-selector">
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-12-01/topics/data-science/tutorials/cli-basics/tutorial.html">2020-12-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-11-01/topics/data-science/tutorials/cli-basics/tutorial.html">2020-11-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2020-10-01/topics/data-science/tutorials/cli-basics/tutorial.html">2020-10-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/">Older Versions</a>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+
+                    <!-- Search bar-->
+                    <li class="nav-item">
+                      <div id="navbarSupportedContent" role="search">
+                        <!-- Search form -->
+                        <form class="form-inline mr-auto" method="GET" action="/training-material/search2">
+                          <i class="fas fa-search nav-link" aria-hidden="true"></i>
+                          <div class="md-form mb-2">
+                            <input name="query" class="form-control nicer" type="text" placeholder="Search Tutorials" aria-label="Search">
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+        
+        <div class="container main-content" role="main">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Gitter -->
+
+
+
+
+
+
+<article class="tutorial topic-data-science">
     <h1 data-toc-skip>CLI basics</h1>
     
 
+    <section aria-labelledby="overview-box" id="tutorial-metadata">
+    <div markdown="0">
 
-    <div class="contributors-line">Authors: 
-<a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=27" alt="Avatar">The Carpentries</a>
-
-
-<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="https://avatars.githubusercontent.com/hexylena?s=27" alt="Avatar">Helena Rasche</a>
-
-
-<a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=27" alt="Avatar">Bazante Sanders</a>
-
-
-<a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://avatars.githubusercontent.com/erasmusplus?s=27" alt="Avatar">Erasmus+ Programme</a>
-
-
-<a href="/training-material/hall-of-fame/avans-atgm/" class="contributor-badge contributor-avans-atgm"><img src="https://avatars.githubusercontent.com/avans-atgm?s=27" alt="Avatar">Avans Hogeschool</a>
-
-
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
+	<div class="contributors-line">
+		Authors: <a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=36" alt="Avatar" width="36" height="36">The Carpentries</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=36" alt="Avatar" width="36" height="36">Bazante Sanders</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://www.erasmusplus.nl/assets/images/logo.png" alt="Avatar" width="36" height="36">Erasmus+ Programme</a><a href="/training-material/hall-of-fame/avans-atgm/" class="contributor-badge contributor-avans-atgm"><img src="https://avatars.githubusercontent.com/avans-atgm?s=36" alt="Avatar" width="36" height="36">Avans Hogeschool</a>
+	</div>
 
 </div>
 
 
     <blockquote class="overview">
-        <h3>Overview</h3>
+        <div id="overview-box" class="box-title">Overview</div>
         
-        <img alt="Creative Commons License" class="float-right" style="border-width:0; display: inline-block; margin:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" aria-hidden="true" />
+        <img alt="Creative Commons License: CC-BY" class="float-right" style="border-width:0; display: inline-block; margin:0" src="/training-material/assets/images/cc-by.png"/>
         
         <strong><i class="far fa-question-circle" aria-hidden="true"></i> Questions:</strong>
         <ul>
@@ -493,9 +600,9 @@
         
 
         
-        
 
         
+
         <div id="supporting-materials"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Supporting Materials:</strong></div>
         <ul class="supporting_material">
             
@@ -521,17 +628,16 @@
             
             
             
-                 <li class="btn btn-default supporting_material">
-    <a class="topic-icon" href="/training-material/topics/data-science/tutorials/cli-basics/faqs/" title="Frequently Asked Questions" alt="Tutorial FAQs">
+                <li class="btn btn-default supporting_material">    <a class="topic-icon" href="/training-material/topics/data-science/tutorials/cli-basics/faqs/" title="Frequently Asked Questions">
         <i class="far fa-question-circle" aria-hidden="true"></i> FAQs
     </a>
-  </li>
-
-
+</li>
             
 
             <!-- Check the GTN Video Library for recordings of this tutorial or associated slides -->
             
+
+
 
 
 
@@ -548,32 +654,41 @@
 
 
             
+                
+            
         </ul>
-        
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Dec 21, 2021 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 23, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
+		
             
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
-            
-            <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">The GTN Framework is licensed under MIT</a>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>.
+             The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
+        
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00076">https://gxy.io/GTN:T00076</a> </div>
+        
     </blockquote>
+    </section>
 
     <div class="container">
         <div class="row">
             <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-2">
+            <div class="col-sm-2 hide-when-printing">
                 <nav id="toc" data-toggle="toc" class="sticky-top" aria-label="Table of Contents"></nav>
             </div>
             <div class="col-sm-10">
                  
+                <section aria-label="Tutorial Notebook access information" id="tutorial-notebook">
+                     
+                     
+                     
                      
                     
                         <blockquote class="comment">
-                            <h3><i class="far fa-comment-dots" aria-hidden="true"></i> Best viewed in a Jupyter Notebook</h3>
+                            <div class="box-title">Best viewed in a Jupyter Notebook</div>
                             <p>
-                                This tutorial is best viewed in a Jupyter notebook! You can load this notebook in Jupyter on one of the UseGalaxy.* servers<!--, or you can click to run it in MyBinder-->
+                                This tutorial is best viewed in a Jupyter notebook! You can load this notebook one of the following ways<!--, or you can click to run it in MyBinder-->
                             </p>
                             <!--
                             <p><b>Launching on MyBinder</b>
@@ -581,6 +696,7 @@
                                 <a href="https://mybinder.org/v2/gh/galaxyproject/training-material/main?filepath=training-material%2Ftopics%2Fdata-science%2Ftutorials%2Fcli-basics%2Ftutorial.md.ipynb" title="Launch notebook on MyBinder"><img src="https://mybinder.org/badge_logo.svg" alt="My Binder Logo"/></a>
                             </p>
                             -->
+                            
                             <p><b>Launching the notebook in Jupyter in Galaxy</b>
                                 <ol>
                                     <li><a href="/training-material/faqs/galaxy/interactive_tools_jupyter_launch.html">Instructions to Launch JupyterLab</a></li>
@@ -591,25 +707,27 @@
                             </p>
                             <p><b>Downloading the notebook</b>
                                 <ol>
-                                    <li>Right click this link: <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/data-science-cli-basics.ipynb">Jupyter Notebook</a></li>
+                                    <li>Right click one of these links: <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/data-science-cli-basics.ipynb">Jupyter Notebook (With Solutions)</a>, <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/data-science-cli-basics-course.ipynb">Jupyter Notebook (Without Solutions)</a></li>
                                     <li>Save Link As..</li>
                                 </ol>
                             </p>
                         </blockquote>
                     
-                 
+                </section>
+                
 
+                <section aria-label="Tutorial Content" id="tutorial-content">
                 <p>This tutorial will walk you through the basics of how to use the Unix command line.</p>
 
 <blockquote class="comment">
-  <h3 id="comment-comment"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Comment</h3>
+  <div class="box-title comment-title" id="comment-1"><i class="far fa-comment-dots" aria-hidden="true" ></i> Comment</div>
 
-  <p>This tutorial is <strong>significantly</strong> based on <a href="https://carpentries.org">the Carpentries</a> <a href="https://swcarpentry.github.io/shell-novice/">“The Unix Shell”</a> lesson, which is licensed CC-BY 4.0. Adaptations have been made to make this work better in a GTN/<span class="notranslate">Galaxy</span> environment.</p>
+  <p>This tutorial is <strong>significantly</strong> based on <a href="https://carpentries.org">the Carpentries</a> <a href="https://swcarpentry.github.io/shell-novice/">“The Unix Shell”</a> lesson, which is licensed CC-BY 4.0. Adaptations have been made to make this work better in a GTN/Galaxy environment.</p>
 
 </blockquote>
 
 <blockquote class="agenda">
-  <h3 id="agenda">Agenda</h3>
+  <div class="box-title agenda-title" id="agenda-1">Agenda</div>
 
   <p>In this tutorial, we will cover:</p>
 
@@ -621,7 +739,6 @@
     </ol>
   </li>
   <li><a href="#navigating-files-and-directories" id="markdown-toc-navigating-files-and-directories">Navigating Files and Directories</a>    <ol>
-      <li><a href="#slashes" id="markdown-toc-slashes">Slashes</a></li>
       <li><a href="#general-syntax-of-a-shell-command" id="markdown-toc-general-syntax-of-a-shell-command">General Syntax of a Shell Command</a></li>
     </ol>
   </li>
@@ -632,7 +749,6 @@
       <li><a href="#moving-files-and-directories" id="markdown-toc-moving-files-and-directories">Moving files and directories</a></li>
       <li><a href="#copying-files-and-directories" id="markdown-toc-copying-files-and-directories">Copying files and directories</a></li>
       <li><a href="#removing-files-and-directories" id="markdown-toc-removing-files-and-directories">Removing files and directories</a></li>
-      <li><a href="#deleting-is-forever" id="markdown-toc-deleting-is-forever">Deleting Is Forever</a></li>
       <li><a href="#operations-with-multiple-files-and-directories" id="markdown-toc-operations-with-multiple-files-and-directories">Operations with multiple files and directories</a></li>
     </ol>
   </li>
@@ -728,28 +844,28 @@ You may have seen it in a text editor program, for example.</p>
 <p>So let’s try our first command, <code class="language-plaintext highlighter-rouge">ls</code> which is short for listing.</p>
 
 <blockquote class="notranslate hands_on">
-  <h3 id="hands_on-open-a-jupyter-terminal"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Open a Jupyter Terminal</h3>
+  <div class="box-title hands-on-title" id="hands-on-open-a-jupyter-terminal-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Open a Jupyter Terminal</div>
   <p>This tutorial will let you accomplish almost everything from this view, running code in the cells below directly in the training material. You can choose between running the code here, or opening up a terminal tab in which to run it.</p>
 
   <p>Here are some instructions for how to do this on various environments.</p>
 
-  <p><strong>Jupyter</strong> on Use<span class="notranslate">Galaxy</span>.* and <strong>MyBinder.org</strong></p>
+  <p><strong>Jupyter</strong> on UseGalaxy.* and <strong>MyBinder.org</strong></p>
 
   <ol>
     <li>
       <p>Use the File → New → Terminal menu to launch a terminal.</p>
 
-      <p><img src="../../images/carpentries-cli/mybinder-launch.png" alt="screenshot of jupyterlab showing the File menu expanded to show new and terminal option." loading="lazy" /></p>
+      <p><a href="../../images/carpentries-cli/mybinder-launch.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/mybinder-launch.png" alt="screenshot of jupyterlab showing the File menu expanded to show new and terminal option." width="522" height="160" loading="lazy" /></a></p>
     </li>
     <li>
       <p>Disable “Simple” mode in the bottom left hand corner, if it activated.</p>
 
-      <p><img src="../../images/carpentries-cli/mybinder-simple.png" alt="screenshot of jupyterlab showing a toggle labelled simple. " loading="lazy" /></p>
+      <p><a href="../../images/carpentries-cli/mybinder-simple.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/mybinder-simple.png" alt="screenshot of jupyterlab showing a toggle labelled simple. " width="198" height="58" loading="lazy" /></a></p>
     </li>
     <li>
       <p>Drag one of the terminal or notebook tabs to the side to have the training materials and terminal side-by-side</p>
 
-      <p><img src="../../images/carpentries-cli/mybinder-final.png" alt="screenshot of jupyterlab with notebook and terminal side-by-side." loading="lazy" /></p>
+      <p><a href="../../images/carpentries-cli/mybinder-final.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/mybinder-final.png" alt="screenshot of jupyterlab with notebook and terminal side-by-side." width="1692" height="347" loading="lazy" /></a></p>
     </li>
   </ol>
 
@@ -759,12 +875,12 @@ You may have seen it in a text editor program, for example.</p>
     <li>
       <p>Use the <em>Split View</em> functionality of cocalc to split your view into two portions.</p>
 
-      <p><img src="../../images/carpentries-cli/cocalc-split.png" alt="screenshot of cocalc button to split views. " loading="lazy" /></p>
+      <p><a href="../../images/carpentries-cli/cocalc-split.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/cocalc-split.png" alt="screenshot of cocalc button to split views. " width="474" height="214" loading="lazy" /></a></p>
     </li>
     <li>
       <p>Change the view of one panel to a terminal</p>
 
-      <p><img src="../../images/carpentries-cli/cocalc-terminal.png" alt="screenshot of cocalc swapping view port to that of a terminal. " loading="lazy" /></p>
+      <p><a href="../../images/carpentries-cli/cocalc-terminal.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/cocalc-terminal.png" alt="screenshot of cocalc swapping view port to that of a terminal. " width="427" height="443" loading="lazy" /></a></p>
     </li>
   </ol>
 
@@ -776,18 +892,18 @@ You may have seen it in a text editor program, for example.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h3 id="tip-command-not-found"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Command not found</h3>
+  <div class="box-title tip-title" id="tip-command-not-found-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-command-not-found-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Command not found<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>If the shell can’t find a program whose name is the command you typed, it
 will print an error message such as:</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-9"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ks
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-out">
-    <h3 id="code-out-output"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+    <div class="box-title code-out-title" id="code-out-6"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ks: command not found
 </code></pre></div>    </div>
   </blockquote>
@@ -862,7 +978,7 @@ a command is important. <code class="language-plaintext highlighter-rouge">pwd</
 <p>Try running it now.</p>
 
 <blockquote class="tip">
-  <h3 id="tip-home-directory-variation"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Home Directory Variation</h3>
+  <div class="box-title tip-title" id="tip-home-directory-variation-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-home-directory-variation-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Home Directory Variation<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The home directory path will look different on different operating systems.</p>
 
@@ -871,7 +987,7 @@ a command is important. <code class="language-plaintext highlighter-rouge">pwd</
       <tr>
         <th>Linux</th>
         <th>OSX</th>
-        <th>Jupyter (Use<span class="notranslate">Galaxy</span>/Binder)</th>
+        <th>Jupyter (UseGalaxy/Binder)</th>
         <th>CoCalc</th>
       </tr>
     </thead>
@@ -906,7 +1022,7 @@ which will be constructed in a similar way, but not be exactly identical.</p>
 
 <p>On Nelle’s computer, the filesystem looks like this:</p>
 
-<p><img src="../../images/carpentries-cli/filesystem.svg" alt="The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp. " loading="lazy" /></p>
+<p><a href="../../images/carpentries-cli/filesystem.svg" rel="noopener noreferrer"><img src="../../images/carpentries-cli/filesystem.svg" alt="The file system is made up of a root directory that contains sub-directories titled bin, data, users, and tmp. " width="54" height="29" loading="lazy" /></a></p>
 
 <p>At the top is the <strong>root directory</strong>
 that holds everything else.
@@ -927,7 +1043,7 @@ we know that <code class="language-plaintext highlighter-rouge">/Users</code> is
 because its name begins with <code class="language-plaintext highlighter-rouge">/</code>.</p>
 
 <blockquote class="tip">
-  <h2 id="slashes">Slashes</h2>
+  <div class="box-title tip-title" id="tip-slashes-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-slashes-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Slashes<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Notice that there are two meanings for the <code class="language-plaintext highlighter-rouge">/</code> character.
 When it appears at the front of a file or directory name,
@@ -939,7 +1055,7 @@ it’s just a separator.</p>
 we find one directory for each user with an account on Nelle’s machine,
 her colleagues <em>imhotep</em> and <em>larry</em>.</p>
 
-<p><img src="../../images/carpentries-cli/home-directories.svg" alt="Like other directories, home directories are sub-directories underneath '/Users' like '/Users/imhotep', '/Users/larry' or '/Users/nelle'. " loading="lazy" /></p>
+<p><a href="../../images/carpentries-cli/home-directories.svg" rel="noopener noreferrer"><img src="../../images/carpentries-cli/home-directories.svg" alt="Like other directories, home directories are sub-directories underneath '/Users' like '/Users/imhotep', '/Users/larry' or '/Users/nelle'. " width="55" height="50" loading="lazy" /></a></p>
 
 <p>The user <em>imhotep</em>’s files are stored in <code class="language-plaintext highlighter-rouge">/Users/imhotep</code>,
 user <em>larry</em>’s in <code class="language-plaintext highlighter-rouge">/Users/larry</code>,
@@ -978,7 +1094,7 @@ Any names in our output that don’t have a classification symbol
 are plain old <strong>files</strong>.</p>
 
 <blockquote class="tip">
-  <h3 id="tip-real-terminal-tip-clearing-your-terminal"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Real Terminal Tip: Clearing your terminal</h3>
+  <div class="box-title tip-title" id="tip-real-terminal-tip-clearing-your-terminal-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-real-terminal-tip-clearing-your-terminal-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Real Terminal Tip: Clearing your terminal<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>If your screen gets too cluttered, you can clear your terminal using the
 <code class="language-plaintext highlighter-rouge">clear</code> command. You can still access previous commands using <kbd>↑</kbd>
@@ -1005,18 +1121,18 @@ information on how to use the command or program.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h3 id="tip-unsupported-command-line-options"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Unsupported command-line options</h3>
+  <div class="box-title tip-title" id="tip-unsupported-command-line-options-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-unsupported-command-line-options-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Unsupported command-line options<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>If you try to use an option (flag) that is not supported, <code class="language-plaintext highlighter-rouge">ls</code> and other commands
 will usually print an error message similar to:</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-1"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-10"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -j
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-out">
-    <h3 id="code-out-output-1"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+    <div class="box-title code-out-title" id="code-out-7"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls: invalid option -- 'j'
 Try 'ls --help' for more information.
 </code></pre></div>    </div>
@@ -1029,13 +1145,13 @@ Try 'ls --help' for more information.
 <p>The other way to learn about <code class="language-plaintext highlighter-rouge">ls</code> is to type</p>
 
 <blockquote class="code-in">
-  <h3 id="code-in-input-bash-2"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+  <div class="box-title code-in-title" id="code-in-bash-11"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ man ls
 </code></pre></div>  </div>
 </blockquote>
 
 <blockquote class="code-out">
-  <h3 id="code-out-output-2"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+  <div class="box-title code-out-title" id="code-out-8"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LS(1)                                                          User Commands                                                          LS(1)
 
 NAME
@@ -1094,7 +1210,7 @@ If so, you can move between hits using <kbd>N</kbd> (for moving forward) and
 <p>To <strong>quit</strong> the <code class="language-plaintext highlighter-rouge">man</code> pages, press <kbd>Q</kbd>.</p>
 
 <blockquote class="tip">
-  <h3 id="tip-manual-pages-on-the-web"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Manual pages on the web</h3>
+  <div class="box-title tip-title" id="tip-manual-pages-on-the-web-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-manual-pages-on-the-web-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Manual pages on the web<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Of course, there is a third way to access help for commands:
 searching the internet via your web browser.
@@ -1108,7 +1224,7 @@ which covers many commands introduced within this lesson.</p>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-exploring-more-ls-flags"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Exploring More <code class="language-plaintext highlighter-rouge">ls</code> Flags</h3>
+  <div class="box-title question-title" id="question-exploring-more-ls-flags"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Exploring More `ls` Flags</div>
 
   <p>You can also use two options at the same time. What does the command <code class="language-plaintext highlighter-rouge">ls</code> do when used
 with the <code class="language-plaintext highlighter-rouge">-l</code> option? What about if you use both the <code class="language-plaintext highlighter-rouge">-l</code> and the <code class="language-plaintext highlighter-rouge">-h</code> option?</p>
@@ -1118,7 +1234,7 @@ as file permissions and ownership), but the rest should be useful
 nevertheless.</p>
 
   <blockquote class="solution">
-    <h3 id="solution-solution"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-15"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-15" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The <code class="language-plaintext highlighter-rouge">-l</code> option makes <code class="language-plaintext highlighter-rouge">ls</code> use a <strong>l</strong>ong listing format, showing not only
 the file/directory names but also additional information, such as the file size
 and the time of its last modification. If you use both the <code class="language-plaintext highlighter-rouge">-h</code> option and the <code class="language-plaintext highlighter-rouge">-l</code> option,
@@ -1128,7 +1244,7 @@ instead of <code class="language-plaintext highlighter-rouge">5369</code>.</p>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-listing-in-reverse-chronological-order"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Listing in Reverse Chronological Order</h3>
+  <div class="box-title question-title" id="question-listing-in-reverse-chronological-order-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Listing in Reverse Chronological Order</div>
 
   <p>By default, <code class="language-plaintext highlighter-rouge">ls</code> lists the contents of a directory in alphabetical
 order by name. The command <code class="language-plaintext highlighter-rouge">ls -t</code> lists items by time of last
@@ -1139,7 +1255,7 @@ Hint: You may need to use the <code class="language-plaintext highlighter-rouge"
 last changed dates.</p>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-1"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-16"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-16" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The most recently changed file is listed last when using <code class="language-plaintext highlighter-rouge">-rt</code>. This
 can be very useful for finding your most recent edits or checking to
 see if a new output file was written.</p>
@@ -1262,7 +1378,7 @@ with a single <code class="language-plaintext highlighter-rouge">-</code> and no
 equivalent to <code class="language-plaintext highlighter-rouge">ls -Fa</code>.</p>
 
 <blockquote class="tip">
-  <h3 id="tip-other-hidden-files"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Other Hidden Files</h3>
+  <div class="box-title tip-title" id="tip-other-hidden-files-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-other-hidden-files-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Other Hidden Files<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>In addition to the hidden directories <code class="language-plaintext highlighter-rouge">..</code> and <code class="language-plaintext highlighter-rouge">.</code>, you may also see a file
 called <code class="language-plaintext highlighter-rouge">.bash_profile</code>. This file usually contains shell configuration
@@ -1319,13 +1435,13 @@ we’re looking for, we can use <code class="language-plaintext highlighter-roug
 to move to <code class="language-plaintext highlighter-rouge">shell-lesson-data</code>.</p>
 
 <blockquote class="code-in">
-  <h3 id="code-in-input-bash-3"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+  <div class="box-title code-in-title" id="code-in-bash-12"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pwd
 </code></pre></div>  </div>
 </blockquote>
 
 <blockquote class="code-out">
-  <h3 id="code-out-output-3"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+  <div class="box-title code-out-title" id="code-out-9"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/nelle/
 </code></pre></div>  </div>
 </blockquote>
@@ -1342,7 +1458,7 @@ ls -F
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h3 id="tip-two-more-shortcuts"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Two More Shortcuts</h3>
+  <div class="box-title tip-title" id="tip-two-more-shortcuts-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-more-shortcuts-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Two More Shortcuts<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The shell interprets a tilde (<code class="language-plaintext highlighter-rouge">~</code>) character at the start of a path to
 mean “the current user’s home directory”. For example, if Nelle’s home
@@ -1379,7 +1495,7 @@ that the former brings you <em>up</em>, while the latter brings you <em>back</em
 Run <code class="language-plaintext highlighter-rouge">cd -</code> again and you’re back in <code class="language-plaintext highlighter-rouge">~/Desktop/shell-lesson-data/creatures</code></p>
 
 <blockquote class="question">
-  <h3 id="question-absolute-vs-relative-paths"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Absolute vs Relative Paths</h3>
+  <div class="box-title question-title" id="question-absolute-vs-relative-paths-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Absolute vs Relative Paths</div>
 
   <p>Starting from <code class="language-plaintext highlighter-rouge">/Users/amanda/data</code>,
 which of the following commands could Amanda use to navigate to her home directory,
@@ -1398,7 +1514,7 @@ which is <code class="language-plaintext highlighter-rouge">/Users/amanda</code>
   </ol>
 
   <blockquote class="solution">
-    <h3 id="question-solution"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-17"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-17" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: <code class="language-plaintext highlighter-rouge">.</code> stands for the current directory.</li>
       <li>No: <code class="language-plaintext highlighter-rouge">/</code> stands for the root directory.</li>
@@ -1414,7 +1530,7 @@ which is <code class="language-plaintext highlighter-rouge">/Users/amanda</code>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-relative-path-resolution"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Relative Path Resolution</h3>
+  <div class="box-title question-title" id="question-relative-path-resolution-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Relative Path Resolution</div>
 
   <p>Using the filesystem diagram below, if <code class="language-plaintext highlighter-rouge">pwd</code> displays <code class="language-plaintext highlighter-rouge">/Users/thing</code>,
 what will <code class="language-plaintext highlighter-rouge">ls -F ../backup</code> display?</p>
@@ -1426,10 +1542,10 @@ what will <code class="language-plaintext highlighter-rouge">ls -F ../backup</co
     <li><code class="language-plaintext highlighter-rouge">original/ pnas_final/ pnas_sub/</code></li>
   </ol>
 
-  <p><img src="../../images/carpentries-cli/filesystem-challenge.svg" alt="A directory tree below the Users directory where '/Users' contains the directories 'backup' and 'thing'; '/Users/backup' contains 'original', 'pnas_final' and 'pnas_sub'; '/Users/thing' contains 'backup'; and '/Users/thing/backup' contains '2012-12-01', '2013-01-08' and '2013-01-27'. " loading="lazy" /></p>
+  <p><a href="../../images/carpentries-cli/filesystem-challenge.svg" rel="noopener noreferrer"><img src="../../images/carpentries-cli/filesystem-challenge.svg" alt="A directory tree below the Users directory where '/Users' contains the directories 'backup' and 'thing'; '/Users/backup' contains 'original', 'pnas_final' and 'pnas_sub'; '/Users/thing' contains 'backup'; and '/Users/thing/backup' contains '2012-12-01', '2013-01-08' and '2013-01-27'. " width="522" height="331" loading="lazy" /></a></p>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-2"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-18"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-18" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: there <em>is</em> a directory <code class="language-plaintext highlighter-rouge">backup</code> in <code class="language-plaintext highlighter-rouge">/Users</code>.</li>
       <li>No: this is the content of <code class="language-plaintext highlighter-rouge">Users/thing/backup</code>, but with <code class="language-plaintext highlighter-rouge">..</code>, we asked for one level further up.</li>
@@ -1440,7 +1556,7 @@ what will <code class="language-plaintext highlighter-rouge">ls -F ../backup</co
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-ls-reading-comprehension"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> <code class="language-plaintext highlighter-rouge">ls</code> Reading Comprehension</h3>
+  <div class="box-title question-title" id="question-ls-reading-comprehension"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: `ls` Reading Comprehension</div>
 
   <p>Using the filesystem diagram below,
 if <code class="language-plaintext highlighter-rouge">pwd</code> displays <code class="language-plaintext highlighter-rouge">/Users/backup</code>,
@@ -1450,7 +1566,7 @@ what command(s) will result in the following output:</p>
   <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pnas_sub/ pnas_final/ original/
 </code></pre></div>  </div>
 
-  <p><img src="../../images/carpentries-cli/filesystem-challenge.svg" alt="A directory tree below the Users directory where '/Users' contains the directories 'backup' and 'thing'; '/Users/backup' contains 'original', 'pnas_final' and 'pnas_sub'; '/Users/thing' contains 'backup'; and'/Users/thing/backup' contains '2012-12-01', '2013-01-08' and '2013-01-27'. " loading="lazy" /></p>
+  <p><a href="../../images/carpentries-cli/filesystem-challenge.svg" rel="noopener noreferrer"><img src="../../images/carpentries-cli/filesystem-challenge.svg" alt="A directory tree below the Users directory where '/Users' contains the directories 'backup' and 'thing'; '/Users/backup' contains 'original', 'pnas_final' and 'pnas_sub'; '/Users/thing' contains 'backup'; and'/Users/thing/backup' contains '2012-12-01', '2013-01-08' and '2013-01-27'. " width="522" height="331" loading="lazy" /></a></p>
 
   <ol>
     <li><code class="language-plaintext highlighter-rouge">ls pwd</code></li>
@@ -1459,7 +1575,7 @@ what command(s) will result in the following output:</p>
   </ol>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-3"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-19"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-19" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: <code class="language-plaintext highlighter-rouge">pwd</code> is not the name of a directory.</li>
       <li>Yes: <code class="language-plaintext highlighter-rouge">ls</code> without directory argument lists files and directories in the current directory.</li>
@@ -1522,7 +1638,7 @@ but she found them hard to understand after a couple of years.
 a directory called <code class="language-plaintext highlighter-rouge">revised-revised-results-3</code>.)</p>
 
 <blockquote class="tip">
-  <h3 id="tip-sorting-output"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Sorting Output</h3>
+  <div class="box-title tip-title" id="tip-sorting-output-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-sorting-output-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Sorting Output<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Nelle names her directories ‘year-month-day’,
 with leading zeroes for months and days,
@@ -1641,7 +1757,7 @@ project/results:
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h3 id="tip-two-ways-of-doing-the-same-thing"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Two ways of doing the same thing</h3>
+  <div class="box-title tip-title" id="tip-two-ways-of-doing-the-same-thing-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-ways-of-doing-the-same-thing-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Two ways of doing the same thing<span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>Using the shell to create a directory is no different than using a file explorer.
 If you open the current directory using your operating system’s graphical file explorer,
 the <code class="language-plaintext highlighter-rouge">thesis</code> directory will appear there too.
@@ -1650,7 +1766,7 @@ the files and directories themselves are the same.</p>
 </blockquote>
 
 <blockquote class="tip">
-  <h3 id="tip-good-names-for-files-and-directories"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Good names for files and directories</h3>
+  <div class="box-title tip-title" id="tip-good-names-for-files-and-directories-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-good-names-for-files-and-directories-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Good names for files and directories<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
@@ -1696,7 +1812,7 @@ $ nano draft.txt
 </code></pre></div></div>
 
 <blockquote class="warning">
-  <h3 id="warning-nano-wont-work-in-a-jupyter-notebook"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i><span class="visually-hidden">warning</span> Nano won’t work in a Jupyter Notebook!</h3>
+  <div class="box-title warning-title" id="warning-nano-won-t-work-in-a-jupyter-notebook-1"><i class="fas fa-exclamation-triangle" aria-hidden="true" ></i> Warning: Nano won't work in a Jupyter Notebook!</div>
   <p>Nano is an interactive, full screen editor. You’ll need to switch to a proper
 console to do this step, if you haven’t already.</p>
 
@@ -1704,7 +1820,7 @@ console to do this step, if you haven’t already.</p>
 </blockquote>
 
 <blockquote class="tip">
-  <h3 id="tip-which-editor"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Which Editor?</h3>
+  <div class="box-title tip-title" id="tip-which-editor-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-which-editor-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Which Editor?<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>When we say, “<code class="language-plaintext highlighter-rouge">nano</code> is a text editor” we really do mean “text”: it can
 only work with plain character data, not tables, images, or any other
@@ -1735,13 +1851,13 @@ holding it down, press the <kbd>O</kbd> key) to write our data to disk
 (we’ll be asked what file we want to save this to:
 press <kbd>Return</kbd> to accept the suggested default of <code class="language-plaintext highlighter-rouge">draft.txt</code>).</p>
 
-<p><img src="../../images/carpentries-cli/nano-screenshot.png" alt="screenshot of nano text editor in action. " loading="lazy" /></p>
+<p><a href="../../images/carpentries-cli/nano-screenshot.png" rel="noopener noreferrer"><img src="../../images/carpentries-cli/nano-screenshot.png" alt="screenshot of nano text editor in action. " width="1039" height="317" loading="lazy" /></a></p>
 
 <p>Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
 return to the shell.</p>
 
 <blockquote class="tip">
-  <h3 id="tip-control-ctrl-or--key"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Control, Ctrl, or ^ Key</h3>
+  <div class="box-title tip-title" id="tip-control-ctrl-or-key-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-control-ctrl-or-key-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Control, Ctrl, or ^ Key<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The Control key is also called the ‘Ctrl’ key. There are various ways
 in which using the Control key may be described. For example, you may
@@ -1769,7 +1885,7 @@ but <code class="language-plaintext highlighter-rouge">ls</code> now shows that 
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-creating-files-a-different-way"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Creating Files a Different Way</h3>
+  <div class="box-title question-title" id="question-creating-files-a-different-way-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Creating Files a Different Way</div>
 
   <p>We have seen how to create text files using the <code class="language-plaintext highlighter-rouge">nano</code> editor.
 Now, try the following command:</p>
@@ -1792,7 +1908,7 @@ does the file show up?</p>
   </ol>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-4"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-20"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-20" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>
         <p>The <code class="language-plaintext highlighter-rouge">touch</code> command generates a new file called <code class="language-plaintext highlighter-rouge">my_file.txt</code> in
@@ -1822,7 +1938,7 @@ programs.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h3 id="tip-whats-in-a-name"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> What’s In A Name?</h3>
+  <div class="box-title tip-title" id="tip-what-s-in-a-name-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-s-in-a-name-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: What's In A Name?<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>You may have noticed that all of Nelle’s files are named ‘something dot
 something’, and in this part of the lesson, we always used the extension
@@ -1896,7 +2012,7 @@ the directory name we use is the special directory name <code class="language-pl
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls </span>thesis
 </code></pre></div></div>
 
-<p>Alte<span class="notranslate">rna</span>tively, we can confirm the file <code class="language-plaintext highlighter-rouge">quotes.txt</code> is no longer present in the <code class="language-plaintext highlighter-rouge">thesis</code> directory
+<p>Alternatively, we can confirm the file <code class="language-plaintext highlighter-rouge">quotes.txt</code> is no longer present in the <code class="language-plaintext highlighter-rouge">thesis</code> directory
 by explicitly trying to list it:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls </span>thesis/quotes.txt
@@ -1910,7 +2026,7 @@ We can use this to see that <code class="language-plaintext highlighter-rouge">q
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-moving-files-to-a-new-folder"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Moving Files to a new folder</h3>
+  <div class="box-title question-title" id="question-moving-files-to-a-new-folder-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Moving Files to a new folder</div>
 
   <p>After running the following commands,
 Jamie realizes that she put the files <code class="language-plaintext highlighter-rouge">sucrose.dat</code> and <code class="language-plaintext highlighter-rouge">maltose.dat</code> into the wrong folder.
@@ -1930,7 +2046,7 @@ $ cd analyzed
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-5"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-21"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-21" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mv </span>sucrose.dat maltose.dat ../raw
 </code></pre></div>    </div>
     <p>Recall that <code class="language-plaintext highlighter-rouge">..</code> refers to the parent directory (i.e. one above the current directory)
@@ -1963,7 +2079,7 @@ e.g. to back up a directory:</p>
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-renaming-files"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Renaming Files</h3>
+  <div class="box-title question-title" id="question-renaming-files-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Renaming Files</div>
 
   <p>Suppose that you created a plain-text file in your current directory to contain a list of the
 statistical tests you will need to do to analyze your data, and named it: <code class="language-plaintext highlighter-rouge">statstics.txt</code></p>
@@ -1979,7 +2095,7 @@ correct the mistake, which of the following commands could you use to do so?</p>
   </ol>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-6"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-22"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-22" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No.  While this would create a file with the correct name,
 the incorrectly named file still exists in the directory
@@ -1995,36 +2111,36 @@ identical file names cannot be created.</li>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-moving-and-copying"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Moving and Copying</h3>
+  <div class="box-title question-title" id="question-moving-and-copying-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Moving and Copying</div>
 
   <p>What is the output of the closing <code class="language-plaintext highlighter-rouge">ls</code> command in the sequence shown below?</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-4"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-13"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pwd
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-out">
-    <h3 id="code-out-output-4"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+    <div class="box-title code-out-title" id="code-out-10"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/jamie/data
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-5"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-14"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-out">
-    <h3 id="code-out-output-5"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="visually-hidden">code-out</span> Output</h3>
+    <div class="box-title code-out-title" id="code-out-11"><i class="fas fa-laptop-code" aria-hidden="true" ></i> Output</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proteins.dat
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-6"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-15"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir recombined
 mv proteins.dat recombined/
 cp recombined/proteins.dat ../proteins-saved.dat
@@ -2040,7 +2156,7 @@ ls
   </ol>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-7"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-23"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-23" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>We start in the <code class="language-plaintext highlighter-rouge">/Users/jamie/data</code> directory, and create a new folder called <code class="language-plaintext highlighter-rouge">recombined</code>.
 The second line moves (<code class="language-plaintext highlighter-rouge">mv</code>) the file <code class="language-plaintext highlighter-rouge">proteins.dat</code> to the new folder (<code class="language-plaintext highlighter-rouge">recombined</code>).
 The third line makes a copy of the file we just moved.
@@ -2075,7 +2191,7 @@ The Unix command we’ll use for this is <code class="language-plaintext highlig
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <h2 id="deleting-is-forever">Deleting Is Forever</h2>
+  <div class="box-title tip-title" id="tip-deleting-is-forever-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-deleting-is-forever-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Deleting Is Forever<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The Unix shell doesn’t have a trash bin that we can recover deleted
 files from (though most graphical interfaces to Unix do).  Instead,
@@ -2087,13 +2203,13 @@ file’s disk space right away.</p>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-using-rm-safely"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Using <code class="language-plaintext highlighter-rouge">rm</code> Safely</h3>
+  <div class="box-title question-title" id="question-using-rm-safely"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Using `rm` Safely</div>
 
   <p>What happens when we execute <code class="language-plaintext highlighter-rouge">rm -i thesis_backup/quotations.txt</code>?
 Why would we want this protection when using <code class="language-plaintext highlighter-rouge">rm</code>?</p>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-8"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-24"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-24" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm</span>: remove regular file <span class="s1">'thesis_backup/quotations.txt'</span>? y
 </code></pre></div>    </div>
     <p>The <code class="language-plaintext highlighter-rouge">-i</code> option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion
@@ -2129,14 +2245,14 @@ This can be done by providing a list of individual filenames,
 or specifying a naming pattern using wildcards.</p>
 
 <blockquote class="question">
-  <h3 id="question-copy-with-multiple-filenames"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Copy with Multiple Filenames</h3>
+  <div class="box-title question-title" id="question-copy-with-multiple-filenames-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Copy with Multiple Filenames</div>
 
   <p>For this exercise, you can test the commands in the <code class="language-plaintext highlighter-rouge">shell-lesson-data/data</code> directory.</p>
 
   <p>In the example below, what does <code class="language-plaintext highlighter-rouge">cp</code> do when given several filenames and a directory name?</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-7"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-16"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir backup
 $ cp amino-acids.txt animals.txt backup/
 </code></pre></div>    </div>
@@ -2145,7 +2261,7 @@ $ cp amino-acids.txt animals.txt backup/
   <p>In the example below, what does <code class="language-plaintext highlighter-rouge">cp</code> do when given three or more file names?</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-input-bash-8"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Input: Bash</h3>
+    <div class="box-title code-in-title" id="code-in-bash-17"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Bash</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -F
 amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/
 planets.txt  salmon.txt  sunspot.txt
@@ -2154,7 +2270,7 @@ $ cp amino-acids.txt animals.txt morse.txt
   </blockquote>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-9"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-25"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-25" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>If given more than one file name followed by a directory name
 (i.e. the destination directory must be the last argument),
 <code class="language-plaintext highlighter-rouge">cp</code> copies the files to the named directory.</p>
@@ -2173,7 +2289,7 @@ because it is expecting a directory name as the last argument.</p>
 <h3 id="using-wildcards-for-accessing-multiple-files-at-once">Using wildcards for accessing multiple files at once</h3>
 
 <blockquote class="tip">
-  <h3 id="tip-wildcards"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden">tip</span> Wildcards</h3>
+  <div class="box-title tip-title" id="tip-wildcards-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-wildcards-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Wildcards<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p><code class="language-plaintext highlighter-rouge">*</code> is a <strong>wildcard</strong>, which matches zero or more  characters.
 Let’s consider the <code class="language-plaintext highlighter-rouge">shell-lesson-data/molecules</code> directory:
@@ -2192,19 +2308,19 @@ giving <code class="language-plaintext highlighter-rouge">cubane.pdb  ethane.pdb
 
   <p>When the shell sees a wildcard, it expands the wildcard to create a
 list of matching filenames <em>before</em> running the command that was
-asked for. As an exception, if a wildcard <span class="notranslate">expression</span> does not match
-any file, Bash will pass the <span class="notranslate">expression</span> as an argument to the command
+asked for. As an exception, if a wildcard expression does not match
+any file, Bash will pass the expression as an argument to the command
 as it is. For example, typing <code class="language-plaintext highlighter-rouge">ls *.pdf</code> in the <code class="language-plaintext highlighter-rouge">molecules</code> directory
 (which contains only files with names ending with <code class="language-plaintext highlighter-rouge">.pdb</code>) results in
 an error message that there is no file called <code class="language-plaintext highlighter-rouge">*.pdf</code>.
 However, generally commands like <code class="language-plaintext highlighter-rouge">wc</code> and <code class="language-plaintext highlighter-rouge">ls</code> see the lists of
-file names matching these <span class="notranslate">expression</span>s, but not the wildcards
+file names matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.</p>
 </blockquote>
 
 <blockquote class="question">
-  <h3 id="question-list-filenames-matching-a-pattern"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> List filenames matching a pattern</h3>
+  <div class="box-title question-title" id="question-list-filenames-matching-a-pattern-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: List filenames matching a pattern</div>
 
   <p>When run in the <code class="language-plaintext highlighter-rouge">molecules</code> directory, which <code class="language-plaintext highlighter-rouge">ls</code> command(s) will
 produce this output?</p>
@@ -2219,7 +2335,7 @@ produce this output?</p>
   </ol>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-10"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-26"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-26" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The solution is <code class="language-plaintext highlighter-rouge">3.</code></p>
 
     <p><code class="language-plaintext highlighter-rouge">1.</code> shows all files whose names contain zero or more characters (<code class="language-plaintext highlighter-rouge">*</code>)
@@ -2244,7 +2360,7 @@ This is the solution.</p>
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-more-on-wildcards"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> More on Wildcards</h3>
+  <div class="box-title question-title" id="question-more-on-wildcards-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: More on Wildcards</div>
 
   <p>Sam has a directory containing calibration data, datasets, and descriptions of
 the datasets:</p>
@@ -2328,7 +2444,7 @@ $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-11"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-27"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-27" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp *calibration.txt backup/calibration
 cp 2015-11-* send_to_bob/all_november_files/
@@ -2342,7 +2458,7 @@ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-organizing-directories-and-files"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Organizing Directories and Files</h3>
+  <div class="box-title question-title" id="question-organizing-directories-and-files-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Organizing Directories and Files</div>
 
   <p>Jamie is working on a project and she sees that her files aren’t very well
 organized:</p>
@@ -2362,7 +2478,7 @@ fructose.dat    sucrose.dat
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-12"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-28"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-28" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> <span class="k">*</span>.dat analyzed
 </code></pre></div>    </div>
     <p>Jamie needs to move her files <code class="language-plaintext highlighter-rouge">fructose.dat</code> and <code class="language-plaintext highlighter-rouge">sucrose.dat</code> to the <code class="language-plaintext highlighter-rouge">analyzed</code> directory.
@@ -2375,7 +2491,7 @@ The <code class="language-plaintext highlighter-rouge">mv</code> command then mo
 </code></pre></div></div>
 
 <blockquote class="question">
-  <h3 id="question-reproduce-a-folder-structure"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Reproduce a folder structure</h3>
+  <div class="box-title question-title" id="question-reproduce-a-folder-structure-1"><i class="far fa-question-circle" aria-hidden="true" ></i> Question: Reproduce a folder structure</div>
 
   <p>You’re starting a new experiment and would like to duplicate the directory
 structure from your previous experiment so you can add new data.</p>
@@ -2396,7 +2512,7 @@ so that your final directory structure looks like this:</p>
 What would the other commands do?</p>
 
   <blockquote class="code-in">
-    <h3 id="code-in-option-1"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Option 1</h3>
+    <div class="box-title code-in-title" id="code-in-option-1-1"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Option 1</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir 2016-05-20
 $ mkdir 2016-05-20/data
 $ mkdir 2016-05-20/data/processed
@@ -2405,7 +2521,7 @@ $ mkdir 2016-05-20/data/raw
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-option-2"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Option 2</h3>
+    <div class="box-title code-in-title" id="code-in-option-2-1"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Option 2</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir 2016-05-20
 $ cd 2016-05-20/
 $ mkdir data/
@@ -2415,21 +2531,21 @@ $ mkdir raw processed
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-option-3"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Option 3</h3>
+    <div class="box-title code-in-title" id="code-in-option-3-1"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Option 3</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir 2016-05-20/data/raw
 $ mkdir 2016-05-20/data/processed
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-option-4"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Option 4</h3>
+    <div class="box-title code-in-title" id="code-in-option-4-1"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Option 4</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p 2016-05-20/data/raw
 $ mkdir -p 2016-05-20/data/processed
 </code></pre></div>    </div>
   </blockquote>
 
   <blockquote class="code-in">
-    <h3 id="code-in-option-5"><i class="far fa-keyboard" aria-hidden="true"></i><span class="visually-hidden">code-in</span> Option 5</h3>
+    <div class="box-title code-in-title" id="code-in-option-5-1"><i class="far fa-keyboard" aria-hidden="true" ></i> Input: Option 5</div>
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir 2016-05-20
 $ cd 2016-05-20
 $ mkdir data
@@ -2438,7 +2554,7 @@ $ mkdir raw processed
   </blockquote>
 
   <blockquote class="solution">
-    <h3 id="solution-solution-13"><i class="far fa-eye" aria-hidden="true"></i><span class="visually-hidden">solution</span> Solution</h3>
+    <div class="box-title solution-title" id="solution-29"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-29" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The first two sets of commands achieve this objective.
 The first set uses relative paths to create the top-level directory before
 the subdirectories.</p>
@@ -2460,10 +2576,12 @@ as the ‘data’ directory.</p>
 </code></pre></div></div>
 
 
+                </section>
 
+                <section aria-label="Tutorial Footer, Feedback, Citation" id="tutorial-footer">
                 
                 <blockquote class="key_points">
-                    <h3><i class="fas fa-key" aria-hidden="true"></i> Key points</h3>
+                    <div class="box-title"><i class="fas fa-key" aria-hidden="true"></i> Key points</div>
                     <ul>
                         
                         <li><p>A shell is a program whose primary purpose is to read commands and run other programs.</p>
@@ -2560,47 +2678,28 @@ as the ‘data’ directory.</p>
 
                 
 
+
+                
+
                 
 
                 <h1>Feedback</h1>
-                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.
+                <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452">how it went</a>.
                 <br>Did you use this material as a learner or student? Click the form below to leave feedback.<i class="fas fa-hand-point-down"></i>
                 </p>
 
-                <div id="feedback-button">
-                    <img src="/training-material/shared/images/feedback.png" title="Click to activate" alt="Click here to load Google feedback frame" />
-                </div>
-                <div id="feedback-form">
-                </div>
-                <script type="text/javascript">
-                    (function (window, document) {
-                        function onDocumentReady(fn) {
-                            if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-                                fn();
-                            } else {
-                                document.addEventListener('DOMContentLoaded', fn);
-                            }
-                        }
-
-                        onDocumentReady(function () {
-                            $("#feedback-button").click(function(evt){
-                                var e = $(evt.target)
-                                e.hide();
-
-                                $("#feedback-form").html(`
-                                    <iframe id="feedback-google" class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=CLI basics (Foundations of Data Science)">Loading...</iframe>
-                                `)
-                            })
-                        });
-                    })(window, document);
-                </script>
-
-
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4VZptFTQ03kHkMz0JyW9b6_S8geU5KjNE_tLM0dixT3ZQmA/viewform?embedded=true&entry.1235803833=CLI basics (Foundations of Data Science)" alt="Feedback form link">
+                    <img src="/training-material/shared/images/feedback.png" alt="Preview of the google form" />
+                </a>
 
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">The Carpentries, Helena Rasche, Bazante Sanders, Erasmus+ Programme, Avans Hogeschool, 2021 <b>CLI basics (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html">https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">
+                            The Carpentries, Helena Rasche, Bazante Sanders, Erasmus+ Programme, Avans Hogeschool,  <b>CLI basics (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html">https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html</a> Online; accessed TODAY
+                        </li>
+                        <li>
+                        Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -2608,52 +2707,65 @@ as the ‘data’ directory.</p>
                     </ol>
                 </p>
 
-
+                <!-- collapsible boxcontaining the BibTeX-formatted citation -->
                 <blockquote class="details">
-                  <h3><i class="fa fa-info-circle" aria-hidden="true"></i><span class="visually-hidden">details</span> BibTeX</h3>
-                  <p style="display: none;">
 
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
+                  <div id="citation-bibtex" class="box-title">
+                    <button type="button" aria-controls="citation-bibtex" aria-expanded="false">
+                      <i class="fas fa-info-circle" aria-hidden="true"></i>
+                      <span class="visually-hidden"></span> BibTeX<span role="button" class="fold-unfold fa fa-minus-square" aria-hidden="true"></span>
+                    </button>
+                   </div>
+                   <p style="display: none;">
+
+                   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
+
+
 <code id="citation-code">@misc{data-science-cli-basics,
 author = "The Carpentries and Helena Rasche and Bazante Sanders and Erasmus+ Programme and Avans Hogeschool",
-title = "CLI basics (Galaxy Training Materials)",
-year = "2021",
-month = "12",
-day = "21"
-url = "\url{https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html}",
-note = "[Online; accessed TODAY]"
+	title = "CLI basics (Galaxy Training Materials)",
+	year = "",
+	month = "",
+	day = ""
+	url = "\url{https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html}",
+	note = "[Online; accessed TODAY]"
 }
-@article{Batut_2018,
-    doi = {10.1016/j.cels.2018.05.012},
-    url = {https://doi.org/10.1016%2Fj.cels.2018.05.012},
-    year = 2018,
-    month = {jun},
-    publisher = {Elsevier {BV}},
-    volume = {6},
-    number = {6},
-    pages = {752--758.e1},
-    author = {B{\'{e}}r{\'{e}}nice Batut and Saskia Hiltemann and Andrea Bagnacani and Dannon Baker and Vivek Bhardwaj and Clemens Blank and Anthony Bretaudeau and Loraine Brillet-Gu{\'{e}}guen and Martin {\v{C}}ech and John Chilton and Dave Clements and Olivia Doppelt-Azeroual and Anika Erxleben and Mallory Ann Freeberg and Simon Gladman and Youri Hoogstrate and Hans-Rudolf Hotz and Torsten Houwaart and Pratik Jagtap and Delphine Larivi{\`{e}}re and Gildas Le Corguill{\'{e}} and Thomas Manke and Fabien Mareuil and Fidel Ram{\'{\i}}rez and Devon Ryan and Florian Christoph Sigloch and Nicola Soranzo and Joachim Wolff and Pavankumar Videm and Markus Wolfien and Aisanjiang Wubuli and Dilmurat Yusuf and James Taylor and Rolf Backofen and Anton Nekrutenko and Björn Grüning},
-    title = {Community-Driven Data Analysis Training for Biology},
-    journal = {Cell Systems}
-}</code>
-                </pre></div></div>
-                </p>
+@article{Hiltemann_2023,
+	doi = {10.1371/journal.pcbi.1010752},
+	url = {https://doi.org/10.1371%2Fjournal.pcbi.1010752},
+	year = 2023,
+	month = {jan},
+	publisher = {Public Library of Science ({PLoS})},
+	volume = {19},
+	number = {1},
+	pages = {e1010752},
+	author = {Saskia Hiltemann and Helena Rasche and Simon Gladman and Hans-Rudolf Hotz and Delphine Larivi{\`{e}}re and Daniel Blankenberg and Pratik D. Jagtap and Thomas Wollmann and Anthony Bretaudeau and Nadia Gou{\'{e}} and Timothy J. Griffin and Coline Royaux and Yvan Le Bras and Subina Mehta and Anna Syme and Frederik Coppens and Bert Droesbeke and Nicola Soranzo and Wendi Bacon and Fotis Psomopoulos and Crist{\'{o}}bal Gallardo-Alba and John Davis and Melanie Christine Föll and Matthias Fahrner and Maria A. Doyle and Beatriz Serrano-Solano and Anne Claire Fouilloux and Peter van Heusden and Wolfgang Maier and Dave Clements and Florian Heyl and Björn Grüning and B{\'{e}}r{\'{e}}nice Batut and},
+	editor = {Francis Ouellette},
+	title = {Galaxy Training: A powerful framework for teaching!},
+	journal = {PLoS Comput Biol} Computational Biology}
+}
+</code>
+                   </pre></div></div>
+                   </p>
                 </blockquote>
 
+                
 
-<script type="text/javascript">
+
+<script>
 // update the date on load, or leave fallback of 'today'
-d = new Date();
-document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", d.toDateString());
-document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
+const citationTodaysDate = new Date();
+document.getElementById("citation-code").innerHTML = document.getElementById("citation-code").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
+document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", citationTodaysDate.toDateString());
 </script>
 
-                <h3><i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!</h3>
+                <i class="far fa-thumbs-up" aria-hidden="true"></i> Congratulations on successfully completing this tutorial!
 
                 
 
                 
                 <blockquote class="agenda follow-up">
+                    <div class="box-title">Go Further</div>
                     <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
                     <ul>
                         
@@ -2665,6 +2777,28 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
         
             <ul>
                 
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
                     
                         
                             
@@ -2706,7 +2840,63 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                     
                         
                     
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                 
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
                     
                         
                     
@@ -2748,6 +2938,32 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                     
                         
                     
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                 
             </ul>
         
@@ -2758,49 +2974,79 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                 </blockquote>
                 
 
+		
+                <blockquote class="agenda follow-up" id="admins-install-missing-tools">
+                    <div class="box-title">Galaxy Administrators: Install the missing tools</div>
+			<p>You can use Ephemeris's <code>shed-tools install</code> command to install the tools used in this tutorial.</p>
+<div class="highlight"><pre class="highlight"><code>shed-tools install [-g GALAXY] [-a API_KEY] -t &lt;(curl https://training.galaxyproject.org/training-material/api/topics/data-science/tutorials/cli-basics/tutorial.json | jq .admin_install_yaml -r)</code></pre></div>
+<p>Alternatively you can copy and paste the following YAML</p>
+<div class="highlight"><pre class="highlight"><code>---
+install_tool_dependencies: true
+install_repository_dependencies: true
+install_resolver_dependencies: true
+tools: []
+</code></pre></div>
+                </blockquote>
+		
+
+
+                </section>
+
             </div>
         </div>
     </div>
-</section>
+</article>
 <br/>
 <br/>
 <br/>
 
         </div>
-        
+        <footer>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6" style="text-align: left">
+				<p>
+					The <a href="https://galaxyproject.org/teach/gtn/">Galaxy Training Network</a>
+					provides researchers with online training materials, connects them with local trainers, and helps promoting FAIR and Open Science practices worldwide. All contributions are subject to the <a rel="code-of-conduct" href="https://galaxyproject.org/community/coc/">Galaxy Project Code of Conduct</a>.
+				</p>
+				<p>
+				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
+				</p>
+				<p>
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				</p>
+			</div>
+			<div class="col-sm-6" style="text-align: right">
+				
+				<p>
+					Resource <i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>: <a href="https://gxy.io/GTN:T00076">https://gxy.io/GTN:T00076</a>
+				</p>
+				
+				<p>
+					<i>This Material</i>:
+					
+					is licensed under
+					<a rel="license" href="https://spdx.org/licenses/CC-BY-4.0">
+						Creative Commons Attribution 4.0 International License
+					</a>
+				</p>
+				<p>
+					<a href="https://github.com/galaxyproject/training-material/edit/main/topics/data-science/tutorials/cli-basics/tutorial.md" title="Edit on GitHub">
+					<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> Edit on GitHub
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    </div>
+</footer>
+
+
+        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
-    <script type="text/javascript" src="/training-material/assets/js/jquery.slim.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap.min.js?v=3"></script>
-    <script type="text/javascript" src="/training-material/assets/js/details-element-polyfill.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="/training-material/assets/js/bootstrap-toc.min.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/main.js"></script>
-    <script type="text/javascript" src="/training-material/assets/js/theme.js"></script>
-
-    <script type="text/javascript" src="/training-material/assets/js/clipboard.min.js"></script>
-    <script type="text/javascript">
-    var snippets=document.querySelectorAll('div.highlight');
-    [].forEach.call(snippets,function(snippet){
-        snippet.firstChild.insertAdjacentHTML('beforebegin','<button class="btn btn-light" data-clipboard-snippet><i class="fa fa-copy"></i>&nbsp;Copy</button>');
-    });
-
-    var clipboardSnippets=new ClipboardJS('[data-clipboard-snippet]',{
-        target:function(trigger){return trigger.nextElementSibling;
-    }});
-    </script>
-    
-
-    <script type="text/javascript">
-        if(window.location.hostname === "galaxyproject.github.io") {
-            // Redirect
-            var redirect = "https://training.galaxyproject.org" + window.location.pathname + window.location.search;
-            $('div.container.main-content').prepend("<div class='alert alert-warning'><strong>Note: </strong>This content has a new home at <a href=\"" + redirect + "\">" + redirect + "</a>, which you will be redirected to in 5 seconds.</div>");
-
-            window.setTimeout(function(){
-                window.location.href = redirect;
-            }, 5000)
-
-        }
-    </script>
 </html>
