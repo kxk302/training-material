@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>GTN Contributor: Wendi Bacon</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -103,7 +83,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -187,7 +167,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -234,8 +214,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <div class="container main-content" role="main">
         
 
+
 <script type="application/ld+json">
-	
 	{
   "@context": "https://schema.org",
   "@type": "Person",
@@ -253,7 +233,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
       "@type": "Organization",
       "email": "galaxytrainingnetwork@gmail.com",
       "name": "Galaxy Training Network",
-      "url": "https://galaxyproject.org/teach/gtn/"
+      "url": "https://training.galaxyproject.org",
+      "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
     }
   ],
   "identifier": "https://orcid.org/0000-0002-8170-8806",
@@ -267,16 +248,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 }
 
 </style>
-<section class="contributor-nomadscientist">
+<section class="contributor-page contributor-nomadscientist">
 	<div class="stats">
 		<div class="row">
-
-			<div class="col-md-3">
-				<div>
+			<div class="col-md-9">
+				<hgroup>
+					<h1>
+						Wendi Bacon
+					</h1>
 				
-					<img src="https://avatars.githubusercontent.com/nomadscientist" alt="github avatar" >
-				
-				</div>
+				</hgroup>
 
 				
 				<p class="text-muted">
@@ -285,70 +266,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 				
 
 				
-
-				
-				<div class="contact-items">
-					<a title="GitHub" href="https://github.com/nomadscientist">
-						<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> nomadscientist
-					</a>
-				</div>
 				
 
 				
-
-				
-				<div class="contact-items">
-					<a title="E-mail" href="mailto:wendi.bacon@open.ac.uk">
-						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> wendi.bacon@open.ac.uk
-					</a>
-				</div>
 				
 
-				
-				<div class="contact-items">
-					<a title="matrix" href="https://matrix.to/#/@nomadscientist:matrix.org">
-						<i class="fab fa-gitter" aria-hidden="true"></i><span class="visually-hidden">gitter</span> nomadscientist:matrix.org
-					</a>
-				</div>
-				
-
-				
-
-				
-				<div class="contact-items">
-					<a title="Twitter" href="https://twitter.com/WendiBacon1">
-						<i class="fab fa-twitter" aria-hidden="true"></i><span class="visually-hidden">twitter</span> WendiBacon1
-					</a>
-				</div>
-				
-
-				
-
-				
-				<div class="contact-items">
-					<a title="ORCID" href="https://orcid.org/0000-0002-8170-8806">
-						<i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">orcid</span> 0000-0002-8170-8806
-					</a>
-				</div>
-				
-
-				
-				<div class="contact-items">
-					<img src="/training-material/assets/images/elixir/elixir-uk.svg" alt="elixir logo for United Kingdom">
-				</div>
-				
-
-				<h4>Favourite Topics</h4>
-				<canvas id="myChart" height="300px"></canvas>
-				<h4>Favourite Formats</h4>
-				<canvas id="slidesVsTutorials" height="300px"></canvas>
-
-			</div>
-
-			<div class="col-md-9">
-				<h1>
-					Wendi Bacon
-				</h1>
 				
 				
 
@@ -402,23 +324,6 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.html">
-						Filter, plot and explore single-cell RNA-seq data (Scanpy)
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
 						<a href="/training-material//topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial.html">
 						Combining single cell datasets after pre-processing
 						</a>
@@ -436,76 +341,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html">
-						Bulk matrix to ESet | Creating the bulk RNA-seq dataset for deconvolution
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scanpy_parameter_iterator/tutorial.html">
-						Scanpy Parameter Iterator
-						</a>
-						
-						
-	<abbr title="This person tested the tutorial to ensure it works correctly for students, or reported issues with the tutorial.">⚙️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_monocle3-rstudio/tutorial.html">
-						Inferring single cell trajectories (Monocle3, R)
-						</a>
-						
-						
-	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_alevin/tutorial.html">
-						Generating a single cell matrix using Alevin
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_JUPYTER-trajectories/tutorial.html">
-						Inferring single cell trajectories (Scanpy, Python)
+						<a href="/training-material//topics/single-cell/tutorials/bulk-music-2-preparescref/tutorial.html">
+						Matrix Exchange Format to ESet | Creating a single-cell RNA-seq reference dataset for deconvolution
 						</a>
 						
 						
@@ -538,29 +375,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/bulk-music-2-preparescref/tutorial.html">
-						Matrix Exchange Format to ESet | Creating a single-cell RNA-seq reference dataset for deconvolution
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_monocle3-rstudio/tutorial.html">
+						Inferring single cell trajectories (Monocle3, R)
 						</a>
 						
 						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case-jupyter_basic-pipeline/tutorial.html">
-						Filter, plot and explore single-cell RNA-seq data (Scanpy, Python)
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
 
 
 					</li>
@@ -589,29 +409,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_FilterPlotandExploreRStudio/tutorial.html">
-						Filter, plot, and explore single cell RNA-seq data (Seurat, R)
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_JUPYTER-trajectories/tutorial.html">
+						Inferring single cell trajectories (Scanpy, Python)
 						</a>
 						
 						
-	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/single-cell">
-							Single Cell
-						</a>
-						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.html">
-						Removing the effects of the cell cycle
-						</a>
-						
-						
-	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
 
 
 					</li>
@@ -657,6 +460,108 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial.html">
+						Filter, plot and explore single-cell RNA-seq data (Scanpy)
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_cell-cycle/tutorial.html">
+						Removing the effects of the cell cycle
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scanpy_parameter_iterator/tutorial.html">
+						Scanpy Parameter Iterator
+						</a>
+						
+						
+	<abbr title="This person tested the tutorial to ensure it works correctly for students, or reported issues with the tutorial.">⚙️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_FilterPlotandExploreRStudio/tutorial.html">
+						Filter, plot, and explore single cell RNA-seq data (Seurat, R)
+						</a>
+						
+						
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case-jupyter_basic-pipeline/tutorial.html">
+						Filter, plot and explore single-cell RNA-seq data (Scanpy, Python)
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/bulk-music-3-preparebulk/tutorial.html">
+						Bulk matrix to ESet | Creating the bulk RNA-seq dataset for deconvolution
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
 						<a href="/training-material//topics/single-cell/tutorials/scrna-preprocessing-tenx/tutorial.html">
 						Pre-processing of 10X Single-Cell RNA Datasets
 						</a>
@@ -674,8 +579,25 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial_ES.html">
-						Filtrado, representación y exploración de secuenciación de ARN de células únicas
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_alevin/tutorial.html">
+						Generating a single cell matrix using Alevin
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/single-cell">
+							Single Cell
+						</a>
+						/
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial_ES.html">
+						Generación de una matriz de datos de secuenciación de ARN de células únicas utilizando Alevin
 						</a>
 						
 						
@@ -691,8 +613,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Single Cell
 						</a>
 						/
-						<a href="/training-material//topics/single-cell/tutorials/scrna-case_alevin-combine-datasets/tutorial_ES.html">
-						Generación de una matriz de datos de secuenciación de ARN de células únicas utilizando Alevin
+						<a href="/training-material//topics/single-cell/tutorials/scrna-case_basic-pipeline/tutorial_ES.html">
+						Filtrado, representación y exploración de secuenciación de ARN de células únicas
 						</a>
 						
 						
@@ -815,7 +737,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a><a href="/training-material/hall-of-fame/pavanvidem/" class="contributor-badge contributor-pavanvidem"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pavanvidem?s=36" alt="Avatar" width="36" height="36">Pavankumar Videm</a>
+			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a><a href="/training-material/hall-of-fame/pavanvidem/" class="contributor-badge contributor-pavanvidem"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/pavanvidem?s=36" alt="Pavankumar Videm avatar" width="36" class="avatar" />
+    Pavankumar Videm</a>
 		</td>
 	</tr>
 	
@@ -833,7 +757,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people managed and provided infrastructure to the GTN or for training purposes">Infrastructure</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/kysrpex/" class="contributor-badge contributor-kysrpex"><img src="https://avatars.githubusercontent.com/kysrpex?s=36" alt="Avatar" width="36" height="36">José Manuel Domínguez</a></td>
+			<a href="/training-material/hall-of-fame/kysrpex/" class="contributor-badge contributor-kysrpex"><img src="https://avatars.githubusercontent.com/kysrpex?s=36" alt="José Manuel Domínguez avatar" width="36" class="avatar" />
+    José Manuel Domínguez</a></td>
 	</tr>
 	
 </table>
@@ -892,7 +817,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a>
+			<a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Helena Rasche avatar" width="36" class="avatar" />
+    Helena Rasche</a>
 		</td>
 	</tr>
 	
@@ -906,7 +832,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people tested the tutorial to ensure it works correctly for students, or reported issues with the tutorial.">Tester(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a></td>
+			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a></td>
 	</tr>
 	
 
@@ -969,7 +896,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Avatar" width="36" height="36">Mehmet Tekman</a><a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a>
+			<a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Mehmet Tekman avatar" width="36" class="avatar" />
+    Mehmet Tekman</a><a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a>
 		</td>
 	</tr>
 	
@@ -1042,7 +971,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a><a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Avatar" width="36" height="36">Mehmet Tekman</a>
+			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a><a href="/training-material/hall-of-fame/mtekman/" class="contributor-badge contributor-mtekman"><img src="https://avatars.githubusercontent.com/mtekman?s=36" alt="Mehmet Tekman avatar" width="36" class="avatar" />
+    Mehmet Tekman</a>
 		</td>
 	</tr>
 	
@@ -1075,7 +1006,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <hr/>
     <p class="card-text">
       
-        Single-cell analysis now has it’s own topic! These tutorials were previously part of the transcriptomics topic, but due to the amazing efforts byWendi Bacon,Mehmet Tekmanand others, we now have so many single-cell analysis tutorials that they deserve their own dedicated topic! From introductory slides and practicals, to case study tutorials generating cell clusters and trajectories from raw sequencing files, and even a growing subtopic of smaller tips and tricks for adapting analysis to user needs, the single cell topic either has what you need or is working on it. Come learn or get involved!
+        Single-cell analysis now has it’s own topic! These tutorials were previously part of the transcriptomics topic, but due to the amazing efforts by
+    Wendi Bacon,
+    Mehmet Tekmanand others, we now have so many single-cell analysis tutorials that they deserve their own dedicated topic! From introductory slides and practicals, to case study tutorials generating cell clusters and trajectories from raw sequencing files, and even a growing subtopic of smaller tips and tricks for adapting analysis to user needs, the single cell topic either has what you need or is working on it. Come learn or get involved!
 
       
     </p>
@@ -1115,7 +1048,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Avatar" width="36" height="36">Wendi Bacon</a><a href="/training-material/hall-of-fame/beatrizserrano/" class="contributor-badge contributor-beatrizserrano"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/beatrizserrano?s=36" alt="Avatar" width="36" height="36">Beatriz Serrano-Solano</a><a href="/training-material/hall-of-fame/pclo/" class="contributor-badge contributor-pclo"><img src="https://avatars.githubusercontent.com/pclo?s=36" alt="Avatar" width="36" height="36">Patricia Carvajal López</a><a href="/training-material/hall-of-fame/ales-ibt/" class="contributor-badge contributor-ales-ibt"><img src="https://avatars.githubusercontent.com/ales-ibt?s=36" alt="Avatar" width="36" height="36">Alejandra Escobar-Zepeda</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Avatar" width="36" height="36">Saskia Hiltemann</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a>
+			<a href="/training-material/hall-of-fame/nomadscientist/" class="contributor-badge contributor-nomadscientist"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/nomadscientist?s=36" alt="Wendi Bacon avatar" width="36" class="avatar" />
+    Wendi Bacon</a><a href="/training-material/hall-of-fame/beatrizserrano/" class="contributor-badge contributor-beatrizserrano"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/beatrizserrano?s=36" alt="Beatriz Serrano-Solano avatar" width="36" class="avatar" />
+    Beatriz Serrano-Solano</a><a href="/training-material/hall-of-fame/pclo/" class="contributor-badge contributor-pclo"><img src="https://avatars.githubusercontent.com/pclo?s=36" alt="Patricia Carvajal López avatar" width="36" class="avatar" />
+    Patricia Carvajal López</a><a href="/training-material/hall-of-fame/ales-ibt/" class="contributor-badge contributor-ales-ibt"><img src="https://avatars.githubusercontent.com/ales-ibt?s=36" alt="Alejandra Escobar-Zepeda avatar" width="36" class="avatar" />
+    Alejandra Escobar-Zepeda</a><a href="/training-material/hall-of-fame/shiltemann/" class="contributor-badge contributor-shiltemann"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/shiltemann?s=36" alt="Saskia Hiltemann avatar" width="36" class="avatar" />
+    Saskia Hiltemann</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Helena Rasche avatar" width="36" class="avatar" />
+    Helena Rasche</a>
 		</td>
 	</tr>
 	
@@ -1146,7 +1085,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <hr/>
     <p class="card-text">
       
-        ¡El primer tutorial en español ya está disponible! Galaxy siempre ha tenido tutoriales traducidos automáticamente mediante Google-Translate, ahora nos estamos embarcando en un nuevo proyecto para estudiar la experiencia de aprendizaje con tutoriales en bioinformática traducidos por humanos. Nuestro objetivo es crear un paquete de tutoriales para el análisis de datos single-cell (célula única) en primera instancia, con el fin de estudiar su uso y utilidad en un taller para hablantes nativos de español. Agradecemos enormemente a las nuevas participantes Patricia Carvajal López y Alejandra Escobar-Zepeda (EMBL-EBI) así como a las miembros existentes de GTN Beatriz Serrano-Solano (University of Freiburg), Saskia Hiltemann &amp; Helena Rasche (Erasmus-MC), por su arduo trabajo en este proyecto de traducción y mantenimiento y, por supuesto, a Wendi Bacon (The Open University/EBI) como líder de proyecto.
+        ¡El primer tutorial en español ya está disponible! Galaxy siempre ha tenido tutoriales traducidos automáticamente mediante Google-Translate, ahora nos estamos embarcando en un nuevo proyecto para estudiar la experiencia de aprendizaje con tutoriales en bioinformática traducidos por humanos. Nuestro objetivo es crear un paquete de tutoriales para el análisis de datos single-cell (célula única) en primera instancia, con el fin de estudiar su uso y utilidad en un taller para hablantes nativos de español. Agradecemos enormemente a las nuevas participantes 
+    Patricia Carvajal López y 
+    Alejandra Escobar-Zepeda (EMBL-EBI) así como a las miembros existentes de GTN 
+    Beatriz Serrano-Solano (University of Freiburg), 
+    Saskia Hiltemann &amp; 
+    Helena Rasche (Erasmus-MC), por su arduo trabajo en este proyecto de traducción y mantenimiento y, por supuesto, a 
+    Wendi Bacon (The Open University/EBI) como líder de proyecto.
 
       
     </p>
@@ -1160,6 +1105,81 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                 
                 </div>
 				
+
+			</div>
+
+			<div class="col-md-3">
+				<div>
+					<img src="https://avatars.githubusercontent.com/nomadscientist?s=200" alt="Wendi Bacon avatar" width="200" class="avatar" />
+				</div>
+
+				<h2>External Links</h2>
+				
+
+				
+				<div class="contact-items">
+					<a title="GitHub" href="https://github.com/nomadscientist">
+						<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> nomadscientist
+					</a>
+				</div>
+				
+
+				
+
+				
+				<div class="contact-items">
+					<a title="E-mail" href="mailto:wendi.bacon@open.ac.uk">
+						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> wendi.bacon@open.ac.uk
+					</a>
+				</div>
+				
+
+				
+				<div class="contact-items">
+					<a title="matrix" href="https://matrix.to/#/@nomadscientist:matrix.org">
+						<i class="fab fa-gitter" aria-hidden="true"></i><span class="visually-hidden">gitter</span> nomadscientist:matrix.org
+					</a>
+				</div>
+				
+
+				
+
+				
+				<div class="contact-items">
+					<a title="Twitter" href="https://twitter.com/WendiBacon1">
+						<i class="fab fa-twitter" aria-hidden="true"></i><span class="visually-hidden">twitter</span> WendiBacon1
+					</a>
+				</div>
+				
+
+				
+
+				
+				<div class="contact-items">
+					<a title="ORCID" href="https://orcid.org/0000-0002-8170-8806">
+						<i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">orcid</span> 0000-0002-8170-8806
+					</a>
+				</div>
+				
+
+				
+				<div class="contact-items">
+					<img src="/training-material/assets/images/elixir/elixir-uk.svg" alt="elixir logo for United Kingdom">
+				</div>
+				
+
+				<p>Favourite Topics</p>
+				<canvas id="myChart" height="300px"></canvas>
+				<p>Favourite Formats</p>
+				<canvas id="slidesVsTutorials" height="300px"></canvas>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <script src="/training-material/assets/js/Chart.bundle.js"></script>
 
 <script>
@@ -1392,14 +1412,7 @@ var chart2 = new Chart(ctx2, {
 		}
 	}
 });
-				</script>
-
-			</div>
-
-			</div>
-		</div>
-	</div>
-</section>
+</script>
 
         </div>
         <footer>
@@ -1415,7 +1428,7 @@ var chart2 = new Chart(ctx2, {
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1439,11 +1452,7 @@ var chart2 = new Chart(ctx2, {
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

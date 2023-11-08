@@ -69,6 +69,10 @@
       },
       "fediverse": "https://piaille.fr/@bebatut",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries",
+        "uni-freiburg"
+      ],
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -83,6 +87,11 @@
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
       "fediverse_flavor": "akkoma",
+      "affiliations": [
+        "gallantries",
+        "erasmusmc",
+        "avans-atgm"
+      ],
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -189,7 +198,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "GTN - Sequence Analyses - Mapping - Jbrowse (imported from uploaded file)",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "mapping.ga",
@@ -203,6 +214,7 @@
       "creators": [
 
       ],
+      "name": "GTN - Sequence Analyses - Mapping (imported from uploaded file)",
       "test_results": {
         "eu": {
           "summary": {
@@ -1978,7 +1990,8 @@
           ],
           "version": "0.1"
         }
-      }
+      },
+      "modified": "2023-11-08 14:21:42 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/mapping/tutorial.json",

@@ -69,7 +69,9 @@
           "name": "RECETOX"
         }
       ],
-      "test_results": null
+      "name": "GC MS using XCMS",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.json",
@@ -266,6 +268,11 @@
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
       "fediverse_flavor": "akkoma",
+      "affiliations": [
+        "gallantries",
+        "erasmusmc",
+        "avans-atgm"
+      ],
       "contact_for_training": false,
       "location": {
         "country": "NL",

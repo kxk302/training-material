@@ -47,6 +47,10 @@
       },
       "fediverse": "https://piaille.fr/@bebatut",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries",
+        "uni-freiburg"
+      ],
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -117,7 +121,9 @@
           "name": "Wolfgang Maier"
         }
       ],
-      "test_results": null
+      "name": "Exome Seq Training Pre-Mapped W Cached Ref",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:43 +0000"
     },
     {
       "workflow": "workflow_exome_seq_full.ga",
@@ -135,7 +141,9 @@
           "name": "Wolfgang Maier"
         }
       ],
-      "test_results": null
+      "name": "Exome Seq Training Full W Cached Ref",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:43 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/exome-seq/tutorial.json",
@@ -158,6 +166,11 @@
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
+        "usegalaxy": "true"
+      },
+      {
+        "url": "https://usegalaxy.fr/",
+        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

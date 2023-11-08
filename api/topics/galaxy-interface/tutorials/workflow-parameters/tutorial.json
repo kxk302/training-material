@@ -40,6 +40,11 @@
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
       "fediverse_flavor": "akkoma",
+      "affiliations": [
+        "gallantries",
+        "erasmusmc",
+        "avans-atgm"
+      ],
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -110,7 +115,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Select First N Lines",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:41 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.json",
@@ -132,11 +139,6 @@
       {
         "url": "https://galaxy.hyphy.org/",
         "name": "HyPhy HIV NGS Tools",
-        "usegalaxy": "false"
-      },
-      {
-        "url": "http://pepsimili.e-nios.com:8080/",
-        "name": "PepSimili",
         "usegalaxy": "false"
       },
       {

@@ -85,8 +85,10 @@
     <li><a href="../bin/publish-archive.html">publish-archive</a>
     <li><a href="../bin/schema-contributors_yaml.html">schema-contributors.yaml</a>
     <li><a href="../bin/schema-faq_yaml.html">schema-faq.yaml</a>
+    <li><a href="../bin/schema-funders_yaml.html">schema-funders.yaml</a>
     <li><a href="../bin/schema-learning-pathway_yaml.html">schema-learning-pathway.yaml</a>
     <li><a href="../bin/schema-news_yaml.html">schema-news.yaml</a>
+    <li><a href="../bin/schema-organisations_yaml.html">schema-organisations.yaml</a>
     <li><a href="../bin/schema-quiz_yaml.html">schema-quiz.yaml</a>
     <li><a href="../bin/schema-requirement-external_yaml.html">schema-requirement-external.yaml</a>
     <li><a href="../bin/schema-requirement-internal_yaml.html">schema-requirement-internal.yaml</a>
@@ -133,7 +135,12 @@ description:
     required: true
     description: |
         Description of the pathway
-
+type:
+    type: str
+    enum:
+      - use
+      - admin-dev
+      - instructors
 cover-image:
     type: str
     description: cover image
@@ -153,21 +160,58 @@ editorial_board:
         - type: str
           required: true
           description: A contributor&#39;s ID in the CONTRIBUTORS.yaml file.
-            #enum:
-            #- CONTRIBUTORS
+          enum:
+          - CONTRIBUTORS
 
 funding:
     type: seq
     description: These entities provided funding support for the development of this resource
     sequence:
     - type: str
-      #enum:
-      #- CONTRIBUTORS
+      enum:
+      - ORGANISATIONS
+      - FUNDERS
 tags:
     type: seq
+    description: Any relevant tags that would help a user discover this LP
     sequence:
         - type: str
     required: true
+
+type:
+    type: str
+    description: |
+        The type of topic, some have subtly different behaviours.
+
+        `admin-dev`
+        :  should be used for admin and developer topics that are not scientifically focused.
+
+        `basics`
+        :  Only used for galaxy-interface type topics
+
+        `data-science`
+        :  Topics which are not necessarily Galaxy focused but expand into broader communities
+
+        `use`
+        :  These topics use galaxy for some analysis
+
+        `instructors`
+        :  Specific to topics related to instruction of Galaxy
+    required: true
+    enum:
+        - admin-dev
+        - basics
+        - data-science
+        - use
+        - instructors
+
+draft:
+    type: bool
+    description: |
+        `true` to hide your LP from the LP list (optional). This
+        is useful if you need an LP for a workshop, but have not
+        finished making it up to GTN standards.
+
 pathway:
     type: seq
     required: true
@@ -181,7 +225,6 @@ pathway:
               type: str
             tutorials:
               type: seq
-              required: true
               sequence:
                 - type: map
                   mapping:

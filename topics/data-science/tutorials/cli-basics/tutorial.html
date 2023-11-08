@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>CLI basics</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,22 +57,21 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
 <meta name="DC.title" content="CLI basics">
 <meta name="DC.publisher" content="Galaxy Training Network">
-<meta name="DC.date" content="2023-01-23 14:28:11 +0000">
+<meta name="DC.date" content="2023-10-23 09:44:54 +0000">
 <meta name="DC.creator" content="The Carpentries">
 <meta name="DC.creator" content="Helena Rasche">
 <meta name="DC.creator" content="Bazante Sanders">
-<meta name="DC.creator" content="Erasmus+ Programme">
+<meta name="DC.creator" content="Gallantries: Bridging Training Communities in Life Science, Environment and Health">
 <meta name="DC.creator" content="Avans Hogeschool">
 
         
@@ -119,7 +99,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   },
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "Students"
+    "educationalRole": "Data-Science Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -130,9 +110,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "dateModified": "2023-01-23 14:28:11 +0000",
+  "dateModified": "2023-10-23 09:44:54 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "CLI basics",
   "interactivityType": "mixed",
@@ -143,25 +124,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00076",
   "accessMode": [
     "textual",
     "visual"
@@ -186,11 +170,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/data-science/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'CLI basics' tutorial",
+  "name": "CLI basics",
   "url": "https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html",
+  "version": 13,
   "timeRequired": "PT1H",
   "teaches": "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.\n - Explain when and why command-line interfaces should be used instead of graphical interfaces.\n - Explain the similarities and differences between a file and a directory.\n - Translate an absolute path into a relative path and vice versa.\n - Construct absolute and relative paths that identify specific files and directories.\n - Use options and arguments to change the behaviour of a shell command.\n - Demonstrate the use of tab completion and explain its advantages.\n - Create a directory hierarchy that matches a given diagram.\n - Create files in that hierarchy using an editor or by copying and renaming existing files.\n - Delete, copy and move specified files and/or directories.",
-  "keywords": "data-science, bash, jupyter-notebook",
+  "keywords": [
+    "Foundations of Data Science",
+    "bash",
+    "jupyter-notebook"
+  ],
   "description": "The questions this  addresses are:\n - What is a command shell and why would I use one?\n - How can I move around on my computer?\n - How can I see what files and directories I have?\n - How can I specify the location of a file or directory on my computer?\n - How can I create, copy, and delete files and directories?\n - How can I edit files?\n\n\nThe objectives are:\n - Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.\n - Explain when and why command-line interfaces should be used instead of graphical interfaces.\n - Explain the similarities and differences between a file and a directory.\n - Translate an absolute path into a relative path and vice versa.\n - Construct absolute and relative paths that identify specific files and directories.\n - Use options and arguments to change the behaviour of a shell command.\n - Demonstrate the use of tab completion and explain its advantages.\n - Create a directory hierarchy that matches a given diagram.\n - Create files in that hierarchy using an editor or by copying and renaming existing files.\n - Delete, copy and move specified files and/or directories.\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -215,7 +204,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -236,7 +226,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0001-9760-8992",
@@ -259,7 +250,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -270,17 +262,18 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
         "@type": "CreativeWork"
       },
-      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/erasmusplus/",
-      "name": "Erasmus+ Programme",
-      "image": "https://avatars.githubusercontent.com/erasmusplus",
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/gallantries/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/gallantries/",
+      "name": "Gallantries: Bridging Training Communities in Life Science, Environment and Health",
+      "image": "https://avatars.githubusercontent.com/gallantries",
       "description": "A contributor to the GTN project.",
       "memberOf": [
         {
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -301,7 +294,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     }
@@ -338,7 +332,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -430,7 +424,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -505,7 +499,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=36" alt="Avatar" width="36" height="36">The Carpentries</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Avatar" width="36" height="36">Helena Rasche</a><a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=36" alt="Avatar" width="36" height="36">Bazante Sanders</a><a href="/training-material/hall-of-fame/erasmusplus/" class="contributor-badge contributor-erasmusplus"><img src="https://www.erasmusplus.nl/assets/images/logo.png" alt="Avatar" width="36" height="36">Erasmus+ Programme</a><a href="/training-material/hall-of-fame/avans-atgm/" class="contributor-badge contributor-avans-atgm"><img src="https://avatars.githubusercontent.com/avans-atgm?s=36" alt="Avatar" width="36" height="36">Avans Hogeschool</a>
+		Authors: <a href="/training-material/hall-of-fame/carpentries/" class="contributor-badge contributor-carpentries"><img src="https://avatars.githubusercontent.com/carpentries?s=36" alt="The Carpentries avatar" width="36" class="avatar" />
+    The Carpentries</a><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge contributor-hexylena"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/hexylena?s=36" alt="Helena Rasche avatar" width="36" class="avatar" />
+    Helena Rasche</a><a href="/training-material/hall-of-fame/bazante1/" class="contributor-badge contributor-bazante1"><img src="https://avatars.githubusercontent.com/bazante1?s=36" alt="Bazante Sanders avatar" width="36" class="avatar" />
+    Bazante Sanders</a><a href="/training-material/hall-of-fame/gallantries/" class="contributor-badge contributor-gallantries"><img src="https://gallantries.github.io/assets/images/gallantries-logo.png" alt="Gallantries: Bridging Training Communities in Life Science, Environment and Health avatar" width="36" class="avatar" />
+    Gallantries</a><a href="/training-material/hall-of-fame/avans-atgm/" class="contributor-badge contributor-avans-atgm"><img src="/training-material/shared/images/logo-avans.png" alt="Avans Hogeschool avatar" width="36" class="avatar" />
+    Avans Hogeschool</a>
 	</div>
 
 </div>
@@ -658,7 +657,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
             
         </ul>
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Jan 23, 2023 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Oct 23, 2023 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
 		
             
@@ -666,8 +665,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00076">https://gxy.io/GTN:T00076</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00076">https://gxy.io/GTN:T00076</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 13 </div>
+
     </blockquote>
     </section>
 
@@ -892,7 +894,7 @@ You may have seen it in a text editor program, for example.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-command-not-found-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-command-not-found-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Command not found<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-command-not-found-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-command-not-found-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Command not found</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>If the shell can’t find a program whose name is the command you typed, it
 will print an error message such as:</p>
 
@@ -978,7 +980,7 @@ a command is important. <code class="language-plaintext highlighter-rouge">pwd</
 <p>Try running it now.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-home-directory-variation-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-home-directory-variation-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Home Directory Variation<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-home-directory-variation-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-home-directory-variation-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Home Directory Variation</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The home directory path will look different on different operating systems.</p>
 
@@ -1043,7 +1045,7 @@ we know that <code class="language-plaintext highlighter-rouge">/Users</code> is
 because its name begins with <code class="language-plaintext highlighter-rouge">/</code>.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-slashes-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-slashes-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Slashes<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-slashes-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-slashes-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Slashes</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Notice that there are two meanings for the <code class="language-plaintext highlighter-rouge">/</code> character.
 When it appears at the front of a file or directory name,
@@ -1094,7 +1096,7 @@ Any names in our output that don’t have a classification symbol
 are plain old <strong>files</strong>.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-real-terminal-tip-clearing-your-terminal-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-real-terminal-tip-clearing-your-terminal-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Real Terminal Tip: Clearing your terminal<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-real-terminal-tip-clearing-your-terminal-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-real-terminal-tip-clearing-your-terminal-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Real Terminal Tip: Clearing your terminal</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>If your screen gets too cluttered, you can clear your terminal using the
 <code class="language-plaintext highlighter-rouge">clear</code> command. You can still access previous commands using <kbd>↑</kbd>
@@ -1121,7 +1123,7 @@ information on how to use the command or program.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-unsupported-command-line-options-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-unsupported-command-line-options-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Unsupported command-line options<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-unsupported-command-line-options-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-unsupported-command-line-options-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Unsupported command-line options</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>If you try to use an option (flag) that is not supported, <code class="language-plaintext highlighter-rouge">ls</code> and other commands
 will usually print an error message similar to:</p>
 
@@ -1210,7 +1212,7 @@ If so, you can move between hits using <kbd>N</kbd> (for moving forward) and
 <p>To <strong>quit</strong> the <code class="language-plaintext highlighter-rouge">man</code> pages, press <kbd>Q</kbd>.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-manual-pages-on-the-web-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-manual-pages-on-the-web-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Manual pages on the web<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-manual-pages-on-the-web-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-manual-pages-on-the-web-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Manual pages on the web</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Of course, there is a third way to access help for commands:
 searching the internet via your web browser.
@@ -1234,7 +1236,7 @@ as file permissions and ownership), but the rest should be useful
 nevertheless.</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-15"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-15" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-15"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-15" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The <code class="language-plaintext highlighter-rouge">-l</code> option makes <code class="language-plaintext highlighter-rouge">ls</code> use a <strong>l</strong>ong listing format, showing not only
 the file/directory names but also additional information, such as the file size
 and the time of its last modification. If you use both the <code class="language-plaintext highlighter-rouge">-h</code> option and the <code class="language-plaintext highlighter-rouge">-l</code> option,
@@ -1255,7 +1257,7 @@ Hint: You may need to use the <code class="language-plaintext highlighter-rouge"
 last changed dates.</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-16"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-16" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-16"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-16" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The most recently changed file is listed last when using <code class="language-plaintext highlighter-rouge">-rt</code>. This
 can be very useful for finding your most recent edits or checking to
 see if a new output file was written.</p>
@@ -1378,7 +1380,7 @@ with a single <code class="language-plaintext highlighter-rouge">-</code> and no
 equivalent to <code class="language-plaintext highlighter-rouge">ls -Fa</code>.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-other-hidden-files-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-other-hidden-files-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Other Hidden Files<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-other-hidden-files-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-other-hidden-files-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Other Hidden Files</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>In addition to the hidden directories <code class="language-plaintext highlighter-rouge">..</code> and <code class="language-plaintext highlighter-rouge">.</code>, you may also see a file
 called <code class="language-plaintext highlighter-rouge">.bash_profile</code>. This file usually contains shell configuration
@@ -1458,7 +1460,7 @@ ls -F
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-two-more-shortcuts-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-more-shortcuts-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Two More Shortcuts<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-two-more-shortcuts-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-more-shortcuts-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Two More Shortcuts</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The shell interprets a tilde (<code class="language-plaintext highlighter-rouge">~</code>) character at the start of a path to
 mean “the current user’s home directory”. For example, if Nelle’s home
@@ -1514,7 +1516,7 @@ which is <code class="language-plaintext highlighter-rouge">/Users/amanda</code>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-17"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-17" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-17"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-17" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: <code class="language-plaintext highlighter-rouge">.</code> stands for the current directory.</li>
       <li>No: <code class="language-plaintext highlighter-rouge">/</code> stands for the root directory.</li>
@@ -1545,7 +1547,7 @@ what will <code class="language-plaintext highlighter-rouge">ls -F ../backup</co
   <p><a href="../../images/carpentries-cli/filesystem-challenge.svg" rel="noopener noreferrer"><img src="../../images/carpentries-cli/filesystem-challenge.svg" alt="A directory tree below the Users directory where '/Users' contains the directories 'backup' and 'thing'; '/Users/backup' contains 'original', 'pnas_final' and 'pnas_sub'; '/Users/thing' contains 'backup'; and '/Users/thing/backup' contains '2012-12-01', '2013-01-08' and '2013-01-27'. " width="522" height="331" loading="lazy" /></a></p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-18"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-18" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-18"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-18" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: there <em>is</em> a directory <code class="language-plaintext highlighter-rouge">backup</code> in <code class="language-plaintext highlighter-rouge">/Users</code>.</li>
       <li>No: this is the content of <code class="language-plaintext highlighter-rouge">Users/thing/backup</code>, but with <code class="language-plaintext highlighter-rouge">..</code>, we asked for one level further up.</li>
@@ -1575,7 +1577,7 @@ what command(s) will result in the following output:</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-19"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-19" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-19"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-19" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No: <code class="language-plaintext highlighter-rouge">pwd</code> is not the name of a directory.</li>
       <li>Yes: <code class="language-plaintext highlighter-rouge">ls</code> without directory argument lists files and directories in the current directory.</li>
@@ -1638,7 +1640,7 @@ but she found them hard to understand after a couple of years.
 a directory called <code class="language-plaintext highlighter-rouge">revised-revised-results-3</code>.)</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-sorting-output-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-sorting-output-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Sorting Output<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-sorting-output-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-sorting-output-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Sorting Output</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Nelle names her directories ‘year-month-day’,
 with leading zeroes for months and days,
@@ -1757,7 +1759,7 @@ project/results:
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-two-ways-of-doing-the-same-thing-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-ways-of-doing-the-same-thing-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Two ways of doing the same thing<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-two-ways-of-doing-the-same-thing-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-two-ways-of-doing-the-same-thing-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Two ways of doing the same thing</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>Using the shell to create a directory is no different than using a file explorer.
 If you open the current directory using your operating system’s graphical file explorer,
 the <code class="language-plaintext highlighter-rouge">thesis</code> directory will appear there too.
@@ -1766,7 +1768,7 @@ the files and directories themselves are the same.</p>
 </blockquote>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-good-names-for-files-and-directories-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-good-names-for-files-and-directories-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Good names for files and directories<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-good-names-for-files-and-directories-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-good-names-for-files-and-directories-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Good names for files and directories</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Complicated names of files and directories can make your life painful
 when working on the command line. Here we provide a few useful
@@ -1820,7 +1822,7 @@ console to do this step, if you haven’t already.</p>
 </blockquote>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-which-editor-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-which-editor-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Which Editor?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-which-editor-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-which-editor-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Which Editor?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>When we say, “<code class="language-plaintext highlighter-rouge">nano</code> is a text editor” we really do mean “text”: it can
 only work with plain character data, not tables, images, or any other
@@ -1857,7 +1859,7 @@ press <kbd>Return</kbd> to accept the suggested default of <code class="language
 return to the shell.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-control-ctrl-or-key-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-control-ctrl-or-key-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Control, Ctrl, or ^ Key<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-control-ctrl-or-key-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-control-ctrl-or-key-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Control, Ctrl, or ^ Key</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The Control key is also called the ‘Ctrl’ key. There are various ways
 in which using the Control key may be described. For example, you may
@@ -1908,7 +1910,7 @@ does the file show up?</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-20"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-20" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-20"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-20" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>
         <p>The <code class="language-plaintext highlighter-rouge">touch</code> command generates a new file called <code class="language-plaintext highlighter-rouge">my_file.txt</code> in
@@ -1938,7 +1940,7 @@ programs.</p>
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-what-s-in-a-name-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-s-in-a-name-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: What's In A Name?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-what-s-in-a-name-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-what-s-in-a-name-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: What's In A Name?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>You may have noticed that all of Nelle’s files are named ‘something dot
 something’, and in this part of the lesson, we always used the extension
@@ -2046,7 +2048,7 @@ $ cd analyzed
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-21"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-21" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-21"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-21" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mv </span>sucrose.dat maltose.dat ../raw
 </code></pre></div>    </div>
     <p>Recall that <code class="language-plaintext highlighter-rouge">..</code> refers to the parent directory (i.e. one above the current directory)
@@ -2095,7 +2097,7 @@ correct the mistake, which of the following commands could you use to do so?</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-22"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-22" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-22"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-22" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>No.  While this would create a file with the correct name,
 the incorrectly named file still exists in the directory
@@ -2156,7 +2158,7 @@ ls
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-23"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-23" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-23"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-23" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>We start in the <code class="language-plaintext highlighter-rouge">/Users/jamie/data</code> directory, and create a new folder called <code class="language-plaintext highlighter-rouge">recombined</code>.
 The second line moves (<code class="language-plaintext highlighter-rouge">mv</code>) the file <code class="language-plaintext highlighter-rouge">proteins.dat</code> to the new folder (<code class="language-plaintext highlighter-rouge">recombined</code>).
 The third line makes a copy of the file we just moved.
@@ -2191,7 +2193,7 @@ The Unix command we’ll use for this is <code class="language-plaintext highlig
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-deleting-is-forever-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-deleting-is-forever-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Deleting Is Forever<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-deleting-is-forever-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-deleting-is-forever-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Deleting Is Forever</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The Unix shell doesn’t have a trash bin that we can recover deleted
 files from (though most graphical interfaces to Unix do).  Instead,
@@ -2209,7 +2211,7 @@ file’s disk space right away.</p>
 Why would we want this protection when using <code class="language-plaintext highlighter-rouge">rm</code>?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-24"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-24" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-24"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-24" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm</span>: remove regular file <span class="s1">'thesis_backup/quotations.txt'</span>? y
 </code></pre></div>    </div>
     <p>The <code class="language-plaintext highlighter-rouge">-i</code> option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion
@@ -2270,7 +2272,7 @@ $ cp amino-acids.txt animals.txt morse.txt
   </blockquote>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-25"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-25" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-25"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-25" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>If given more than one file name followed by a directory name
 (i.e. the destination directory must be the last argument),
 <code class="language-plaintext highlighter-rouge">cp</code> copies the files to the named directory.</p>
@@ -2289,7 +2291,7 @@ because it is expecting a directory name as the last argument.</p>
 <h3 id="using-wildcards-for-accessing-multiple-files-at-once">Using wildcards for accessing multiple files at once</h3>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-wildcards-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-wildcards-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Wildcards<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-wildcards-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-wildcards-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Wildcards</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p><code class="language-plaintext highlighter-rouge">*</code> is a <strong>wildcard</strong>, which matches zero or more  characters.
 Let’s consider the <code class="language-plaintext highlighter-rouge">shell-lesson-data/molecules</code> directory:
@@ -2335,7 +2337,7 @@ produce this output?</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-26"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-26" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-26"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-26" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The solution is <code class="language-plaintext highlighter-rouge">3.</code></p>
 
     <p><code class="language-plaintext highlighter-rouge">1.</code> shows all files whose names contain zero or more characters (<code class="language-plaintext highlighter-rouge">*</code>)
@@ -2444,7 +2446,7 @@ $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-27"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-27" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-27"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-27" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp *calibration.txt backup/calibration
 cp 2015-11-* send_to_bob/all_november_files/
@@ -2478,7 +2480,7 @@ fructose.dat    sucrose.dat
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-28"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-28" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-28"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-28" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv</span> <span class="k">*</span>.dat analyzed
 </code></pre></div>    </div>
     <p>Jamie needs to move her files <code class="language-plaintext highlighter-rouge">fructose.dat</code> and <code class="language-plaintext highlighter-rouge">sucrose.dat</code> to the <code class="language-plaintext highlighter-rouge">analyzed</code> directory.
@@ -2554,7 +2556,7 @@ $ mkdir raw processed
   </blockquote>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-29"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-29" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-29"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-29" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>The first two sets of commands achieve this objective.
 The first set uses relative paths to create the top-level directory before
 the subdirectories.</p>
@@ -2696,7 +2698,7 @@ as the ‘data’ directory.</p>
                 <p>
                     <ol>
                         <li id="citation-text">
-                            The Carpentries, Helena Rasche, Bazante Sanders, Erasmus+ Programme, Avans Hogeschool,  <b>CLI basics (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html">https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html</a> Online; accessed TODAY
+                            carpentries, Helena Rasche, Bazante Sanders, gallantries, avans-atgm,  <b>CLI basics (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html">https://training.galaxyproject.org/training-material/topics/data-science/tutorials/cli-basics/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Hiltemann, Saskia, Rasche, Helena et al., 2023 <b>Galaxy Training: A Powerful Framework for Teaching!</b> PLOS Computational Biology <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752">10.1371/journal.pcbi.1010752</a>
@@ -2722,7 +2724,7 @@ as the ‘data’ directory.</p>
 
 
 <code id="citation-code">@misc{data-science-cli-basics,
-author = "The Carpentries and Helena Rasche and Bazante Sanders and Erasmus+ Programme and Avans Hogeschool",
+author = "carpentries and Helena Rasche and Bazante Sanders and gallantries and avans-atgm",
 	title = "CLI basics (Galaxy Training Materials)",
 	year = "",
 	month = "",
@@ -2801,6 +2803,22 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                         
                     
                         
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
                             
                             <li> Advanced CLI in Galaxy:
                             
@@ -2810,22 +2828,6 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                                 
                             
                             </li>
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
                         
                     
                         
@@ -2893,22 +2895,6 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                             
                             <li> CLI Educational Game - Bashcrawl:
                             
@@ -2918,6 +2904,22 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
                                 
                             
                             </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -3014,7 +3016,7 @@ tools: []
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -3042,11 +3044,7 @@ tools: []
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

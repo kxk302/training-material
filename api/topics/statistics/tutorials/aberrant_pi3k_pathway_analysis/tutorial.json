@@ -1,7 +1,7 @@
 {
   "layout": "tutorial_hands_on",
   "title": "PAPAA PI3K_OG: PanCancer Aberrant Pathway Activity Analysis",
-  "zenodo_link": "https://zenodo.org/record/4306639#.X9FJF-lKgZE",
+  "zenodo_link": "https://zenodo.org/record/4306639",
   "questions": [
     "How to predict aberrant pathway activity in The Cancer Genome Atlas (TCGA) using Machine learning approaches?"
   ],
@@ -67,7 +67,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "papaa@0.1.9_PI3K_OG_model_tutorial",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/statistics/tutorials/aberrant_pi3k_pathway_analysis/tutorial.json",

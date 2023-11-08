@@ -34,7 +34,7 @@
       "mboudet"
     ],
     "funding": [
-      "erasmusplus"
+      "gallantries"
     ]
   },
   "requirements": [
@@ -155,7 +155,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Apollo Load Test",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:41 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/apollo/tutorial.json",
@@ -244,7 +246,7 @@
     "hexylena",
     "nathandunn",
     "mboudet",
-    "erasmusplus"
+    "gallantries"
   ],
   "logo": "assets/images/gga.png",
   "redirect_from": [

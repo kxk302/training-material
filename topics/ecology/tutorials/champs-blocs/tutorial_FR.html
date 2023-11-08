@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Production d'indicateurs champs de bloc</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -127,7 +107,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-03-21 22:48:54 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -140,25 +121,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:",
   "accessMode": [
     "textual",
     "visual"
@@ -199,7 +183,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -221,7 +206,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -242,7 +228,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-8504-068X",
@@ -274,7 +261,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -366,7 +353,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -441,7 +428,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Auteurs: <a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=36" alt="Avatar" width="36" height="36">Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Avatar" width="36" height="36">Yvan Le Bras</a>
+		Auteurs: <a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=36" alt="Marie Josse avatar" width="36" class="avatar" />
+    Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Yvan Le Bras avatar" width="36" class="avatar" />
+    Yvan Le Bras</a>
 	</div>
 
 </div>
@@ -589,6 +578,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 18 </div>
+
     </blockquote>
     </section>
 
@@ -637,7 +629,7 @@ Ainsi, l’habitat « champs de blocs médiolittoraux » a fait l’objet de plu
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-rapide-introduction-sur-le-fonctionnement-de-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-rapide-introduction-sur-le-fonctionnement-de-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Détails: Rapide introduction sur le fonctionnement de Galaxy<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-rapide-introduction-sur-le-fonctionnement-de-galaxy"><button class="gtn-boxify-button details" type="button" aria-controls="details-rapide-introduction-sur-le-fonctionnement-de-galaxy" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Détails: Rapide introduction sur le fonctionnement de Galaxy</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Vous pouvez quitter le didacticiel et aller vous prélasser sur l’écran principal en cliquant en dehors de l’écran du didacticiel.
 Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en cliquant sur <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span>.</p>
@@ -752,7 +744,7 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
   </ul>
 
   <blockquote class="tip">
-    <div class="box-title tip-title" id="tip-création-d-un-nouvel-historique-analytique"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-création-d-un-nouvel-historique-analytique" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Création d'un nouvel historique analytique<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title tip-title" id="tip-création-d-un-nouvel-historique-analytique"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-création-d-un-nouvel-historique-analytique" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Astuce: Création d'un nouvel historique analytique</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>Créez un nouvel historique pour ce tutoriel et donnez-lui un nom (exemple : “Indicateurs de blocs de champs”) pour que vous puissiez le retrouver plus tard si besoin.</p>
 
     <!--SNIPPET-->
@@ -769,12 +761,12 @@ Vous pouvez revenir à tout moment là où vous avez laissé le didacticiel en c
 <p>Basé sur la proportion de blocs « tournés » et « non tournés », cet indicateur varie de 0 à 5 et peut être rapidement utilisé.</p>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-comment-accéder-à-l-outil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-comment-accéder-à-l-outil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Comment accéder à l'outil ?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-comment-accéder-à-l-outil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-comment-accéder-à-l-outil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Astuce: Comment accéder à l'outil ?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <blockquote class="notranslate hands_on">
     <div class="box-title hands-on-title" id="hands-on-utilisation-un-outil-galaxy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Utilisation 'un outil Galaxy</div>
     <ol>
-      <li>cliquer sur le lien de l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="link"><strong>IVR</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0</span></span> ou taper <strong>ivr</strong> dans le module de recherche du panneau d’outils (en haut à gauche)
+      <li>cliquer sur le lien de l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>IVR</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.0)</span> ou taper <strong>ivr</strong> dans le module de recherche du panneau d’outils (en haut à gauche)
 L’outil sera affiché dans le panneau central Galaxy.</li>
     </ol>
   </blockquote>
@@ -788,7 +780,7 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
   <div class="box-title hands-on-title" id="hands-on-calculer-l-indice-ivr"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Calculer l'indice IVR</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="link"><strong>IVR</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0</span></span> avec ces paramètres :
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0" title="IVR tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>IVR</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.0)</span> avec ces paramètres :
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input champbloc_ivr.csv”</em>: <code class="language-plaintext highlighter-rouge">input</code> (champbloc_ivr.csv)</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input ficheterrain.csv”</em>: <code class="language-plaintext highlighter-rouge">input</code> (ficheterrain.csv)</li>
@@ -813,7 +805,7 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
   <figure id="figure-8" style="max-width: 90%; margin:auto;"><img src="../../images/champbloc/ivr.png" alt="IVR. " width="1855" height="919" loading="lazy" /><a target="_blank" href="../../images/champbloc/ivr.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 8</strong>:</span> IVR for Bilfot</figcaption></figure>
 
   <blockquote class="tip">
-    <div class="box-title tip-title" id="tip-rechercher-les-résultats-de-votre-site"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-rechercher-les-résultats-de-votre-site" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Astuce: Rechercher les résultats de votre site<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title tip-title" id="tip-rechercher-les-résultats-de-votre-site"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-rechercher-les-résultats-de-votre-site" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Astuce: Rechercher les résultats de votre site</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>En haut du panneau Historique (à droite) allez sur le champ de recherche</li>
@@ -838,13 +830,13 @@ L’outil sera affiché dans le panneau central Galaxy.</li>
 
 <h2 id="dissimilarité"><strong>Dissimilarité</strong></h2>
 <p>Nettoyez vos données, puis calculez le coefficient de dissimilarité.
-Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="link"><strong>Dissimilarity</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0</span></span></p>
+Utiliser l’outil <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Dissimilarity</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.0)</span></p>
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-calculer-des-index-de-dissimilarité"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> En pratique: Calculer des index de dissimilarité</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="link"><strong>Dissimilarity</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0</span></span> avec les paramètres suivants:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0" title="Dissimilarity tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Dissimilarity</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.0)</span> avec les paramètres suivants:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input champbloc_qecb.csv”</em>: <code class="language-plaintext highlighter-rouge">input</code> (champbloc_qecb.csv)</li>
         <li>
@@ -1057,7 +1049,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1081,11 +1073,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

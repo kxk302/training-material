@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>SARS-CoV-2 Viral Sample Alignment and Variant Visualization</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -128,7 +108,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-07-10 08:20:22 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -141,25 +122,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00356",
   "accessMode": [
     "textual",
     "visual"
@@ -184,11 +168,15 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'SARS-CoV-2 Viral Sample Alignment and Variant Visualization' tutorial",
+  "name": "SARS-CoV-2 Viral Sample Alignment and Variant Visualization",
   "url": "https://training.galaxyproject.org/training-material/topics/sequence-analysis/tutorials/sars-with-galaxy-on-anvil/tutorial.html",
+  "version": 26,
   "timeRequired": "PT1H",
   "teaches": "Gather and evaluate experimental evidence, including qualitative and quantitative data\n - Generate and interpret graphs displaying experimental results\n - Critique large data sets and use bioinformatics to assess genetics data\n - Tap into the interdisciplinary nature of science",
-  "keywords": "sequence-analysis, covid19",
+  "keywords": [
+    "Sequence analysis",
+    "covid19"
+  ],
   "description": "The questions this  addresses are:\n - How do I check my data quality?\n - How do I put together my dataset of fragmented sequences into a full sequence?\n - How do I visually explore the variants in my SARS-CoV-2 sample?\n\n\nThe objectives are:\n - Gather and evaluate experimental evidence, including qualitative and quantitative data\n - Generate and interpret graphs displaying experimental results\n - Critique large data sets and use bioinformatics to assess genetics data\n - Tap into the interdisciplinary nature of science\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -206,7 +194,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -228,7 +217,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -249,7 +239,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -270,7 +261,142 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    }
+  ],
+  "contributor": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/katherinecox/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/katherinecox/",
+      "name": "Katherine Cox",
+      "image": "https://avatars.githubusercontent.com/katherinecox",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/cutsort/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/cutsort/",
+      "name": "Frederick Tan",
+      "image": "https://avatars.githubusercontent.com/cutsort",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nakucher/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nakucher/",
+      "name": "Natalie Kucher",
+      "image": "https://avatars.githubusercontent.com/nakucher",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/cansavvy/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/cansavvy/",
+      "name": "Candace Savonen",
+      "image": "https://avatars.githubusercontent.com/cansavvy",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/avahoffman/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/avahoffman/",
+      "name": "Ava Hoffman",
+      "image": "https://avatars.githubusercontent.com/avahoffman",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.3-DRAFT",
+        "@type": "CreativeWork"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/ehumph/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/ehumph/",
+      "name": "Elizabeth Humphries",
+      "image": "https://avatars.githubusercontent.com/ehumph",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     }
@@ -303,7 +429,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -395,7 +521,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -476,7 +602,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/nakucher/" class="contributor-badge contributor-nakucher"><img src="https://avatars.githubusercontent.com/nakucher?s=36" alt="Avatar" width="36" height="36">Natalie Kucher</a><a href="/training-material/hall-of-fame/avahoffman/" class="contributor-badge contributor-avahoffman"><img src="https://avatars.githubusercontent.com/avahoffman?s=36" alt="Avatar" width="36" height="36">Ava Hoffman</a><a href="/training-material/hall-of-fame/robertmeller/" class="contributor-badge contributor-robertmeller"><img src="https://avatars.githubusercontent.com/robertmeller?s=36" alt="Avatar" width="36" height="36">Robert Meller</a>
+			<a href="/training-material/hall-of-fame/nakucher/" class="contributor-badge contributor-nakucher"><img src="https://avatars.githubusercontent.com/nakucher?s=36" alt="Natalie Kucher avatar" width="36" class="avatar" />
+    Natalie Kucher</a><a href="/training-material/hall-of-fame/avahoffman/" class="contributor-badge contributor-avahoffman"><img src="https://avatars.githubusercontent.com/avahoffman?s=36" alt="Ava Hoffman avatar" width="36" class="avatar" />
+    Ava Hoffman</a><a href="/training-material/hall-of-fame/robertmeller/" class="contributor-badge contributor-robertmeller"><img src="https://avatars.githubusercontent.com/robertmeller?s=36" alt="Robert Meller avatar" width="36" class="avatar" />
+    Robert Meller</a>
 		</td>
 	</tr>
 	
@@ -488,7 +617,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">Editor(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/katherinecox/" class="contributor-badge contributor-katherinecox"><img src="https://avatars.githubusercontent.com/katherinecox?s=36" alt="Avatar" width="36" height="36">Katherine Cox</a><a href="/training-material/hall-of-fame/cutsort/" class="contributor-badge contributor-cutsort"><img src="https://avatars.githubusercontent.com/cutsort?s=36" alt="Avatar" width="36" height="36">Frederick Tan</a><a href="/training-material/hall-of-fame/nakucher/" class="contributor-badge contributor-nakucher"><img src="https://avatars.githubusercontent.com/nakucher?s=36" alt="Avatar" width="36" height="36">Natalie Kucher</a></td>
+			<a href="/training-material/hall-of-fame/katherinecox/" class="contributor-badge contributor-katherinecox"><img src="https://avatars.githubusercontent.com/katherinecox?s=36" alt="Katherine Cox avatar" width="36" class="avatar" />
+    Katherine Cox</a><a href="/training-material/hall-of-fame/cutsort/" class="contributor-badge contributor-cutsort"><img src="https://avatars.githubusercontent.com/cutsort?s=36" alt="Frederick Tan avatar" width="36" class="avatar" />
+    Frederick Tan</a><a href="/training-material/hall-of-fame/nakucher/" class="contributor-badge contributor-nakucher"><img src="https://avatars.githubusercontent.com/nakucher?s=36" alt="Natalie Kucher avatar" width="36" class="avatar" />
+    Natalie Kucher</a></td>
 	</tr>
 	
 
@@ -500,7 +632,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people managed and provided infrastructure to the GTN or for training purposes">Infrastructure</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/cansavvy/" class="contributor-badge contributor-cansavvy"><img src="https://avatars.githubusercontent.com/cansavvy?s=36" alt="Avatar" width="36" height="36">Candace Savonen</a><a href="/training-material/hall-of-fame/avahoffman/" class="contributor-badge contributor-avahoffman"><img src="https://avatars.githubusercontent.com/avahoffman?s=36" alt="Avatar" width="36" height="36">Ava Hoffman</a><a href="/training-material/hall-of-fame/katherinecox/" class="contributor-badge contributor-katherinecox"><img src="https://avatars.githubusercontent.com/katherinecox?s=36" alt="Avatar" width="36" height="36">Katherine Cox</a><a href="/training-material/hall-of-fame/ehumph/" class="contributor-badge contributor-ehumph"><img src="https://avatars.githubusercontent.com/ehumph?s=36" alt="Avatar" width="36" height="36">Elizabeth Humphries</a><a href="/training-material/hall-of-fame/cutsort/" class="contributor-badge contributor-cutsort"><img src="https://avatars.githubusercontent.com/cutsort?s=36" alt="Avatar" width="36" height="36">Frederick Tan</a></td>
+			<a href="/training-material/hall-of-fame/cansavvy/" class="contributor-badge contributor-cansavvy"><img src="https://avatars.githubusercontent.com/cansavvy?s=36" alt="Candace Savonen avatar" width="36" class="avatar" />
+    Candace Savonen</a><a href="/training-material/hall-of-fame/avahoffman/" class="contributor-badge contributor-avahoffman"><img src="https://avatars.githubusercontent.com/avahoffman?s=36" alt="Ava Hoffman avatar" width="36" class="avatar" />
+    Ava Hoffman</a><a href="/training-material/hall-of-fame/katherinecox/" class="contributor-badge contributor-katherinecox"><img src="https://avatars.githubusercontent.com/katherinecox?s=36" alt="Katherine Cox avatar" width="36" class="avatar" />
+    Katherine Cox</a><a href="/training-material/hall-of-fame/ehumph/" class="contributor-badge contributor-ehumph"><img src="https://avatars.githubusercontent.com/ehumph?s=36" alt="Elizabeth Humphries avatar" width="36" class="avatar" />
+    Elizabeth Humphries</a><a href="/training-material/hall-of-fame/cutsort/" class="contributor-badge contributor-cutsort"><img src="https://avatars.githubusercontent.com/cutsort?s=36" alt="Frederick Tan avatar" width="36" class="avatar" />
+    Frederick Tan</a></td>
 	</tr>
 	
 </table>
@@ -732,8 +869,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00356">https://gxy.io/GTN:T00356</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00356">https://gxy.io/GTN:T00356</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 26 </div>
+
     </blockquote>
     </section>
 
@@ -864,7 +1004,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </blockquote>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-screen-view"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-screen-view" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Screen view<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-screen-view"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-screen-view" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Screen view</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <ul>
     <li>At this point, it might make things easier to open up a new window in your browser and split your screen. That way, you can follow along with this guide on one side and execute the steps on the other.</li>
@@ -927,7 +1067,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </blockquote>
 
 <blockquote class="tip">
-  <div class="box-title tip-title" id="tip-refresh"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-refresh" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Refresh<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title tip-title" id="tip-refresh"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-refresh" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Refresh</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
   <p>Remember that you can refresh your browser or navigate away at any time. This is because the connection to the environment is in the cloud, not on your personal computer.</p>
 
 </blockquote>
@@ -986,7 +1126,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>Four lines represent one read.</li>
@@ -1005,7 +1145,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   <div class="box-title hands-on-title" id="hands-on-determine-the-quality-of-the-samples"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Determine the Quality of the Samples</div>
 
   <ol>
-    <li>Find <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool" aria-role="link"><strong>FastQC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0</span></span> in the GENOMIC FILE MANIPULATION: FASTQ Quality Control tool folder.
+    <li>Find <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0" title="FastQC tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>FastQC</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.73+galaxy0)</span> in the GENOMIC FILE MANIPULATION: FASTQ Quality Control tool folder.
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Raw read data from your current history”</em>: <code class="language-plaintext highlighter-rouge">VA_sample_forward_reads.fastq</code></li>
       </ul>
@@ -1033,7 +1173,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>43,522 reads. Zero flagged as poor quality. Sequence length is 3-301 base pairs.</li>
@@ -1045,7 +1185,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </blockquote>
 
 <!--SNIPPET-->
-<blockquote class="details">   <div class="box-title details-title" id="details-quality-scores"><button class="gtn-boxify-button details" type="button" aria-controls="details-quality-scores" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> Details: Quality Scores<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>But what does this quality score mean?</p>   <p>The quality score for each sequence is a string of characters, one for each base of the nucleotide sequence, used to characterize the probability of misidentification of each base. The score is encoded using the ASCII character table (with <a href="https://en.wikipedia.org/wiki/FASTQ_format#Encoding">some historical differences</a>):</p>   <p>To save space, the sequencer records an <a href="http://drive5.com/usearch/manual/quality_score.html">ASCII character</a> to represent scores 0-42. For example 10 corresponds to “+” and 40 corresponds to “I”. FastQC knows how to translate this. This is often called “Phred” scoring.</p>   <p><img src="/training-material/topics/sequence-analysis/faqs/images/fastq-quality-encoding.png" alt="Encoding of the quality score with ASCII characters for different Phred encoding. The ascii code sequence is shown at the top with symbols for 33 to 64, upper case letters, more symbols, and then lowercase letters. Sanger maps from 33 to 73 while solexa is shifted, starting at 59 and going to 104. Illumina 1.3 starts at 54 and goes to 104, Illumina 1.5 is shifted three scores to the right but still ends at 104. Illumina 1.8+ goes back to the Sanger except one single score wider. Illumina" /></p>   <p>So there is an ASCII character associated with each nucleotide, representing its <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred quality score</a>, the probability of an incorrect base call:</p>   <table>   <thead>     <tr>       <th>Phred Quality Score</th>       <th>Probability of incorrect base call</th>       <th>Base call accuracy</th>     </tr>   </thead>   <tbody>     <tr>       <td>10</td>       <td>1 in 10</td>       <td>90%</td>     </tr>     <tr>       <td>20</td>       <td>1 in 100</td>       <td>99%</td>     </tr>     <tr>       <td>30</td>       <td>1 in 1000</td>       <td>99.9%</td>     </tr>     <tr>       <td>40</td>       <td>1 in 10,000</td>       <td>99.99%</td>     </tr>     <tr>       <td>50</td>       <td>1 in 100,000</td>       <td>99.999%</td>     </tr>     <tr>       <td>60</td>       <td>1 in 1,000,000</td>       <td>99.9999%</td>     </tr>   </tbody> </table>   <p>What does 0-42 represent? These numbers, when plugged into a formula, tell us the probability of an error for that base. This is the formula, where Q is our quality score (0-42) and P is the probability of an error:</p>   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Q = -10 log10(P)<br /></code></pre></div></div>   <p>Using this formula, we can calculate that a quality score of 40 means only 0.00010 probability of an error!</p> </blockquote>
+<blockquote class="details">   <div class="box-title details-title" id="details-quality-scores"><button class="gtn-boxify-button details" type="button" aria-controls="details-quality-scores" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true"></i> <span>Details: Quality Scores</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>But what does this quality score mean?</p>   <p>The quality score for each sequence is a string of characters, one for each base of the nucleotide sequence, used to characterize the probability of misidentification of each base. The score is encoded using the ASCII character table (with <a href="https://en.wikipedia.org/wiki/FASTQ_format#Encoding">some historical differences</a>):</p>   <p>To save space, the sequencer records an <a href="http://drive5.com/usearch/manual/quality_score.html">ASCII character</a> to represent scores 0-42. For example 10 corresponds to “+” and 40 corresponds to “I”. FastQC knows how to translate this. This is often called “Phred” scoring.</p>   <p><img src="/training-material/topics/sequence-analysis/faqs/images/fastq-quality-encoding.png" alt="Encoding of the quality score with ASCII characters for different Phred encoding. The ascii code sequence is shown at the top with symbols for 33 to 64, upper case letters, more symbols, and then lowercase letters. Sanger maps from 33 to 73 while solexa is shifted, starting at 59 and going to 104. Illumina 1.3 starts at 54 and goes to 104, Illumina 1.5 is shifted three scores to the right but still ends at 104. Illumina 1.8+ goes back to the Sanger except one single score wider. Illumina" /></p>   <p>So there is an ASCII character associated with each nucleotide, representing its <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred quality score</a>, the probability of an incorrect base call:</p>   <table>   <thead>     <tr>       <th>Phred Quality Score</th>       <th>Probability of incorrect base call</th>       <th>Base call accuracy</th>     </tr>   </thead>   <tbody>     <tr>       <td>10</td>       <td>1 in 10</td>       <td>90%</td>     </tr>     <tr>       <td>20</td>       <td>1 in 100</td>       <td>99%</td>     </tr>     <tr>       <td>30</td>       <td>1 in 1000</td>       <td>99.9%</td>     </tr>     <tr>       <td>40</td>       <td>1 in 10,000</td>       <td>99.99%</td>     </tr>     <tr>       <td>50</td>       <td>1 in 100,000</td>       <td>99.999%</td>     </tr>     <tr>       <td>60</td>       <td>1 in 1,000,000</td>       <td>99.9999%</td>     </tr>   </tbody> </table>   <p>What does 0-42 represent? These numbers, when plugged into a formula, tell us the probability of an error for that base. This is the formula, where Q is our quality score (0-42) and P is the probability of an error:</p>   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Q = -10 log10(P)<br /></code></pre></div></div>   <p>Using this formula, we can calculate that a quality score of 40 means only 0.00010 probability of an error!</p> </blockquote>
 <p><!--END_SNIPPET--></p>
 
 <h1 id="exercise-three-alignment">Exercise Three: Alignment</h1>
@@ -1063,7 +1203,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   <div class="box-title hands-on-title" id="hands-on-align-to-the-reference-dataset"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Align to the Reference Dataset</div>
 
   <ol>
-    <li>Go to GENOMICS ANALYSIS and expand the Mapping menu. Select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2" title="Map with BWA-MEM tool" aria-role="link"><strong>Map with BWA-MEM</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2</span></span>. This program will align your reads to your SARS reference genome. Some of our reads are &gt;100 base pairs so we will use the MEM option.
+    <li>Go to GENOMICS ANALYSIS and expand the Mapping menu. Select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.2" title="Map with BWA-MEM tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Map with BWA-MEM</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.7.17.2)</span>. This program will align your reads to your SARS reference genome. Some of our reads are &gt;100 base pairs so we will use the MEM option.
       <ul>
         <li><em>“Will you select a reference genome from your history or use a built-in index?”</em>: Use a genome from history and build index.</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Use the following dataset as the reference sequence”</em>: <code class="language-plaintext highlighter-rouge">SARS-CoV-2_reference_genome.fasta</code></li>
@@ -1088,7 +1228,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>Alignment tools figure out the optimal positioning of the reads next to the reference genome to minimize mismatches and gaps.</li>
@@ -1106,7 +1246,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   <div class="box-title hands-on-title" id="hands-on-visualize-reference-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize Reference Data</div>
 
   <ol>
-    <li>Scroll down in the Tools menu to STATISTICS AND VISUALIZATION. Under “Graph/Display Data”, select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0" title="JBrowse tool" aria-role="link"><strong>JBrowse</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0</span></span>.
+    <li>Scroll down in the Tools menu to STATISTICS AND VISUALIZATION. Under “Graph/Display Data”, select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0" title="JBrowse tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>JBrowse</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.16.9+galaxy0)</span>.
       <ul>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Reference genome to display”</em>: <code class="language-plaintext highlighter-rouge">Use a genome from history</code></li>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Select the reference genome”</em>: <code class="language-plaintext highlighter-rouge">SARS-CoV-2_reference_genome.fasta</code></li>
@@ -1128,7 +1268,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   <div class="box-title hands-on-title" id="hands-on-visualize-aligned-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Visualize Aligned Data</div>
 
   <ol>
-    <li>Scroll down in the Tools menu to STATISTICS AND VISUALIZATION. Under “Graph/Display Data”, select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0" title="JBrowse tool" aria-role="link"><strong>JBrowse</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0</span></span>.
+    <li>Scroll down in the Tools menu to STATISTICS AND VISUALIZATION. Under “Graph/Display Data”, select <span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.9+galaxy0" title="JBrowse tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>JBrowse</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.16.9+galaxy0)</span>.
       <ul>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Reference genome to display”</em>: <code class="language-plaintext highlighter-rouge">Use a genome from history</code></li>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Select the reference genome”</em>: <code class="language-plaintext highlighter-rouge">SARS-CoV-2_reference_genome.fasta</code></li>
@@ -1174,7 +1314,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>~29,904 bp</li>
@@ -1185,7 +1325,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </blockquote>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-sequencing-errors"><button class="gtn-boxify-button details" type="button" aria-controls="details-sequencing-errors" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Sequencing errors<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-sequencing-errors"><button class="gtn-boxify-button details" type="button" aria-controls="details-sequencing-errors" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Sequencing errors</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>It’s possible to make mistakes in the data preparation before we get to the data analysis. Sometimes this happens when the samples are being prepared in the lab and sometimes this happens because the sequencer makes a mistake. This is one reason why quality scores are helpful. With millions of reads of data, it’s more likely that we see a “SNP” that is actually an accident. Multiple copies of the same areas of our data (“read depth”) help us be sure it’s a real SNP. When we compare across lots of aligned reads of the same area, we can determine the actual sequence by consensus. For example, we can be reasonably confident that the “G” at position 1,203 is just a sequencing or lab mistake.</p>
 
@@ -1340,7 +1480,7 @@ author = "Natalie Kucher and Ava Hoffman and Robert Meller",
 
 	<div class="col-md-3 col-xs-12">
 		
-		<img class="funder-avatar" src="https://www.genome.gov/themes/custom/nhgri/assets/global/NHGRI-logo.svg" alt="Logo">
+		<img class="funder-avatar" src="https://avatars.githubusercontent.com/nhgri-gdscn" alt="Logo">
 		
 		<a href="/training-material/hall-of-fame/nhgri-gdscn/" class="btn btn-secondary">See Funder Profile</a>
 	</div>
@@ -1351,7 +1491,7 @@ author = "Natalie Kucher and Ava Hoffman and Robert Meller",
 
 	<div class="col-md-3 col-xs-12">
 		
-		<img class="funder-avatar" src="https://www.genome.gov/themes/custom/nhgri/assets/global/NHGRI-logo.svg" alt="Logo">
+		<img class="funder-avatar" src="https://avatars.githubusercontent.com/nhgri-anvil" alt="Logo">
 		
 		<a href="/training-material/hall-of-fame/nhgri-anvil/" class="btn btn-secondary">See Funder Profile</a>
 	</div>
@@ -1435,7 +1575,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1463,11 +1603,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

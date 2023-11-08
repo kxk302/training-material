@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Galaxy Training!</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -103,7 +83,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -187,7 +167,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -336,13 +316,13 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         all_topics: [
             {
                 label: "All topic",
-                data: [{x:"2018-09", y: 28 } ,{x:"2018-10", y: 71 } ,{x:"2018-11", y: 102 } ,{x:"2018-12", y: 116 } ,{x:"2019-01", y: 140 } ,{x:"2019-02", y: 161 } ,{x:"2019-03", y: 185 } ,{x:"2019-04", y: 225 } ,{x:"2019-05", y: 247 } ,{x:"2019-06", y: 270 } ,{x:"2019-07", y: 316 } ,{x:"2019-08", y: 357 } ,{x:"2019-09", y: 400 } ,{x:"2019-10", y: 454 } ,{x:"2019-11", y: 485 } ,{x:"2019-12", y: 505 } ,{x:"2020-01", y: 539 } ,{x:"2020-02", y: 577 } ,{x:"2020-03", y: 623 } ,{x:"2020-04", y: 668 } ,{x:"2020-05", y: 704 } ,{x:"2020-06", y: 758 } ,{x:"2020-07", y: 798 } ,{x:"2020-08", y: 809 } ,{x:"2020-09", y: 830 } ,{x:"2020-10", y: 857 } ,{x:"2020-11", y: 889 } ,{x:"2020-12", y: 909 } ,{x:"2021-01", y: 994 } ,{x:"2021-02", y: 1107 } ,{x:"2021-03", y: 1134 } ,{x:"2021-04", y: 1162 } ,{x:"2021-05", y: 1192 } ,{x:"2021-06", y: 1248 } ,{x:"2021-07", y: 1334 } ,{x:"2021-08", y: 1408 } ,{x:"2021-09", y: 1435 } ,{x:"2021-10", y: 1477 } ,{x:"2021-11", y: 1527 } ,{x:"2021-12", y: 1553 } ,{x:"2022-01", y: 1574 } ,{x:"2022-02", y: 1611 } ,{x:"2022-03", y: 1815 } ,{x:"2022-04", y: 1859 } ,{x:"2022-05", y: 1886 } ,{x:"2022-06", y: 1912 } ,{x:"2022-07", y: 1934 } ,{x:"2022-08", y: 1956 } ,{x:"2022-09", y: 1983 } ,{x:"2022-10", y: 2007 } ,{x:"2022-11", y: 2035 } ,{x:"2022-12", y: 2045 } ,{x:"2023-01", y: 2069 } ,{x:"2023-02", y: 2086 } ,{x:"2023-03", y: 2116 } ,{x:"2023-04", y: 2153 } ,{x:"2023-05", y: 2270 } ,{x:"2023-06", y: 2313 } ,{x:"2023-07", y: 2336 } ,{x:"2023-08", y: 2355 } ,{x:"2023-09", y: 2388 } ,{x:"2023-10", y: 2404 } ],
+                data: [{x:"2018-09", y: 28 } ,{x:"2018-10", y: 71 } ,{x:"2018-11", y: 102 } ,{x:"2018-12", y: 116 } ,{x:"2019-01", y: 140 } ,{x:"2019-02", y: 161 } ,{x:"2019-03", y: 185 } ,{x:"2019-04", y: 225 } ,{x:"2019-05", y: 247 } ,{x:"2019-06", y: 270 } ,{x:"2019-07", y: 316 } ,{x:"2019-08", y: 357 } ,{x:"2019-09", y: 400 } ,{x:"2019-10", y: 454 } ,{x:"2019-11", y: 485 } ,{x:"2019-12", y: 505 } ,{x:"2020-01", y: 539 } ,{x:"2020-02", y: 577 } ,{x:"2020-03", y: 623 } ,{x:"2020-04", y: 668 } ,{x:"2020-05", y: 704 } ,{x:"2020-06", y: 758 } ,{x:"2020-07", y: 798 } ,{x:"2020-08", y: 809 } ,{x:"2020-09", y: 830 } ,{x:"2020-10", y: 857 } ,{x:"2020-11", y: 889 } ,{x:"2020-12", y: 909 } ,{x:"2021-01", y: 994 } ,{x:"2021-02", y: 1107 } ,{x:"2021-03", y: 1134 } ,{x:"2021-04", y: 1162 } ,{x:"2021-05", y: 1192 } ,{x:"2021-06", y: 1248 } ,{x:"2021-07", y: 1334 } ,{x:"2021-08", y: 1408 } ,{x:"2021-09", y: 1435 } ,{x:"2021-10", y: 1477 } ,{x:"2021-11", y: 1527 } ,{x:"2021-12", y: 1553 } ,{x:"2022-01", y: 1574 } ,{x:"2022-02", y: 1611 } ,{x:"2022-03", y: 1815 } ,{x:"2022-04", y: 1859 } ,{x:"2022-05", y: 1886 } ,{x:"2022-06", y: 1912 } ,{x:"2022-07", y: 1934 } ,{x:"2022-08", y: 1956 } ,{x:"2022-09", y: 1983 } ,{x:"2022-10", y: 2007 } ,{x:"2022-11", y: 2035 } ,{x:"2022-12", y: 2045 } ,{x:"2023-01", y: 2069 } ,{x:"2023-02", y: 2086 } ,{x:"2023-03", y: 2116 } ,{x:"2023-04", y: 2153 } ,{x:"2023-05", y: 2270 } ,{x:"2023-06", y: 2313 } ,{x:"2023-07", y: 2336 } ,{x:"2023-08", y: 2355 } ,{x:"2023-09", y: 2388 } ,{x:"2023-10", y: 2426 } ,{x:"2023-11", y: 2432 } ],
                 fill: false,
             }
         ]
     };
     var data_notes = {
-        all_topics: [30,83,43,112,431,1705]
+        all_topics: [30,84,43,114,440,1721]
     };
     var labels_notes = ["0","1","2","3","4","5"];
 </script>
@@ -351,24 +331,24 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Assembly",
-        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 3 } ,{x:"2018-11", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-03", y: 8 } ,{x:"2019-04", y: 11 } ,{x:"2019-06", y: 12 } ,{x:"2019-10", y: 14 } ,{x:"2019-11", y: 15 } ,{x:"2020-01", y: 16 } ,{x:"2020-04", y: 19 } ,{x:"2020-06", y: 20 } ,{x:"2020-07", y: 23 } ,{x:"2020-10", y: 24 } ,{x:"2020-12", y: 25 } ,{x:"2021-01", y: 27 } ,{x:"2021-02", y: 37 } ,{x:"2021-04", y: 38 } ,{x:"2021-05", y: 40 } ,{x:"2021-06", y: 43 } ,{x:"2021-07", y: 45 } ,{x:"2021-08", y: 47 } ,{x:"2021-10", y: 48 } ,{x:"2021-11", y: 49 } ,{x:"2021-12", y: 50 } ,{x:"2022-01", y: 51 } ,{x:"2022-02", y: 53 } ,{x:"2022-03", y: 62 } ,{x:"2022-04", y: 64 } ,{x:"2022-06", y: 66 } ,{x:"2022-09", y: 67 } ,{x:"2022-10", y: 69 } ,{x:"2022-11", y: 70 } ,{x:"2022-12", y: 71 } ,{x:"2023-03", y: 72 } ,{x:"2023-04", y: 73 } ,{x:"2023-05", y: 80 } ,{x:"2023-06", y: 82 } ,{x:"2023-07", y: 83 } ,{x:"2023-08", y: 84 } ],
+        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 3 } ,{x:"2018-11", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-03", y: 8 } ,{x:"2019-04", y: 11 } ,{x:"2019-06", y: 12 } ,{x:"2019-10", y: 14 } ,{x:"2019-11", y: 15 } ,{x:"2020-01", y: 16 } ,{x:"2020-04", y: 19 } ,{x:"2020-06", y: 20 } ,{x:"2020-07", y: 23 } ,{x:"2020-10", y: 24 } ,{x:"2020-12", y: 25 } ,{x:"2021-01", y: 27 } ,{x:"2021-02", y: 37 } ,{x:"2021-04", y: 38 } ,{x:"2021-05", y: 40 } ,{x:"2021-06", y: 43 } ,{x:"2021-07", y: 45 } ,{x:"2021-08", y: 47 } ,{x:"2021-10", y: 48 } ,{x:"2021-11", y: 49 } ,{x:"2021-12", y: 50 } ,{x:"2022-01", y: 51 } ,{x:"2022-02", y: 53 } ,{x:"2022-03", y: 62 } ,{x:"2022-04", y: 64 } ,{x:"2022-06", y: 66 } ,{x:"2022-09", y: 67 } ,{x:"2022-10", y: 69 } ,{x:"2022-11", y: 70 } ,{x:"2022-12", y: 71 } ,{x:"2023-03", y: 72 } ,{x:"2023-04", y: 73 } ,{x:"2023-05", y: 80 } ,{x:"2023-06", y: 82 } ,{x:"2023-07", y: 83 } ,{x:"2023-08", y: 84 } ,{x:"2023-10", y: 85 } ],
         fill: false,
     };
     fdbk_over_month['topic-assembly'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-assembly'] = [1,3,3,4,20,53];
+    data_notes['topic-assembly'] = [1,3,3,4,20,54];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "An Introduction to Genome Assembly",
-        data: [{x:"2018-10", y: 1 } ,{x:"2018-11", y: 2 } ,{x:"2018-12", y: 3 } ,{x:"2019-06", y: 4 } ,{x:"2019-10", y: 5 } ,{x:"2019-11", y: 6 } ,{x:"2020-01", y: 7 } ,{x:"2020-04", y: 8 } ,{x:"2020-06", y: 9 } ,{x:"2020-07", y: 11 } ,{x:"2020-10", y: 12 } ,{x:"2021-02", y: 13 } ,{x:"2021-05", y: 14 } ,{x:"2021-10", y: 15 } ,{x:"2022-01", y: 16 } ,{x:"2022-03", y: 18 } ,{x:"2022-04", y: 19 } ,{x:"2022-06", y: 20 } ,{x:"2022-11", y: 21 } ,{x:"2022-12", y: 22 } ,{x:"2023-06", y: 23 } ,{x:"2023-07", y: 24 } ],
+        data: [{x:"2018-10", y: 1 } ,{x:"2018-11", y: 2 } ,{x:"2018-12", y: 3 } ,{x:"2019-06", y: 4 } ,{x:"2019-10", y: 5 } ,{x:"2019-11", y: 6 } ,{x:"2020-01", y: 7 } ,{x:"2020-04", y: 8 } ,{x:"2020-06", y: 9 } ,{x:"2020-07", y: 11 } ,{x:"2020-10", y: 12 } ,{x:"2021-02", y: 13 } ,{x:"2021-05", y: 14 } ,{x:"2021-10", y: 15 } ,{x:"2022-01", y: 16 } ,{x:"2022-03", y: 18 } ,{x:"2022-04", y: 19 } ,{x:"2022-06", y: 20 } ,{x:"2022-11", y: 21 } ,{x:"2022-12", y: 22 } ,{x:"2023-06", y: 23 } ,{x:"2023-07", y: 24 } ,{x:"2023-10", y: 25 } ],
         fill: false,
     };
     fdbk_over_month['tuto-general-introduction'] = [tuto_data];
     fdbk_over_month['topic-assembly'].push(tuto_data);
-    data_notes['tuto-general-introduction'] = [1,2,0,2,3,16];
+    data_notes['tuto-general-introduction'] = [1,2,0,2,3,17];
 </script>
 
 <script>
@@ -579,24 +559,24 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Computational chemistry",
-        data: [{x:"2019-11", y: 2 } ,{x:"2020-01", y: 3 } ,{x:"2020-05", y: 4 } ,{x:"2020-09", y: 5 } ,{x:"2021-02", y: 6 } ,{x:"2021-06", y: 7 } ,{x:"2021-07", y: 9 } ,{x:"2021-08", y: 11 } ,{x:"2021-10", y: 12 } ,{x:"2021-12", y: 14 } ,{x:"2022-02", y: 16 } ,{x:"2022-03", y: 19 } ,{x:"2022-04", y: 21 } ,{x:"2022-06", y: 22 } ,{x:"2022-08", y: 24 } ,{x:"2022-10", y: 25 } ,{x:"2023-01", y: 26 } ,{x:"2023-03", y: 28 } ,{x:"2023-06", y: 29 } ,{x:"2023-09", y: 31 } ],
+        data: [{x:"2019-11", y: 2 } ,{x:"2020-01", y: 3 } ,{x:"2020-05", y: 4 } ,{x:"2020-09", y: 5 } ,{x:"2021-02", y: 6 } ,{x:"2021-06", y: 7 } ,{x:"2021-07", y: 9 } ,{x:"2021-08", y: 11 } ,{x:"2021-10", y: 12 } ,{x:"2021-12", y: 14 } ,{x:"2022-02", y: 16 } ,{x:"2022-03", y: 19 } ,{x:"2022-04", y: 21 } ,{x:"2022-06", y: 22 } ,{x:"2022-08", y: 24 } ,{x:"2022-10", y: 25 } ,{x:"2023-01", y: 26 } ,{x:"2023-03", y: 28 } ,{x:"2023-06", y: 29 } ,{x:"2023-09", y: 31 } ,{x:"2023-10", y: 32 } ],
         fill: false,
     };
     fdbk_over_month['topic-computational-chemistry'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-computational-chemistry'] = [0,6,0,1,7,17];
+    data_notes['topic-computational-chemistry'] = [0,6,0,1,7,18];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Analysis of molecular dynamics simulations",
-        data: [{x:"2020-05", y: 1 } ,{x:"2021-10", y: 2 } ,{x:"2022-02", y: 3 } ,{x:"2023-01", y: 4 } ],
+        data: [{x:"2020-05", y: 1 } ,{x:"2021-10", y: 2 } ,{x:"2022-02", y: 3 } ,{x:"2023-01", y: 4 } ,{x:"2023-10", y: 5 } ],
         fill: false,
     };
     fdbk_over_month['tuto-analysis-md-simulations'] = [tuto_data];
     fdbk_over_month['topic-computational-chemistry'].push(tuto_data);
-    data_notes['tuto-analysis-md-simulations'] = [0,1,0,0,3,0];
+    data_notes['tuto-analysis-md-simulations'] = [0,1,0,0,3,1];
 </script>
 
 <script>
@@ -963,48 +943,48 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Evolution",
-        data: [{x:"2022-07", y: 1 } ,{x:"2023-01", y: 2 } ,{x:"2023-05", y: 4 } ,{x:"2023-10", y: 7 } ],
+        data: [{x:"2022-07", y: 1 } ,{x:"2023-01", y: 2 } ,{x:"2023-05", y: 4 } ,{x:"2023-10", y: 9 } ],
         fill: false,
     };
     fdbk_over_month['topic-evolution'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-evolution'] = [0,0,0,0,2,5];
+    data_notes['topic-evolution'] = [0,0,0,0,4,5];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Identifying tuberculosis transmission links: from SNPs to transmission clusters",
-        data: [{x:"2022-07", y: 1 } ,{x:"2023-01", y: 2 } ,{x:"2023-05", y: 3 } ,{x:"2023-10", y: 4 } ],
+        data: [{x:"2022-07", y: 1 } ,{x:"2023-01", y: 2 } ,{x:"2023-05", y: 3 } ,{x:"2023-10", y: 5 } ],
         fill: false,
     };
     fdbk_over_month['tuto-mtb_transmission'] = [tuto_data];
     fdbk_over_month['topic-evolution'].push(tuto_data);
-    data_notes['tuto-mtb_transmission'] = [0,0,0,0,2,2];
+    data_notes['tuto-mtb_transmission'] = [0,0,0,0,3,2];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Tree thinking for tuberculosis evolution and epidemiology",
-        data: [{x:"2023-05", y: 1 } ,{x:"2023-10", y: 3 } ],
+        data: [{x:"2023-05", y: 1 } ,{x:"2023-10", y: 4 } ],
         fill: false,
     };
     fdbk_over_month['tuto-mtb_phylogeny'] = [tuto_data];
     fdbk_over_month['topic-evolution'].push(tuto_data);
-    data_notes['tuto-mtb_phylogeny'] = [0,0,0,0,0,3];
+    data_notes['tuto-mtb_phylogeny'] = [0,0,0,0,1,3];
 </script>
 
 <script>
     var topic_data =
     {
         label: "Foundations of Data Science",
-        data: [{x:"2019-10", y: 1 } ,{x:"2020-02", y: 2 } ,{x:"2020-04", y: 3 } ,{x:"2020-06", y: 6 } ,{x:"2020-07", y: 7 } ,{x:"2020-08", y: 8 } ,{x:"2020-09", y: 10 } ,{x:"2020-12", y: 11 } ,{x:"2021-02", y: 17 } ,{x:"2021-03", y: 18 } ,{x:"2021-08", y: 19 } ,{x:"2021-09", y: 20 } ,{x:"2022-03", y: 22 } ,{x:"2022-11", y: 23 } ,{x:"2022-12", y: 24 } ,{x:"2023-05", y: 28 } ,{x:"2023-07", y: 29 } ,{x:"2023-09", y: 30 } ],
+        data: [{x:"2019-10", y: 1 } ,{x:"2020-02", y: 2 } ,{x:"2020-04", y: 3 } ,{x:"2020-06", y: 6 } ,{x:"2020-07", y: 7 } ,{x:"2020-08", y: 8 } ,{x:"2020-09", y: 10 } ,{x:"2020-12", y: 11 } ,{x:"2021-02", y: 17 } ,{x:"2021-03", y: 18 } ,{x:"2021-08", y: 19 } ,{x:"2021-09", y: 20 } ,{x:"2022-03", y: 22 } ,{x:"2022-11", y: 23 } ,{x:"2022-12", y: 24 } ,{x:"2023-05", y: 28 } ,{x:"2023-07", y: 29 } ,{x:"2023-09", y: 30 } ,{x:"2023-10", y: 31 } ],
         fill: false,
     };
     fdbk_over_month['topic-data-science'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-data-science'] = [3,2,1,2,2,20];
+    data_notes['topic-data-science'] = [3,2,1,2,2,21];
 </script>
 
 <script>
@@ -1053,6 +1033,18 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     fdbk_over_month['tuto-python-plotting'] = [tuto_data];
     fdbk_over_month['topic-data-science'].push(tuto_data);
     data_notes['tuto-python-plotting'] = [0,0,0,0,0,1];
+</script>
+
+<script>
+    var tuto_data =
+    {
+        label: "Python - Math",
+        data: [{x:"2023-10", y: 1 } ],
+        fill: false,
+    };
+    fdbk_over_month['tuto-python-math'] = [tuto_data];
+    fdbk_over_month['topic-data-science'].push(tuto_data);
+    data_notes['tuto-python-math'] = [0,0,0,0,0,1];
 </script>
 
 <script>
@@ -1503,48 +1495,48 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Introduction to Galaxy Analyses",
-        data: [{x:"2018-09", y: 12 } ,{x:"2018-10", y: 36 } ,{x:"2018-11", y: 56 } ,{x:"2018-12", y: 59 } ,{x:"2019-01", y: 73 } ,{x:"2019-02", y: 83 } ,{x:"2019-03", y: 89 } ,{x:"2019-04", y: 108 } ,{x:"2019-05", y: 116 } ,{x:"2019-06", y: 127 } ,{x:"2019-07", y: 136 } ,{x:"2019-08", y: 157 } ,{x:"2019-09", y: 171 } ,{x:"2019-10", y: 181 } ,{x:"2019-11", y: 200 } ,{x:"2019-12", y: 207 } ,{x:"2020-01", y: 224 } ,{x:"2020-02", y: 245 } ,{x:"2020-03", y: 265 } ,{x:"2020-04", y: 284 } ,{x:"2020-05", y: 296 } ,{x:"2020-06", y: 320 } ,{x:"2020-07", y: 332 } ,{x:"2020-08", y: 337 } ,{x:"2020-09", y: 348 } ,{x:"2020-10", y: 356 } ,{x:"2020-11", y: 372 } ,{x:"2020-12", y: 380 } ,{x:"2021-01", y: 387 } ,{x:"2021-02", y: 408 } ,{x:"2021-03", y: 419 } ,{x:"2021-04", y: 423 } ,{x:"2021-05", y: 438 } ,{x:"2021-06", y: 452 } ,{x:"2021-07", y: 471 } ,{x:"2021-08", y: 496 } ,{x:"2021-09", y: 506 } ,{x:"2021-10", y: 526 } ,{x:"2021-11", y: 552 } ,{x:"2021-12", y: 559 } ,{x:"2022-01", y: 566 } ,{x:"2022-02", y: 580 } ,{x:"2022-03", y: 632 } ,{x:"2022-04", y: 651 } ,{x:"2022-05", y: 663 } ,{x:"2022-06", y: 671 } ,{x:"2022-07", y: 679 } ,{x:"2022-08", y: 685 } ,{x:"2022-09", y: 693 } ,{x:"2022-10", y: 707 } ,{x:"2022-11", y: 717 } ,{x:"2022-12", y: 720 } ,{x:"2023-01", y: 729 } ,{x:"2023-02", y: 740 } ,{x:"2023-03", y: 757 } ,{x:"2023-04", y: 771 } ,{x:"2023-05", y: 799 } ,{x:"2023-06", y: 816 } ,{x:"2023-07", y: 827 } ,{x:"2023-08", y: 832 } ,{x:"2023-09", y: 849 } ,{x:"2023-10", y: 855 } ],
+        data: [{x:"2018-09", y: 12 } ,{x:"2018-10", y: 36 } ,{x:"2018-11", y: 56 } ,{x:"2018-12", y: 59 } ,{x:"2019-01", y: 73 } ,{x:"2019-02", y: 83 } ,{x:"2019-03", y: 89 } ,{x:"2019-04", y: 108 } ,{x:"2019-05", y: 116 } ,{x:"2019-06", y: 127 } ,{x:"2019-07", y: 136 } ,{x:"2019-08", y: 157 } ,{x:"2019-09", y: 171 } ,{x:"2019-10", y: 181 } ,{x:"2019-11", y: 200 } ,{x:"2019-12", y: 207 } ,{x:"2020-01", y: 224 } ,{x:"2020-02", y: 245 } ,{x:"2020-03", y: 265 } ,{x:"2020-04", y: 284 } ,{x:"2020-05", y: 296 } ,{x:"2020-06", y: 320 } ,{x:"2020-07", y: 332 } ,{x:"2020-08", y: 337 } ,{x:"2020-09", y: 348 } ,{x:"2020-10", y: 356 } ,{x:"2020-11", y: 372 } ,{x:"2020-12", y: 380 } ,{x:"2021-01", y: 387 } ,{x:"2021-02", y: 408 } ,{x:"2021-03", y: 419 } ,{x:"2021-04", y: 423 } ,{x:"2021-05", y: 438 } ,{x:"2021-06", y: 452 } ,{x:"2021-07", y: 471 } ,{x:"2021-08", y: 496 } ,{x:"2021-09", y: 506 } ,{x:"2021-10", y: 526 } ,{x:"2021-11", y: 552 } ,{x:"2021-12", y: 559 } ,{x:"2022-01", y: 566 } ,{x:"2022-02", y: 580 } ,{x:"2022-03", y: 632 } ,{x:"2022-04", y: 651 } ,{x:"2022-05", y: 663 } ,{x:"2022-06", y: 671 } ,{x:"2022-07", y: 679 } ,{x:"2022-08", y: 685 } ,{x:"2022-09", y: 693 } ,{x:"2022-10", y: 707 } ,{x:"2022-11", y: 717 } ,{x:"2022-12", y: 720 } ,{x:"2023-01", y: 729 } ,{x:"2023-02", y: 740 } ,{x:"2023-03", y: 757 } ,{x:"2023-04", y: 771 } ,{x:"2023-05", y: 799 } ,{x:"2023-06", y: 816 } ,{x:"2023-07", y: 827 } ,{x:"2023-08", y: 832 } ,{x:"2023-09", y: 849 } ,{x:"2023-10", y: 865 } ,{x:"2023-11", y: 869 } ],
         fill: false,
     };
     fdbk_over_month['topic-introduction'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-introduction'] = [4,18,11,26,135,661];
+    data_notes['topic-introduction'] = [4,19,11,26,140,669];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "A short introduction to Galaxy",
-        data: [{x:"2018-10", y: 13 } ,{x:"2018-11", y: 19 } ,{x:"2018-12", y: 21 } ,{x:"2019-01", y: 28 } ,{x:"2019-02", y: 32 } ,{x:"2019-03", y: 35 } ,{x:"2019-04", y: 50 } ,{x:"2019-05", y: 54 } ,{x:"2019-06", y: 60 } ,{x:"2019-07", y: 65 } ,{x:"2019-08", y: 75 } ,{x:"2019-09", y: 83 } ,{x:"2019-10", y: 88 } ,{x:"2019-11", y: 101 } ,{x:"2019-12", y: 106 } ,{x:"2020-01", y: 120 } ,{x:"2020-02", y: 129 } ,{x:"2020-03", y: 138 } ,{x:"2020-04", y: 153 } ,{x:"2020-05", y: 162 } ,{x:"2020-06", y: 176 } ,{x:"2020-07", y: 185 } ,{x:"2020-08", y: 189 } ,{x:"2020-09", y: 195 } ,{x:"2020-10", y: 199 } ,{x:"2020-11", y: 210 } ,{x:"2020-12", y: 216 } ,{x:"2021-01", y: 219 } ,{x:"2021-02", y: 223 } ,{x:"2021-03", y: 227 } ,{x:"2021-04", y: 230 } ,{x:"2021-05", y: 236 } ,{x:"2021-06", y: 242 } ,{x:"2021-07", y: 248 } ,{x:"2021-08", y: 251 } ,{x:"2021-09", y: 254 } ,{x:"2021-10", y: 263 } ,{x:"2021-11", y: 275 } ,{x:"2021-12", y: 280 } ,{x:"2022-01", y: 281 } ,{x:"2022-02", y: 283 } ,{x:"2022-03", y: 300 } ,{x:"2022-04", y: 310 } ,{x:"2022-05", y: 316 } ,{x:"2022-06", y: 318 } ,{x:"2022-07", y: 323 } ,{x:"2022-08", y: 327 } ,{x:"2022-09", y: 334 } ,{x:"2022-10", y: 346 } ,{x:"2022-11", y: 349 } ,{x:"2022-12", y: 352 } ,{x:"2023-01", y: 358 } ,{x:"2023-02", y: 362 } ,{x:"2023-03", y: 369 } ,{x:"2023-04", y: 380 } ,{x:"2023-05", y: 397 } ,{x:"2023-06", y: 411 } ,{x:"2023-07", y: 416 } ,{x:"2023-08", y: 419 } ,{x:"2023-09", y: 430 } ,{x:"2023-10", y: 435 } ],
+        data: [{x:"2018-10", y: 13 } ,{x:"2018-11", y: 19 } ,{x:"2018-12", y: 21 } ,{x:"2019-01", y: 28 } ,{x:"2019-02", y: 32 } ,{x:"2019-03", y: 35 } ,{x:"2019-04", y: 50 } ,{x:"2019-05", y: 54 } ,{x:"2019-06", y: 60 } ,{x:"2019-07", y: 65 } ,{x:"2019-08", y: 75 } ,{x:"2019-09", y: 83 } ,{x:"2019-10", y: 88 } ,{x:"2019-11", y: 101 } ,{x:"2019-12", y: 106 } ,{x:"2020-01", y: 120 } ,{x:"2020-02", y: 129 } ,{x:"2020-03", y: 138 } ,{x:"2020-04", y: 153 } ,{x:"2020-05", y: 162 } ,{x:"2020-06", y: 176 } ,{x:"2020-07", y: 185 } ,{x:"2020-08", y: 189 } ,{x:"2020-09", y: 195 } ,{x:"2020-10", y: 199 } ,{x:"2020-11", y: 210 } ,{x:"2020-12", y: 216 } ,{x:"2021-01", y: 219 } ,{x:"2021-02", y: 223 } ,{x:"2021-03", y: 227 } ,{x:"2021-04", y: 230 } ,{x:"2021-05", y: 236 } ,{x:"2021-06", y: 242 } ,{x:"2021-07", y: 248 } ,{x:"2021-08", y: 251 } ,{x:"2021-09", y: 254 } ,{x:"2021-10", y: 263 } ,{x:"2021-11", y: 275 } ,{x:"2021-12", y: 280 } ,{x:"2022-01", y: 281 } ,{x:"2022-02", y: 283 } ,{x:"2022-03", y: 300 } ,{x:"2022-04", y: 310 } ,{x:"2022-05", y: 316 } ,{x:"2022-06", y: 318 } ,{x:"2022-07", y: 323 } ,{x:"2022-08", y: 327 } ,{x:"2022-09", y: 334 } ,{x:"2022-10", y: 346 } ,{x:"2022-11", y: 349 } ,{x:"2022-12", y: 352 } ,{x:"2023-01", y: 358 } ,{x:"2023-02", y: 362 } ,{x:"2023-03", y: 369 } ,{x:"2023-04", y: 380 } ,{x:"2023-05", y: 397 } ,{x:"2023-06", y: 411 } ,{x:"2023-07", y: 416 } ,{x:"2023-08", y: 419 } ,{x:"2023-09", y: 430 } ,{x:"2023-10", y: 439 } ,{x:"2023-11", y: 443 } ],
         fill: false,
     };
     fdbk_over_month['tuto-galaxy-intro-short'] = [tuto_data];
     fdbk_over_month['topic-introduction'].push(tuto_data);
-    data_notes['tuto-galaxy-intro-short'] = [3,1,2,5,59,365];
+    data_notes['tuto-galaxy-intro-short'] = [3,1,2,5,61,371];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Breve introducción a Galaxy - en español",
-        data: [{x:"2021-08", y: 1 } ,{x:"2021-11", y: 7 } ,{x:"2022-10", y: 9 } ,{x:"2022-11", y: 10 } ,{x:"2023-03", y: 12 } ,{x:"2023-04", y: 13 } ],
+        data: [{x:"2021-08", y: 1 } ,{x:"2021-11", y: 7 } ,{x:"2022-10", y: 9 } ,{x:"2022-11", y: 10 } ,{x:"2023-03", y: 12 } ,{x:"2023-04", y: 13 } ,{x:"2023-10", y: 16 } ],
         fill: false,
     };
     fdbk_over_month['tuto-galaxy-intro-shorttutorial_ES'] = [tuto_data];
     fdbk_over_month['topic-introduction'].push(tuto_data);
-    data_notes['tuto-galaxy-intro-shorttutorial_ES'] = [0,0,0,1,1,11];
+    data_notes['tuto-galaxy-intro-shorttutorial_ES'] = [0,0,0,1,2,13];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Data Manipulation Olympics",
-        data: [{x:"2023-05", y: 1 } ],
+        data: [{x:"2023-05", y: 1 } ,{x:"2023-10", y: 2 } ],
         fill: false,
     };
     fdbk_over_month['tuto-data-manipulation-olympics'] = [tuto_data];
     fdbk_over_month['topic-introduction'].push(tuto_data);
-    data_notes['tuto-data-manipulation-olympics'] = [0,0,0,0,0,1];
+    data_notes['tuto-data-manipulation-olympics'] = [0,0,0,0,1,1];
 </script>
 
 <script>
@@ -1623,12 +1615,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "NGS data logistics",
-        data: [{x:"2018-09", y: 1 } ,{x:"2018-11", y: 3 } ,{x:"2019-01", y: 5 } ,{x:"2019-04", y: 6 } ,{x:"2019-05", y: 7 } ,{x:"2019-08", y: 9 } ,{x:"2019-10", y: 10 } ,{x:"2019-11", y: 12 } ,{x:"2020-03", y: 13 } ,{x:"2020-04", y: 14 } ,{x:"2020-10", y: 15 } ,{x:"2020-12", y: 16 } ,{x:"2021-02", y: 19 } ,{x:"2021-05", y: 20 } ,{x:"2021-06", y: 21 } ,{x:"2021-07", y: 25 } ,{x:"2021-08", y: 34 } ,{x:"2021-10", y: 35 } ,{x:"2021-12", y: 36 } ,{x:"2022-01", y: 37 } ,{x:"2022-03", y: 39 } ,{x:"2022-06", y: 40 } ,{x:"2022-11", y: 42 } ,{x:"2023-05", y: 43 } ,{x:"2023-07", y: 44 } ],
+        data: [{x:"2018-09", y: 1 } ,{x:"2018-11", y: 3 } ,{x:"2019-01", y: 5 } ,{x:"2019-04", y: 6 } ,{x:"2019-05", y: 7 } ,{x:"2019-08", y: 9 } ,{x:"2019-10", y: 10 } ,{x:"2019-11", y: 12 } ,{x:"2020-03", y: 13 } ,{x:"2020-04", y: 14 } ,{x:"2020-10", y: 15 } ,{x:"2020-12", y: 16 } ,{x:"2021-02", y: 19 } ,{x:"2021-05", y: 20 } ,{x:"2021-06", y: 21 } ,{x:"2021-07", y: 25 } ,{x:"2021-08", y: 34 } ,{x:"2021-10", y: 35 } ,{x:"2021-12", y: 36 } ,{x:"2022-01", y: 37 } ,{x:"2022-03", y: 39 } ,{x:"2022-06", y: 40 } ,{x:"2022-11", y: 42 } ,{x:"2023-05", y: 43 } ,{x:"2023-07", y: 44 } ,{x:"2023-10", y: 46 } ],
         fill: false,
     };
     fdbk_over_month['tuto-galaxy-intro-ngs-data-managment'] = [tuto_data];
     fdbk_over_month['topic-introduction'].push(tuto_data);
-    data_notes['tuto-galaxy-intro-ngs-data-managment'] = [0,2,2,6,8,26];
+    data_notes['tuto-galaxy-intro-ngs-data-managment'] = [0,3,2,6,9,26];
 </script>
 
 <script>
@@ -1695,12 +1687,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Metagenomics",
-        data: [{x:"2018-09", y: 1 } ,{x:"2018-10", y: 4 } ,{x:"2018-11", y: 6 } ,{x:"2018-12", y: 8 } ,{x:"2019-03", y: 12 } ,{x:"2019-04", y: 17 } ,{x:"2019-05", y: 21 } ,{x:"2019-06", y: 23 } ,{x:"2019-07", y: 27 } ,{x:"2019-08", y: 29 } ,{x:"2019-09", y: 31 } ,{x:"2019-10", y: 32 } ,{x:"2019-12", y: 34 } ,{x:"2020-02", y: 35 } ,{x:"2020-03", y: 38 } ,{x:"2020-04", y: 39 } ,{x:"2020-05", y: 42 } ,{x:"2020-06", y: 43 } ,{x:"2020-07", y: 45 } ,{x:"2020-08", y: 46 } ,{x:"2020-12", y: 48 } ,{x:"2021-01", y: 50 } ,{x:"2021-02", y: 53 } ,{x:"2021-07", y: 55 } ,{x:"2021-09", y: 57 } ,{x:"2021-10", y: 58 } ,{x:"2021-11", y: 59 } ,{x:"2021-12", y: 61 } ,{x:"2022-02", y: 62 } ,{x:"2022-03", y: 73 } ,{x:"2022-04", y: 77 } ,{x:"2022-05", y: 78 } ,{x:"2022-06", y: 80 } ,{x:"2022-08", y: 82 } ,{x:"2022-09", y: 83 } ,{x:"2022-10", y: 84 } ,{x:"2022-11", y: 85 } ,{x:"2023-02", y: 87 } ,{x:"2023-04", y: 90 } ,{x:"2023-05", y: 97 } ,{x:"2023-08", y: 98 } ,{x:"2023-10", y: 99 } ],
+        data: [{x:"2018-09", y: 1 } ,{x:"2018-10", y: 4 } ,{x:"2018-11", y: 6 } ,{x:"2018-12", y: 8 } ,{x:"2019-03", y: 12 } ,{x:"2019-04", y: 17 } ,{x:"2019-05", y: 21 } ,{x:"2019-06", y: 23 } ,{x:"2019-07", y: 27 } ,{x:"2019-08", y: 29 } ,{x:"2019-09", y: 31 } ,{x:"2019-10", y: 32 } ,{x:"2019-12", y: 34 } ,{x:"2020-02", y: 35 } ,{x:"2020-03", y: 38 } ,{x:"2020-04", y: 39 } ,{x:"2020-05", y: 42 } ,{x:"2020-06", y: 43 } ,{x:"2020-07", y: 45 } ,{x:"2020-08", y: 46 } ,{x:"2020-12", y: 48 } ,{x:"2021-01", y: 50 } ,{x:"2021-02", y: 53 } ,{x:"2021-07", y: 55 } ,{x:"2021-09", y: 57 } ,{x:"2021-10", y: 58 } ,{x:"2021-11", y: 59 } ,{x:"2021-12", y: 61 } ,{x:"2022-02", y: 62 } ,{x:"2022-03", y: 73 } ,{x:"2022-04", y: 77 } ,{x:"2022-05", y: 78 } ,{x:"2022-06", y: 80 } ,{x:"2022-08", y: 82 } ,{x:"2022-09", y: 83 } ,{x:"2022-10", y: 84 } ,{x:"2022-11", y: 85 } ,{x:"2023-02", y: 87 } ,{x:"2023-04", y: 90 } ,{x:"2023-05", y: 97 } ,{x:"2023-08", y: 98 } ,{x:"2023-10", y: 101 } ,{x:"2023-11", y: 102 } ],
         fill: false,
     };
     fdbk_over_month['topic-metagenomics'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-metagenomics'] = [0,2,2,5,16,74];
+    data_notes['topic-metagenomics'] = [0,2,2,6,17,75];
 </script>
 
 <script>
@@ -1767,12 +1759,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "Identification of the micro-organisms in a beer using Nanopore sequencing",
-        data: [{x:"2023-05", y: 1 } ],
+        data: [{x:"2023-05", y: 1 } ,{x:"2023-10", y: 2 } ,{x:"2023-11", y: 3 } ],
         fill: false,
     };
     fdbk_over_month['tuto-beer-data-analysis'] = [tuto_data];
     fdbk_over_month['topic-metagenomics'].push(tuto_data);
-    data_notes['tuto-beer-data-analysis'] = [0,0,0,0,0,1];
+    data_notes['tuto-beer-data-analysis'] = [0,0,0,0,1,2];
 </script>
 
 <script>
@@ -1815,24 +1807,24 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "Taxonomic Profiling and Visualization of Metagenomic Data",
-        data: [{x:"2023-05", y: 1 } ,{x:"2023-08", y: 2 } ],
+        data: [{x:"2023-05", y: 1 } ,{x:"2023-08", y: 2 } ,{x:"2023-10", y: 3 } ],
         fill: false,
     };
     fdbk_over_month['tuto-taxonomic-profiling'] = [tuto_data];
     fdbk_over_month['topic-metagenomics'].push(tuto_data);
-    data_notes['tuto-taxonomic-profiling'] = [0,0,0,0,0,2];
+    data_notes['tuto-taxonomic-profiling'] = [0,0,0,1,0,2];
 </script>
 
 <script>
     var topic_data =
     {
         label: "Proteomics",
-        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-04", y: 7 } ,{x:"2019-06", y: 8 } ,{x:"2019-09", y: 9 } ,{x:"2019-10", y: 10 } ,{x:"2019-11", y: 11 } ,{x:"2019-12", y: 12 } ,{x:"2020-02", y: 13 } ,{x:"2020-03", y: 14 } ,{x:"2020-05", y: 16 } ,{x:"2020-11", y: 17 } ,{x:"2021-01", y: 18 } ,{x:"2021-02", y: 24 } ,{x:"2021-03", y: 25 } ,{x:"2021-04", y: 27 } ,{x:"2021-07", y: 30 } ,{x:"2021-08", y: 32 } ,{x:"2021-09", y: 34 } ,{x:"2021-11", y: 35 } ,{x:"2022-03", y: 42 } ,{x:"2022-05", y: 43 } ,{x:"2022-06", y: 44 } ,{x:"2022-07", y: 47 } ,{x:"2022-08", y: 49 } ,{x:"2023-01", y: 50 } ,{x:"2023-05", y: 52 } ,{x:"2023-06", y: 54 } ,{x:"2023-07", y: 56 } ,{x:"2023-10", y: 57 } ],
+        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-04", y: 7 } ,{x:"2019-06", y: 8 } ,{x:"2019-09", y: 9 } ,{x:"2019-10", y: 10 } ,{x:"2019-11", y: 11 } ,{x:"2019-12", y: 12 } ,{x:"2020-02", y: 13 } ,{x:"2020-03", y: 14 } ,{x:"2020-05", y: 16 } ,{x:"2020-11", y: 17 } ,{x:"2021-01", y: 18 } ,{x:"2021-02", y: 24 } ,{x:"2021-03", y: 25 } ,{x:"2021-04", y: 27 } ,{x:"2021-07", y: 30 } ,{x:"2021-08", y: 32 } ,{x:"2021-09", y: 34 } ,{x:"2021-11", y: 35 } ,{x:"2022-03", y: 42 } ,{x:"2022-05", y: 43 } ,{x:"2022-06", y: 44 } ,{x:"2022-07", y: 47 } ,{x:"2022-08", y: 49 } ,{x:"2023-01", y: 50 } ,{x:"2023-05", y: 52 } ,{x:"2023-06", y: 54 } ,{x:"2023-07", y: 56 } ,{x:"2023-10", y: 59 } ],
         fill: false,
     };
     fdbk_over_month['topic-proteomics'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-proteomics'] = [0,2,1,2,13,39];
+    data_notes['topic-proteomics'] = [0,2,1,3,13,40];
 </script>
 
 <script>
@@ -1899,12 +1891,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "Library Generation for DIA Analysis",
-        data: [{x:"2022-06", y: 1 } ],
+        data: [{x:"2022-06", y: 1 } ,{x:"2023-10", y: 2 } ],
         fill: false,
     };
     fdbk_over_month['tuto-DIA_lib_OSW'] = [tuto_data];
     fdbk_over_month['topic-proteomics'].push(tuto_data);
-    data_notes['tuto-DIA_lib_OSW'] = [0,0,0,0,0,1];
+    data_notes['tuto-DIA_lib_OSW'] = [0,0,0,0,0,2];
 </script>
 
 <script>
@@ -2031,12 +2023,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "Proteogenomics 2: Database Search",
-        data: [{x:"2021-02", y: 3 } ,{x:"2022-03", y: 5 } ],
+        data: [{x:"2021-02", y: 3 } ,{x:"2022-03", y: 5 } ,{x:"2023-10", y: 6 } ],
         fill: false,
     };
     fdbk_over_month['tuto-proteogenomics-dbsearch'] = [tuto_data];
     fdbk_over_month['topic-proteomics'].push(tuto_data);
-    data_notes['tuto-proteogenomics-dbsearch'] = [0,0,0,0,1,4];
+    data_notes['tuto-proteogenomics-dbsearch'] = [0,0,0,1,1,4];
 </script>
 
 <script>
@@ -2055,36 +2047,36 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Sequence analysis",
-        data: [{x:"2018-09", y: 3 } ,{x:"2018-10", y: 6 } ,{x:"2018-11", y: 7 } ,{x:"2018-12", y: 8 } ,{x:"2019-01", y: 10 } ,{x:"2019-02", y: 12 } ,{x:"2019-03", y: 15 } ,{x:"2019-05", y: 16 } ,{x:"2019-06", y: 17 } ,{x:"2019-07", y: 25 } ,{x:"2019-08", y: 27 } ,{x:"2019-09", y: 32 } ,{x:"2019-10", y: 47 } ,{x:"2019-11", y: 50 } ,{x:"2019-12", y: 51 } ,{x:"2020-01", y: 57 } ,{x:"2020-03", y: 60 } ,{x:"2020-04", y: 67 } ,{x:"2020-05", y: 70 } ,{x:"2020-06", y: 73 } ,{x:"2020-07", y: 75 } ,{x:"2020-08", y: 76 } ,{x:"2020-09", y: 77 } ,{x:"2020-10", y: 78 } ,{x:"2020-11", y: 83 } ,{x:"2020-12", y: 87 } ,{x:"2021-02", y: 106 } ,{x:"2021-04", y: 110 } ,{x:"2021-05", y: 111 } ,{x:"2021-06", y: 121 } ,{x:"2021-07", y: 131 } ,{x:"2021-08", y: 150 } ,{x:"2021-09", y: 151 } ,{x:"2021-10", y: 155 } ,{x:"2021-11", y: 160 } ,{x:"2021-12", y: 164 } ,{x:"2022-01", y: 165 } ,{x:"2022-02", y: 168 } ,{x:"2022-03", y: 202 } ,{x:"2022-04", y: 205 } ,{x:"2022-05", y: 208 } ,{x:"2022-06", y: 212 } ,{x:"2022-07", y: 213 } ,{x:"2022-08", y: 215 } ,{x:"2022-09", y: 219 } ,{x:"2022-10", y: 220 } ,{x:"2022-11", y: 221 } ,{x:"2023-01", y: 222 } ,{x:"2023-02", y: 223 } ,{x:"2023-03", y: 224 } ,{x:"2023-04", y: 225 } ,{x:"2023-05", y: 241 } ,{x:"2023-06", y: 244 } ,{x:"2023-08", y: 247 } ,{x:"2023-09", y: 249 } ,{x:"2023-10", y: 250 } ],
+        data: [{x:"2018-09", y: 3 } ,{x:"2018-10", y: 6 } ,{x:"2018-11", y: 7 } ,{x:"2018-12", y: 8 } ,{x:"2019-01", y: 10 } ,{x:"2019-02", y: 12 } ,{x:"2019-03", y: 15 } ,{x:"2019-05", y: 16 } ,{x:"2019-06", y: 17 } ,{x:"2019-07", y: 25 } ,{x:"2019-08", y: 27 } ,{x:"2019-09", y: 32 } ,{x:"2019-10", y: 47 } ,{x:"2019-11", y: 50 } ,{x:"2019-12", y: 51 } ,{x:"2020-01", y: 57 } ,{x:"2020-03", y: 60 } ,{x:"2020-04", y: 67 } ,{x:"2020-05", y: 70 } ,{x:"2020-06", y: 73 } ,{x:"2020-07", y: 75 } ,{x:"2020-08", y: 76 } ,{x:"2020-09", y: 77 } ,{x:"2020-10", y: 78 } ,{x:"2020-11", y: 83 } ,{x:"2020-12", y: 87 } ,{x:"2021-02", y: 106 } ,{x:"2021-04", y: 110 } ,{x:"2021-05", y: 111 } ,{x:"2021-06", y: 121 } ,{x:"2021-07", y: 131 } ,{x:"2021-08", y: 150 } ,{x:"2021-09", y: 151 } ,{x:"2021-10", y: 155 } ,{x:"2021-11", y: 160 } ,{x:"2021-12", y: 164 } ,{x:"2022-01", y: 165 } ,{x:"2022-02", y: 168 } ,{x:"2022-03", y: 202 } ,{x:"2022-04", y: 205 } ,{x:"2022-05", y: 208 } ,{x:"2022-06", y: 212 } ,{x:"2022-07", y: 213 } ,{x:"2022-08", y: 215 } ,{x:"2022-09", y: 219 } ,{x:"2022-10", y: 220 } ,{x:"2022-11", y: 221 } ,{x:"2023-01", y: 222 } ,{x:"2023-02", y: 223 } ,{x:"2023-03", y: 224 } ,{x:"2023-04", y: 225 } ,{x:"2023-05", y: 241 } ,{x:"2023-06", y: 244 } ,{x:"2023-08", y: 247 } ,{x:"2023-09", y: 249 } ,{x:"2023-10", y: 251 } ,{x:"2023-11", y: 252 } ],
         fill: false,
     };
     fdbk_over_month['topic-sequence-analysis'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-sequence-analysis'] = [1,2,4,17,49,177];
+    data_notes['topic-sequence-analysis'] = [1,2,4,17,49,179];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Mapping",
-        data: [{x:"2018-09", y: 1 } ,{x:"2018-10", y: 2 } ,{x:"2018-11", y: 3 } ,{x:"2019-02", y: 4 } ,{x:"2019-06", y: 5 } ,{x:"2019-07", y: 8 } ,{x:"2019-09", y: 9 } ,{x:"2019-11", y: 10 } ,{x:"2020-01", y: 12 } ,{x:"2020-04", y: 16 } ,{x:"2020-05", y: 17 } ,{x:"2020-12", y: 18 } ,{x:"2021-02", y: 22 } ,{x:"2021-04", y: 23 } ,{x:"2021-06", y: 26 } ,{x:"2021-07", y: 30 } ,{x:"2021-08", y: 36 } ,{x:"2021-10", y: 37 } ,{x:"2021-12", y: 40 } ,{x:"2022-02", y: 42 } ,{x:"2022-03", y: 56 } ,{x:"2022-04", y: 57 } ,{x:"2022-05", y: 58 } ,{x:"2022-11", y: 59 } ,{x:"2023-01", y: 60 } ,{x:"2023-02", y: 61 } ,{x:"2023-05", y: 66 } ,{x:"2023-06", y: 67 } ,{x:"2023-08", y: 68 } ,{x:"2023-09", y: 69 } ,{x:"2023-10", y: 70 } ],
+        data: [{x:"2018-09", y: 1 } ,{x:"2018-10", y: 2 } ,{x:"2018-11", y: 3 } ,{x:"2019-02", y: 4 } ,{x:"2019-06", y: 5 } ,{x:"2019-07", y: 8 } ,{x:"2019-09", y: 9 } ,{x:"2019-11", y: 10 } ,{x:"2020-01", y: 12 } ,{x:"2020-04", y: 16 } ,{x:"2020-05", y: 17 } ,{x:"2020-12", y: 18 } ,{x:"2021-02", y: 22 } ,{x:"2021-04", y: 23 } ,{x:"2021-06", y: 26 } ,{x:"2021-07", y: 30 } ,{x:"2021-08", y: 36 } ,{x:"2021-10", y: 37 } ,{x:"2021-12", y: 40 } ,{x:"2022-02", y: 42 } ,{x:"2022-03", y: 56 } ,{x:"2022-04", y: 57 } ,{x:"2022-05", y: 58 } ,{x:"2022-11", y: 59 } ,{x:"2023-01", y: 60 } ,{x:"2023-02", y: 61 } ,{x:"2023-05", y: 66 } ,{x:"2023-06", y: 67 } ,{x:"2023-08", y: 68 } ,{x:"2023-09", y: 69 } ,{x:"2023-10", y: 71 } ],
         fill: false,
     };
     fdbk_over_month['tuto-mapping'] = [tuto_data];
     fdbk_over_month['topic-sequence-analysis'].push(tuto_data);
-    data_notes['tuto-mapping'] = [1,0,1,9,14,45];
+    data_notes['tuto-mapping'] = [1,0,1,9,14,46];
 </script>
 
 <script>
     var tuto_data =
     {
         label: "Quality Control",
-        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-01", y: 7 } ,{x:"2019-02", y: 8 } ,{x:"2019-03", y: 11 } ,{x:"2019-05", y: 12 } ,{x:"2019-07", y: 17 } ,{x:"2019-08", y: 19 } ,{x:"2019-09", y: 23 } ,{x:"2019-10", y: 38 } ,{x:"2019-11", y: 40 } ,{x:"2019-12", y: 41 } ,{x:"2020-01", y: 45 } ,{x:"2020-03", y: 48 } ,{x:"2020-04", y: 51 } ,{x:"2020-05", y: 53 } ,{x:"2020-06", y: 56 } ,{x:"2020-07", y: 58 } ,{x:"2020-08", y: 59 } ,{x:"2020-09", y: 60 } ,{x:"2020-10", y: 61 } ,{x:"2020-11", y: 66 } ,{x:"2020-12", y: 69 } ,{x:"2021-02", y: 84 } ,{x:"2021-04", y: 87 } ,{x:"2021-05", y: 88 } ,{x:"2021-06", y: 95 } ,{x:"2021-07", y: 101 } ,{x:"2021-08", y: 111 } ,{x:"2021-09", y: 112 } ,{x:"2021-10", y: 115 } ,{x:"2021-11", y: 120 } ,{x:"2021-12", y: 121 } ,{x:"2022-01", y: 122 } ,{x:"2022-02", y: 123 } ,{x:"2022-03", y: 140 } ,{x:"2022-04", y: 142 } ,{x:"2022-05", y: 144 } ,{x:"2022-06", y: 148 } ,{x:"2022-07", y: 149 } ,{x:"2022-08", y: 151 } ,{x:"2022-09", y: 155 } ,{x:"2022-10", y: 156 } ,{x:"2023-03", y: 157 } ,{x:"2023-04", y: 158 } ,{x:"2023-05", y: 169 } ,{x:"2023-06", y: 171 } ,{x:"2023-08", y: 173 } ,{x:"2023-09", y: 174 } ],
+        data: [{x:"2018-09", y: 2 } ,{x:"2018-10", y: 4 } ,{x:"2018-12", y: 5 } ,{x:"2019-01", y: 7 } ,{x:"2019-02", y: 8 } ,{x:"2019-03", y: 11 } ,{x:"2019-05", y: 12 } ,{x:"2019-07", y: 17 } ,{x:"2019-08", y: 19 } ,{x:"2019-09", y: 23 } ,{x:"2019-10", y: 38 } ,{x:"2019-11", y: 40 } ,{x:"2019-12", y: 41 } ,{x:"2020-01", y: 45 } ,{x:"2020-03", y: 48 } ,{x:"2020-04", y: 51 } ,{x:"2020-05", y: 53 } ,{x:"2020-06", y: 56 } ,{x:"2020-07", y: 58 } ,{x:"2020-08", y: 59 } ,{x:"2020-09", y: 60 } ,{x:"2020-10", y: 61 } ,{x:"2020-11", y: 66 } ,{x:"2020-12", y: 69 } ,{x:"2021-02", y: 84 } ,{x:"2021-04", y: 87 } ,{x:"2021-05", y: 88 } ,{x:"2021-06", y: 95 } ,{x:"2021-07", y: 101 } ,{x:"2021-08", y: 111 } ,{x:"2021-09", y: 112 } ,{x:"2021-10", y: 115 } ,{x:"2021-11", y: 120 } ,{x:"2021-12", y: 121 } ,{x:"2022-01", y: 122 } ,{x:"2022-02", y: 123 } ,{x:"2022-03", y: 140 } ,{x:"2022-04", y: 142 } ,{x:"2022-05", y: 144 } ,{x:"2022-06", y: 148 } ,{x:"2022-07", y: 149 } ,{x:"2022-08", y: 151 } ,{x:"2022-09", y: 155 } ,{x:"2022-10", y: 156 } ,{x:"2023-03", y: 157 } ,{x:"2023-04", y: 158 } ,{x:"2023-05", y: 169 } ,{x:"2023-06", y: 171 } ,{x:"2023-08", y: 173 } ,{x:"2023-09", y: 174 } ,{x:"2023-11", y: 175 } ],
         fill: false,
     };
     fdbk_over_month['tuto-quality-control'] = [tuto_data];
     fdbk_over_month['topic-sequence-analysis'].push(tuto_data);
-    data_notes['tuto-quality-control'] = [0,2,3,8,35,126];
+    data_notes['tuto-quality-control'] = [0,2,3,8,35,127];
 </script>
 
 <script>
@@ -2439,12 +2431,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Transcriptomics",
-        data: [{x:"2018-09", y: 3 } ,{x:"2018-10", y: 9 } ,{x:"2018-12", y: 13 } ,{x:"2019-01", y: 16 } ,{x:"2019-02", y: 19 } ,{x:"2019-03", y: 21 } ,{x:"2019-04", y: 26 } ,{x:"2019-05", y: 33 } ,{x:"2019-06", y: 39 } ,{x:"2019-07", y: 43 } ,{x:"2019-08", y: 50 } ,{x:"2019-09", y: 58 } ,{x:"2019-10", y: 76 } ,{x:"2019-11", y: 78 } ,{x:"2019-12", y: 80 } ,{x:"2020-01", y: 84 } ,{x:"2020-02", y: 87 } ,{x:"2020-03", y: 92 } ,{x:"2020-04", y: 98 } ,{x:"2020-05", y: 105 } ,{x:"2020-06", y: 108 } ,{x:"2020-07", y: 112 } ,{x:"2020-08", y: 114 } ,{x:"2020-09", y: 116 } ,{x:"2020-10", y: 117 } ,{x:"2020-11", y: 125 } ,{x:"2021-01", y: 128 } ,{x:"2021-02", y: 144 } ,{x:"2021-03", y: 150 } ,{x:"2021-04", y: 157 } ,{x:"2021-05", y: 159 } ,{x:"2021-06", y: 165 } ,{x:"2021-07", y: 181 } ,{x:"2021-08", y: 184 } ,{x:"2021-09", y: 186 } ,{x:"2021-11", y: 192 } ,{x:"2021-12", y: 196 } ,{x:"2022-01", y: 200 } ,{x:"2022-02", y: 205 } ,{x:"2022-03", y: 221 } ,{x:"2022-04", y: 226 } ,{x:"2022-05", y: 230 } ,{x:"2022-06", y: 231 } ,{x:"2022-07", y: 233 } ,{x:"2022-08", y: 236 } ,{x:"2022-09", y: 240 } ,{x:"2022-10", y: 244 } ,{x:"2022-11", y: 248 } ,{x:"2022-12", y: 251 } ,{x:"2023-01", y: 252 } ,{x:"2023-02", y: 253 } ,{x:"2023-03", y: 254 } ,{x:"2023-04", y: 257 } ,{x:"2023-05", y: 268 } ,{x:"2023-06", y: 273 } ,{x:"2023-07", y: 275 } ,{x:"2023-08", y: 279 } ,{x:"2023-09", y: 283 } ,{x:"2023-10", y: 284 } ],
+        data: [{x:"2018-09", y: 3 } ,{x:"2018-10", y: 9 } ,{x:"2018-12", y: 13 } ,{x:"2019-01", y: 16 } ,{x:"2019-02", y: 19 } ,{x:"2019-03", y: 21 } ,{x:"2019-04", y: 26 } ,{x:"2019-05", y: 33 } ,{x:"2019-06", y: 39 } ,{x:"2019-07", y: 43 } ,{x:"2019-08", y: 50 } ,{x:"2019-09", y: 58 } ,{x:"2019-10", y: 76 } ,{x:"2019-11", y: 78 } ,{x:"2019-12", y: 80 } ,{x:"2020-01", y: 84 } ,{x:"2020-02", y: 87 } ,{x:"2020-03", y: 92 } ,{x:"2020-04", y: 98 } ,{x:"2020-05", y: 105 } ,{x:"2020-06", y: 108 } ,{x:"2020-07", y: 112 } ,{x:"2020-08", y: 114 } ,{x:"2020-09", y: 116 } ,{x:"2020-10", y: 117 } ,{x:"2020-11", y: 125 } ,{x:"2021-01", y: 128 } ,{x:"2021-02", y: 144 } ,{x:"2021-03", y: 150 } ,{x:"2021-04", y: 157 } ,{x:"2021-05", y: 159 } ,{x:"2021-06", y: 165 } ,{x:"2021-07", y: 181 } ,{x:"2021-08", y: 184 } ,{x:"2021-09", y: 186 } ,{x:"2021-11", y: 192 } ,{x:"2021-12", y: 196 } ,{x:"2022-01", y: 200 } ,{x:"2022-02", y: 205 } ,{x:"2022-03", y: 221 } ,{x:"2022-04", y: 226 } ,{x:"2022-05", y: 230 } ,{x:"2022-06", y: 231 } ,{x:"2022-07", y: 233 } ,{x:"2022-08", y: 236 } ,{x:"2022-09", y: 240 } ,{x:"2022-10", y: 244 } ,{x:"2022-11", y: 248 } ,{x:"2022-12", y: 251 } ,{x:"2023-01", y: 252 } ,{x:"2023-02", y: 253 } ,{x:"2023-03", y: 254 } ,{x:"2023-04", y: 257 } ,{x:"2023-05", y: 268 } ,{x:"2023-06", y: 273 } ,{x:"2023-07", y: 275 } ,{x:"2023-08", y: 279 } ,{x:"2023-09", y: 283 } ,{x:"2023-10", y: 285 } ],
         fill: false,
     };
     fdbk_over_month['topic-transcriptomics'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-transcriptomics'] = [2,14,2,10,52,204];
+    data_notes['topic-transcriptomics'] = [2,14,2,10,52,205];
 </script>
 
 <script>
@@ -2463,12 +2455,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "2: RNA-seq counts to genes",
-        data: [{x:"2019-04", y: 1 } ,{x:"2019-08", y: 3 } ,{x:"2020-02", y: 4 } ,{x:"2021-03", y: 6 } ,{x:"2021-04", y: 8 } ,{x:"2021-09", y: 9 } ,{x:"2021-11", y: 10 } ,{x:"2022-10", y: 11 } ,{x:"2022-12", y: 12 } ],
+        data: [{x:"2019-04", y: 1 } ,{x:"2019-08", y: 3 } ,{x:"2020-02", y: 4 } ,{x:"2021-03", y: 6 } ,{x:"2021-04", y: 8 } ,{x:"2021-09", y: 9 } ,{x:"2021-11", y: 10 } ,{x:"2022-10", y: 11 } ,{x:"2022-12", y: 12 } ,{x:"2023-10", y: 13 } ],
         fill: false,
     };
     fdbk_over_month['tuto-rna-seq-counts-to-genes'] = [tuto_data];
     fdbk_over_month['topic-transcriptomics'].push(tuto_data);
-    data_notes['tuto-rna-seq-counts-to-genes'] = [0,0,0,0,3,9];
+    data_notes['tuto-rna-seq-counts-to-genes'] = [0,0,0,0,3,10];
 </script>
 
 <script>
@@ -2871,12 +2863,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var topic_data =
     {
         label: "Variant Analysis",
-        data: [{x:"2018-10", y: 1 } ,{x:"2018-11", y: 5 } ,{x:"2018-12", y: 6 } ,{x:"2019-03", y: 7 } ,{x:"2019-07", y: 11 } ,{x:"2019-08", y: 12 } ,{x:"2019-09", y: 15 } ,{x:"2019-10", y: 16 } ,{x:"2019-12", y: 18 } ,{x:"2020-01", y: 19 } ,{x:"2020-02", y: 20 } ,{x:"2020-03", y: 22 } ,{x:"2020-06", y: 25 } ,{x:"2020-10", y: 26 } ,{x:"2021-02", y: 30 } ,{x:"2021-03", y: 33 } ,{x:"2021-04", y: 34 } ,{x:"2021-05", y: 37 } ,{x:"2021-06", y: 40 } ,{x:"2021-07", y: 44 } ,{x:"2021-08", y: 52 } ,{x:"2021-09", y: 54 } ,{x:"2021-11", y: 56 } ,{x:"2022-03", y: 65 } ,{x:"2022-04", y: 66 } ,{x:"2022-05", y: 67 } ,{x:"2022-07", y: 69 } ,{x:"2022-09", y: 70 } ,{x:"2022-11", y: 75 } ,{x:"2023-01", y: 78 } ,{x:"2023-03", y: 82 } ,{x:"2023-04", y: 85 } ,{x:"2023-05", y: 92 } ,{x:"2023-06", y: 95 } ,{x:"2023-08", y: 98 } ,{x:"2023-10", y: 99 } ],
+        data: [{x:"2018-10", y: 1 } ,{x:"2018-11", y: 5 } ,{x:"2018-12", y: 6 } ,{x:"2019-03", y: 7 } ,{x:"2019-07", y: 11 } ,{x:"2019-08", y: 12 } ,{x:"2019-09", y: 15 } ,{x:"2019-10", y: 16 } ,{x:"2019-12", y: 18 } ,{x:"2020-01", y: 19 } ,{x:"2020-02", y: 20 } ,{x:"2020-03", y: 22 } ,{x:"2020-06", y: 25 } ,{x:"2020-10", y: 26 } ,{x:"2021-02", y: 30 } ,{x:"2021-03", y: 33 } ,{x:"2021-04", y: 34 } ,{x:"2021-05", y: 37 } ,{x:"2021-06", y: 40 } ,{x:"2021-07", y: 44 } ,{x:"2021-08", y: 52 } ,{x:"2021-09", y: 54 } ,{x:"2021-11", y: 56 } ,{x:"2022-03", y: 65 } ,{x:"2022-04", y: 66 } ,{x:"2022-05", y: 67 } ,{x:"2022-07", y: 69 } ,{x:"2022-09", y: 70 } ,{x:"2022-11", y: 75 } ,{x:"2023-01", y: 78 } ,{x:"2023-03", y: 82 } ,{x:"2023-04", y: 85 } ,{x:"2023-05", y: 92 } ,{x:"2023-06", y: 95 } ,{x:"2023-08", y: 98 } ,{x:"2023-10", y: 100 } ],
         fill: false,
     };
     fdbk_over_month['topic-variant-analysis'] = [topic_data];
     fdbk_over_month['all_topics'].push(topic_data);
-    data_notes['topic-variant-analysis'] = [0,8,3,6,21,61];
+    data_notes['topic-variant-analysis'] = [0,8,3,6,22,61];
 </script>
 
 <script>
@@ -2955,12 +2947,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     var tuto_data =
     {
         label: "M. tuberculosis Variant Analysis",
-        data: [{x:"2021-07", y: 1 } ,{x:"2022-03", y: 8 } ,{x:"2022-04", y: 9 } ,{x:"2022-07", y: 10 } ,{x:"2022-11", y: 11 } ,{x:"2023-01", y: 13 } ,{x:"2023-05", y: 16 } ,{x:"2023-10", y: 17 } ],
+        data: [{x:"2021-07", y: 1 } ,{x:"2022-03", y: 8 } ,{x:"2022-04", y: 9 } ,{x:"2022-07", y: 10 } ,{x:"2022-11", y: 11 } ,{x:"2023-01", y: 13 } ,{x:"2023-05", y: 16 } ,{x:"2023-10", y: 18 } ],
         fill: false,
     };
     fdbk_over_month['tuto-tb-variant-analysis'] = [tuto_data];
     fdbk_over_month['topic-variant-analysis'].push(tuto_data);
-    data_notes['tuto-tb-variant-analysis'] = [0,0,0,0,6,11];
+    data_notes['tuto-tb-variant-analysis'] = [0,0,0,0,7,11];
 </script>
 
 <script>
@@ -3062,7 +3054,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">2404 responses</h5>
+                            <h5 class="card-title">2432 responses</h5>
                             
                             <canvas id="allFdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -3100,7 +3092,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">84 responses</h5>
+                                <h5 class="card-title">85 responses</h5>
                                 
                                 <canvas id="assembly-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -3289,7 +3281,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">24 responses</h5>
+                                                    <h5 class="card-title">25 responses</h5>
                                                     
                                                     <canvas id="general-introduction-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -3338,6 +3330,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -5289,7 +5285,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">31 responses</h5>
+                                <h5 class="card-title">32 responses</h5>
                                 
                                 <canvas id="computational-chemistry-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -5710,7 +5706,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">4 responses</h5>
+                                                    <h5 class="card-title">5 responses</h5>
                                                     
                                                     <canvas id="analysis-md-simulations-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -5759,6 +5755,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 17, 2023</td>
+                                                                        <td>Extremely easy to follow and I was so impressed that it all works as described. Good maintenance :)</td>
+                                                                        <td>I had the mental model of a Jupyter Notebook coming in, so I was trying to figure out how to open the tutorial in my usegalaxy.org account view.</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -8822,7 +8828,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">7 responses</h5>
+                                <h5 class="card-title">9 responses</h5>
                                 
                                 <canvas id="evolution-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -8886,7 +8892,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">4 responses</h5>
+                                                    <h5 class="card-title">5 responses</h5>
                                                     
                                                     <canvas id="mtb_transmission-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -8935,6 +8941,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 31, 2023</td>
+                                                                        <td>Very clear tutorial</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -9003,7 +9019,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">3 responses</h5>
+                                                    <h5 class="card-title">4 responses</h5>
                                                     
                                                     <canvas id="mtb_phylogeny-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -9055,6 +9071,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                             
                                                                 
                                                                     
+                                                                    <tr>
+                                                                        <td>Oct 30, 2023</td>
+                                                                        <td>How to develop and analyse a phylogenetic tree</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
                                                                 
                                                             
                                                                 
@@ -9094,7 +9120,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">30 responses</h5>
+                                <h5 class="card-title">31 responses</h5>
                                 
                                 <canvas id="data-science-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -9865,6 +9891,99 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                                         <td>Sep 1, 2023</td>
                                                                         <td>It&apos;s so didactic, well thought over and it encompasses all the dark corners of jq usage.</td>
                                                                         <td>I had a hard finding the dataset used in this tutorial because the url are no longer available. Managed to find the .tsv files that I&apos;ve converted back to json</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                
+                    
+                    
+                    
+                        
+                        
+                        <div class="accordion-card card" id="tutorial-python-math">
+                            <div class="card-header" id="heading-python-math">
+                                <div class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-python-math" aria-expanded="false" aria-controls="collapse-python-math">
+                                        Python - Math
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="collapse-python-math" class="collapse" aria-labelledby="heading-python-math" data-parent="#accordion-data-science">
+                                <div class="card-body">
+                                    
+                                    <div class="row">
+                                        <!-- feedback over time  -->
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">1 responses</h5>
+                                                    
+                                                    <canvas id="python-math-tutorial-fdbkOverMonthGraph" width="400" height="400">
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        drawFdbkOverMonthGraph("python-math-tutorial-fdbkOverMonthGraph", fdbk_over_month['tuto-python-math']);
+    });
+</script>
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- feedback notes  -->
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Rating Distribution</h5>
+                                                    
+                                                    <canvas id="python-math-tutorial-fdbkNoteGraph" width="400" height="400">
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        drawFdbkNoteGraph("python-math-tutorial-fdbkNoteGraph", data_notes['tuto-python-math'], labels_notes);
+    });
+</script>
+                                                    </canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="/training-material/topics/data-science/tutorials/python-math/tutorial.html">View this Tutorial</a>
+                                    
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+
+                                                    <h5 class="card-title">Detailed feedback</h5>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>What did you like?</th>
+                                                                <th>What could be improved?</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 19, 2023</td>
+                                                                        <td>I think it was very straightforward and easy to follow</td>
+                                                                        <td>This part: Given the following variables: a = 2 b = 1 c = -1 I think the variables should be separated, I was really confused for a bit</td>
                                                                     </tr>
                                                                     
                                                                 
@@ -14306,7 +14425,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">855 responses</h5>
+                                <h5 class="card-title">869 responses</h5>
                                 
                                 <canvas id="introduction-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -16875,7 +16994,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">44 responses</h5>
+                                                    <h5 class="card-title">46 responses</h5>
                                                     
                                                     <canvas id="galaxy-intro-ngs-data-managment-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -16924,6 +17043,20 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 20, 2023</td>
+                                                                        <td></td>
+                                                                        <td>I feel this was too advanced for an introduction. I couldn&apos;t follow as outputs were not as described.</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -17302,7 +17435,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">435 responses</h5>
+                                                    <h5 class="card-title">443 responses</h5>
                                                     
                                                     <canvas id="galaxy-intro-short-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -17351,6 +17484,56 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Nov 8, 2023</td>
+                                                                        <td>the coherence</td>
+                                                                        <td>Examples in many ways to analyze</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Nov 3, 2023</td>
+                                                                        <td>Very clear, providing a first glance on the main actions with Galaxy.</td>
+                                                                        <td>Maybe the tutorial should be updated according to new versions of web Galaxy. Also, the reason for the second renaming (as &quot;FASTQ reads&quot;) during the creation of a workflow is not well justified.</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 28, 2023</td>
+                                                                        <td>Clearly stated with pictures</td>
+                                                                        <td>Trouble shooting pages and video recording</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -21323,7 +21506,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">13 responses</h5>
+                                                    <h5 class="card-title">16 responses</h5>
                                                     
                                                     <canvas id="galaxy-intro-shorttutorial_ES-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -21372,6 +21555,30 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 31, 2023</td>
+                                                                        <td>It was very clear and detailed</td>
+                                                                        <td>Some of the options were not updated, or at least they show different in my browser (galaxy.ue). Specifically in the FastQC &quot;short...&quot;</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 21, 2023</td>
+                                                                        <td>Easy and completed</td>
+                                                                        <td>You should try more video clips content but I think tihs tuturial is great</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -21617,7 +21824,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">1 responses</h5>
+                                                    <h5 class="card-title">2 responses</h5>
                                                     
                                                     <canvas id="data-manipulation-olympics-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -21666,6 +21873,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 26, 2023</td>
+                                                                        <td>il is well explained and step-by-step guided. </td>
+                                                                        <td>It maybe useful to have more details on the special meaning of &quot; *, ?, ., + etc in a regular expression, maybe i just missed the information.  Regarding the sort-tool based exercise i had a different answer to &quot;Which athlete comes last by alphabet, in the most recent Olympics?&quot; : instead of &quot; Žolt Peto who competed in table tennis at the 2020 Summer Olympics in Tokyo. &quot; i obtained &quot;Zuzana Rehák Štefečeková who competed in shooting at the 2020 Summer Olympics in Tokyo&quot;. I do not understand why i get a different result and if Žolt should come last because of the &quot;Ž&quot; not being a &quot;Z&quot; ?</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -22172,7 +22389,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">99 responses</h5>
+                                <h5 class="card-title">102 responses</h5>
                                 
                                 <canvas id="metagenomics-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -23509,7 +23726,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">1 responses</h5>
+                                                    <h5 class="card-title">3 responses</h5>
                                                     
                                                     <canvas id="beer-data-analysis-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -23561,6 +23778,20 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                             
                                                                 
                                                                     
+                                                                    <tr>
+                                                                        <td>Nov 7, 2023</td>
+                                                                        <td>The step by step process is well explained</td>
+                                                                        <td>I as not able to comple some steps, like converting the resistance gene table to gf3</td>
+                                                                    </tr>
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
+                                                                
+                                                            
+                                                                
+                                                                    
                                                                 
                                                             
                                                         </tbody>
@@ -23596,7 +23827,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">2 responses</h5>
+                                                    <h5 class="card-title">3 responses</h5>
                                                     
                                                     <canvas id="taxonomic-profiling-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -23645,6 +23876,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 19, 2023</td>
+                                                                        <td>All steps are very clear and have a great explanation </td>
+                                                                        <td>all the datasets used in this pipeline are very poor and incomplete and there are a lot of unclassified reads and taxa so really need to improve </td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -23782,7 +24023,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">57 responses</h5>
+                                <h5 class="card-title">59 responses</h5>
                                 
                                 <canvas id="proteomics-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -24782,7 +25023,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">5 responses</h5>
+                                                    <h5 class="card-title">6 responses</h5>
                                                     
                                                     <canvas id="proteogenomics-dbsearch-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -24831,6 +25072,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 25, 2023</td>
+                                                                        <td></td>
+                                                                        <td>I went through the first tutorial, Proteogenomics 1: Database Creation. This resulted in creation of the fasta protein database file, Uniprot_cRAP_SAV_indel_translatedbed.FASTA which is used by this tutorial. When I ran the SearchGUI against this database file and the same downloaded mfg files, an empty SearchGUI archive file was generated. So I could not move onto the next steps of the tutorial. I suppose it is possible that I somehow did something wrong in the first tutorial to create the fasta file although just by looking at it it seemed reasonable and had a fair amount of data in it. I was wondering if anyone has gone through the first tutorial and the second tutorial to verify that they work. Also, it would be helpful if there was a sample input protein database file available on zenodo to complete this tutorial without having to be dependent upon the output of the first tutorial.</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -25321,7 +25572,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">1 responses</h5>
+                                                    <h5 class="card-title">2 responses</h5>
                                                     
                                                     <canvas id="DIA_lib_OSW-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -25370,6 +25621,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 25, 2023</td>
+                                                                        <td>I like almost everything, nicely presented and so helpful</td>
+                                                                        <td>maybe more clear at first regarding what site provides what so we dont have to register several rounds</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -25774,7 +26035,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">250 responses</h5>
+                                <h5 class="card-title">252 responses</h5>
                                 
                                 <canvas id="sequence-analysis-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -25838,7 +26099,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">70 responses</h5>
+                                                    <h5 class="card-title">71 responses</h5>
                                                     
                                                     <canvas id="mapping-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -25887,6 +26148,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 18, 2023</td>
+                                                                        <td>The important function of each tool was described clearly. The questions and answers could highlight other practical information.</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -26393,7 +26664,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">174 responses</h5>
+                                                    <h5 class="card-title">175 responses</h5>
                                                     
                                                     <canvas id="quality-control-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -26442,6 +26713,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Nov 3, 2023</td>
+                                                                        <td></td>
+                                                                        <td>More examples of poor quality reads.</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -31289,7 +31570,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">284 responses</h5>
+                                <h5 class="card-title">285 responses</h5>
                                 
                                 <canvas id="transcriptomics-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -33678,7 +33959,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">12 responses</h5>
+                                                    <h5 class="card-title">13 responses</h5>
                                                     
                                                     <canvas id="rna-seq-counts-to-genes-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -33727,6 +34008,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 19, 2023</td>
+                                                                        <td>Easy to follow</td>
+                                                                        <td>-</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -36947,7 +37238,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">99 responses</h5>
+                                <h5 class="card-title">100 responses</h5>
                                 
                                 <canvas id="variant-analysis-topic-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -37963,7 +38254,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                         <div class="col-md-6">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">17 responses</h5>
+                                                    <h5 class="card-title">18 responses</h5>
                                                     
                                                     <canvas id="tb-variant-analysis-tutorial-fdbkOverMonthGraph" width="400" height="400">
 <script>
@@ -38012,6 +38303,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
                                                         </thead>
                                                         <tbody>
                                                             
+                                                            
+                                                                
+                                                                    
+                                                                    <tr>
+                                                                        <td>Oct 29, 2023</td>
+                                                                        <td>Very clear and well explain tutorial</td>
+                                                                        <td>Maybe I would suggest to put some figures to easy find some commands on galaxy</td>
+                                                                    </tr>
+                                                                    
+                                                                
                                                             
                                                                 
                                                                     
@@ -38982,7 +39283,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -39006,11 +39307,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

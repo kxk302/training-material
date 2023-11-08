@@ -178,6 +178,11 @@
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
       "fediverse_flavor": "akkoma",
+      "affiliations": [
+        "gallantries",
+        "erasmusmc",
+        "avans-atgm"
+      ],
       "contact_for_training": false,
       "location": {
         "country": "NL",
@@ -222,6 +227,11 @@
       "bio": "Researcher at Erasmus Medical Center",
       "elixir_node": "nl",
       "contact_for_training": true,
+      "affiliations": [
+        "CINECA-Project",
+        "gallantries",
+        "erasmusmc"
+      ],
       "location": {
         "country": "NL",
         "lat": 51.912,
@@ -319,6 +329,9 @@
       },
       "fediverse": "https://genomic.social/@abretaud",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries"
+      ],
       "id": "abretaud",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/abretaud.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/"
@@ -349,6 +362,14 @@
       "id": "mira-miracoli",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/mira-miracoli.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/mira-miracoli/"
+    },
+    {
+      "name": "Edwin den Haas",
+      "matrix": "edmontosaurus:matrix.org",
+      "joined": "2023-11",
+      "id": "edmontosaurus",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/edmontosaurus.json",
+      "page": "https://training.galaxyproject.org/training-material/hall-of-fame/edmontosaurus/"
     }
   ],
   "logo": "assets/images/gat.png",

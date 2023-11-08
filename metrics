@@ -4,46 +4,56 @@
 gtn_pages_total{layout=""} 0
 gtn_pages_total{layout="base"} 10
 gtn_pages_total{layout="embed"} 1
-gtn_pages_total{layout="faq"} 395
-gtn_pages_total{layout="faq-page"} 341
+gtn_pages_total{layout="faq"} 402
+gtn_pages_total{layout="faq-page"} 342
 gtn_pages_total{layout="hall-of-fame"} 1
 gtn_pages_total{layout="home"} 1
 gtn_pages_total{layout="introduction_slides"} 15
-gtn_pages_total{layout="learning-pathway"} 12
+gtn_pages_total{layout="learning-pathway"} 17
 gtn_pages_total{layout="none"} 1
 gtn_pages_total{layout="page"} 11
 gtn_pages_total{layout="topic"} 29
 gtn_pages_total{layout="training_philosophy"} 6
-gtn_pages_total{layout="tutorial_hands_on"} 370
+gtn_pages_total{layout="tutorial_hands_on"} 376
 gtn_pages_total{layout="tutorial_slides"} 96
 gtn_pages_total{layout="tutorial_slides_ai4life"} 3
-gtn_pages_total{layout="workflow-list"} 189
+gtn_pages_total{layout="workflow-list"} 191
 
-# HELP gtn_contributors_total Total number of Contributors
+# HELP gtn_contributors_total Total number of contributors
 # TYPE gtn_contributors_total counter
-gtn_contributors_total{orcid="true"} 101
-gtn_contributors_total{orcid="false"} 225
+gtn_contributors_total{orcid="true"} 102
+gtn_contributors_total{orcid="false"} 213
+
+# HELP gtn_organisations_total Total number of organisations
+# TYPE gtn_organisations_total counter
+gtn_organisations_total{orcid="true"} 0
+gtn_organisations_total{orcid="false"} 10
+
+# HELP gtn_funders_total Total number of funders
+# TYPE gtn_funders_total counter
+gtn_funders_total{orcid="true"} 0
+gtn_funders_total{orcid="false"} 19
 
 # HELP gtn_tutorials_total Total number of Hands-on Tutorials
 # TYPE gtn_tutorials_total counter
-gtn_tutorials_total 370
+gtn_tutorials_total 376
 
 # HELP gtn_faqs_total Total number of FAQs
 # TYPE gtn_faqs_total counter
-gtn_faqs_total 395
+gtn_faqs_total 402
 
 # HELP gtn_project_years_total Total years of project lifetime
 # TYPE gtn_project_years_total counter
-gtn_project_years_total 8.295890410958904
+gtn_project_years_total 8.367123287671232
 
 # HELP tutorial_update_age_days How recently was every single Hands-on Tutorial touched within the GTN, grouped by days since last edited.
 # TYPE tutorial_update_age_days histogram
-tutorial_update_age_days{le="1"} 4
-tutorial_update_age_days{le="7"} 25
-tutorial_update_age_days{le="28"} 10
-tutorial_update_age_days{le="90"} 9
-tutorial_update_age_days{le="365"} 309
-tutorial_update_age_days{le="730"} 12
+tutorial_update_age_days{le="1"} 5
+tutorial_update_age_days{le="7"} 11
+tutorial_update_age_days{le="28"} 71
+tutorial_update_age_days{le="90"} 27
+tutorial_update_age_days{le="365"} 211
+tutorial_update_age_days{le="730"} 50
 tutorial_update_age_days{le="1095"} 0
 tutorial_update_age_days{le="+Inf"} 1
 
@@ -52,8 +62,8 @@ tutorial_update_age_days{le="+Inf"} 1
 contributor_join_age_days{le="1"} 0
 contributor_join_age_days{le="7"} 0
 contributor_join_age_days{le="28"} 1
-contributor_join_age_days{le="90"} 4
-contributor_join_age_days{le="365"} 37
-contributor_join_age_days{le="730"} 61
-contributor_join_age_days{le="1095"} 54
+contributor_join_age_days{le="90"} 5
+contributor_join_age_days{le="365"} 31
+contributor_join_age_days{le="730"} 52
+contributor_join_age_days{le="1095"} 55
 contributor_join_age_days{le="+Inf"} 65

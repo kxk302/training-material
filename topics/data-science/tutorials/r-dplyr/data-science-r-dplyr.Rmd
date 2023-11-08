@@ -1,6 +1,6 @@
 ---
 title: dplyr & tidyverse for data processing
-author: "[Helena Rasche](https://training.galaxyproject.org/hall-of-fame/hexylena/), [Erasmus+ Programme](https://training.galaxyproject.org/hall-of-fame/erasmusplus/), [Avans Hogeschool](https://training.galaxyproject.org/hall-of-fame/avans-atgm/), MIT licensed content from the [Galaxy Training Network](https://training.galaxyproject.org/)"
+author: "[Helena Rasche](https://training.galaxyproject.org/hall-of-fame/hexylena/), [Gallantries: Bridging Training Communities in Life Science, Environment and Health](https://training.galaxyproject.org/hall-of-fame/gallantries/), [Avans Hogeschool](https://training.galaxyproject.org/hall-of-fame/avans-atgm/), MIT licensed content from the [Galaxy Training Network](https://training.galaxyproject.org/)"
 bibliography: data-science-r-dplyr.bib
 output:
   html_notebook:
@@ -25,7 +25,7 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-date: '2022-09-28 13:13:58 +0000'
+date: '2023-10-23 09:44:54 +0000'
 link-citations: true
 anchor_sections: true
 code_download: true
@@ -63,7 +63,7 @@ library(tidyverse)
 ```
 
 :::{.tip}
-<div class="box-title tip-title" id="tip-package-not-found"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-package-not-found" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: Package not found?<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title tip-title" id="tip-package-not-found"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-package-not-found" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: Package not found?</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 Remember that you can install new packages by running
 ```
 install.packages("tidyverse")
@@ -157,7 +157,7 @@ How would you rewrite the following code to use the pipe operator?
 prcomp(tail(read.csv("file.csv"), 10))
 ```
 :::{.solution}
-<div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+<div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 Just read from inside to outside, starting with the innermost `()` and use `%>%` between each step.
 ```
 read.csv("file.csv") %>% tail(10) %>% prcomp()

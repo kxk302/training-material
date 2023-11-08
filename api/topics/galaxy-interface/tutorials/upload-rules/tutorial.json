@@ -6,7 +6,7 @@
     "/short/T00160"
   ],
   "title": "Rule Based Uploader",
-  "zenodo_link": "",
+  "zenodo_link": "https://zenodo.org/records/3263975",
   "level": "Intermediate",
   "questions": [
     "How to use the rule based uploader to create complex collections"
@@ -60,6 +60,11 @@
       "elixir_node": "nl",
       "fediverse": "https://galaxians.garden/hexylena",
       "fediverse_flavor": "akkoma",
+      "affiliations": [
+        "gallantries",
+        "erasmusmc",
+        "avans-atgm"
+      ],
       "contact_for_training": false,
       "location": {
         "country": "NL",

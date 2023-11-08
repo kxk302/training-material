@@ -66,7 +66,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "CHROMEISTER chromosome comparison",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:41 +0000"
     },
     {
       "workflow": "GECKO_pairwise_comparison.ga",
@@ -80,7 +82,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "GECKO pairwise comparison",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:41 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/hpc-for-lsgc/tutorial.json",
@@ -109,7 +113,11 @@
       }
     ],
     "inexact": [
-
+      {
+        "url": "https://galaxytrakr.org/",
+        "name": "GalaxyTrakr",
+        "usegalaxy": "false"
+      }
     ]
   },
   "topic_name_human": "Genome Annotation",

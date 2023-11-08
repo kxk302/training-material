@@ -35,6 +35,9 @@
       },
       "fediverse": "https://genomic.social/@abretaud",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries"
+      ],
       "id": "abretaud",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/abretaud.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/"
@@ -140,7 +143,9 @@
           "name": "Laura Leroi"
         }
       ],
-      "test_results": null
+      "name": "Genome Assembly Quality Control",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:39 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-quality-control/tutorial.json",

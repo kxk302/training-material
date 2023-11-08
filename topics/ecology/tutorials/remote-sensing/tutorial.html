@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Sentinel 2 biodiversity</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -127,7 +107,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-10-05 15:38:34 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -140,25 +121,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00333",
   "accessMode": [
     "textual",
     "visual"
@@ -183,11 +167,15 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/ecology/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Sentinel 2 biodiversity' tutorial",
+  "name": "Sentinel 2 biodiversity",
   "url": "https://training.galaxyproject.org/training-material/topics/ecology/tutorials/remote-sensing/tutorial.html",
+  "version": 33,
   "timeRequired": "PT48H",
   "teaches": "Getting Sentinel 2 data and reformatting them in a generalized way\n - Computing spectral indices such as the NDVI\n - Calculating and visualizing biodiversity indicators\n - Comparing with in-situ data",
-  "keywords": "ecology, Remote sensing",
+  "keywords": [
+    "Ecology",
+    "Remote sensing"
+  ],
   "description": "The questions this  addresses are:\n - How to get spectral and biodiversity indicators from remote sensing data ?\n - Which kind of ecosystem are you studying ? global or canopy data ?\n\n\nThe objectives are:\n - Getting Sentinel 2 data and reformatting them in a generalized way\n - Computing spectral indices such as the NDVI\n - Calculating and visualizing biodiversity indicators\n - Comparing with in-situ data\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -205,7 +193,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -227,7 +216,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -248,12 +238,16 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0002-8504-068X",
       "orcid": "https://orcid.org/0000-0002-8504-068X"
     }
+  ],
+  "contributor": [
+
   ],
   "about": [
     {
@@ -283,7 +277,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -375,7 +369,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -456,7 +450,9 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 	<tr>
 		<td><abbr title="These people wrote the bulk of the tutorial, they may have done the analysis, built the workflow, and wrote the text themselves.">Author(s)</abbr></td>
 		<td>
-			<a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=36" alt="Avatar" width="36" height="36">Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Avatar" width="36" height="36">Yvan Le Bras</a>
+			<a href="/training-material/hall-of-fame/Marie59/" class="contributor-badge contributor-Marie59"><img src="https://avatars.githubusercontent.com/Marie59?s=36" alt="Marie Josse avatar" width="36" class="avatar" />
+    Marie Josse</a><a href="/training-material/hall-of-fame/yvanlebras/" class="contributor-badge contributor-yvanlebras"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/yvanlebras?s=36" alt="Yvan Le Bras avatar" width="36" class="avatar" />
+    Yvan Le Bras</a>
 		</td>
 	</tr>
 	
@@ -645,8 +641,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00333">https://gxy.io/GTN:T00333</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00333">https://gxy.io/GTN:T00333</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 33 </div>
+
     </blockquote>
     </section>
 
@@ -671,7 +670,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 <p>So, we will compute biodiversity and spectral indices mainly using reflectance information.</p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-definition-of-reflectance"><button class="gtn-boxify-button details" type="button" aria-controls="details-definition-of-reflectance" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Definition of reflectance<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-definition-of-reflectance"><button class="gtn-boxify-button details" type="button" aria-controls="details-definition-of-reflectance" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Definition of reflectance</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>The reflectance is a proportion on reflected light on an area. It’s the ratio between the electromagnetic incident wave on the area and the reflected wave. It’s often a percentage between reflected intensity and incident intensity assumed as energy quantity.</p>
 
@@ -701,7 +700,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </ul>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-details-about-spectral-indices"><button class="gtn-boxify-button details" type="button" aria-controls="details-details-about-spectral-indices" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Details about spectral indices<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-details-about-spectral-indices"><button class="gtn-boxify-button details" type="button" aria-controls="details-details-about-spectral-indices" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Details about spectral indices</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Spectral indices are used to highlight particular features or properties of the earth’s surface, e.g. vegetation, soil, water. They are developed on the basis of the spectral properties of the object of interest.</p>
 
@@ -757,7 +756,7 @@ Spectral indices dedicated to vegetation analysis are developed on the basis tha
       <p>Create a new history for this tutorial and give it a name (example: “Sentinel 2 data for biodiversity tutorial”) for you to find it again later if needed.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Creating a new history<span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-creating-a-new-history"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-creating-a-new-history" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Creating a new history</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.</p>   <p>If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>   <ol>   <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden">galaxy-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>   <li>Select the option <strong>Create New</strong> from the menu</li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
@@ -774,14 +773,14 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
       <p>Upload the zip folder</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-upload-few-files-1-10"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-upload-few-files-1-10" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Upload few files (1-10)<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <strong>Upload Data</strong> on the top of the left panel</li>   <li>Click on <strong>Choose local file</strong> and select the files or drop the files in the <strong>Drop files here</strong> part</li>   <li>Click on <strong>Start</strong></li>   <li>Click on <strong>Close</strong></li> </ol> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-upload-few-files-1-10"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-upload-few-files-1-10" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Upload few files (1-10)</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ol>   <li>Click on <strong>Upload Data</strong> on the top of the left panel</li>   <li>Click on <strong>Choose local file</strong> and select the files or drop the files in the <strong>Drop files here</strong> part</li>   <li>Click on <strong>Start</strong></li>   <li>Click on <strong>Close</strong></li> </ol> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>You can <strong>rename</strong> <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> the dataset, <code class="language-plaintext highlighter-rouge">sentinel_2_data.zip</code> for example, and to keep informations about the original name <code class="language-plaintext highlighter-rouge">SENTINEL2A.....zip</code></p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-dataset"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-dataset" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a dataset<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, change the <strong>Name</strong> field</li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-dataset"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-dataset" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Renaming a dataset</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, change the <strong>Name</strong> field</li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
   </ol>
@@ -798,7 +797,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
   <div class="box-title hands-on-title" id="hands-on-preprocess"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Preprocess</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1" title="Preprocessing sentinel 2 data tool" aria-role="link"><strong>Preprocessing sentinel 2 data</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1</span></span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1" title="Preprocessing sentinel 2 data tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Preprocessing sentinel 2 data</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input data”</em>: <code class="language-plaintext highlighter-rouge">sentinel_2_data.zip</code> (Input dataset)</li>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“Where does your data come from ?”</em>: ‘From Theia’</li>
@@ -827,7 +826,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>The 2 files in the <strong>Reflectance</strong> folder that finish by “_Refl” and “_Refl.hdr”</li>
@@ -885,7 +884,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     <div class="box-title hands-on-title" id="hands-on-principal-components-analysis-for-remote-sensing-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Principal components analysis for remote sensing data</div>
 
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1" title="Compute a PCA tool" aria-role="link"><strong>Compute a PCA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1</span></span> with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1" title="Compute a PCA tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Compute a PCA</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
         <ul>
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
             <ul>
@@ -896,7 +895,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
         </ul>
 
         <blockquote class="tip">
-          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: If you want to use your own files ENVI BIL<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: If you want to use your own files ENVI BIL</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>Check that the “Input raster” datatype is bil and that “Input raster header” datatype is hdr</p>
 
@@ -928,7 +927,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     <div class="box-title hands-on-title" id="hands-on-biodiversity-indicators-for-global-remote-sensing-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Biodiversity indicators for global remote sensing data</div>
 
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1" title="Compute biodiversity indices tool" aria-role="link"><strong>Compute biodiversity indices</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1</span></span> with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1" title="Compute biodiversity indices tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Compute biodiversity indices</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
         <ul>
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
             <ul>
@@ -939,7 +938,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
         </ul>
 
         <blockquote class="tip">
-          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: If you want to use your own files ENVI BIL<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-1"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-1" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: If you want to use your own files ENVI BIL</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>Check that the “Input raster” datatype is bil and that “Input raster header” datatype is hdr</p>
 
@@ -962,7 +961,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
         </blockquote>
 
         <blockquote class="tip">
-          <div class="box-title tip-title" id="tip-you-can-use-the-output-of-compute-a-pca"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-you-can-use-the-output-of-compute-a-pca" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: You can use the output of **Compute a PCA**<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title tip-title" id="tip-you-can-use-the-output-of-compute-a-pca"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-you-can-use-the-output-of-compute-a-pca" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: You can use the output of **Compute a PCA**</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <ul>
             <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘Your already have the files in ENVI BIL format’</li>
@@ -992,7 +991,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     </ol>
 
     <blockquote class="solution">
-      <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+      <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
       <ol>
         <li>You should have 7 of them (Shannon, Renyi, Prao, Pielou, Hill, CRE, Berger-Parker). If you have only 5 of them, no problem, it just means you data are too small to compute CRE and Pielou but you can still continue your analysis.</li>
@@ -1014,7 +1013,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     <div class="box-title hands-on-title" id="hands-on-principal-components-analysis-for-remote-sensing-data-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Principal components analysis for remote sensing data</div>
 
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1" title="Compute a PCA tool" aria-role="link"><strong>Compute a PCA</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1</span></span> with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_pca/srs_pca/0.0.1" title="Compute a PCA tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Compute a PCA</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
         <ul>
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
             <ul>
@@ -1025,7 +1024,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
         </ul>
 
         <blockquote class="tip">
-          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-2"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-2" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: If you want to use your own files ENVI BIL<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-2"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-2" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: If you want to use your own files ENVI BIL</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>Check that the “Input raster” datatype is bil and that “Input raster header” datatype is hdr</p>
 
@@ -1057,7 +1056,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     <div class="box-title hands-on-title" id="hands-on-biodiversity-indicators-for-canopy-remote-sensing-data"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Biodiversity indicators for canopy remote sensing data</div>
 
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1" title="Mapping diversity tool" aria-role="link"><strong>Mapping diversity</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1</span></span> with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1" title="Mapping diversity tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Mapping diversity</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
         <ul>
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
             <ul>
@@ -1068,7 +1067,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
         </ul>
 
         <blockquote class="tip">
-          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-3"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-3" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: If you want to use your own files ENVI BIL<span class="fold-unfold fa fa-minus-square"></span></button></div>
+          <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-3"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-3" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: If you want to use your own files ENVI BIL</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
           <p>Check that the “Input raster” datatype is bil and that “Input raster header” datatype is hdr</p>
 
@@ -1102,7 +1101,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
   <blockquote class="notranslate hands_on">
     <div class="box-title hands-on-title" id="hands-on-comparing-biodiversity-indicators-for-canopy"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Comparing biodiversity indicators for canopy</div>
     <ol>
-      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_process_data/srs_process_data/0.0.1" title="Comparing remote sensing data tool" aria-role="link"><strong>Comparing remote sensing data</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_process_data/srs_process_data/0.0.1</span></span> with the following parameters:
+      <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_process_data/srs_process_data/0.0.1" title="Comparing remote sensing data tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Comparing remote sensing data</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
         <ul>
           <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
             <ul>
@@ -1141,7 +1140,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
     </ol>
 
     <blockquote class="solution">
-      <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+      <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
       <ol>
         <li>This analisys is for data on forest, it’s a canopy study.</li>
@@ -1162,7 +1161,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
   <div class="box-title hands-on-title" id="hands-on-compute-spectral-indices"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Compute spectral indices</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1" title="Compute spectral indices tool" aria-role="link"><strong>Compute spectral indices</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1</span></span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1" title="Compute spectral indices tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Compute spectral indices</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.0.1)</span> with the following parameters:
       <ul>
         <li><i class="fas fa-filter" aria-hidden="true"></i><span class="visually-hidden">param-select</span> <em>“In which format are your data ?”</em>: ‘The data you are using are in a zip folder Reflectance’
           <ul>
@@ -1176,7 +1175,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
       </ul>
 
       <blockquote class="tip">
-        <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-4"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-4" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> Tip: If you want to use your own files ENVI BIL<span class="fold-unfold fa fa-minus-square"></span></button></div>
+        <div class="box-title tip-title" id="tip-if-you-want-to-use-your-own-files-envi-bil-4"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-if-you-want-to-use-your-own-files-envi-bil-4" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true" ></i> <span>Tip: If you want to use your own files ENVI BIL</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
         <p>Check that the “Input raster” datatype is bil and that “Input raster header” datatype is hdr</p>
 
@@ -1212,7 +1211,7 @@ Select Reflectance, Sentinel 2 and “Niveau 2A” (level 2A).</p>
 <figure id="figure-10" style="max-width: 90%; margin:auto;"><img src="../../images/remote_sensing/ndvi.png" alt="A tabular with columns for the NDVI index, the longitude and the latitude. " width="1275" height="313" loading="lazy" /><a target="_blank" href="../../images/remote_sensing/ndvi.png" rel="noopener noreferrer"><small>Open image in new tab</small></a><figcaption><span class="figcaption-prefix"><strong>Figure 10</strong>:</span> Normalized different vegetation index</figcaption></figure>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-spectral-indices-and-essential-biodiversity-variables"><button class="gtn-boxify-button details" type="button" aria-controls="details-spectral-indices-and-essential-biodiversity-variables" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Spectral indices and Essential Biodiversity Variables<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-spectral-indices-and-essential-biodiversity-variables"><button class="gtn-boxify-button details" type="button" aria-controls="details-spectral-indices-and-essential-biodiversity-variables" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Spectral indices and Essential Biodiversity Variables</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Remotely sensed diversity is consistent with most of the essential spatially constrained biodiversity variables proposed by Skidmore et al. (2015). This highlights the need for increased dialogue and collaboration between the biodiversity monitoring community and the remote sensing community to make satellite remote sensing a tool of choice for conservation. Increased dialogue is also essential within the biodiversity monitoring community to achieve this. From this point of view multiple Satellite Remote Sensing EBV (SRS EBV) were created.
 Some of the indices proposed here will allow you to compute  SRS EBV.
@@ -1229,7 +1228,7 @@ For instance it allows you to compute one of GEO BON EBV <a href="https://portal
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>Biodiversity indicators give us informations on the heterogeneity of the landscape whereas spectral indices inform us on the well being of the vegetation.</li>
@@ -1251,7 +1250,7 @@ For instance it allows you to compute one of GEO BON EBV <a href="https://portal
   </ol>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <ol>
       <li>NO ! remote sensing and in-situ data should come and complete one another to have the most complete view of the state of biodiversity.</li>
@@ -1454,7 +1453,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1482,11 +1481,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

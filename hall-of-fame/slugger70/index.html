@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>GTN Contributor: Simon Gladman</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -103,7 +83,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -187,7 +167,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -234,8 +214,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <div class="container main-content" role="main">
         
 
+
 <script type="application/ld+json">
-	
 	{
   "@context": "https://schema.org",
   "@type": "Person",
@@ -253,7 +233,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
       "@type": "Organization",
       "email": "galaxytrainingnetwork@gmail.com",
       "name": "Galaxy Training Network",
-      "url": "https://galaxyproject.org/teach/gtn/"
+      "url": "https://training.galaxyproject.org",
+      "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
     }
   ],
   "identifier": "https://orcid.org/0000-0002-6100-4385",
@@ -267,72 +248,19 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 }
 
 </style>
-<section class="contributor-slugger70">
+<section class="contributor-page contributor-slugger70">
 	<div class="stats">
 		<div class="row">
-
-			<div class="col-md-3">
-				<div>
-				
-					<img src="https://avatars.githubusercontent.com/slugger70" alt="github avatar" >
-				
-				</div>
-
-				
-
-				
-
-				
-				<div class="contact-items">
-					<a title="GitHub" href="https://github.com/slugger70">
-						<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> slugger70
-					</a>
-				</div>
-				
-
-				
-
-				
-				<div class="contact-items">
-					<a title="E-mail" href="mailto:simon.gladman@unimelb.edu.au">
-						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> simon.gladman@unimelb.edu.au
-					</a>
-				</div>
-				
-
-				
-
-				
-
-				
-
-				
-
-				
-				<div class="contact-items">
-					<a title="ORCID" href="https://orcid.org/0000-0002-6100-4385">
-						<i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">orcid</span> 0000-0002-6100-4385
-					</a>
-				</div>
-				
-
-				
-				<div class="contact-items">
-					<img src="/training-material/assets/images/elixir/elixir-au.svg" alt="elixir logo for Australia">
-				</div>
-				
-
-				<h4>Favourite Topics</h4>
-				<canvas id="myChart" height="300px"></canvas>
-				<h4>Favourite Formats</h4>
-				<canvas id="slidesVsTutorials" height="300px"></canvas>
-
-			</div>
-
 			<div class="col-md-9">
-				<h1>
-					Simon Gladman
-				</h1>
+				<hgroup>
+					<h1>
+						Simon Gladman
+					</h1>
+				
+				</hgroup>
+
+				
+
 				
 				
 				<div class="alert alert-dark" role="alert">
@@ -345,6 +273,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 </p>
 				</div>
 
+				
+
+				
+				
+
+				
 				
 
 				<h2>Contributions</h2>
@@ -405,148 +339,63 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
-						Galaxy Interactive Tools
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
-						Galaxy Monitoring with Reports
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/upgrading/tutorial.html">
-						Upgrading Galaxy
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
-						Running Jobs on Remote Resources with Pulsar
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/tutorial.html">
-						Galaxy Installation with Ansible
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
-						Reference Data with CVMFS
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs-manual/tutorial.html">
-						Reference Data with CVMFS without Ansible
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/reference-genomes/tutorial.html">
-						Reference Data with Data Managers
-						</a>
-						
-						
-	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
-
-
-					</li>
-				
-					<li>
-						
-						
 						<a href="/training-material/topics/genome-annotation">
 							Genome Annotation
 						</a>
 						/
 						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.html">
 						Genome annotation with Prokka
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/galaxy-interface">
+							Using Galaxy and Managing your Data
+						</a>
+						/
+						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
+						Downloading and Deleting Data in Galaxy
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
+						</a>
+						/
+						<a href="/training-material//topics/variant-analysis/tutorials/microbial-variants/tutorial.html">
+						Microbial Variant Calling
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/variant-analysis">
+							Variant Analysis
+						</a>
+						/
+						<a href="/training-material//topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">
+						M. tuberculosis Variant Analysis
 						</a>
 						
 						
@@ -609,12 +458,29 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/galaxy-interface">
-							Using Galaxy and Managing your Data
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/galaxy-interface/tutorials/download-delete-data/tutorial.html">
-						Downloading and Deleting Data in Galaxy
+						<a href="/training-material//topics/admin/tutorials/ansible-galaxy/tutorial.html">
+						Galaxy Installation with Ansible
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/reports/tutorial.html">
+						Galaxy Monitoring with Reports
 						</a>
 						
 						
@@ -626,12 +492,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/variant-analysis">
-							Variant Analysis
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">
-						M. tuberculosis Variant Analysis
+						<a href="/training-material//topics/admin/tutorials/interactive-tools/tutorial.html">
+						Galaxy Interactive Tools
 						</a>
 						
 						
@@ -643,12 +509,80 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/variant-analysis">
-							Variant Analysis
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/variant-analysis/tutorials/microbial-variants/tutorial.html">
-						Microbial Variant Calling
+						<a href="/training-material//topics/admin/tutorials/cvmfs/tutorial.html">
+						Reference Data with CVMFS
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/reference-genomes/tutorial.html">
+						Reference Data with Data Managers
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs-manual/tutorial.html">
+						Reference Data with CVMFS without Ansible
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/upgrading/tutorial.html">
+						Upgrading Galaxy
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/pulsar/tutorial.html">
+						Running Jobs on Remote Resources with Pulsar
 						</a>
 						
 						
@@ -667,12 +601,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/genome-annotation">
+							Genome Annotation
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/backup-cleanup/slides.html">
-						Server Maintenance: Cleanup, Backup, and Restoration
+						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/slides.html">
+						Genome annotation with Prokka
 						</a>
 						
 						
@@ -684,12 +618,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/gxadmin/slides.html">
-						Galaxy Monitoring with gxadmin
+						<a href="/training-material//topics/assembly/tutorials/general-introduction/slides.html">
+						An Introduction to Genome Assembly
 						</a>
 						
 						
@@ -701,12 +635,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/monitoring/slides.html">
-						Galaxy Monitoring with Telegraf and Grafana
+						<a href="/training-material//topics/assembly/tutorials/debruijn-graph-assembly/slides.html">
+						De Bruijn Graph Assembly
 						</a>
 						
 						
@@ -718,12 +652,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
-						Galaxy Tool Management with Ephemeris
+						<a href="/training-material//topics/assembly/tutorials/algorithms-introduction/slides.html">
+						Deeper look into Genome Assembly algorithms
 						</a>
 						
 						
@@ -735,12 +669,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
+						<a href="/training-material/topics/assembly">
+							Assembly
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
-						Running Jobs on Remote Resources with Pulsar
+						<a href="/training-material//topics/assembly/tutorials/unicycler-assembly/slides.html">
+						Unicycler Assembly
 						</a>
 						
 						
@@ -773,25 +707,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/cvmfs/slides.html">
-						Reference Data with CVMFS
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/admin">
-							Galaxy Server administration
-						</a>
-						/
-						<a href="/training-material//topics/admin/tutorials/cloudbursting/slides.html">
-						Galaxy on the Cloud
+						<a href="/training-material//topics/admin/tutorials/backup-cleanup/slides.html">
+						Server Maintenance: Cleanup, Backup, and Restoration
 						</a>
 						
 						
@@ -824,8 +741,42 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
-						Galaxy Monitoring
+						<a href="/training-material//topics/admin/tutorials/gxadmin/slides.html">
+						Galaxy Monitoring with gxadmin
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/tool-management/slides.html">
+						Galaxy Tool Management with Ephemeris
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
+						</a>
+						/
+						<a href="/training-material//topics/admin/tutorials/cvmfs/slides.html">
+						Reference Data with CVMFS
 						</a>
 						
 						
@@ -871,12 +822,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/genome-annotation">
-							Genome Annotation
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/genome-annotation/tutorials/annotation-with-prokka/slides.html">
-						Genome annotation with Prokka
+						<a href="/training-material//topics/admin/tutorials/general-monitoring/slides.html">
+						Galaxy Monitoring
 						</a>
 						
 						
@@ -888,12 +839,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/assembly">
-							Assembly
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/general-introduction/slides.html">
-						An Introduction to Genome Assembly
+						<a href="/training-material//topics/admin/tutorials/monitoring/slides.html">
+						Galaxy Monitoring with Telegraf and Grafana
 						</a>
 						
 						
@@ -905,12 +856,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/assembly">
-							Assembly
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/algorithms-introduction/slides.html">
-						Deeper look into Genome Assembly algorithms
+						<a href="/training-material//topics/admin/tutorials/pulsar/slides.html">
+						Running Jobs on Remote Resources with Pulsar
 						</a>
 						
 						
@@ -922,29 +873,12 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 					<li>
 						
 						
-						<a href="/training-material/topics/assembly">
-							Assembly
+						<a href="/training-material/topics/admin">
+							Galaxy Server administration
 						</a>
 						/
-						<a href="/training-material//topics/assembly/tutorials/debruijn-graph-assembly/slides.html">
-						De Bruijn Graph Assembly
-						</a>
-						
-						
-	
-
-
-					</li>
-				
-					<li>
-						
-						
-						<a href="/training-material/topics/assembly">
-							Assembly
-						</a>
-						/
-						<a href="/training-material//topics/assembly/tutorials/unicycler-assembly/slides.html">
-						Unicycler Assembly
+						<a href="/training-material//topics/admin/tutorials/cloudbursting/slides.html">
+						Galaxy on the Cloud
 						</a>
 						
 						
@@ -960,6 +894,69 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
 
 
 				
+
+			</div>
+
+			<div class="col-md-3">
+				<div>
+					<img src="https://avatars.githubusercontent.com/slugger70?s=200" alt="Simon Gladman avatar" width="200" class="avatar" />
+				</div>
+
+				<h2>External Links</h2>
+				
+
+				
+				<div class="contact-items">
+					<a title="GitHub" href="https://github.com/slugger70">
+						<i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">github</span> slugger70
+					</a>
+				</div>
+				
+
+				
+
+				
+				<div class="contact-items">
+					<a title="E-mail" href="mailto:simon.gladman@unimelb.edu.au">
+						<i class="far fa-envelope" aria-hidden="true"></i><span class="visually-hidden">email</span> simon.gladman@unimelb.edu.au
+					</a>
+				</div>
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+				<div class="contact-items">
+					<a title="ORCID" href="https://orcid.org/0000-0002-6100-4385">
+						<i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">orcid</span> 0000-0002-6100-4385
+					</a>
+				</div>
+				
+
+				
+				<div class="contact-items">
+					<img src="/training-material/assets/images/elixir/elixir-au.svg" alt="elixir logo for Australia">
+				</div>
+				
+
+				<p>Favourite Topics</p>
+				<canvas id="myChart" height="300px"></canvas>
+				<p>Favourite Formats</p>
+				<canvas id="slidesVsTutorials" height="300px"></canvas>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <script src="/training-material/assets/js/Chart.bundle.js"></script>
 
 <script>
@@ -975,51 +972,7 @@ var topics = [
 
 	
 	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
 	"Genome Annotation",
-
-	
-	
-	"Assembly",
-
-	
-	
-	"Assembly",
-
-	
-	
-	"Assembly",
 
 	
 	
@@ -1033,6 +986,17 @@ var topics = [
 	
 	"Variant Analysis",
 
+	
+	
+	"Assembly",
+
+	
+	
+	"Assembly",
+
+	
+	
+	"Assembly",
 
 	
 	
@@ -1066,21 +1030,6 @@ var topics = [
 	
 	"Galaxy Server administration",
 
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
-
-	
-	
-	"Galaxy Server administration",
 
 	
 	
@@ -1101,6 +1050,54 @@ var topics = [
 	
 	
 	"Assembly",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
+
+	
+	
+	"Galaxy Server administration",
 
 ];
 
@@ -1256,14 +1253,7 @@ var chart2 = new Chart(ctx2, {
 		}
 	}
 });
-				</script>
-
-			</div>
-
-			</div>
-		</div>
-	</div>
-</section>
+</script>
 
         </div>
         <footer>
@@ -1279,7 +1269,7 @@ var chart2 = new Chart(ctx2, {
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1303,11 +1293,7 @@ var chart2 = new Chart(ctx2, {
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

@@ -30,6 +30,11 @@
       "bio": "Researcher at Erasmus Medical Center",
       "elixir_node": "nl",
       "contact_for_training": true,
+      "affiliations": [
+        "CINECA-Project",
+        "gallantries",
+        "erasmusmc"
+      ],
       "location": {
         "country": "NL",
         "lat": 51.912,
@@ -56,6 +61,10 @@
       },
       "fediverse": "https://piaille.fr/@bebatut",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries",
+        "uni-freiburg"
+      ],
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -149,7 +158,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 1: Quality Control [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow2_data_cleaning.ga",
@@ -167,7 +178,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 2: Data Cleaning And Chimera Removal [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow3_classification.ga",
@@ -185,7 +198,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 3: Classification [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow4_mock_otu_clustering.ga",
@@ -203,7 +218,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 4: Mock OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow5_otu_clustering.ga",
@@ -221,7 +238,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 5: OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow6_alpha_diversity.ga",
@@ -239,7 +258,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow 6: Alpha Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     },
     {
       "workflow": "workflow7_beta_diversity.ga",
@@ -257,7 +278,9 @@
           "name": "Saskia Hiltemann"
         }
       ],
-      "test_results": null
+      "name": "Workflow7: Beta Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:42 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.json",

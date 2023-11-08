@@ -6,63 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Classification in Machine Learning</title>
         
-            <!--
-<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
--->
-<!-- We let users opt-out, so if they've opted in, we need to append the plausible script to the body -->
-
-<script>
-var scriptElement = document.createElement("script");
-scriptElement.async = true;
-scriptElement.defer = true;
-scriptElement.setAttribute("data-domain", "training.galaxyproject.org");
-scriptElement.src = "https://plausible.galaxyproject.eu/js/plausible.js";
-
-// Appending the script element to the body
-if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
-	console.log("Plausible: opt-in");
-	// Wait for the document to be available
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-}
-</script>
+            <meta name="google-site-verification" content="9mOXn2JL833-i7-aioCCEuIdG4_tb6qjwUozB5GJnPQ" />
 
 <!-- JavaScript Error Monitoring, and performance tracking. -->
-<!--
 <script
   src="https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js"
   integrity="sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43"
   crossorigin="anonymous"
 ></script>
--->
 <script type="text/javascript">
-var scriptElement = document.createElement("script");
-scriptElement.src = "https://browser.sentry-cdn.com/7.52.1/bundle.tracing.min.js";
-scriptElement.integrity = "sha384-muuFXKS3752PNA4rPm9Uq6BLvOfV4CXyr9MHDBPvozOJJUWLKkogEFWOIRoVps43";
-scriptElement.crossOrigin = "anonymous";
-
 if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
 	console.log("Sentry: opt-in");
-	// Appending the script element to the body
-	document.addEventListener("DOMContentLoaded", function(event) {
-		document.body.appendChild(scriptElement);
-	});
-		
 	Sentry.init({
-	  dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
-	  release: "galaxy-training-network@5549a8718415b1feeb732d4d9eab583cb9117ebb",
-	  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
-	  sampleRate: 0.1,
-	  tracesSampleRate: 0.1,
-	  // Capture Replay for no sessions by default
-	  replaysSessionSampleRate: 0.01,
-	  // plus for 1% of sessions with an error
-	  replaysOnErrorSampleRate: 0.01,
-	  // PII OFF
-	  sendDefaultPii: false, // Off by default but just in case.
-	  environment: "production",
+		dsn: "https://45e0ec6e4373462b92969505df37cf40@sentry.galaxyproject.org/10",
+		release: "galaxy-training-network@902cca86953cf414a5c8d41f9f9c33de8dd1147d",
+		integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
+		sampleRate: 0.1,
+		tracesSampleRate: 0.1,
+		// Capture Replay for no sessions by default
+		replaysSessionSampleRate: 0.01,
+		// plus for 1% of sessions with an error
+		replaysOnErrorSampleRate: 0.01,
+		// PII OFF
+		sendDefaultPii: false, // Off by default but just in case.
+		environment: "production",
 	});
+}
+</script>
+
+<!-- Page view tracking -->
+<script async defer data-domain="training.galaxyproject.org" src="https://plausible.galaxyproject.eu/js/plausible.js"></script>
+<script>
+if(localStorage.getItem('plausible-opt-out') !== 'opt-out' && navigator.doNotTrack !== "1") {
+	localStorage.removeItem("plausible_ignore")
+	console.log("Plausible: opt-in");
+} else {
+	// if they're opting-out, or DNT
+	// we might get one page by accident but we won't get future ones.
+	localStorage.setItem("plausible_ignore", "true")
 }
 </script>
 
@@ -76,12 +57,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         <link rel="preload" href="/training-material/assets/fonts/AtkinsonHyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" as="script" crossorigin>
         <link rel="preload" href="/training-material/assets/css/main.css?v=3" as="style">
-        <link rel='preload' href='/training-material/assets/js/bundle.theme.js?v=1697220082' as='script'>
-<link rel='preload' href='/training-material/assets/js/bundle.main.js?v=1697220082' as='script'>
+        <link rel='preload' href='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299' as='script'>
+<link rel='preload' href='/training-material/assets/js/bundle.9d052497.js?v=1699453299' as='script'>
         <link rel="stylesheet" href="/training-material/assets/css/main.css?v=3">
         <link rel="manifest" href="/training-material/manifest.json">
         <meta name="theme-color" content="#2c3143"/>
-
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material">
 <meta name="DC.type" content="text">
@@ -128,7 +108,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "dateModified": "2023-05-10 14:01:29 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
@@ -141,25 +122,28 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "provider": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
   "sourceOrganization": {
     "@type": "Organization",
     "email": "galaxytrainingnetwork@gmail.com",
     "name": "Galaxy Training Network",
-    "url": "https://galaxyproject.org/teach/gtn/"
+    "url": "https://training.galaxyproject.org",
+    "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
   },
-  "identifier": "https://github.com/galaxyproject/training-material",
   "workTranslation": [
 
   ],
   "creativeWorkStatus": "Active",
+  "identifier": "https://gxy.io/GTN:T00262",
   "accessMode": [
     "textual",
     "visual"
@@ -184,11 +168,14 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     "url": "https://training.galaxyproject.org/training-material/topics/statistics/"
   },
   "learningResourceType": "hands-on tutorial",
-  "name": "Hands-on for 'Classification in Machine Learning' tutorial",
+  "name": "Classification in Machine Learning",
   "url": "https://training.galaxyproject.org/training-material/topics/statistics/tutorials/classification_machinelearning/tutorial.html",
+  "version": 16,
   "timeRequired": "PT2H",
   "teaches": "Learn classification background\n - Learn what a quantitative structure-analysis relationship (QSAR) model is and how it can be constructed in Galaxy\n - Learn to apply logistic regression, k-nearest neighbors, support verctor machines, random forests and bagging algorithms\n - Learn how visualizations can be used to analyze the classification results",
-  "keywords": "statistics",
+  "keywords": [
+    "Statistics and machine learning"
+  ],
   "description": "The questions this  addresses are:\n - What is classification and how we can use classification techniques?\n\n\nThe objectives are:\n - Learn classification background\n - Learn what a quantitative structure-analysis relationship (QSAR) model is and how it can be constructed in Galaxy\n - Learn to apply logistic regression, k-nearest neighbors, support verctor machines, random forests and bagging algorithms\n - Learn how visualizations can be used to analyze the classification results\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -206,7 +193,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         "@type": "Organization",
         "email": "galaxytrainingnetwork@gmail.com",
         "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
+        "url": "https://training.galaxyproject.org",
+        "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
       }
     }
   ],
@@ -228,7 +216,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ],
       "identifier": "https://orcid.org/0000-0001-6811-9196",
@@ -251,7 +240,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     },
@@ -272,7 +262,8 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
           "@type": "Organization",
           "email": "galaxytrainingnetwork@gmail.com",
           "name": "Galaxy Training Network",
-          "url": "https://galaxyproject.org/teach/gtn/"
+          "url": "https://training.galaxyproject.org",
+          "logo": "https://training.galaxyproject.org/training-material/assets/images/GTNLogo1000.png"
         }
       ]
     }
@@ -302,7 +293,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
     </head>
     <body data-spy="scroll" data-target="#toc" data-brightness="auto" data-contrast="auto">
-        <script src='/training-material/assets/js/bundle.theme.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.f1f2de89.js?v=1699453299'></script>
         <header>
     <nav class="navbar navbar-expand-md navbar-dark" aria-label="Site Navigation">
         <div class="container">
@@ -394,7 +385,7 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
         
 
 		<a href="/training-material/preferences.html" class="dropdown-item">
-			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> Themes have moved <span class="badge badge-secondary">New</span>
+			<i class="fas fa-palette" aria-hidden="true"></i><span class="visually-hidden">gtn-theme</span> User Preferences <span class="badge badge-secondary">New</span>
 		</a>
 
         <div class="dropdown-item">
@@ -469,7 +460,10 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
     <div markdown="0">
 
 	<div class="contributors-line">
-		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=36" alt="Avatar" width="36" height="36">Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=36" alt="Avatar" width="36" height="36">Anup Kumar</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Avatar" width="36" height="36">Simon Bray</a>
+		Authors: <a href="/training-material/hall-of-fame/khanteymoori/" class="contributor-badge contributor-khanteymoori"><img src="/training-material/assets/images/orcid.png" alt="orcid logo" width="36" height="36"/><img src="https://avatars.githubusercontent.com/khanteymoori?s=36" alt="Alireza Khanteymoori avatar" width="36" class="avatar" />
+    Alireza Khanteymoori</a><a href="/training-material/hall-of-fame/anuprulez/" class="contributor-badge contributor-anuprulez"><img src="https://avatars.githubusercontent.com/anuprulez?s=36" alt="Anup Kumar avatar" width="36" class="avatar" />
+    Anup Kumar</a><a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=36" alt="Simon Bray avatar" width="36" class="avatar" />
+    Simon Bray</a>
 	</div>
 
 </div>
@@ -704,8 +698,11 @@ if(localStorage.getItem('sentry-opt-out') !== 'opt-out' && navigator.doNotTrack 
              The GTN Framework is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
         </div>
         
-        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span><abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00262">https://gxy.io/GTN:T00262</a> </div>
+        <div><strong><i class="fas fa-fingerprint" aria-hidden="true"></i><span class="visually-hidden">purl</span> <abbr title="Persistent URL">PURL</abbr>:</strong> <a href="https://gxy.io/GTN:T00262">https://gxy.io/GTN:T00262</a> </div>
         
+
+	<div><strong><i class="fas fa-code-commit" aria-hidden="true"></i><span class="visually-hidden">version</span> Revision:</strong> 16 </div>
+
     </blockquote>
     </section>
 
@@ -807,14 +804,14 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 </code></pre></div>      </div>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Importing via links<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-importing-via-links"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-importing-via-links" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Importing via links</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Copy the link location</li>   <li>     <p>Click <i class="fas fa-upload" aria-hidden="true"></i><span class="visually-hidden">galaxy-upload</span> <strong>Upload Data</strong> at the top of the tool panel</p>   </li>   <li>Select <i class="fa fa-edit" aria-hidden="true"></i><span class="visually-hidden">galaxy-wf-edit</span> <strong>Paste/Fetch Data</strong></li>   <li>     <p>Paste the link(s) into the text field</p>   </li>   <li>     <p>Press <strong>Start</strong></p>   </li>   <li><strong>Close</strong> the window</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
     <li>
       <p>Rename the datasets as <code class="language-plaintext highlighter-rouge">train_rows</code>, <code class="language-plaintext highlighter-rouge">test_rows_labels</code> and <code class="language-plaintext highlighter-rouge">test_rows</code> respectively.</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-dataset"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-dataset" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> Tip: Renaming a dataset<span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, change the <strong>Name</strong> field</li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
+      <blockquote class="tip">   <div class="box-title tip-title" id="tip-renaming-a-dataset"><button class="gtn-boxify-button tip" type="button" aria-controls="tip-renaming-a-dataset" aria-expanded="true"><i class="far fa-lightbulb" aria-hidden="true"></i> <span>Tip: Renaming a dataset</span><span class="fold-unfold fa fa-minus-square"></span></button></div>   <ul>   <li>Click on the <i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">galaxy-pencil</span> <strong>pencil icon</strong> for the dataset to edit its attributes</li>   <li>In the central panel, change the <strong>Name</strong> field</li>   <li>Click the <strong>Save</strong> button</li> </ul> </blockquote>
       <p><!--END_SNIPPET--></p>
     </li>
   </ol>
@@ -824,7 +821,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 <p class="comment">The <code class="language-plaintext highlighter-rouge">train_rows</code> contains a column <code class="language-plaintext highlighter-rouge">Class</code> which is the class label or target. We will evaluate our model on <code class="language-plaintext highlighter-rouge">test_rows</code> and compare the predicted class with the true class value in <code class="language-plaintext highlighter-rouge">test_rows_labels</code></p>
 
 <blockquote class="details">
-  <div class="box-title details-title" id="details-preparing-the-data-for-classification"><button class="gtn-boxify-button details" type="button" aria-controls="details-preparing-the-data-for-classification" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> Details: Preparing the data for classification<span class="fold-unfold fa fa-minus-square"></span></button></div>
+  <div class="box-title details-title" id="details-preparing-the-data-for-classification"><button class="gtn-boxify-button details" type="button" aria-controls="details-preparing-the-data-for-classification" aria-expanded="true"><i class="fas fa-info-circle" aria-hidden="true" ></i> <span>Details: Preparing the data for classification</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
   <p>Preparing the data involves these following major tasks:</p>
   <ol>
@@ -845,7 +842,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <div class="box-title hands-on-title" id="hands-on-train-logistic-regression-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train logistic regression classifier</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="link"><strong>Generalized linear models for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4</span></span>:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Generalized linear models for classification and regression</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:
       <ul>
         <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Train a model</code>
           <ul>
@@ -885,7 +882,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <p>What is learned by the logistic regression model?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution"><button class="gtn-boxify-button solution" type="button" aria-controls="solution" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>In the logistic regressoion model, the coefficients of the logistic regression algorithm have be estimated from our training data. This is done using <a href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">maximum-likelihood estimation</a>.</p>
 
@@ -903,7 +900,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <div class="box-title hands-on-title" id="hands-on-predict-class-using-the-logistic-regression-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict class using the logistic regression classifier</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="link"><strong>Generalized linear models for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4</span></span>:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_generalized_linear/sklearn_generalized_linear/1.0.8.4" title="Generalized linear models for classification and regression tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Generalized linear models for classification and regression</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:
       <ul>
         <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Load a model and predict</code>
           <ul>
@@ -941,7 +938,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-classification"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Check and visualize the classification</div>
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="link"><strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.2)</span>:</p>
   <ul>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select input data file”</em>: <code class="language-plaintext highlighter-rouge">test_rows_labels_noheader</code></li>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select predicted data file”</em>: <code class="language-plaintext highlighter-rouge">LogisticRegression_result</code></li>
@@ -977,7 +974,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <p>Inspect the plots. What can you say about the classification?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-1"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-1" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>Figures 2,3 and 4 show that the classification is acceptable, but as you will see in the next steps, the results can be improved.</p>
 
@@ -994,7 +991,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <p>What are advantages and disadvantages about this model?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-2"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-2" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>Advantages:</p>
     <ul>
       <li>
@@ -1040,7 +1037,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-train-k-nearest-neighbor-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train k-nearest neighbor classifier</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4" title="Nearest Neighbors Classification tool" aria-role="link"><strong>Nearest Neighbors Classification</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4" title="Nearest Neighbors Classification tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Nearest Neighbors Classification</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Train a model</code>
       <ul>
@@ -1082,7 +1079,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
   <p>What is the value of k (number of neighbors) for the model?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-3"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-3" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <p>As you can see in the Advanced Options, the default value for the number of neighbors is 5, and we used the default value. You can set this parameter based on your problem and data.</p>
 
   </blockquote>
@@ -1093,7 +1090,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-predict-class-using-the-k-nearest-neighbor-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict class using the k-nearest neighbor classifier</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4" title="Nearest Neighbors Classification tool" aria-role="link"><strong>Nearest Neighbors Classification</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_nn_classifier/sklearn_nn_classifier/1.0.8.4" title="Nearest Neighbors Classification tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Nearest Neighbors Classification</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Load a model and predict</code>
       <ul>
@@ -1111,7 +1108,7 @@ https://zenodo.org/record/3738729/files/test_rows.csv
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-classification-1"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Check and visualize the classification</div>
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="link"><strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.2)</span>:</p>
   <ul>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select input data file”</em>: <code class="language-plaintext highlighter-rouge">test_rows_labels</code></li>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select predicted data file”</em>: <code class="language-plaintext highlighter-rouge">NearestNeighbors_result</code></li>
@@ -1139,7 +1136,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-train-a-svm-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train a SVM classifier</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4" title="Support vector machines (SVMs) tool" aria-role="link"><strong>Support vector machines (SVMs)</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4" title="Support vector machines (SVMs) tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Support vector machines (SVMs)</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Train a model</code>
       <ul>
@@ -1180,7 +1177,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <p>What is learned by the support vector machines?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-4"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-4" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>The coefficients of the line with the maximal margin in the kernel space is learned in the training phase.</p>
 
@@ -1193,7 +1190,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-predict-class-svm-classifier"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict class SVM classifier</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4" title="Support vector machines (SVMs) tool" aria-role="link"><strong>Support vector machines (SVMs)</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_svm_classifier/sklearn_svm_classifier/1.0.8.4" title="Support vector machines (SVMs) tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Support vector machines (SVMs)</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Load a model and predict</code>
       <ul>
@@ -1211,7 +1208,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-check-and-visualize-the-classification-2"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Check and visualize the classification</div>
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="link"><strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/plotly_ml_performance_plots/plotly_ml_performance_plots/0.2" title="Plot confusion matrix, precision, recall and ROC and AUC curves tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Plot confusion matrix, precision, recall and ROC and AUC curves</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 0.2)</span>:</p>
   <ul>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select input data file”</em>: <code class="language-plaintext highlighter-rouge">test_rows_labels</code></li>
     <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Select predicted data file”</em>: <code class="language-plaintext highlighter-rouge">SVM_result</code></li>
@@ -1233,7 +1230,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <div class="box-title hands-on-title" id="hands-on-train-random-forest"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Train random forest</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Ensemble methods for classification and regression</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:
       <ul>
         <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Train a model</code>
           <ul>
@@ -1273,7 +1270,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <p>What are the advantages of random forest classifier compared with KNN and SVM?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-5"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-5" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-5"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-5" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
     <ol>
       <li>The overfitting problem will never arise when we use the random forest algorithm in any classification problem.</li>
       <li>The same random forest algorithm can be used for both classification and regression task.</li>
@@ -1289,7 +1286,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <div class="box-title hands-on-title" id="hands-on-predict-targets-using-the-random-forest"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict targets using the random forest</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Ensemble methods for classification and regression</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:
       <ul>
         <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Load a model and predict</code>
           <ul>
@@ -1315,7 +1312,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <p>Inspect the plots. What can you say about the classification?</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-6"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-6" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-6"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-6" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>Figures show that we achieved an AUC score of <code class="language-plaintext highlighter-rouge">1.0</code>  for the test set using random forest. It means the prediction is very good, in fact it has no error at all. Unfortunately, this is not usually the case when dealing with chemical data.</p>
   </blockquote>
@@ -1328,7 +1325,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-create-pipeline"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Create pipeline</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.4" title="Pipeline builder tool" aria-role="link"><strong>Pipeline builder</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_build_pipeline/sklearn_build_pipeline/1.0.8.4" title="Pipeline builder tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Pipeline builder</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li>In <em>“Final Estimator”</em>:
       <ul>
@@ -1355,7 +1352,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
 <blockquote class="notranslate hands_on">
   <div class="box-title hands-on-title" id="hands-on-hyperparameter-search"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Hyperparameter search</div>
 
-  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.4" title="Hyperparameter search tool" aria-role="link"><strong>Hyperparameter search</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.4</span></span>:</p>
+  <p><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_searchcv/sklearn_searchcv/1.0.8.4" title="Hyperparameter search tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Hyperparameter search</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:</p>
   <ul>
     <li><em>“Select a model selection search scheme”</em>: <code class="language-plaintext highlighter-rouge">GridSearchCV - Exhaustive search over specified parameter values for an estimator </code>
       <ul>
@@ -1410,7 +1407,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <p>Hint: Please look at the <code class="language-plaintext highlighter-rouge">mean_test_score</code> column in the tabular result from the <strong>Hyperparameter search</strong> tool.</p>
 
   <blockquote class="solution">
-    <div class="box-title solution-title" id="solution-7"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-7" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> Solution<span class="fold-unfold fa fa-minus-square"></span></button></div>
+    <div class="box-title solution-title" id="solution-7"><button class="gtn-boxify-button solution" type="button" aria-controls="solution-7" aria-expanded="true"><i class="far fa-eye" aria-hidden="true" ></i> <span>Solution</span><span class="fold-unfold fa fa-minus-square"></span></button></div>
 
     <p>20 - even though the default value of the number of estimators for Bagging Classifier is <code class="language-plaintext highlighter-rouge">10</code>, <code class="language-plaintext highlighter-rouge">20</code> gives the best accuracy. That’s why it is important to perform hyperparameter search to tune these parameters for any dataset.</p>
 
@@ -1424,7 +1421,7 @@ kernel trick. In the next step, we will build a SVM classifier with our data.</p
   <div class="box-title hands-on-title" id="hands-on-predict-age"><i class="fas fa-pencil-alt" aria-hidden="true" ></i> Hands-on: Predict age</div>
 
   <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="link"><strong>Ensemble methods for classification and regression</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4</span></span>:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/bgruening/sklearn_ensemble/sklearn_ensemble/1.0.8.4" title="Ensemble methods for classification and regression tool" aria-role="button"><i class="fas fa-wrench" aria-hidden="true"></i> <strong>Ensemble methods for classification and regression</strong> (<i class="fas fa-cubes" aria-hidden="true"></i> Galaxy version 1.0.8.4)</span>:
       <ul>
         <li><em>“Select a Classification Task”</em>: <code class="language-plaintext highlighter-rouge">Load a model and predict</code>
           <ul>
@@ -1687,7 +1684,7 @@ tools:
 				The GTN infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>
 				</p>
 				<p>
-				Revision <a href="https://github.com/galaxyproject/training-material/commit/5549a8718415b1feeb732d4d9eab583cb9117ebb">5549a87</a>, built with Jekyll (4.3.2 | production)
+				Revision <a href="https://github.com/galaxyproject/training-material/commit/902cca86953cf414a5c8d41f9f9c33de8dd1147d">902cca8</a>, built with Jekyll (4.3.2 | production)
 				</p>
 			</div>
 			<div class="col-sm-6" style="text-align: right">
@@ -1715,11 +1712,7 @@ tools:
 </footer>
 
 
-    </div>
-</footer>
-
-
-        <script src='/training-material/assets/js/bundle.main.js?v=1697220082'></script>
+        <script src='/training-material/assets/js/bundle.9d052497.js?v=1699453299'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </body>
 </html>

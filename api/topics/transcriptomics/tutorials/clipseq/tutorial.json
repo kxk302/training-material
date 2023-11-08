@@ -56,6 +56,10 @@
       },
       "fediverse": "https://piaille.fr/@bebatut",
       "fediverse_flavor": "mastodon",
+      "affiliations": [
+        "gallantries",
+        "uni-freiburg"
+      ],
       "id": "bebatut",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/bebatut.json",
       "page": "https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/"
@@ -89,7 +93,9 @@
       "creators": [
 
       ],
-      "test_results": null
+      "name": "Tutorial CLIPseq Explorer Demultiplexed PEAKachu eCLIP Hg38 ",
+      "test_results": null,
+      "modified": "2023-11-08 14:21:43 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/clipseq/tutorial.json",
