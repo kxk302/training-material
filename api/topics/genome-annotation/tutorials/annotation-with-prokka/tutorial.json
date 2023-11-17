@@ -145,7 +145,7 @@
       ],
       "name": "Genome Annotation with Prokka [Feb 2020]",
       "test_results": null,
-      "modified": "2023-11-16 01:13:15 +0000"
+      "modified": "2023-11-17 01:11:09 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.json",
