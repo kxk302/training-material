@@ -85,7 +85,7 @@
       ],
       "name": "preparing genomic data for phylogeny recostruction (GTN)",
       "test_results": null,
-      "modified": "2023-11-19 01:16:35 +0000"
+      "modified": "2023-11-20 01:11:46 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/phylogeny-data-prep/tutorial.json",
