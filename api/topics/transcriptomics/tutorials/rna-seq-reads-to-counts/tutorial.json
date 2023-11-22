@@ -109,7 +109,7 @@
       ],
       "name": "QC report",
       "test_results": null,
-      "modified": "2023-11-21 01:14:59 +0000"
+      "modified": "2023-11-22 01:13:35 +0000"
     },
     {
       "workflow": "rna-seq-reads-to-counts.ga",
@@ -125,7 +125,7 @@
       ],
       "name": "RNA Seq Reads To Counts",
       "test_results": null,
-      "modified": "2023-11-21 01:14:59 +0000"
+      "modified": "2023-11-22 01:13:35 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/rna-seq-reads-to-counts/tutorial.json",
@@ -177,11 +177,6 @@
       {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.org.au",
-        "name": "UseGalaxy.org.au",
         "usegalaxy": "true"
       }
     ]

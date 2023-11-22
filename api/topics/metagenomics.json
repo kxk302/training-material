@@ -186,7 +186,7 @@
           ],
           "name": "Amplicon Tutorial",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "wgs-worklow.ga",
@@ -202,7 +202,7 @@
           ],
           "name": "WGS Part In \"Analyses Of Metagenomics Data - The Global Picture\"",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/general-tutorial/tutorial.json",
@@ -246,11 +246,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -590,7 +585,7 @@
           ],
           "name": "Workflow 1: Quality Control [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow2_data_cleaning.ga",
@@ -610,7 +605,7 @@
           ],
           "name": "Workflow 2: Data Cleaning And Chimera Removal [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow3_classification.ga",
@@ -630,7 +625,7 @@
           ],
           "name": "Workflow 3: Classification [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow4_mock_otu_clustering.ga",
@@ -650,7 +645,7 @@
           ],
           "name": "Workflow 4: Mock OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow5_otu_clustering.ga",
@@ -670,7 +665,7 @@
           ],
           "name": "Workflow 5: OTU Clustering [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow6_alpha_diversity.ga",
@@ -690,7 +685,7 @@
           ],
           "name": "Workflow 6: Alpha Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow7_beta_diversity.ga",
@@ -710,7 +705,7 @@
           ],
           "name": "Workflow7: Beta Diversity [Galaxy Training: 16S Microbial Analysis With Mothur]",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.json",
@@ -758,11 +753,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -1094,7 +1084,7 @@
           ],
           "name": "Taxonomic Profiling and Visualization of Metagenomic Data",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/taxonomic-profiling/tutorial.json",
@@ -1368,7 +1358,7 @@
           ],
           "name": "Metagenomics assembly tutorial workflow",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
@@ -1384,7 +1374,7 @@
           ],
           "name": "workflow-generate-dataset-for-assembly-tutorial",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metagenomics-assembly/tutorial.json",
@@ -1896,7 +1886,7 @@
           ],
           "name": "Main Metatranscriptomics Analysis",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metatranscriptomics/tutorial.json",
@@ -1934,11 +1924,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -2205,7 +2190,7 @@
           ],
           "name": "Pathogen-Detection-Nanopore-Gene-based-pathogenic-Identification-collection",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "Nanopore_Datasets_Pathogen_Tracking_among_all_samples.ga",
@@ -2232,7 +2217,7 @@
           ],
           "name": "Pathogen-Detection-Nanopore-All-Samples-Analysis",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "nanopore_preprocessing.ga",
@@ -2259,7 +2244,7 @@
           ],
           "name": "Pathogen-Detection-Nanopore-Pre-Processing-collection",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "nanopore_snp_based_pathogenetic_identification.ga",
@@ -2286,7 +2271,7 @@
           ],
           "name": "Pathogen-Detection-Nanopore-SNP-based-pathogenetic-Identification-collection",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "nanopore_taxonomy_profiling_and_visualization.ga",
@@ -2313,7 +2298,7 @@
           ],
           "name": "Pathogen Detection-Nanopore-Taxonomy-Profiling-and-Visualization-collection",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/pathogen-detection-from-nanopore-foodborne-data/tutorial.json",
@@ -2931,7 +2916,7 @@
           ],
           "name": "Training: 16S rRNA Sequencing With Mothur: Main Tutorial",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.json",
@@ -2997,11 +2982,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -3375,7 +3355,7 @@
           ],
           "name": "Identification of the micro-organisms in a beer using Nanopore sequencing",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/beer-data-analysis/tutorial.json",
@@ -3403,11 +3383,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -3756,7 +3731,7 @@
           ],
           "name": "Workflow 1: Preprocessing",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow2_community_profile.ga",
@@ -3808,7 +3783,7 @@
           ],
           "name": "Workflow 2: Community Profile",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow3_functional_information.ga",
@@ -3860,7 +3835,7 @@
           ],
           "name": "Workflow 3: Functional Information",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "workflow3_functional_information_quick.ga",
@@ -3912,7 +3887,7 @@
           ],
           "name": "Workflow 3: Functional Information (quick)",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/metatranscriptomics-short/tutorial.json",
@@ -3955,11 +3930,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -4281,7 +4251,7 @@
           ],
           "name": "Copy Of GTN Training - Antibiotic Resistance Detection",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json",
@@ -4326,11 +4296,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -4542,7 +4507,7 @@
           ],
           "name": "Training: 16S rRNA Analysis with Nanopore Sequencing Reads",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.json",
@@ -4577,11 +4542,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],

@@ -206,7 +206,7 @@
       ],
       "name": "Preprocessing of 10X scRNA-seq data",
       "test_results": null,
-      "modified": "2023-11-21 01:14:58 +0000"
+      "modified": "2023-11-22 01:13:35 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-preprocessing-tenx/tutorial.json",
@@ -225,11 +225,6 @@
       {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.org.au",
-        "name": "UseGalaxy.org.au",
         "usegalaxy": "true"
       }
     ],

@@ -110,7 +110,7 @@
       ],
       "name": "Identification of the micro-organisms in a beer using Nanopore sequencing",
       "test_results": null,
-      "modified": "2023-11-21 01:14:57 +0000"
+      "modified": "2023-11-22 01:13:34 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/beer-data-analysis/tutorial.json",
@@ -138,11 +138,6 @@
       {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.org.au",
-        "name": "UseGalaxy.org.au",
         "usegalaxy": "true"
       }
     ],

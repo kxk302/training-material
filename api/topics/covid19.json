@@ -117,7 +117,7 @@
           ],
           "name": "Simple COVID-19 - PE Variation",
           "test_results": null,
-          "modified": "2023-11-21 01:14:59 +0000"
+          "modified": "2023-11-22 01:13:35 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/sars-cov-2/tutorial.json",
@@ -165,11 +165,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -663,7 +658,7 @@
           ],
           "name": "Virtual screening of the SARS-CoV-2 main protease with rDock and pose scoring",
           "test_results": null,
-          "modified": "2023-11-21 01:14:55 +0000"
+          "modified": "2023-11-22 01:13:32 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/computational-chemistry/tutorials/covid19-docking/tutorial.json",
@@ -936,7 +931,7 @@
           ],
           "name": "GTN - Sequence Analyses - Removal of human reads from SARS-CoV-2 sequencing data",
           "test_results": null,
-          "modified": "2023-11-21 01:14:58 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/human-reads-removal/tutorial.json",
@@ -988,11 +983,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -1189,7 +1179,7 @@
           ],
           "name": "assembly_with_preprocessing",
           "test_results": null,
-          "modified": "2023-11-21 01:14:55 +0000"
+          "modified": "2023-11-22 01:13:32 +0000"
         },
         {
           "workflow": "assembly_with_preprocessing_and_sra_download.ga",
@@ -1205,7 +1195,7 @@
           ],
           "name": "assembly_with_preprocessing_and_sra_download",
           "test_results": null,
-          "modified": "2023-11-21 01:14:55 +0000"
+          "modified": "2023-11-22 01:13:32 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-with-preprocessing/tutorial.json",
@@ -1237,11 +1227,6 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -1484,7 +1469,7 @@
           ],
           "name": "GTN_ENA_upload_workflow",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-data-to-ena/tutorial.json",
@@ -1666,7 +1651,7 @@
           ],
           "name": "vcf2lineage",
           "test_results": null,
-          "modified": "2023-11-21 01:14:57 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json",
@@ -1692,11 +1677,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -1925,11 +1905,6 @@
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
-            "usegalaxy": "true"
           }
         ],
         "inexact": [
@@ -2107,11 +2082,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],

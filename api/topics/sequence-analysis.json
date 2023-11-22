@@ -364,7 +364,7 @@
           ],
           "name": "GTN - Sequence Analyses - Removal of human reads from SARS-CoV-2 sequencing data",
           "test_results": null,
-          "modified": "2023-11-21 01:14:58 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/human-reads-removal/tutorial.json",
@@ -416,11 +416,6 @@
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ]
@@ -1969,7 +1964,7 @@
               "version": "0.1"
             }
           },
-          "modified": "2023-11-21 01:14:58 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/quality-control/tutorial.json",
@@ -1993,11 +1988,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -2293,7 +2283,7 @@
           ],
           "name": "GTN - Sequence Analyses - Mapping - Jbrowse (imported from uploaded file)",
           "test_results": null,
-          "modified": "2023-11-21 01:14:58 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         },
         {
           "workflow": "mapping.ga",
@@ -4084,7 +4074,7 @@
               "version": "0.1"
             }
           },
-          "modified": "2023-11-21 01:14:58 +0000"
+          "modified": "2023-11-22 01:13:34 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/sequence-analysis/tutorials/mapping/tutorial.json",
@@ -4110,11 +4100,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -4324,11 +4309,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
@@ -4565,11 +4545,6 @@
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.org.au",
-            "name": "UseGalaxy.org.au",
             "usegalaxy": "true"
           }
         ],
