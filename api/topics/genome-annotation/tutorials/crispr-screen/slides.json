@@ -130,7 +130,7 @@
       ],
       "name": "Workflow constructed from history 'CRISPR tutorial Kenji'",
       "test_results": null,
-      "modified": "2023-11-22 01:13:34 +0000"
+      "modified": "2023-11-23 01:11:00 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/crispr-screen/tutorial.json",
@@ -152,6 +152,11 @@
       {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",
+        "usegalaxy": "true"
+      },
+      {
+        "url": "https://usegalaxy.org.au",
+        "name": "UseGalaxy.org.au",
         "usegalaxy": "true"
       }
     ],
