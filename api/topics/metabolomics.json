@@ -117,7 +117,7 @@
           ],
           "name": "MSI Workflow: spatial distribution",
           "test_results": null,
-          "modified": "2023-11-24 01:09:20 +0000"
+          "modified": "2023-11-25 01:08:19 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.json",
@@ -319,7 +319,7 @@
           ],
           "name": "MSI Finding Diff Analytes",
           "test_results": null,
-          "modified": "2023-11-24 01:09:20 +0000"
+          "modified": "2023-11-25 01:08:19 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.json",
@@ -544,7 +544,7 @@
           ],
           "name": "Workflow Constructed From History 'imported: testpourGCC'",
           "test_results": null,
-          "modified": "2023-11-24 01:09:20 +0000"
+          "modified": "2023-11-25 01:08:19 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms/tutorial.json",
@@ -780,7 +780,7 @@
           ],
           "name": "GC MS using XCMS",
           "test_results": null,
-          "modified": "2023-11-24 01:09:20 +0000"
+          "modified": "2023-11-25 01:08:19 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.json",
