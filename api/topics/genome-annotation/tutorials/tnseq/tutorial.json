@@ -92,7 +92,7 @@
       ],
       "name": "Essential genes detection with Transposon insertion sequencing",
       "test_results": null,
-      "modified": "2023-11-27 01:11:23 +0000"
+      "modified": "2023-11-28 01:12:14 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/tnseq/tutorial.json",
