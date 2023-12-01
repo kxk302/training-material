@@ -65,7 +65,7 @@
       ],
       "name": "Du Novo GTN Tutorial - Make Consensus Sequences",
       "test_results": null,
-      "modified": "2023-11-30 01:11:43 +0000"
+      "modified": "2023-12-01 01:17:33 +0000"
     },
     {
       "workflow": "variant-calling.ga",
@@ -81,7 +81,7 @@
       ],
       "name": "Du Novo GTN Tutorial - Variant Calling",
       "test_results": null,
-      "modified": "2023-11-30 01:11:43 +0000"
+      "modified": "2023-12-01 01:17:33 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/dunovo/tutorial.json",
