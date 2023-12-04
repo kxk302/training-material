@@ -76,7 +76,7 @@
       ],
       "name": "Secreted Proteins Via GO Annotation And WoLF PSORT For shCTSB Paper",
       "test_results": null,
-      "modified": "2023-12-03 01:14:52 +0000"
+      "modified": "2023-12-04 01:12:03 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/secretome-prediction/tutorial.json",
