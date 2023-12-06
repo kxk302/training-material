@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-05T01:12:32.563+00:00",
+      "datePublished": "2023-12-06T01:14:27.067+00:00",
       "mainEntity": {
         "@id": "obis-indicators.ga"
       }
