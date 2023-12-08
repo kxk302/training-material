@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-07T01:11:46.530+00:00",
+      "datePublished": "2023-12-08T01:12:31.482+00:00",
       "mainEntity": {
         "@id": "infinium-human-methylation-beadchip.ga"
       }
@@ -39,7 +39,7 @@
           "@id": "https://orcid.org/0000-0001-5481-8893"
         },
         {
-          "@id": "#20b71c2a-8285-43c5-b58f-871f16414678"
+          "@id": "#59dbf3d4-c1c6-4bbb-bf02-5642ee890e8d"
         }
       ],
       "license": {
@@ -79,7 +79,7 @@
       "name": "Khaled Jum'ah"
     },
     {
-      "@id": "#20b71c2a-8285-43c5-b58f-871f16414678",
+      "@id": "#59dbf3d4-c1c6-4bbb-bf02-5642ee890e8d",
       "@type": "Organization",
       "name": "poterlowicz-lab"
     }
