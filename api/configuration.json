@@ -133,7 +133,7 @@
       "resources": [
         "assets/js/theme.js"
       ],
-      "timestamp": 1701997949,
+      "timestamp": 1702084207,
       "hash": "f1f2de89",
       "path": "/assets/js/bundle.f1f2de89.js"
     },
@@ -148,7 +148,7 @@
         "assets/js/list.min.js",
         "assets/js/main.js"
       ],
-      "timestamp": 1701997949,
+      "timestamp": 1702084207,
       "hash": "9d052497",
       "path": "/assets/js/bundle.9d052497.js"
     }
@@ -326,5 +326,5 @@
     "2020-11-01",
     "2020-10-01"
   ],
-  "age": 8.4435318275154
+  "age": 8.446269678302533
 }
