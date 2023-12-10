@@ -103,7 +103,7 @@
       ],
       "name": "Visualization Of RNA-Seq Results With Volcano Plot",
       "test_results": null,
-      "modified": "2023-12-09 01:10:11 +0000"
+      "modified": "2023-12-10 01:16:10 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.json",
@@ -115,11 +115,6 @@
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

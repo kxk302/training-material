@@ -186,7 +186,7 @@
           ],
           "name": "GTN Training: Workflow Reports - Galaxy 101 For Everyone",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         },
         {
           "workflow": "workflow_reports_final_workflow.ga",
@@ -202,7 +202,7 @@
           ],
           "name": "GTN Training: Workflow Reports",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-reports/tutorial.json",
@@ -221,11 +221,6 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -462,7 +457,7 @@
           ],
           "name": "Intermine import/export",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/intermine/tutorial.json",
@@ -625,7 +620,7 @@
           ],
           "name": "GTN_ENA_upload_workflow",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-data-to-ena/tutorial.json",
@@ -801,7 +796,7 @@
           ],
           "name": "Select First N Lines",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.json",
@@ -833,11 +828,6 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -1018,7 +1008,7 @@
           ],
           "name": "vcf2lineage",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-automation/tutorial.json",
@@ -1053,11 +1043,7 @@
           }
         ],
         "inexact": [
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
-            "usegalaxy": "true"
-          }
+
         ]
       },
       "topic_name_human": "Using Galaxy and Managing your Data",
@@ -1185,7 +1171,7 @@
           ],
           "name": "Tutorial workflow",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         },
         {
           "workflow": "subworkflow.ga",
@@ -1201,7 +1187,7 @@
           ],
           "name": "Subworkflow",
           "test_results": null,
-          "modified": "2023-12-09 01:10:09 +0000"
+          "modified": "2023-12-10 01:16:08 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json",
@@ -1225,11 +1211,6 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -2511,11 +2492,6 @@
             "usegalaxy": "true"
           },
           {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
-            "usegalaxy": "true"
-          },
-          {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
@@ -2723,11 +2699,6 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -3417,11 +3388,6 @@
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
-            "usegalaxy": "true"
-          },
-          {
-            "url": "https://usegalaxy.fr/",
-            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {

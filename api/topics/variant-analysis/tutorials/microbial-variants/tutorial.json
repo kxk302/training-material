@@ -80,7 +80,7 @@
       ],
       "name": "Microbial Variant Calling",
       "test_results": null,
-      "modified": "2023-12-09 01:10:11 +0000"
+      "modified": "2023-12-10 01:16:10 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/microbial-variants/tutorial.json",
@@ -111,11 +111,6 @@
         "url": "https://galaxytrakr.org/",
         "name": "GalaxyTrakr",
         "usegalaxy": "false"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
-        "usegalaxy": "true"
       },
       {
         "url": "https://usegalaxy.no/",

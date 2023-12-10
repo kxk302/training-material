@@ -81,7 +81,7 @@
       ],
       "name": "'Biomarkers4Paris' Workflow",
       "test_results": null,
-      "modified": "2023-12-09 01:10:10 +0000"
+      "modified": "2023-12-10 01:16:08 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/biomarker_selection/tutorial.json",
@@ -103,11 +103,6 @@
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       }
     ]

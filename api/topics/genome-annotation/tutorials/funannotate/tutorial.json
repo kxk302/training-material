@@ -129,7 +129,7 @@
       ],
       "name": "Funannotate",
       "test_results": null,
-      "modified": "2023-12-09 01:10:10 +0000"
+      "modified": "2023-12-10 01:16:08 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/funannotate/tutorial.json",
@@ -154,11 +154,6 @@
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

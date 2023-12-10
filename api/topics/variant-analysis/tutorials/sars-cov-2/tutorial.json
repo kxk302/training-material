@@ -95,7 +95,7 @@
       ],
       "name": "Simple COVID-19 - PE Variation",
       "test_results": null,
-      "modified": "2023-12-09 01:10:11 +0000"
+      "modified": "2023-12-10 01:16:10 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/sars-cov-2/tutorial.json",
@@ -133,11 +133,6 @@
       {
         "url": "https://usegalaxy.be/",
         "name": "UseGalaxy.be",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

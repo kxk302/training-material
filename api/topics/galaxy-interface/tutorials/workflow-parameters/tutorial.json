@@ -117,7 +117,7 @@
       ],
       "name": "Select First N Lines",
       "test_results": null,
-      "modified": "2023-12-09 01:10:09 +0000"
+      "modified": "2023-12-10 01:16:08 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.json",
@@ -149,11 +149,6 @@
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
-        "usegalaxy": "true"
-      },
-      {
-        "url": "https://usegalaxy.fr/",
-        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

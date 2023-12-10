@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-09T01:10:09.741+00:00",
+      "datePublished": "2023-12-10T01:16:08.162+00:00",
       "mainEntity": {
         "@id": "galaxy-workflow-galaxy_hi-c.ga"
       }
