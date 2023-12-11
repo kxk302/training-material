@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-10T01:16:08.706+00:00",
+      "datePublished": "2023-12-11T01:12:23.925+00:00",
       "mainEntity": {
         "@id": "main_workflow.ga"
       }
@@ -33,7 +33,7 @@
       ],
       "author": [
         {
-          "@id": "#522931d7-e504-4a4a-be9e-9e78d22f3466"
+          "@id": "#b59ebec0-fe76-4d2e-b740-3ffbd3ce9a6a"
         }
       ],
       "license": {
@@ -63,7 +63,7 @@
       "version": "23.1"
     },
     {
-      "@id": "#522931d7-e504-4a4a-be9e-9e78d22f3466",
+      "@id": "#b59ebec0-fe76-4d2e-b740-3ffbd3ce9a6a",
       "@type": "Organization",
       "name": "RECETOX"
     }
