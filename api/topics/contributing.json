@@ -243,7 +243,7 @@
           ],
           "name": "MakeAFakeInput",
           "test_results": null,
-          "modified": "2023-12-11 01:12:21 +0000"
+          "modified": "2023-12-12 01:14:19 +0000"
         },
         {
           "workflow": "main_workflow.ga",
@@ -259,7 +259,7 @@
           ],
           "name": "Retrieve climate data from Copernicus",
           "test_results": null,
-          "modified": "2023-12-11 01:12:21 +0000"
+          "modified": "2023-12-12 01:14:19 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/contributing/tutorials/create-new-tutorial/tutorial.json",

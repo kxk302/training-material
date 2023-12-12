@@ -66,7 +66,7 @@
       ],
       "name": "Unicycler training",
       "test_results": null,
-      "modified": "2023-12-11 01:12:21 +0000"
+      "modified": "2023-12-12 01:14:19 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/unicycler-assembly/tutorial.json",
@@ -110,6 +110,11 @@
         "url": "https://galaxy.hyphy.org/",
         "name": "HyPhy HIV NGS Tools",
         "usegalaxy": "false"
+      },
+      {
+        "url": "https://usegalaxy.fr/",
+        "name": "UseGalaxy.fr",
+        "usegalaxy": "true"
       },
       {
         "url": "https://usegalaxy.no/",

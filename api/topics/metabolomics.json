@@ -117,7 +117,7 @@
           ],
           "name": "MSI Workflow: spatial distribution",
           "test_results": null,
-          "modified": "2023-12-11 01:12:23 +0000"
+          "modified": "2023-12-12 01:14:21 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.json",
@@ -148,6 +148,11 @@
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -314,7 +319,7 @@
           ],
           "name": "MSI Finding Diff Analytes",
           "test_results": null,
-          "modified": "2023-12-11 01:12:23 +0000"
+          "modified": "2023-12-12 01:14:21 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.json",
@@ -346,6 +351,11 @@
           }
         ],
         "inexact": [
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.no/",
             "name": "UseGalaxy.no",
@@ -520,7 +530,7 @@
           ],
           "name": "GC MS using XCMS",
           "test_results": null,
-          "modified": "2023-12-11 01:12:23 +0000"
+          "modified": "2023-12-12 01:14:21 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.json",
@@ -825,7 +835,7 @@
           ],
           "name": "Workflow Constructed From History 'imported: testpourGCC'",
           "test_results": null,
-          "modified": "2023-12-11 01:12:23 +0000"
+          "modified": "2023-12-12 01:14:21 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms/tutorial.json",
@@ -852,6 +862,11 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -1066,6 +1081,11 @@
       ],
       "supported_servers": {
         "exact": [
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          },
           {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
@@ -1361,6 +1381,11 @@
             "usegalaxy": "true"
           },
           {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          },
+          {
             "url": "https://usegalaxy.org",
             "name": "UseGalaxy.org (Main)",
             "usegalaxy": "true"
@@ -1505,7 +1530,11 @@
       ],
       "supported_servers": {
         "exact": [
-
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          }
         ],
         "inexact": [
           {

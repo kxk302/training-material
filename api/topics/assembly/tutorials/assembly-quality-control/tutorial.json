@@ -145,7 +145,7 @@
       ],
       "name": "Genome Assembly Quality Control",
       "test_results": null,
-      "modified": "2023-12-11 01:12:21 +0000"
+      "modified": "2023-12-12 01:14:19 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-quality-control/tutorial.json",
@@ -161,6 +161,11 @@
       {
         "url": "https://usegalaxy.eu",
         "name": "UseGalaxy.eu",
+        "usegalaxy": "true"
+      },
+      {
+        "url": "https://usegalaxy.fr/",
+        "name": "UseGalaxy.fr",
         "usegalaxy": "true"
       },
       {

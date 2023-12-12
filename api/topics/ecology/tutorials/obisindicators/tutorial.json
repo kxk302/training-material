@@ -736,7 +736,7 @@
           "version": "0.1"
         }
       },
-      "modified": "2023-12-11 01:12:22 +0000"
+      "modified": "2023-12-12 01:14:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/obisindicators/tutorial.json",
@@ -755,6 +755,11 @@
       }
     ],
     "inexact": [
+      {
+        "url": "https://usegalaxy.fr/",
+        "name": "UseGalaxy.fr",
+        "usegalaxy": "true"
+      },
       {
         "url": "https://usegalaxy.org",
         "name": "UseGalaxy.org (Main)",

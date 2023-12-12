@@ -583,7 +583,7 @@
           "version": "0.1"
         }
       },
-      "modified": "2023-12-11 01:12:24 +0000"
+      "modified": "2023-12-12 01:14:22 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/statistics/tutorials/machinelearning/tutorial.json",
@@ -619,7 +619,11 @@
       }
     ],
     "inexact": [
-
+      {
+        "url": "https://usegalaxy.fr/",
+        "name": "UseGalaxy.fr",
+        "usegalaxy": "true"
+      }
     ]
   },
   "topic_name_human": "Statistics and machine learning",

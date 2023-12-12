@@ -341,7 +341,7 @@
           ],
           "name": "Calling variants in non-diploid systems",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/non-dip/tutorial.json",
@@ -369,6 +369,11 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -560,7 +565,7 @@
           ],
           "name": "Du Novo GTN Tutorial - Make Consensus Sequences",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         },
         {
           "workflow": "variant-calling.ga",
@@ -576,7 +581,7 @@
           ],
           "name": "Du Novo GTN Tutorial - Variant Calling",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/dunovo/tutorial.json",
@@ -798,7 +803,7 @@
           ],
           "name": "Simple COVID-19 - PE Variation",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/sars-cov-2/tutorial.json",
@@ -836,6 +841,11 @@
           {
             "url": "https://usegalaxy.be/",
             "name": "UseGalaxy.be",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -1174,7 +1184,7 @@
           ],
           "name": "Trio Analysis Tutorial",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/trio-analysis/tutorial.json",
@@ -1450,7 +1460,7 @@
           ],
           "name": "M. tuberculosis Variant Analysis tutorial",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.json",
@@ -1674,7 +1684,7 @@
           ],
           "name": "Diploid",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/dip/tutorial.json",
@@ -1699,6 +1709,11 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -1887,7 +1902,7 @@
           ],
           "name": " Control-FREEC/MIRACUM - somatic variant discovery from WES data",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.json",
@@ -2155,7 +2170,7 @@
           ],
           "name": "Identification of somatic and germline variants from tumor and normal sample pairs tutorial",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variants/tutorial.json",
@@ -2205,7 +2220,11 @@
           }
         ],
         "inexact": [
-
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
+          }
         ]
       },
       "topic_name_human": "Variant Analysis",
@@ -2655,7 +2674,7 @@
           ],
           "name": "Mapping And Molecular Identification Of Phenotype Causing Mutations",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/mapping-by-sequencing/tutorial.json",
@@ -2869,7 +2888,7 @@
           ],
           "name": "Microbial Variant Calling",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/microbial-variants/tutorial.json",
@@ -2900,6 +2919,11 @@
             "url": "https://galaxytrakr.org/",
             "name": "GalaxyTrakr",
             "usegalaxy": "false"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
+            "usegalaxy": "true"
           },
           {
             "url": "https://usegalaxy.no/",
@@ -3078,7 +3102,7 @@
           ],
           "name": "Exome Seq Training Pre-Mapped W Cached Ref",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         },
         {
           "workflow": "workflow_exome_seq_full.ga",
@@ -3098,7 +3122,7 @@
           ],
           "name": "Exome Seq Training Full W Cached Ref",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/exome-seq/tutorial.json",
@@ -3121,6 +3145,11 @@
           {
             "url": "https://usegalaxy.eu",
             "name": "UseGalaxy.eu",
+            "usegalaxy": "true"
+          },
+          {
+            "url": "https://usegalaxy.fr/",
+            "name": "UseGalaxy.fr",
             "usegalaxy": "true"
           },
           {
@@ -3342,7 +3371,7 @@
           ],
           "name": "pox-virus-tiled-amplicon-ref-masking",
           "test_results": null,
-          "modified": "2023-12-11 01:12:25 +0000"
+          "modified": "2023-12-12 01:14:23 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/pox-tiled-amplicon/tutorial.json",
