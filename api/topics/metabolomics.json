@@ -117,7 +117,7 @@
           ],
           "name": "MSI Workflow: spatial distribution",
           "test_results": null,
-          "modified": "2023-12-13 01:11:58 +0000"
+          "modified": "2023-12-14 01:10:59 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-analyte-distribution/tutorial.json",
@@ -319,7 +319,7 @@
           ],
           "name": "MSI Finding Diff Analytes",
           "test_results": null,
-          "modified": "2023-12-13 01:11:58 +0000"
+          "modified": "2023-12-14 01:10:59 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/msi-finding-nglycans/tutorial.json",
@@ -530,7 +530,7 @@
           ],
           "name": "GC MS using XCMS",
           "test_results": null,
-          "modified": "2023-12-13 01:11:58 +0000"
+          "modified": "2023-12-14 01:10:59 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/gc_ms_with_xcms/tutorial.json",
@@ -835,7 +835,7 @@
           ],
           "name": "Workflow Constructed From History 'imported: testpourGCC'",
           "test_results": null,
-          "modified": "2023-12-13 01:11:58 +0000"
+          "modified": "2023-12-14 01:10:59 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms/tutorial.json",
@@ -996,6 +996,102 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms/tutorial.json"
+      }
+    },
+    {
+      "layout": "introduction_slides",
+      "logo": "GTN",
+      "title": "Introduction to Metabolomics",
+      "priority": 1,
+      "redirect_from": [
+        "/topics/metabolomics/slides/introduction",
+        "/short/metabolomics/introduction/slides",
+        "/short/S00076"
+      ],
+      "contributors": [
+        {
+          "name": "Gildas Le Corguillé",
+          "joined": "2017-09",
+          "elixir_node": "fr",
+          "id": "lecorguille",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/lecorguille.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/lecorguille/"
+        },
+        {
+          "name": "Cécile Canlet",
+          "github": false,
+          "joined": "2018-09",
+          "id": "cecilecanlet",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/cecilecanlet.json",
+          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cecilecanlet/"
+        }
+      ],
+      "short_id": "S00076",
+      "url": "/topics/metabolomics/tutorials/introduction/slides.html",
+      "topic_name": "metabolomics",
+      "tutorial_name": "introduction",
+      "dir": "topics/metabolomics/tutorials/introduction",
+      "id": "metabolomics/introduction",
+      "video_library": {
+        "tutorial": null,
+        "slides": null,
+        "demo": null,
+        "both": null,
+        "session": null
+      },
+      "hands_on": false,
+      "slides": true,
+      "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/tutorial.json",
+      "tools": [
+
+      ],
+      "supported_servers": {
+        "exact": [
+
+        ],
+        "inexact": [
+          {
+            "name": "UseGalaxy.eu",
+            "url": "https://usegalaxy.eu",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org",
+            "url": "https://usegalaxy.org",
+            "usegalaxy": true
+          },
+          {
+            "name": "UseGalaxy.org.au",
+            "url": "https://usegalaxy.org.au",
+            "usegalaxy": true
+          }
+        ]
+      },
+      "topic_name_human": "Metabolomics",
+      "admin_install": {
+        "install_tool_dependencies": true,
+        "install_repository_dependencies": true,
+        "install_resolver_dependencies": true,
+        "tools": [
+
+        ]
+      },
+      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/slides.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/slides.json"
       }
     },
     {
@@ -1213,102 +1309,6 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/lcms-preprocessing/tutorial.json"
-      }
-    },
-    {
-      "layout": "introduction_slides",
-      "logo": "GTN",
-      "title": "Introduction to Metabolomics",
-      "priority": 1,
-      "redirect_from": [
-        "/topics/metabolomics/slides/introduction",
-        "/short/metabolomics/introduction/slides",
-        "/short/S00076"
-      ],
-      "contributors": [
-        {
-          "name": "Gildas Le Corguillé",
-          "joined": "2017-09",
-          "elixir_node": "fr",
-          "id": "lecorguille",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/lecorguille.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/lecorguille/"
-        },
-        {
-          "name": "Cécile Canlet",
-          "github": false,
-          "joined": "2018-09",
-          "id": "cecilecanlet",
-          "url": "https://training.galaxyproject.org/training-material/api/contributors/cecilecanlet.json",
-          "page": "https://training.galaxyproject.org/training-material/hall-of-fame/cecilecanlet/"
-        }
-      ],
-      "short_id": "S00076",
-      "url": "/topics/metabolomics/tutorials/introduction/slides.html",
-      "topic_name": "metabolomics",
-      "tutorial_name": "introduction",
-      "dir": "topics/metabolomics/tutorials/introduction",
-      "id": "metabolomics/introduction",
-      "video_library": {
-        "tutorial": null,
-        "slides": null,
-        "demo": null,
-        "both": null,
-        "session": null
-      },
-      "hands_on": false,
-      "slides": true,
-      "api": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/tutorial.json",
-      "tools": [
-
-      ],
-      "supported_servers": {
-        "exact": [
-
-        ],
-        "inexact": [
-          {
-            "name": "UseGalaxy.eu",
-            "url": "https://usegalaxy.eu",
-            "usegalaxy": true
-          },
-          {
-            "name": "UseGalaxy.org",
-            "url": "https://usegalaxy.org",
-            "usegalaxy": true
-          },
-          {
-            "name": "UseGalaxy.org.au",
-            "url": "https://usegalaxy.org.au",
-            "usegalaxy": true
-          }
-        ]
-      },
-      "topic_name_human": "Metabolomics",
-      "admin_install": {
-        "install_tool_dependencies": true,
-        "install_repository_dependencies": true,
-        "install_resolver_dependencies": true,
-        "tools": [
-
-        ]
-      },
-      "admin_install_yaml": "---\ninstall_tool_dependencies: true\ninstall_repository_dependencies: true\ninstall_resolver_dependencies: true\ntools: []\n",
-      "tours": false,
-      "video": false,
-      "translations": {
-        "tutorial": [
-
-        ],
-        "slides": [
-
-        ],
-        "video": false
-      },
-      "type": "tutorial",
-      "urls": {
-        "hands_on": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/slides.json",
-        "slides": "https://training.galaxyproject.org/training-material/api/topics/metabolomics/tutorials/introduction/slides.json"
       }
     },
     {
