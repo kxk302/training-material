@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-14T01:10:58.896+00:00",
+      "datePublished": "2023-12-15T01:12:39.600+00:00",
       "mainEntity": {
         "@id": "galaxy-workflow-gtn_tutorial__introduction_to_imaging.ga"
       }
