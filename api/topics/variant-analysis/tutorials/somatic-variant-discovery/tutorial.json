@@ -97,7 +97,7 @@
       ],
       "name": " Control-FREEC/MIRACUM - somatic variant discovery from WES data",
       "test_results": null,
-      "modified": "2023-12-15 01:12:41 +0000"
+      "modified": "2023-12-16 01:11:06 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variant-discovery/tutorial.json",
