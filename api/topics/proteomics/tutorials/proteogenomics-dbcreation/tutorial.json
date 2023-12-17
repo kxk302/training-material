@@ -144,7 +144,7 @@
       ],
       "name": "GTN Proteogenomics1 Database Creation",
       "test_results": null,
-      "modified": "2023-12-16 01:11:05 +0000"
+      "modified": "2023-12-17 01:16:26 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/proteogenomics-dbcreation/tutorial.json",
