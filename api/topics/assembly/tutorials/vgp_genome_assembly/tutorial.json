@@ -131,7 +131,7 @@
       ],
       "name": "VGP assembly: training workflow",
       "test_results": null,
-      "modified": "2023-12-17 01:16:23 +0000"
+      "modified": "2023-12-18 01:12:29 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/vgp_genome_assembly/tutorial.json",
