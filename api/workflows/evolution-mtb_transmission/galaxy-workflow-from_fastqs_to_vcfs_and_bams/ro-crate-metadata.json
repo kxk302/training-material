@@ -19,7 +19,7 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "datePublished": "2023-12-22T01:09:46.036+00:00",
+      "datePublished": "2023-12-23T01:07:39.313+00:00",
       "mainEntity": {
         "@id": "galaxy-workflow-from_fastqs_to_vcfs_and_bams.ga"
       }
