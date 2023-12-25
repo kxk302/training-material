@@ -80,7 +80,7 @@
       ],
       "name": "Microbial Variant Calling",
       "test_results": null,
-      "modified": "2023-12-24 01:15:02 +0000"
+      "modified": "2023-12-25 01:11:53 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/microbial-variants/tutorial.json",
