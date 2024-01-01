@@ -96,7 +96,7 @@
       ],
       "name": "Proteomics: Peptide and Protein ID using OpenMS",
       "test_results": null,
-      "modified": "2023-12-31 01:15:47 +0000"
+      "modified": "2024-01-01 01:17:06 +0000"
     },
     {
       "workflow": "workflow_two-search-engines.ga",
@@ -112,7 +112,7 @@
       ],
       "name": "Peptide And Protein ID Via OMS Using Two Search Engines",
       "test_results": null,
-      "modified": "2023-12-31 01:15:47 +0000"
+      "modified": "2024-01-01 01:17:06 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/protein-id-oms/tutorial.json",
