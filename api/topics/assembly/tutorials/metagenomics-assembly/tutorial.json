@@ -71,7 +71,7 @@
       ],
       "name": "Metagenomics assembly tutorial workflow",
       "test_results": null,
-      "modified": "2024-01-01 01:17:06 +0000"
+      "modified": "2024-01-02 01:09:44 +0000"
     },
     {
       "workflow": "workflow-generate-dataset-for-assembly-tutorial.ga",
@@ -87,7 +87,7 @@
       ],
       "name": "workflow-generate-dataset-for-assembly-tutorial",
       "test_results": null,
-      "modified": "2024-01-01 01:17:06 +0000"
+      "modified": "2024-01-02 01:09:44 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/metagenomics-assembly/tutorial.json",
