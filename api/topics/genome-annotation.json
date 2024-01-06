@@ -241,7 +241,7 @@
           ],
           "name": "Genome Annotation with Prokka [Feb 2020]",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/annotation-with-prokka/tutorial.json",
@@ -510,7 +510,7 @@
           ],
           "name": "Apollo Load Test",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/apollo/tutorial.json",
@@ -816,7 +816,7 @@
           ],
           "name": "RepeatMasker",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/repeatmasker/tutorial.json",
@@ -1075,7 +1075,7 @@
           ],
           "name": "CHROMEISTER chromosome comparison",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         },
         {
           "workflow": "GECKO_pairwise_comparison.ga",
@@ -1091,7 +1091,7 @@
           ],
           "name": "GECKO pairwise comparison",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/hpc-for-lsgc/tutorial.json",
@@ -1698,7 +1698,7 @@
           ],
           "name": "Funannotate",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/funannotate/tutorial.json",
@@ -2050,7 +2050,7 @@
           ],
           "name": "Comparative gene analysis",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/gene-centric/tutorial.json",
@@ -2287,7 +2287,7 @@
           ],
           "name": "Genome annotation with Maker (short)",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/annotation-with-maker-short/tutorial.json",
@@ -2486,7 +2486,7 @@
           ],
           "name": "Essential genes detection with Transposon insertion sequencing",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/tnseq/tutorial.json",
@@ -2702,7 +2702,7 @@
           ],
           "name": "Genome annotation with Maker ",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/annotation-with-maker/tutorial.json",
@@ -2900,7 +2900,7 @@
           ],
           "name": "Functional annotation",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/functional/tutorial.json",
@@ -3323,7 +3323,7 @@
           ],
           "name": "Long non-coding RNAs (lncRNAs) annotation with FEELnc",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/lncrna/tutorial.json",
@@ -3630,7 +3630,7 @@
           ],
           "name": "Workflow constructed from history 'CRISPR tutorial Kenji'",
           "test_results": null,
-          "modified": "2024-01-05 01:11:30 +0000"
+          "modified": "2024-01-06 01:12:03 +0000"
         }
       ],
       "api": "https://training.galaxyproject.org/training-material/api/topics/genome-annotation/tutorials/crispr-screen/tutorial.json",
