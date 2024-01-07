@@ -108,7 +108,7 @@
       ],
       "name": "Training: 16S rRNA Sequencing With Mothur: Main Tutorial",
       "test_results": null,
-      "modified": "2024-01-06 01:12:03 +0000"
+      "modified": "2024-01-07 01:18:57 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.json",

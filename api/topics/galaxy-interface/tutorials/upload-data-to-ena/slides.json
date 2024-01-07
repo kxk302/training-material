@@ -68,7 +68,7 @@
       ],
       "name": "GTN_ENA_upload_workflow",
       "test_results": null,
-      "modified": "2024-01-06 01:12:03 +0000"
+      "modified": "2024-01-07 01:18:56 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/upload-data-to-ena/tutorial.json",
