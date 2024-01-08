@@ -132,7 +132,7 @@
       ],
       "name": "Circos tutorial",
       "test_results": null,
-      "modified": "2024-01-07 01:18:58 +0000"
+      "modified": "2024-01-08 01:13:02 +0000"
     },
     {
       "workflow": "nature_workflow.ga",
@@ -157,7 +157,7 @@
       ],
       "name": "Circos: Nature workflow",
       "test_results": null,
-      "modified": "2024-01-07 01:18:58 +0000"
+      "modified": "2024-01-08 01:13:02 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/visualisation/tutorials/circos/tutorial.json",
