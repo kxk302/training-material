@@ -1248,7 +1248,7 @@
           "version": "0.1"
         }
       },
-      "modified": "2024-01-09 01:12:50 +0000"
+      "modified": "2024-01-10 01:13:49 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/introduction/tutorials/galaxy-intro-101/tutorial.json",
@@ -1289,11 +1289,7 @@
       }
     ],
     "inexact": [
-      {
-        "url": "https://galaxy.mesocentre.uca.fr",
-        "name": "Galaxy@AuBi",
-        "usegalaxy": "false"
-      }
+
     ]
   },
   "topic_name_human": "Introduction to Galaxy Analyses",
