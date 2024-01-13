@@ -100,7 +100,7 @@
       ],
       "name": "GTN Training: Workflow Reports - Galaxy 101 For Everyone",
       "test_results": null,
-      "modified": "2024-01-12 01:13:10 +0000"
+      "modified": "2024-01-13 01:12:04 +0000"
     },
     {
       "workflow": "workflow_reports_final_workflow.ga",
@@ -116,7 +116,7 @@
       ],
       "name": "GTN Training: Workflow Reports",
       "test_results": null,
-      "modified": "2024-01-12 01:13:10 +0000"
+      "modified": "2024-01-13 01:12:04 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-reports/tutorial.json",

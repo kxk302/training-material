@@ -60,7 +60,7 @@
       ],
       "name": "Training: 16S rRNA Analysis with Nanopore Sequencing Reads",
       "test_results": null,
-      "modified": "2024-01-12 01:13:11 +0000"
+      "modified": "2024-01-13 01:12:05 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/nanopore-16S-metagenomics/tutorial.json",

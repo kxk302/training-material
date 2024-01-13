@@ -145,7 +145,7 @@
       ],
       "name": "Genome Assembly Quality Control",
       "test_results": null,
-      "modified": "2024-01-12 01:13:08 +0000"
+      "modified": "2024-01-13 01:12:02 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/assembly-quality-control/tutorial.json",

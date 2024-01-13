@@ -62,7 +62,7 @@
       ],
       "name": "Tutorial workflow",
       "test_results": null,
-      "modified": "2024-01-12 01:13:10 +0000"
+      "modified": "2024-01-13 01:12:04 +0000"
     },
     {
       "workflow": "subworkflow.ga",
@@ -78,7 +78,7 @@
       ],
       "name": "Subworkflow",
       "test_results": null,
-      "modified": "2024-01-12 01:13:10 +0000"
+      "modified": "2024-01-13 01:12:04 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/galaxy-interface/tutorials/workflow-editor/tutorial.json",
