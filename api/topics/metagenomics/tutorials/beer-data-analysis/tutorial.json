@@ -110,7 +110,7 @@
       ],
       "name": "Identification of the micro-organisms in a beer using Nanopore sequencing",
       "test_results": null,
-      "modified": "2024-01-13 01:12:05 +0000"
+      "modified": "2024-01-14 01:18:59 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/beer-data-analysis/tutorial.json",

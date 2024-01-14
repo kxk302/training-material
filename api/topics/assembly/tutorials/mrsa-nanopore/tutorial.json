@@ -107,7 +107,7 @@
       ],
       "name": "Genome Assembly of MRSA using Oxford Nanopore MinION Data (imported from uploaded file)",
       "test_results": null,
-      "modified": "2024-01-13 01:12:02 +0000"
+      "modified": "2024-01-14 01:18:57 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/assembly/tutorials/mrsa-nanopore/tutorial.json",
