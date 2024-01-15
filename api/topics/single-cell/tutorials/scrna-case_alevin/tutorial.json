@@ -127,7 +127,7 @@
       ],
       "name": "Generating a single cell matrix using Alevin 1.9",
       "test_results": null,
-      "modified": "2024-01-14 01:19:00 +0000"
+      "modified": "2024-01-15 01:15:01 +0000"
     },
     {
       "workflow": "Generating-a-single-cell-matrix-using-Alevin.ga",
@@ -147,7 +147,7 @@
       ],
       "name": "CS1_Generating a single cell matrix using Alevin",
       "test_results": null,
-      "modified": "2024-01-14 01:19:00 +0000"
+      "modified": "2024-01-15 01:15:01 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/scrna-case_alevin/tutorial.json",
