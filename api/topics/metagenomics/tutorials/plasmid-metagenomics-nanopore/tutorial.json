@@ -128,7 +128,7 @@
       ],
       "name": "Copy Of GTN Training - Antibiotic Resistance Detection",
       "test_results": null,
-      "modified": "2024-01-15 01:15:00 +0000"
+      "modified": "2024-01-16 01:13:34 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/metagenomics/tutorials/plasmid-metagenomics-nanopore/tutorial.json",
