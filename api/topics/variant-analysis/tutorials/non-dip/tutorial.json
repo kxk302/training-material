@@ -68,7 +68,7 @@
       ],
       "name": "Calling variants in non-diploid systems",
       "test_results": null,
-      "modified": "2024-01-16 01:13:36 +0000"
+      "modified": "2024-01-17 01:13:13 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/non-dip/tutorial.json",

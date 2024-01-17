@@ -97,7 +97,7 @@
       ],
       "name": "Analyze Screen",
       "test_results": null,
-      "modified": "2024-01-16 01:13:34 +0000"
+      "modified": "2024-01-17 01:13:12 +0000"
     },
     {
       "workflow": "feature_extraction.ga",
@@ -113,7 +113,7 @@
       ],
       "name": "Feature Extraction",
       "test_results": null,
-      "modified": "2024-01-16 01:13:34 +0000"
+      "modified": "2024-01-17 01:13:12 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/imaging/tutorials/hela-screen-analysis/tutorial.json",

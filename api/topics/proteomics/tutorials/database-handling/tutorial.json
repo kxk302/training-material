@@ -81,7 +81,7 @@
       ],
       "name": "Proteomics: database handling",
       "test_results": null,
-      "modified": "2024-01-16 01:13:35 +0000"
+      "modified": "2024-01-17 01:13:12 +0000"
     },
     {
       "workflow": "wf_database-handling_mycoplasma.ga",
@@ -97,7 +97,7 @@
       ],
       "name": "Proteomics: database handling including mycoplasma",
       "test_results": null,
-      "modified": "2024-01-16 01:13:35 +0000"
+      "modified": "2024-01-17 01:13:12 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/proteomics/tutorials/database-handling/tutorial.json",
