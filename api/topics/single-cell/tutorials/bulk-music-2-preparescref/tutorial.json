@@ -88,7 +88,7 @@
       ],
       "name": "MuSiC-Deconvolution: Data generation | sc | matrix + ESet",
       "test_results": null,
-      "modified": "2024-01-17 01:13:13 +0000"
+      "modified": "2024-01-18 01:14:57 +0000"
     },
     {
       "workflow": "sc_metadata.ga",
@@ -113,7 +113,7 @@
       ],
       "name": "MuSiC-Deconvolution: Data generation | sc | metadata",
       "test_results": null,
-      "modified": "2024-01-17 01:13:13 +0000"
+      "modified": "2024-01-18 01:14:57 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/single-cell/tutorials/bulk-music-2-preparescref/tutorial.json",
