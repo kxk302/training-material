@@ -71,7 +71,7 @@
       ],
       "name": "Workflow Constructed From History 'STACKS RAD: Population Genomics With Reference Genome'",
       "test_results": null,
-      "modified": "2024-01-18 01:14:55 +0000"
+      "modified": "2024-01-19 01:13:20 +0000"
     },
     {
       "workflow": "workflow.ga",
@@ -87,7 +87,7 @@
       ],
       "name": "Ref Based Rad Seq",
       "test_results": null,
-      "modified": "2024-01-18 01:14:55 +0000"
+      "modified": "2024-01-19 01:13:20 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/ecology/tutorials/ref-based-rad-seq/tutorial.json",

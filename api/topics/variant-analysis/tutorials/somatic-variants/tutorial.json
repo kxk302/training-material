@@ -65,7 +65,7 @@
       ],
       "name": "Identification of somatic and germline variants from tumor and normal sample pairs tutorial",
       "test_results": null,
-      "modified": "2024-01-18 01:14:57 +0000"
+      "modified": "2024-01-19 01:13:23 +0000"
     }
   ],
   "api": "https://training.galaxyproject.org/training-material/api/topics/variant-analysis/tutorials/somatic-variants/tutorial.json",
